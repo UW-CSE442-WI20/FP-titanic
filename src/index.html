@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>My Title</title>
-  </head>
-  <body>
-    <h1>My Webpage</h1>
-    <script src="./index.js"></script>
-  </body>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Titanic Analysis</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="fullPage.css" />
+	<script type="text/javascript" src="fullPage.js"></script>
+	<script type="text/javascript">
+		var headerColor = '#ddd',
+			contentColor = '#fff';
+
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['title', 'section1', 'section2', 'section3'],
+				sectionsColor: [headerColor, contentColor, contentColor, contentColor],
+				navigation: true,
+				navigationPosition: 'right',
+				navigationTooltips: ['Start', 'Section1', 'Section2', 'Section3']
+			});
+		});
+	</script>	
+</head>
+<body>
+  <div id="fullpage">
+
+    <div class="section">
+      <div class="header">
+				<h1>Titanic Analysis</h1>
+			</div>
+    </div>
+
+    <div class="section">
+      <div class="slide" data-anchor="slide1"> Slide 1 </div>
+    </div>
+    <div class="section"></div>
+    <div class="section"></div>
+  </div>
+</body>
 </html>
