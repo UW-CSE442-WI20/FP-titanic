@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+
+		.x.axis path {
+		  display: none;
+		}
+		
+	</style>
+
+
 	<title>Titanic Analysis</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="fullPage.css" />
-  <link rel="stylesheet" type="text/css" href="index.css"/>
+    <link rel="stylesheet" type="text/css" href="fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="index.css"/>
 	<script type="text/javascript" src="fullPage.js"></script>
 	<script type="text/javascript">
 		var headerColor = '#ddd',
@@ -21,6 +30,8 @@
 			});
 		});
 	</script>	
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	
 </head>
 <body>
   <div id="fullpage">
@@ -34,8 +45,17 @@
     <div class="section">
       <div class="slide" data-anchor="slide1"> Slide 1 </div>
     </div>
-    <div class="section"></div>
+    <div class="section">
+		<div id="wordcloud"> Word Cloud </div>
+	</div>
     <div class="section"></div>
   </div>
+
+  
 </body>
+
+<!-- Scripts -->
+<script src="./d3cloud.js"></script>
+<script src="./wordcloud.js"></script>
+
 </html>
