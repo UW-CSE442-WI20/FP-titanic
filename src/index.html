@@ -6,7 +6,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="fullPage.css" />
   <link rel="stylesheet" type="text/css" href="index.css"/>
-	<script type="text/javascript" src="fullPage.js"></script>
+  <script type="text/javascript" src="fullPage.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 	<script type="text/javascript">
 		var headerColor = '#ddd',
 			contentColor = '#fff';
@@ -26,16 +27,28 @@
   <div id="fullpage">
 
     <div class="section" id="header-section">
-      <div class="header">
+      <div id="header">
 				<h1>Titanic Analysis</h1>
 			</div>
     </div>
 
-    <div class="section">
-      <div class="slide" data-anchor="slide1"> Slide 1 </div>
+    <div class="section" id="first-section">
+      <div class="slide" id="bar-chart" data-anchor="slide1">
+        <svg id="chart" width="500" height="400"></svg><br>
+        Select Age: 
+        <select id="age"></select>
+        <input type="checkbox" id="sort">	
+        Toggle sort 
+        <script src="./bar-chart.js"></script>
+      </div>
     </div>
-    <div class="section"></div>
-    <div class="section"></div>
+
+    <div class="section">
+      <div class="slide" data-anchor="slide2"></div>
+    </div>
+    <div class="section">
+      <div class="slide" data-anchor="slide3"></div>
+    </div>
   </div>
 </body>
 </html>
