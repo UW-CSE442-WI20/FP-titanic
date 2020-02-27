@@ -62,13 +62,13 @@ var scrollVis = function () {
     activateFunctions[1] = ["all","both",0];   // all, survived not shown
     activateFunctions[2] = ["sex","both",2000]; // sex, survived not shown
     activateFunctions[3] = ["age","both",2000]; // age, survived not shown
-    activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
-    activateFunctions[5] = ["all","survived",2000]; // all, show survived
-    activateFunctions[6] = ["sex","survived",2000]; // sex, show survived
-    activateFunctions[7] = ["age","survived",2000]; // age, show survived
-    activateFunctions[8] = ["p_class","survived",2000];// class, show survived
-    activateFunctions[9] = ["ch_1_2","survived",2000]; // conclusion 1 - 1st and 2nd class children (< 15)
-    activateFunctions[10] = ["w_ch_1_2","survived",2000];//conclusion 2 - 1st and 2nd class women & children
+    // activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
+    // activateFunctions[5] = ["all","survived",2000]; // all, show survived
+    // activateFunctions[6] = ["sex","survived",2000]; // sex, show survived
+    // activateFunctions[7] = ["age","survived",2000]; // age, show survived
+    // activateFunctions[8] = ["p_class","survived",2000];// class, show survived
+    // activateFunctions[9] = ["ch_1_2","survived",2000]; // conclusion 1 - 1st and 2nd class children (< 15)
+    // activateFunctions[10] = ["w_ch_1_2","survived",2000];//conclusion 2 - 1st and 2nd class women & children
 
   };
   //part inherited from JV.
