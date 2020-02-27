@@ -49,7 +49,7 @@ var scrollVis = function () {
     //background image
     svg.append("svg:image")
       .attr("class","ship_image")
-      .attr("xlink:href", "img/ship_image.png")
+      .attr("xlink:href", "./ship_image.png")
       .attr("height",389)
       .attr("width", 600)
       .attr("x", 0)
