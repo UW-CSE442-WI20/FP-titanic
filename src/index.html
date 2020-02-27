@@ -15,7 +15,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="fullPage.css" />
   <link rel="stylesheet" type="text/css" href="index.css"/>
+  <link rel="stylesheet" type="text/css" href="sequences.css"/>
   <script type="text/javascript" src="fullPage.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script>
+    var d3v3 = window.d3;
+    window.d3 = null;
+  </script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
 	<script type="text/javascript">
 		var headerColor = '#ddd',
@@ -31,7 +37,7 @@
 			});
 		});
 	</script>	
-	<script src="https://d3js.org/d3.v3.min.js"></script>
+  
 	
 </head>
 <body>
@@ -58,7 +64,20 @@
       <div class="slide" data-anchor="slide2"></div>
     </div>
     <div class="section">
-      <div class="slide" data-anchor="slide3"></div>
+      <div class="main">
+        <div id="sidebar">
+          <input type="checkbox" id="togglelegend"> Legend<br/>
+          <div id="legend" style="visibility: hidden;"></div>
+        </div>
+        <div id="sequence"></div>
+        <div id="sunchart">
+        <div id="explanation" style="visibility: hidden;">
+          <span id="percentage"></span><br/>
+          of visits begin with this sequence of pages
+        </div>
+      </div>
+      
+    </div>
     </div>
     <div class="section">
 		<div id="wordcloud"> Word Cloud </div>
@@ -72,5 +91,6 @@
 <!-- Scripts -->
 <script src="./d3cloud.js"></script>
 <script src="./wordcloud.js"></script>
+<script type="text/javascript" src="testsequences.js"></script>
 
 </html>

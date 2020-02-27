@@ -2,11 +2,11 @@
 // Algorithm due to Jonathan Feinberg, http://static.mrfeinberg.com/bv_ch03.pdf
 (function() {
 
-if (typeof define === "function" && define.amd) define(["d3"], cloud);
-else cloud(this.d3);
+if (typeof define === "function" && define.amd) define(["d3v3"], cloud);
+else cloud(this.d3v3);
 
-function cloud(d3) {
-  d3.layout.cloud = function cloud() {
+function cloud(d3v3) {
+  d3v3.layout.cloud = function cloud() {
     var size = [256, 256],
         text = cloudText,
         font = cloudFont,
@@ -18,7 +18,7 @@ function cloud(d3) {
         spiral = archimedeanSpiral,
         words = [],
         timeInterval = Infinity,
-        event = d3.dispatch("word", "end"),
+        event = d3v3.dispatch("word", "end"),
         timer = null,
         random = Math.random,
         cloud = {};
@@ -141,23 +141,23 @@ function cloud(d3) {
     };
 
     cloud.font = function(_) {
-      return arguments.length ? (font = d3.functor(_), cloud) : font;
+      return arguments.length ? (font = d3v3.functor(_), cloud) : font;
     };
 
     cloud.fontStyle = function(_) {
-      return arguments.length ? (fontStyle = d3.functor(_), cloud) : fontStyle;
+      return arguments.length ? (fontStyle = d3v3.functor(_), cloud) : fontStyle;
     };
 
     cloud.fontWeight = function(_) {
-      return arguments.length ? (fontWeight = d3.functor(_), cloud) : fontWeight;
+      return arguments.length ? (fontWeight = d3v3.functor(_), cloud) : fontWeight;
     };
 
     cloud.rotate = function(_) {
-      return arguments.length ? (rotate = d3.functor(_), cloud) : rotate;
+      return arguments.length ? (rotate = d3v3.functor(_), cloud) : rotate;
     };
 
     cloud.text = function(_) {
-      return arguments.length ? (text = d3.functor(_), cloud) : text;
+      return arguments.length ? (text = d3v3.functor(_), cloud) : text;
     };
 
     cloud.spiral = function(_) {
@@ -165,18 +165,18 @@ function cloud(d3) {
     };
 
     cloud.fontSize = function(_) {
-      return arguments.length ? (fontSize = d3.functor(_), cloud) : fontSize;
+      return arguments.length ? (fontSize = d3v3.functor(_), cloud) : fontSize;
     };
 
     cloud.padding = function(_) {
-      return arguments.length ? (padding = d3.functor(_), cloud) : padding;
+      return arguments.length ? (padding = d3v3.functor(_), cloud) : padding;
     };
 
     cloud.random = function(_) {
       return arguments.length ? (random = _, cloud) : random;
     };
 
-    return d3.rebind(cloud, event, "on");
+    return d3v3.rebind(cloud, event, "on");
   };
 
   function cloudText(d) {
