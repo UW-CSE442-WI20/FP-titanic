@@ -76,13 +76,14 @@ var scrollVis = function () {
   //in JV version, all the charts are drawn initially and then shown.
 
   chart.update = function (index, progress) {
-    var show_image = [1,5]; //only show images on scroll index 1 and 5.
+    var show_image = [1]; //only show images on scroll index 1 and 5.
     if(show_image.indexOf(index) >= 0){
       d3.select(".ship_image").attr("visibility","visible");
     } else {
       d3.select(".ship_image").attr("visibility","hidden");
     }
     activeIndex = index;
+    console.log("activeIndex = " + activeIndex);
     var sign = (activeIndex - lastIndex) < 0 ? -1 : 1;
     //call draw dots with pre-defined variables
     draw_dots(activateFunctions[index][0],activateFunctions[index][1],activateFunctions[index][2]);
@@ -196,10 +197,10 @@ function display(data) {
   scroll(d3.selectAll('.step'));
 
   // setup event handling
-   scroll.on('active', function (index) {
+  scroll.on('active', function (index) {
      // highlight current step text
      d3.selectAll('.step')
-       .style('opacity', function (d, i) { return i === index ? 1 : 0.1; });
+       .style('opacity', function (d, i) { return i === index ? 0.1: 1; });
    });
 
   scroll.on('progress', function (index, progress) {

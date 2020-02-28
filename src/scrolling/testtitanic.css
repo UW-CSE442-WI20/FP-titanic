@@ -1,7 +1,7 @@
 
-.container {
+/* .container {
   /* width: 890px; */
-}
+/* } */
 
 #graphic {
   padding-top: 60px;
@@ -36,13 +36,13 @@
 }
 
 .cover {
-  height: 50vh;
-  margin-top: 20vh;
+  height: 200px;
+  margin-top: 200px;
   margin-bottom: 200px;
   font-family: "TiemposTextWeb-Regular","Georgia";
   font-size: 16px;
   line-height: 23px;
-  color: #767678;
+  color: #262626;
 }
 
 .step {
@@ -52,7 +52,10 @@
   font-family: "TiemposTextWeb-Regular","Georgia";
   font-size: 16px;
   line-height: 23px;
-  color: #767678;
+  /* color: #767678; */
+  color: #262626;
+
+  /* trigger: 0.33; */
 }
 
 #sections .title {
@@ -73,8 +76,8 @@
   position: fixed;
   top: 60px;
   z-index: 1;
-  margin-left: 0;
-  /* height: 600px; */
+  margin-left: 600px;
+  height: 600px;
   width: 800px;
   /* background-color: #ddd; */
 }
