@@ -1,0 +1,2478 @@
+,Name,Age,Gender,Survived,Pclass,Passenger,Crew,Passengerid
+0,"ABBING, Mr Anthony",41.0,Male,0,3,1,0,1
+1,"ABBOTT, Mr Ernest Owen",21.0,Male,0,4,0,1,2
+2,"ABBOTT, Mr Eugene Joseph",13.0,Male,0,3,1,0,3
+3,"ABBOTT, Mr Rossmore Edward",16.0,Male,0,3,1,0,4
+4,"ABBOTT, Mrs Rhoda Mary 'Rosa'",39.0,Male,1,3,1,0,5
+5,"ABELSETH, Miss Kalle (Karen) Marie Kristiane",16.0,Female,1,3,1,0,6
+6,"ABELSETH, Mr Olaus Jørgensen",25.0,Male,1,3,1,0,7
+7,"ABELSON, Mr Samuel",30.0,Male,0,2,1,0,8
+8,"ABELSON, Mrs Anna",28.0,Male,1,2,1,0,9
+9,"ABRAHAMSSON, Mr August Abraham Johannes",19.0,Male,1,3,1,0,10
+10,"ABRAMS, Mr William Thomas",34.0,Male,0,4,0,1,11
+11,"ABī SA'B, Mr Jirjis Yūsuf",45.0,Male,0,3,1,0,12
+12,"ABī SA'B, Mrs Sha'nīnah",38.0,Male,1,3,1,0,13
+13,"ABī SHADīD, Mr Dāhir",19.0,Male,0,3,1,0,14
+14,"ABī-AL-MUNà, Mr Nāsīf Qāsim",27.0,Male,1,3,1,0,15
+15,"ADAMS, Mr John",26.0,Male,0,3,1,0,16
+16,"ADAMS, Mr Robert John",26.0,Male,0,4,0,1,17
+17,"AHIER, Mr Percy Snowden",20.0,Male,0,4,0,1,18
+18,"AHLIN, Mrs Johanna Persdotter",40.0,Male,0,3,1,0,19
+19,"AHMED, Mr Ali",24.0,Male,0,3,1,0,20
+20,"AKERMAN, Mr Albert Edward",31.0,Male,0,4,0,1,21
+21,"AKERMAN, Mr Joseph Francis",37.0,Male,0,4,0,1,22
+22,"AKS, Master Philip",0.0,Male,1,3,1,0,23
+23,"AKS, Mrs Leah",21.0,Male,1,3,1,0,24
+24,"AL-BA'QLīNī, Miss Hilānah",2.0,Female,1,3,1,0,25
+25,"AL-BA'QLīNī, Miss Mārīyā",5.0,Female,1,3,1,0,26
+26,"AL-BA'QLīNī, Miss Ūwjīnīyā",3.0,Female,1,3,1,0,27
+27,"AL-BA'QLīNī, Mrs Laṭīfah",23.0,Male,1,3,1,0,28
+28,"AL-MUNà, Mr Farīd Husayn Qāsim",19.0,Male,0,3,1,0,29
+29,"AL-ZA'INNī, Mr Fahīm Rūḥānā",25.0,Male,1,3,1,0,30
+30,"ALDWORTH, Mr Augustus Henry",35.0,Male,0,2,1,0,31
+31,"ALEXANDER, Mr William Albert",24.0,Male,0,3,1,0,32
+32,"ALHOMäKI, Mr Ilmari Rudolf",19.0,Male,0,3,1,0,33
+33,"ALI, Mr William",25.0,Male,0,3,1,0,34
+34,"ALLARIA, Sig. Battista Antonio",22.0,Male,0,4,0,0,35
+35,"ALLEN, Miss Elisabeth Walton",29.0,Female,1,1,1,0,36
+36,"ALLEN, Mr Ernest Frederick",24.0,Male,1,4,0,1,37
+37,"ALLEN, Mr George",26.0,Male,0,4,0,1,38
+38,"ALLEN, Mr Henry",30.0,Male,0,4,0,1,39
+39,"ALLEN, Mr Robert Spencer",35.0,Male,0,4,0,1,40
+40,"ALLEN, Mr William Henry",39.0,Male,0,3,1,0,41
+41,"ALLISON, Master Hudson Trevor",0.0,Male,1,1,1,0,42
+42,"ALLISON, Miss Helen Loraine",2.0,Female,0,1,1,0,43
+43,"ALLISON, Mr Hudson Joshua Creighton",30.0,Male,0,1,1,0,44
+44,"ALLISON, Mrs Bess Waldo",25.0,Male,0,1,1,0,45
+45,"ALLSOP, Mr Alfred Samuel",36.0,Male,0,4,0,1,46
+46,"ALLSOP, Mr Frank Richard",43.0,Male,0,4,0,1,47
+47,"ALLUM, Mr Owen George",17.0,Male,0,3,1,0,48
+48,"ANDERSEN, Mr Albert Kaurin",33.0,Male,0,3,1,0,49
+49,"ANDERSEN-JENSEN, Miss Carla Christine Nielsine",19.0,Female,1,3,1,0,50
+50,"ANDERSON, Mr Henry",42.0,Male,1,1,1,0,51
+51,"ANDERSON, Mr John",42.0,Male,1,4,0,1,52
+52,"ANDERSON, Mr Walter Yuill",50.0,Male,0,4,0,1,53
+53,"ANDERSSON, Master Sigvard Harald Elias",4.0,Male,0,3,1,0,54
+54,"ANDERSSON, Miss Ebba Iris Alfrida",6.0,Female,0,3,1,0,55
+55,"ANDERSSON, Miss Ellis Anna Maria",2.0,Female,0,3,1,0,56
+56,"ANDERSSON, Miss Erna Alexandra",16.0,Female,1,3,1,0,57
+57,"ANDERSSON, Miss Ida Augusta Margareta",38.0,Female,0,3,1,0,58
+58,"ANDERSSON, Miss Ingeborg Constanzia",9.0,Female,0,3,1,0,59
+59,"ANDERSSON, Miss Sigrid Elisabeth",11.0,Female,0,3,1,0,60
+60,"ANDERSSON, Mr Anders Johan",39.0,Male,0,3,1,0,61
+61,"ANDERSSON, Mr Johan Samuel",26.0,Male,0,3,1,0,62
+62,"ANDERSSON, Mrs Alfrida Konstantia Brogren",39.0,Male,0,3,1,0,63
+63,"ANDREASSON, Mr Pål Edvin",20.0,Male,0,3,1,0,64
+64,"ANDREW, Mr Edgar Samuel",17.0,Male,0,2,1,0,65
+65,"ANDREW, Mr Frank Thomas",26.0,Male,0,2,1,0,66
+66,"ANDREWS, Miss Cornelia Theodosia",62.0,Female,1,1,1,0,67
+67,"ANDREWS, Mr Archibald",38.0,Male,0,4,0,1,68
+68,"ANDREWS, Mr Charles Edward",19.0,Male,1,4,0,1,69
+69,"ANDREWS, Mr Thomas",39.0,Male,0,1,1,0,70
+70,"ANGLE, Mr William",31.0,Male,0,2,1,0,71
+71,"ANGLE, Mrs Florence Agnes",36.0,Male,1,2,1,0,72
+72,"APPLETON, Mrs Charlotte",53.0,Male,1,1,1,0,73
+73,"ARCHER, Mr Ernest Edward",35.0,Male,1,4,0,1,74
+74,"ARMSTRONG, Mr James",31.0,Male,0,4,0,1,75
+75,"ARNOLD-FRANCHI, Mr Josef",25.0,Male,0,3,1,0,76
+76,"ARNOLD-FRANCHI, Mrs Josefine",18.0,Male,0,3,1,0,77
+77,"ARONSSON, Mr Ernst Axel Algot",25.0,Male,0,3,1,0,78
+78,"ARTAGAVEYTIA, Mr Ramon",71.0,Male,0,1,1,0,79
+79,"ASHBY, Mr John",57.0,Male,0,2,1,0,80
+80,"ASHCROFT, Mr Austin Aloysius",26.0,Male,0,4,0,1,81
+81,"ASHE, Mr Henry Wellesley",41.0,Male,0,4,0,1,82
+82,"ASIM, Mr Adola",35.0,Male,0,3,1,0,83
+83,"ASPESLAGH, Mr Georges",26.0,Male,0,4,0,0,84
+84,"ASPLUND, Master Carl Edgar",5.0,Male,0,3,1,0,85
+85,"ASPLUND, Master Clarence Gustaf Hugo",9.0,Male,0,3,1,0,86
+86,"ASPLUND, Master Edvin Rojj Felix",3.0,Male,1,3,1,0,87
+87,"ASPLUND, Master Filip Oscar",13.0,Male,0,3,1,0,88
+88,"ASPLUND, Miss Lillian Gertrud",5.0,Female,1,3,1,0,89
+89,"ASPLUND, Mr Carl Oscar Vilhelm Gustafsson",40.0,Male,0,3,1,0,90
+90,"ASPLUND, Mr Johan Charles",23.0,Male,1,3,1,0,91
+91,"ASPLUND, Mrs Selma Augusta Emilia",38.0,Male,1,3,1,0,92
+92,"ASSAM, Mr Ali",23.0,Male,0,3,1,0,93
+93,"ASTOR, Colonel John Jacob",47.0,Male,0,1,1,0,94
+94,"ASTOR, Mrs Madeleine Talmage",18.0,Male,1,1,1,0,95
+95,"ATTALA, Mr Sleiman Khalil",27.0,Male,0,3,1,0,96
+96,"ATā ALLāH, Miss Malakah",18.0,Female,0,3,1,0,97
+97,"AUBART, Mme. Léontine Pauline",24.0,Female,1,1,1,0,98
+98,"AUGUSTSSON, Mr Albert",23.0,Male,0,3,1,0,99
+99,"AULD, Mr James",32.0,Male,0,4,0,1,100
+100,"AVERY, Mr James Albert",20.0,Male,1,4,0,1,101
+101,"AYLING, Mr Edwin George",23.0,Male,0,4,0,1,102
+102,"AYYūB-DāHIR, Miss Bannūrah",15.0,Female,1,3,1,0,103
+103,"BACK, Mr Charles Frederick",37.0,Male,0,4,0,1,104
+104,"BACKSTRöM, Mr Karl Alfred",32.0,Male,0,3,1,0,105
+105,"BACKSTRöM, Mrs Maria Mathilda",33.0,Male,1,3,1,0,106
+106,"BADMAN, Miss Emily Louisa",18.0,Female,1,3,1,0,107
+107,"BADT, Mr Mohamed",40.0,Male,0,3,1,0,108
+108,"BAGGOTT, Mr Allen Marden",28.0,Male,1,4,0,1,109
+109,"BAGLEY, Mr Edward Henry",33.0,Male,0,4,0,1,110
+110,"BAILEY, Mr George",44.0,Male,0,4,0,1,111
+111,"BAILEY, Mr George Frank",46.0,Male,0,4,0,1,112
+112,"BAILEY, Mr Henry Joseph",46.0,Male,1,4,0,1,113
+113,"BAILEY, Mr Percy",18.0,Male,0,2,1,0,114
+114,"BAILEY, Mr William",30.0,Male,0,4,0,1,115
+115,"BAIN, Mr David",46.0,Male,0,4,0,1,116
+116,"BAINBRIGGE, Mr Charles Robert",22.0,Male,0,2,1,0,117
+117,"BAINES, Mr Richard",58.0,Male,0,4,0,1,118
+118,"BAKER (?BARKER), Mr John",,Male,0,4,0,1,119
+119,"BAKIć, Mr Cerin",26.0,Male,0,3,1,0,120
+120,"BALL, Mr Percy",18.0,Male,1,4,0,1,121
+121,"BALLS, Mrs Ada E.",36.0,Male,1,2,1,0,122
+122,"BANEWER, Mr Solomon",42.0,Male,0,2,1,0,123
+123,"BANFI,  Ugo",24.0,Male,0,4,0,0,124
+124,"BANFIELD, Mr Frederick James",28.0,Male,0,2,1,0,125
+125,"BANNON, Mr John Joseph",34.0,Male,0,4,0,1,126
+126,"BARBARA, Miss Saiide",18.0,Female,0,3,1,0,127
+127,"BARBARA, Mrs Catherine David",45.0,Male,0,3,1,0,128
+128,"BARBER, Miss Ellen Mary",26.0,Female,1,1,1,0,129
+129,"BARKER, Mr Albert Vale",19.0,Male,0,4,0,1,130
+130,"BARKER, Mr Ernest Thomas",40.0,Male,0,4,0,1,131
+131,"BARKER, Mr George",56.0,Male,0,4,0,1,132
+132,"BARKER, Mr George",46.0,Male,0,4,0,1,133
+133,"BARKER, Mr Reginald Lomond",42.0,Male,0,4,0,1,134
+134,"BARKER, Mr Stokes",26.0,Male,0,4,0,1,135
+135,"BARKLEY, Mr Robert",39.0,Male,0,4,0,1,136
+136,"BARKWORTH, Mr Algernon Henry",47.0,Male,1,1,1,0,137
+137,"BARLOW, Mr Charles Henry",30.0,Male,0,4,0,1,138
+138,"BARLOW, Mr George",39.0,Male,0,4,0,1,139
+139,"BARNES, Mr Charles",29.0,Male,0,4,0,1,140
+140,"BARNES, Mr Frederick Charles",40.0,Male,0,4,0,1,141
+141,"BARNES, Mr John",39.0,Male,0,4,0,1,142
+142,"BARNES, Mr William",32.0,Male,0,4,0,1,143
+143,"BARRATT, Mr Arthur",16.0,Male,0,4,0,1,144
+144,"BARRETT, Mr Frederick William",29.0,Male,1,4,0,1,145
+145,"BARRETT, Mr Frederick William",33.0,Male,0,4,0,1,146
+146,"BARRINGER, Mr Arthur William",34.0,Male,0,4,0,1,147
+147,"BARROW, Mr Charles Henry John",35.0,Male,0,4,0,1,148
+148,"BARROWS, Mr Edward William Peter",32.0,Male,0,4,0,1,149
+149,"BARRY, Miss Julia",30.0,Female,0,3,1,0,150
+150,"BARRY, Mr James",31.0,Male,0,4,0,1,151
+151,"BARTLEY, Mr Joseph",32.0,Male,0,4,0,1,152
+152,"BARTLEY, Mr Robert",32.0,Male,0,4,0,1,153
+153,"BARTON, Mr David John",22.0,Male,0,3,1,0,154
+154,"BARTON, Mr Sidney John",26.0,Male,0,4,0,1,155
+155,"BASILICO, Sig. Giovanni",27.0,Male,0,4,0,0,156
+156,"BASSANI, Mrs Albina",31.0,Male,1,1,1,0,157
+157,"BATEMAN, Revd Robert James",52.0,Male,0,2,1,0,158
+158,"BATOSHEV, Mr Hristo Lalev",23.0,Male,0,3,1,0,159
+159,"BAUMANN, Mr John David",48.0,Male,0,1,1,0,160
+160,"BAXTER, Mr Harry Ross",53.0,Male,0,4,0,1,161
+161,"BAXTER, Mr Quigg Edmond",24.0,Male,0,1,1,0,162
+162,"BAXTER, Mr Thomas Ferguson",55.0,Male,0,4,0,1,163
+163,"BAXTER, Mrs Hélène",50.0,Male,1,1,1,0,164
+164,"BAZZI, Sig. Narciso",33.0,Male,0,4,0,0,165
+165,"BAZZī, Mr Rashīd Al-Hāj 'Adb al-Husayn",30.0,Male,0,3,1,0,166
+166,"BEANE, Mr Edward",32.0,Male,1,2,1,0,167
+167,"BEANE, Mrs Ethel Louisa",22.0,Male,1,2,1,0,168
+168,"BEATTIE, Mr Francis",36.0,Male,0,4,0,1,169
+169,"BEATTIE, Mr Joseph John",40.0,Male,0,4,0,1,170
+170,"BEATTIE, Mr Thomson",36.0,Male,0,1,1,0,171
+171,"BEAUCHAMP, Mr George William",24.0,Male,1,4,0,1,172
+172,"BEAUCHAMP, Mr Henry James",43.0,Male,0,2,1,0,173
+173,"BEAVAN, Mr William Thomas",20.0,Male,0,3,1,0,174
+174,"BECKER, Master Richard F.",1.0,Male,1,2,1,0,175
+175,"BECKER, Miss Marion Louise",4.0,Female,1,2,1,0,176
+176,"BECKER, Miss Ruth Elizabeth",12.0,Female,1,2,1,0,177
+177,"BECKER, Mrs Nellie E.",35.0,Male,1,2,1,0,178
+178,"BECKWITH, Mr Richard Leonard",37.0,Male,1,1,1,0,179
+179,"BECKWITH, Mrs Sarah Maybell",46.0,Male,1,1,1,0,180
+180,"BEDFORD, Mr William Barnett",31.0,Male,0,4,0,1,181
+181,"BEEDEM, Mr George Arthur",35.0,Male,0,4,0,1,182
+182,"BEERE, Mr William",19.0,Male,0,4,0,1,183
+183,"BEESLEY, Mr Lawrence",34.0,Male,1,2,1,0,184
+184,"BEHR, Mr Karl Howell",26.0,Male,1,1,1,0,185
+185,"BELL, Mr Joseph",51.0,Male,0,4,0,1,186
+186,"BENDELL, Mr Frank",23.0,Male,0,4,0,1,187
+187,"BENGTSSON, Mr Jan Viktor",26.0,Male,0,3,1,0,188
+188,"BENHAM, Mr Fred John",30.0,Male,0,4,0,1,189
+189,"BENNETT, Mr George Alfred",30.0,Male,0,4,0,1,190
+190,"BENNETT, Mrs Mabel Kate",33.0,Male,1,4,0,1,191
+191,"BENSON, Mr James",50.0,Male,0,4,0,1,192
+192,"BENSON, Mr John",26.0,Male,0,4,0,1,193
+193,"BENSON, Mr William",25.0,Male,0,4,0,1,194
+194,"BENTHAM, Miss Lillian Winifred",19.0,Female,1,2,1,0,195
+195,"BENVILLE, Mr Edward",47.0,Male,0,4,0,1,196
+196,"BERGLUND, Mr Karl Ivar Sven",22.0,Male,0,3,1,0,197
+197,"BERNARDI, Sig. Battista",22.0,Male,0,4,0,0,198
+198,"BERRIMAN, Mr William John",23.0,Male,0,2,1,0,199
+199,"BESSANT, Mr Edward",31.0,Male,0,4,0,1,200
+200,"BESSANT, Mr William Edward Lowe",40.0,Male,0,4,0,1,201
+201,"BESSETTE, Miss Nellie Mayo",39.0,Female,1,1,1,0,202
+202,"BEST, Mr Edwin Alfred",40.0,Male,0,4,0,1,203
+203,"BEUX, Mr David",25.0,Male,0,4,0,0,204
+204,"BEVIS, Mr Joseph Henry",22.0,Male,0,4,0,1,205
+205,"BIDDLECOMBE, Mr Reginald Charles",31.0,Male,0,4,0,1,206
+206,"BIDOIS, Miss Rosalie",46.0,Female,1,1,1,0,207
+207,"BIGGS, Mr Edward Charles",20.0,Male,0,4,0,1,208
+208,"BILLOWS, Mr James",20.0,Male,0,4,0,1,209
+209,"BING, Mr Lee",32.0,Male,1,3,1,0,210
+210,"BINSTEAD, Mr Walter William",20.0,Male,1,4,0,1,211
+211,"BIRD, Miss Ellen",31.0,Female,1,1,1,0,212
+212,"BIRKELAND, Mr Hans Martin Monsen",21.0,Male,0,3,1,0,213
+213,"BIRNBAUM, Mr Jakob",24.0,Male,0,1,1,0,214
+214,"BISHOP, Mr Dickinson H.",25.0,Male,1,1,1,0,215
+215,"BISHOP, Mr Walter Alexander",34.0,Male,0,4,0,1,216
+216,"BISHOP, Mrs Helen Margaret",19.0,Male,1,1,1,0,217
+217,"BITTLE, Mr Robert",37.0,Male,0,4,0,1,218
+218,"BIéTRIX, Mr George Baptiste",28.0,Male,0,4,0,0,219
+219,"BJöRKLUND, Mr Ernst Heribert",18.0,Male,0,3,1,0,220
+220,"BJöRNSTRöM-STEFFANSSON, Mr Mauritz Håkan",28.0,Male,1,1,1,0,221
+221,"BLACK, Mr Alexander",28.0,Male,0,4,0,1,222
+222,"BLACK, Mr D.",41.0,Male,0,4,0,1,223
+223,"BLACK, Mr James",38.0,Male,0,4,0,1,224
+224,"BLACKMAN, Mr Albert Edward",23.0,Male,0,4,0,1,225
+225,"BLACKWELL, Mr Stephen Weart",45.0,Male,0,1,1,0,226
+226,"BLADES, Mr Frederick Charles",17.0,Male,0,4,0,1,227
+227,"BLAIR, Mr David",37.0,Male,0,4,0,1,228
+228,"BLAKE, Mr C.",36.0,Male,0,4,0,1,229
+229,"BLAKE, Mr John Douglas Stanley George",26.0,Male,0,4,0,1,230
+230,"BLAKE, Mr Percival Albert",22.0,Male,1,4,0,1,231
+231,"BLAKE, Mr Thomas Henry",36.0,Male,0,4,0,1,232
+232,"BLANEY, Mr James",32.0,Male,0,4,0,1,233
+233,"BLANK, Mr Henry",39.0,Male,1,1,1,0,234
+234,"BLANN, Mr Eustace Horatius",21.0,Male,0,4,0,1,235
+235,"BLISS, Mrs Emma",45.0,Male,1,4,0,1,236
+236,"BLOOMER, Mr James",40.0,Male,0,4,0,1,237
+237,"BLUMET, Mr Jean Baptiste",26.0,Male,0,4,0,0,238
+238,"BOAL, Mr John",40.0,Male,0,4,0,1,239
+239,"BOCHATAY, Mr Alexis Joseph",30.0,Male,0,4,0,1,240
+240,"BOCHET, Mr Pietro Giuseppe",43.0,Male,0,4,0,0,241
+241,"BOGIE, Mr Norman Leslie",59.0,Male,0,4,0,1,242
+242,"BOLHUIS, Mr Hendrik",27.0,Male,0,4,0,0,243
+243,"BOND, Mr William John",45.0,Male,0,4,0,1,244
+244,"BONNELL, Miss Caroline",30.0,Female,1,1,1,0,245
+245,"BONNELL, Miss Elizabeth",61.0,Female,1,1,1,0,246
+246,"BOOTHBY, Mr Walter Thomas",37.0,Male,0,4,0,1,247
+247,"BOREBANK, Mr John James",41.0,Male,0,1,1,0,248
+248,"BOSTANDJIEV, Mr Gencho",26.0,Male,0,3,1,0,249
+249,"BOSTON, Mr William John",32.0,Male,0,4,0,1,250
+250,"BOTSFORD, Mr William Hull",25.0,Male,0,2,1,0,251
+251,"BOTT, Mr William Thomas",46.0,Male,0,4,0,1,252
+252,"BOUGHTON, Mr Bernard John",24.0,Male,0,4,0,1,253
+253,"BOULOS, Mr Hanna",18.0,Male,0,3,1,0,254
+254,"BOURKE, Miss Mary",40.0,Female,0,3,1,0,255
+255,"BOURKE, Mr John",42.0,Male,0,3,1,0,256
+256,"BOURKE, Mrs Catherine",32.0,Male,0,3,1,0,257
+257,"BOWEN, Miss Grace Scott",45.0,Female,1,1,1,0,258
+258,"BOWEN, Mr David John 'Dai'",20.0,Male,0,3,1,0,259
+259,"BOWERMAN, Miss Elsie Edith",22.0,Female,1,1,1,0,260
+260,"BOWKER, Miss Ruth Harwood",31.0,Female,1,4,0,0,261
+261,"BOWMAN, Mr F. T.",38.0,Male,0,4,0,1,262
+262,"BOXHALL, Mr Joseph Groves",28.0,Male,1,4,0,1,263
+263,"BOYD, Mr Adam",38.0,Male,0,4,0,1,264
+264,"BOYD, Mr John",37.0,Male,0,4,0,1,265
+265,"BOYES, Mr John Henry",36.0,Male,0,4,0,1,266
+266,"BRACKEN, Mr James Hollen",30.0,Male,0,2,1,0,267
+267,"BRADLEY, Miss Bridget",22.0,Female,1,3,1,0,268
+268,"BRADLEY, Mr Patrick Joseph",38.0,Male,0,4,0,1,269
+269,"BRADLEY, Mr Thomas Henry",28.0,Male,0,4,0,1,270
+270,"BRADSHAW, Mr John Albert Perkin",42.0,Male,0,4,0,1,271
+271,"BRADY, Mr John Bertram",41.0,Male,0,1,1,0,272
+272,"BRAF, Miss Elin Ester Maria",20.0,Female,0,3,1,0,273
+273,"BRAILEY, Mr William Theodore Ronald",24.0,Male,0,2,1,0,274
+274,"BRAND, Mr",,Male,0,1,1,0,275
+275,"BRANDEIS, Mr Emil Franklin",48.0,Male,0,1,1,0,276
+276,"BRAUND, Mr Lewis Richard",29.0,Male,0,3,1,0,277
+277,"BRAUND, Mr Owen Harris",22.0,Male,0,3,1,0,278
+278,"BRENNAN, Mr Thomas",39.0,Male,0,4,0,1,279
+279,"BRERETON, Mr George Andrew",37.0,Male,1,1,1,0,280
+280,"BREWE, Dr Arthur Jackson",45.0,Male,0,1,1,0,281
+281,"BREWER, Mr B.",24.0,Male,0,4,0,1,282
+282,"BREWER, Mr Harry",30.0,Male,0,4,0,1,283
+283,"BREWSTER, Mr George Henry",52.0,Male,0,4,0,1,284
+284,"BRIANT, Mr Albert",34.0,Male,0,4,0,1,285
+285,"BRIANT, Mr Arthur",30.0,Male,0,4,0,1,286
+286,"BRICE, Mr Walter Thomas",42.0,Male,1,4,0,1,287
+287,"BRICOUX, Mr Roger Marie",20.0,Male,0,2,1,0,288
+288,"BRIDAN, Mr William",33.0,Male,0,4,0,1,289
+289,"BRIDE, Mr Harold Sydney",22.0,Male,1,4,0,1,290
+290,"BRIGHT, Mr Arthur John",42.0,Male,1,4,0,1,291
+291,"BRISTOW, Mr Harry",38.0,Male,0,4,0,1,292
+292,"BRISTOW, Mr Robert Charles",38.0,Male,0,4,0,1,293
+293,"BRITO, Mr José Joaquim de",40.0,Male,0,2,1,0,294
+294,"BROBäCK, Mr Karl Rudolf",22.0,Male,0,3,1,0,295
+295,"BROCKLEBANK, Mr William Alfred",40.0,Male,0,3,1,0,296
+296,"BROOKMAN, Mr John Cress",28.0,Male,0,4,0,1,297
+297,"BROOKS, Mr J.",25.0,Male,0,4,0,1,298
+298,"BROOM, Mr Herbert George",33.0,Male,0,4,0,1,299
+299,"BROOME, Mr Athol Frederick",31.0,Male,0,4,0,1,300
+300,"BROWN, Miss Amelia Mary",18.0,Female,1,2,1,0,301
+301,"BROWN, Miss Edith Eileen",15.0,Female,1,2,1,0,302
+302,"BROWN, Mr Edward",34.0,Male,1,4,0,1,303
+303,"BROWN, Mr John",28.0,Male,0,4,0,1,304
+304,"BROWN, Mr Joseph",30.0,Male,0,4,0,1,305
+305,"BROWN, Mr Thomas William Solomon",60.0,Male,0,2,1,0,306
+306,"BROWN, Mr Walter James",41.0,Male,0,4,0,1,307
+307,"BROWN, Mrs Caroline Lane",59.0,Male,1,1,1,0,308
+308,"BROWN, Mrs Elizabeth Catherine",39.0,Male,1,2,1,0,309
+309,"BROWN, Mrs Margaret",44.0,Male,1,1,1,0,310
+310,"BROWNE, Rev. Francis M.",32.0,Male,0,1,1,0,311
+311,"BRYAN, Mr John",22.0,Male,0,4,0,1,312
+312,"BRYHL, Miss Dagmar Jenny Ingeborg",20.0,Female,1,2,1,0,313
+313,"BRYHL, Mr Kurt Arnold Gottfrid",25.0,Male,0,2,1,0,314
+314,"BUCKLEY, Miss Catherine",23.0,Female,0,3,1,0,315
+315,"BUCKLEY, Mr Daniel",21.0,Male,1,3,1,0,316
+316,"BUCKLEY, Mr H. E.",34.0,Male,0,4,0,1,317
+317,"BUCKNELL, Mrs Emma Eliza",58.0,Male,1,1,1,0,318
+318,"BULEY, Mr Edward John",26.0,Male,1,4,0,1,319
+319,"BULL, Mr Walter Edward",36.0,Male,0,4,0,1,320
+320,"BULLEY, Mr Henry Ashburnham",21.0,Male,0,4,0,1,321
+321,"BUNNELL, Mr Wilfred James",20.0,Male,0,4,0,1,322
+322,"BURGESS, Mr Charles",18.0,Male,1,4,0,1,323
+323,"BURKE, Mr Jeremiah",19.0,Male,0,3,1,0,324
+324,"BURKE, Mr Richard Edward",29.0,Male,0,4,0,1,325
+325,"BURKE, Mr William",39.0,Male,1,4,0,1,326
+326,"BURNESS, Mr Frank",43.0,Male,0,4,0,1,327
+327,"BURNS, Miss Elizabeth Margaret",41.0,Female,1,1,1,0,328
+328,"BURNS, Miss Mary Delia",15.0,Female,0,3,1,0,329
+329,"BURNS, Mr John",32.0,Male,0,4,0,1,330
+330,"BURNS, Mr William",38.0,Male,0,4,0,1,331
+331,"BURR, Mr Ewart Sydenham",29.0,Male,0,4,0,1,332
+332,"BURRAGE, Mr Arthur Victor Edwards",20.0,Male,1,4,0,1,333
+333,"BURROUGHS, Mr Arthur Peckham",34.0,Male,0,4,0,1,334
+334,"BURROWS, Mr W.",29.0,Male,0,4,0,1,335
+335,"BURTON, Mr Edward John",35.0,Male,0,4,0,1,336
+336,"BUSS, Miss Kate",36.0,Female,1,2,1,0,337
+337,"BUTLER, Mr Reginald Fenton",25.0,Male,0,2,1,0,338
+338,"BUTRUS-KA'Wī, Mr Tannūs",21.0,Male,0,3,1,0,339
+339,"BUTT, Major Archibald Willingham",46.0,Male,0,1,1,0,340
+340,"BUTT, Mr Robert Henry",21.0,Male,0,4,0,1,341
+341,"BUTT, Mr William John",30.0,Male,0,4,0,1,342
+342,"BUTTERWORTH, Mr John",23.0,Male,0,4,0,1,343
+343,"BYLES, Fr Thomas Roussel Davids",42.0,Male,0,2,1,0,344
+344,"BYRNE, Mr James Edward",44.0,Male,0,4,0,1,345
+345,"BYSTRöM, Mrs Karolina",39.0,Male,1,2,1,0,346
+346,"BūLUS, Master Akar",7.0,Male,0,3,1,0,347
+347,"BūLUS, Miss Nūr al-'ayn",10.0,Female,0,3,1,0,348
+348,"BūLUS, Mrs Sultānah",40.0,Male,0,3,1,0,349
+349,"CAIRNES, Mr Robert",50.0,Male,0,4,0,1,350
+350,"CAIRNS, Mr Alexander Milne",28.0,Male,0,1,1,0,351
+351,"CALDERHEAD, Mr Edward Pennington",42.0,Male,1,1,1,0,352
+352,"CALDERWOOD, Mr Hugh",33.0,Male,0,4,0,1,353
+353,"CALDWELL, Master Alden Gates",0.0,Male,1,2,1,0,354
+354,"CALDWELL, Mr Albert Francis",26.0,Male,1,2,1,0,355
+355,"CALDWELL, Mrs Sylvia Mae",28.0,Male,1,2,1,0,356
+356,"CAMERON, Miss Clear Annie",35.0,Female,1,2,1,0,357
+357,"CAMPBELL, Mr Donald Samuel",28.0,Male,0,4,0,1,358
+358,"CAMPBELL, Mr William",20.0,Male,0,2,1,0,359
+359,"CANAVAN, Miss Mary",22.0,Female,0,3,1,0,360
+360,"CANAVAN, Mr Patrick",21.0,Male,0,3,1,0,361
+361,"CANDEE, Mrs Helen Churchill",52.0,Male,1,1,1,0,362
+362,"CANN, Mr Ernest",29.0,Male,0,3,1,0,363
+363,"CANNER, Mr John",40.0,Male,0,4,0,1,364
+364,"CARAM, Mr Joseph",28.0,Male,0,3,1,0,365
+365,"CARAM, Mrs Maria Elias",18.0,Male,0,3,1,0,366
+366,"CARBINES, Mr William",19.0,Male,0,2,1,0,367
+367,"CARDEZA, Mr Thomas Drake Martinez",36.0,Male,1,1,1,0,368
+368,"CARDEZA, Mrs Charlotte Wardle",58.0,Male,1,1,1,0,369
+369,"CARDWELL, Mr John",32.0,Male,0,4,0,1,370
+370,"CARLSSON, Mr August Sigfrid",28.0,Male,0,3,1,0,371
+371,"CARLSSON, Mr Carl Robert",24.0,Male,0,3,1,0,372
+372,"CARLSSON, Mr Frans Olof",33.0,Male,0,1,1,0,373
+373,"CARNEY, Mr William",31.0,Male,0,4,0,1,374
+374,"CARR, Miss Jane",45.0,Female,0,3,1,0,375
+375,"CARR, Mr Richard Stephen",27.0,Male,0,4,0,1,376
+376,"CARRAU, Mr Francisco Mauro Severiano",27.0,Male,0,1,1,0,377
+377,"CARRAú-ESTEVES, Mr José Pedro",17.0,Male,0,1,1,0,378
+378,"CARRUTHERS, Mr Francis",,Male,0,1,1,0,379
+379,"CARSON, Mr James",36.0,Male,0,4,0,1,380
+380,"CARTER, Master William Thornton II",11.0,Male,1,1,1,0,381
+381,"CARTER, Miss Lucile Polk",14.0,Female,1,1,1,0,382
+382,"CARTER, Mr F.",27.0,Male,0,4,0,1,383
+383,"CARTER, Mr James",46.0,Male,0,4,0,1,384
+384,"CARTER, Mr William Ernest",36.0,Male,1,1,1,0,385
+385,"CARTER, Mrs Lilian",45.0,Male,0,2,1,0,386
+386,"CARTER, Mrs Lucile",36.0,Male,1,1,1,0,387
+387,"CARTER, Rev. Ernest Courtenay",54.0,Male,0,2,1,0,388
+388,"CARTWRIGHT, Mr James Edward",33.0,Male,0,4,0,1,389
+389,"CARVER, Mr Alfred John",27.0,Male,0,3,1,0,390
+390,"CASALI, Sig. Giulio",32.0,Male,0,4,0,0,391
+391,"CASE, Mr Howard Brown",49.0,Male,0,1,1,0,392
+392,"CASEY, Mr Thomas",44.0,Male,0,4,0,1,393
+393,"CASSEBEER, Mrs Eleanor Genevieve",36.0,Male,1,1,1,0,394
+394,"CASSIDY, Mr William J.",,Male,0,4,0,1,395
+395,"CASSWILL, Mr Charles",34.0,Male,0,4,0,1,396
+396,"CASTLEMAN, Mr Edward",37.0,Male,0,4,0,1,397
+397,"CATON, Miss Annie",33.0,Female,1,4,0,1,398
+398,"CAUNT, Mr William Ewart",28.0,Male,0,4,0,1,399
+399,"CAVE, Mr Herbert",39.0,Male,0,4,0,1,400
+400,"CAVELL, Mr George Henry",22.0,Male,1,4,0,1,401
+401,"CAVENDISH, Mr Tyrell William",36.0,Male,0,1,1,0,402
+402,"CAVENDISH, Mrs Julia Florence",25.0,Male,1,1,1,0,403
+403,"CECIL, Mr Charles Thomas",21.0,Male,0,4,0,1,404
+404,"CELOTTI, Mr Francesco",24.0,Male,0,3,1,0,405
+405,"CHABOISSON, Mr Adrien Firmin",25.0,Male,0,4,0,0,406
+406,"CHAFFEE, Mr Herbert Fuller",46.0,Male,0,1,1,0,407
+407,"CHAFFEE, Mrs Carrie Constance",47.0,Male,1,1,1,0,408
+408,"CHAMBERS, Mr Norman Campbell",27.0,Male,1,1,1,0,409
+409,"CHAMBERS, Mrs Bertha",32.0,Male,1,1,1,0,410
+410,"CHAPMAN, Mr Charles Henry",51.0,Male,0,2,1,0,411
+411,"CHAPMAN, Mr John Henry",37.0,Male,0,2,1,0,412
+412,"CHAPMAN, Mr Joseph Charles",32.0,Male,1,4,0,1,413
+413,"CHAPMAN, Mrs Sarah Elizabeth",30.0,Male,0,2,1,0,414
+414,"CHARMAN, Mr John James",25.0,Male,0,4,0,1,415
+415,"CHARTERS, Mr David",20.0,Male,0,3,1,0,416
+416,"CHAUDANSON, Miss Victorine",36.0,Female,1,1,1,0,417
+417,"CHERRETT, Mr William Victor",24.0,Male,0,4,0,1,418
+418,"CHERRY, Miss Gladys",30.0,Female,1,1,1,0,419
+419,"CHEVERS, Mr William",28.0,Male,0,4,0,1,420
+420,"CHEVERTON, Mr William Frederick",27.0,Male,0,4,0,1,421
+421,"CHEVRé, Mr Paul Romaine Marie Léonce",45.0,Male,1,1,1,0,422
+422,"CHIBNALL, Mrs Edith Martha Bowerman",48.0,Male,1,1,1,0,423
+423,"CHIP, Mr Chang",32.0,Male,1,3,1,0,424
+424,"CHISHOLM, Mr Roderick",43.0,Male,0,1,1,0,425
+425,"CHISNALL, Mr George Alexander",36.0,Male,0,4,0,1,426
+426,"CHITTY, Mr Archibald George",28.0,Male,0,4,0,1,427
+427,"CHITTY, Mr George Henry",50.0,Male,0,4,0,1,428
+428,"CHORLEY, Mr John Henry",25.0,Male,0,4,0,1,429
+429,"CHRISTMANN, Mr Emil",29.0,Male,0,3,1,0,430
+430,"CHRISTMAS, Mr Herbert Harry",34.0,Male,0,4,0,1,431
+431,"CHRISTY, Miss Rachel Juli Cohen",25.0,Female,1,2,1,0,432
+432,"CHRISTY, Mrs Alice Frances",52.0,Male,1,2,1,0,433
+433,"CHRONOPOULOS, Mr Apostolos M.",26.0,Male,0,3,1,0,434
+434,"CHRONOPOULOS, Mr Dimitrios M.",21.0,Male,0,3,1,0,435
+435,"CLARK, Mr Walter Miller",27.0,Male,0,1,1,0,436
+436,"CLARK, Mr William",40.0,Male,1,4,0,1,437
+437,"CLARK, Mrs Virginia Estelle",26.0,Male,1,1,1,0,438
+438,"CLARKE, Mr Charles Valentine",29.0,Male,0,2,1,0,439
+439,"CLARKE, Mr John Frederick Preston",28.0,Male,0,2,1,0,440
+440,"CLARKE, Mrs Ada Maria",28.0,Male,1,2,1,0,441
+441,"CLEAVER, Miss Alice Catherine",22.0,Female,1,1,1,0,442
+442,"CLELAND, Mr James",29.0,Male,0,4,0,1,443
+443,"CLENCH, Mr Frederick Charles",33.0,Male,1,4,0,1,444
+444,"CLENCH, Mr George James",31.0,Male,0,4,0,1,445
+445,"CLIFFORD, Mr George Quincy",40.0,Male,0,1,1,0,446
+446,"COCHRANE, Mr Robert",40.0,Male,0,4,0,1,447
+447,"COE, Mr Harry",21.0,Male,0,4,0,1,448
+448,"COELHO, Mr Domingos Fernandeo",20.0,Male,0,3,1,0,449
+449,"COFFEY, Mr John",23.0,Male,0,4,0,1,450
+450,"COHEN, Mr Gurshon",19.0,Male,1,3,1,0,451
+451,"COLBERT, Mr Patrick",24.0,Male,0,3,1,0,452
+452,"COLEMAN, Mr Albert Edward",28.0,Male,0,4,0,1,453
+453,"COLEMAN, Mr John",57.0,Male,0,4,0,1,454
+454,"COLERIDGE, Mr Reginald Charles",29.0,Male,0,2,1,0,455
+455,"COLGAN, Mr E. Joseph",33.0,Male,1,4,0,1,456
+456,"COLLANDER, Mr Erik Gustaf",27.0,Male,0,2,1,0,457
+457,"COLLETT, Mr Sidney Clarence Stuart",25.0,Male,1,2,1,0,458
+458,"COLLEY, Mr Edward Pomeroy",37.0,Male,0,1,1,0,459
+459,"COLLINS, Mr John",17.0,Male,1,4,0,1,460
+460,"COLLINS, Mr John",38.0,Male,1,4,0,1,461
+461,"COLLIS, Mr",,Male,0,1,1,0,462
+462,"COLLYER, Miss Marjorie Lottie",8.0,Female,1,2,1,0,463
+463,"COLLYER, Mr Harvey",31.0,Male,0,2,1,0,464
+464,"COLLYER, Mrs Charlotte Caroline",30.0,Male,1,2,1,0,465
+465,"COMBES, Mr George",34.0,Male,1,4,0,1,466
+466,"COMPTON, Miss Sara Rebecca",39.0,Female,1,1,1,0,467
+467,"COMPTON, Mr Alexander Taylor jr",37.0,Male,0,1,1,0,468
+468,"COMPTON, Mrs Mary Eliza",64.0,Male,1,1,1,0,469
+469,"CONLIN, Mr Thomas Henry",31.0,Male,0,3,1,0,470
+470,"CONNAUGHTON, Mr Michael",40.0,Male,0,3,1,0,471
+471,"CONNOLLY, Miss Catherine",23.0,Female,1,3,1,0,472
+472,"CONNOLLY, Miss Kate",41.0,Female,0,3,1,0,473
+473,"CONNOR, Mr James",46.0,Male,0,4,0,1,474
+474,"CONNOR, Mr Thomas",39.0,Male,0,4,0,1,475
+475,"CONNORS, Mr Patrick",66.0,Male,0,3,1,0,476
+476,"CONWAY, Mr Percy Walter",25.0,Male,0,4,0,1,477
+477,"COOK, Mr Gilbert William",32.0,Male,0,4,0,1,478
+478,"COOK, Mr Jacob",43.0,Male,0,3,1,0,479
+479,"COOK, Mrs Selena",22.0,Male,1,2,1,0,480
+480,"COOMBS, Mr Charles Augustus",45.0,Male,0,4,0,1,481
+481,"COOPER, Mr H.",25.0,Male,0,4,0,1,482
+482,"COOPER, Mr James Edward",26.0,Male,0,4,0,1,483
+483,"COPPERTHWAITE, Mr Albert Harry",28.0,Male,0,4,0,1,484
+484,"CORBEN, Mr Ernest Theodore",27.0,Male,0,4,0,1,485
+485,"CORBETT, Mrs Irene",30.0,Male,0,2,1,0,486
+486,"CORCORAN, Mr Dennis",33.0,Male,0,4,0,1,487
+487,"COREY, Mrs Mary Emma",32.0,Male,0,2,1,0,488
+488,"CORNAIRE, Mr Marcel Raymond André",19.0,Male,0,4,0,0,489
+489,"CORNBLATT, Mr Harris",30.0,Male,0,3,1,0,490
+490,"CORNELL, Mrs Malvina Helen",55.0,Male,1,1,1,0,491
+491,"CORR, Miss Ellen",16.0,Female,1,3,1,0,492
+492,"COSGROVE, Mr John",23.0,Male,0,4,0,1,493
+493,"COSGROVE, Mr William",26.0,Male,0,4,0,1,494
+494,"COTTERILL, Mr Henry",21.0,Male,0,2,1,0,495
+495,"COTTON, Mr Alfred",35.0,Male,0,4,0,1,496
+496,"COUCH, Mr Frank",27.0,Male,0,4,0,1,497
+497,"COUCH, Mr Joseph Henry",49.0,Male,0,4,0,1,498
+498,"COUPER, Mr Robert Frederick William",30.0,Male,1,4,0,1,499
+499,"COUTIN, Mr Auguste Louis",28.0,Male,0,4,0,0,500
+500,"COUTTS, Master Neville Leslie",3.0,Male,1,3,1,0,501
+501,"COUTTS, Master William Loch",9.0,Male,1,3,1,0,502
+502,"COUTTS, Mrs Winnie",36.0,Male,1,3,1,0,503
+503,"COX, Mr William Denton",30.0,Male,0,4,0,1,504
+504,"COXON, Mr Daniel",58.0,Male,0,3,1,0,505
+505,"COY, Mr Francis Ernest George",27.0,Male,0,4,0,1,506
+506,"CRABB, Mr Henry James",23.0,Male,0,4,0,1,507
+507,"CRAFTER, Mr Frederick Horace",20.0,Male,1,4,0,1,508
+508,"CRAFTON, Mr John Bertram",58.0,Male,0,1,1,0,509
+509,"CRAIG, Mr David",33.0,Male,0,4,0,1,510
+510,"CRAIG, Mr John",29.0,Male,0,4,0,1,511
+511,"CRAWFORD, Mr Alfred George",43.0,Male,1,4,0,1,512
+512,"CREASE, Mr Ernest James",20.0,Male,0,3,1,0,513
+513,"CREESE, Mr Henry Philip",45.0,Male,0,4,0,1,514
+514,"CRIBB, Miss Laura Mae",16.0,Female,1,3,1,0,515
+515,"CRIBB, Mr John Hatfield",43.0,Male,0,3,1,0,516
+516,"CRIMMINS, Mr James",21.0,Male,1,4,0,1,517
+517,"CRISP, Mr Albert Hector",39.0,Male,0,4,0,1,518
+518,"CRISPIN, Mr William",33.0,Male,0,4,0,1,519
+519,"CROSBIE, Mr John Borthwick",45.0,Male,0,4,0,1,520
+520,"CROSBY, Captain Edward Gifford",70.0,Male,0,1,1,0,521
+521,"CROSBY, Miss Harriette Rebecca",39.0,Female,1,1,1,0,522
+522,"CROSBY, Mrs Catherine Elizabeth",64.0,Male,1,1,1,0,523
+523,"CROSKERY, Mr Thomas",38.0,Male,0,4,0,1,524
+524,"CROSS, Mr William Alfred",44.0,Male,0,4,0,1,525
+525,"CROSSLEY, Mr John",34.0,Male,0,4,0,1,526
+526,"CROUGHANE, Mr Michael",45.0,Male,0,4,0,1,527
+527,"CROVELLA, Sig. Paolo Luigi",16.0,Male,0,4,0,0,528
+528,"CROW, Mr George Frederick",26.0,Male,1,4,0,1,529
+529,"CRUMPLIN, Mr Charles George Chandler",35.0,Male,0,4,0,1,530
+530,"CULLEN, Mr Charles James",49.0,Male,1,4,0,1,531
+531,"CULLEN, Mr John",43.0,Male,0,4,0,1,532
+532,"CULLEN, Mr Patrick",36.0,Male,0,4,0,1,533
+533,"CUMINGS, Mr John Bradley",39.0,Male,0,1,1,0,534
+534,"CUMINGS, Mrs Florence Briggs",35.0,Male,1,1,1,0,535
+535,"CUNNINGHAM, Mr Alfred Fleming",21.0,Male,0,2,1,0,536
+536,"CUNNINGHAM, Mr Andrew Orr",38.0,Male,1,4,0,1,537
+537,"CUNNINGHAM, Mr Bernard",35.0,Male,0,4,0,1,538
+538,"CURRAN, Mr Thomas",41.0,Male,0,4,0,1,539
+539,"CURTIS, Mr Arthur",26.0,Male,0,4,0,1,540
+540,"DAHL, Mr Charles Edward",45.0,Male,1,3,1,0,541
+541,"DAHLBERG, Miss Gerda Ulrika",22.0,Female,0,3,1,0,542
+542,"DAKIć, Mr Branko",19.0,Male,0,3,1,0,543
+543,"DALY, Miss Margaret",33.0,Female,1,3,1,0,544
+544,"DALY, Mr Eugene Patrick",29.0,Male,1,3,1,0,545
+545,"DALY, Mr Peter Dennis",51.0,Male,1,1,1,0,546
+546,"DANBOM, Master Gilbert Sigvard Emanuel",0.0,Male,0,3,1,0,547
+547,"DANBOM, Mr Ernst Gilbert",34.0,Male,0,3,1,0,548
+548,"DANBOM, Mrs Anna Sigrid Maria",28.0,Male,0,3,1,0,549
+549,"DANIEL, Mr Robert Williams",27.0,Male,1,1,1,0,550
+550,"DANIELS, Miss Sarah Rebecca",36.0,Female,1,1,1,0,551
+551,"DANIELS, Mr Sidney Edward",18.0,Male,1,4,0,1,552
+552,"DASHWOOD, Mr William George",18.0,Male,0,4,0,1,553
+553,"DAVIDSON, Mr Thornton",31.0,Male,0,1,1,0,554
+554,"DAVIDSON, Mrs Orian",27.0,Male,1,1,1,0,555
+555,"DAVIES, Master John Morgan jr",8.0,Male,1,2,1,0,556
+556,"DAVIES, Miss K.",,Female,0,2,1,0,557
+557,"DAVIES, Mr Alfred James",24.0,Male,0,3,1,0,558
+558,"DAVIES, Mr Charles Henry",19.0,Male,0,2,1,0,559
+559,"DAVIES, Mr Evan Lewis",22.0,Male,0,3,1,0,560
+560,"DAVIES, Mr Gordon Raleigh",32.0,Male,0,4,0,1,561
+561,"DAVIES, Mr H. V.",,Male,0,2,1,0,562
+562,"DAVIES, Mr John",22.0,Male,0,3,1,0,563
+563,"DAVIES, Mr Joseph",17.0,Male,0,3,1,0,564
+564,"DAVIES, Mr Robert J.",26.0,Male,0,4,0,1,565
+565,"DAVIES, Mr Thomas",33.0,Male,0,4,0,1,566
+566,"DAVIES, Mrs Agnes",48.0,Male,1,2,1,0,567
+567,"DAVIS, Miss Mary Ann Charlotte",28.0,Female,1,2,1,0,568
+568,"DAVIS, Mr John",27.0,Male,0,4,0,1,569
+569,"DAVIS, Mr Stephen James",39.0,Male,0,4,0,1,570
+570,"DAVISON, Mr Thomas Henry",32.0,Male,0,3,1,0,571
+571,"DAVISON, Mrs Mary Elizabeth",34.0,Male,1,3,1,0,572
+572,"DAWES, Mr W. W.",38.0,Male,0,4,0,1,573
+573,"DAWKINS, Mr P.",24.0,Male,0,4,0,1,574
+574,"DAWSON, Mr Joseph",23.0,Male,0,4,0,1,575
+575,"DE GRASSE, Mr J.",,Male,0,2,1,0,576
+576,"DE MARSICO, Sig. Govanni",20.0,Male,0,4,0,0,577
+577,"DE MESSEMAEKER, Mr Guillaume Joseph",36.0,Male,1,3,1,0,578
+578,"DE MESSEMAEKER, Mrs Anna",36.0,Male,1,3,1,0,579
+579,"DE MULDER, Mr Theodoor",30.0,Male,1,3,1,0,580
+580,"DE PELSMAEKER, Mr Alfons",16.0,Male,0,3,1,0,581
+581,"DEACON, Mr Percy William",17.0,Male,0,2,1,0,582
+582,"DEAN, Master Bertram Vere",1.0,Male,1,3,1,0,583
+583,"DEAN, Miss Elizabeth Gladys Millvina",0.0,Female,1,3,1,0,584
+584,"DEAN, Mr Bertram Frank",25.0,Male,0,3,1,0,585
+585,"DEAN, Mr George Fox Hopkins",19.0,Male,0,4,0,1,586
+586,"DEAN, Mrs Eva Georgetta",32.0,Male,1,3,1,0,587
+587,"DEBREUCQ, Mr Maurice Emile Victor",18.0,Male,0,4,0,0,588
+588,"DECKER, Mr Charles",47.0,Male,0,4,0,1,589
+589,"DEEBLE, Mr Alfred Arnold",34.0,Male,0,4,0,1,590
+590,"DEL CARLO, Mr Sebastiano",29.0,Male,0,2,1,0,591
+591,"DEL CARLO, Mrs Argene",24.0,Male,1,2,1,0,592
+592,"DELALIC, Mr Redjo",25.0,Male,0,3,1,0,593
+593,"DENBUOY, Mr Albert Joseph",25.0,Male,0,2,1,0,594
+594,"DENKOV, Mr Mityu",30.0,Male,0,3,1,0,595
+595,"DENMIGAN, Mr Charles",42.0,Male,0,4,0,1,596
+596,"DENNIS, Mr Samuel",22.0,Male,0,3,1,0,597
+597,"DENNIS, Mr William",26.0,Male,0,3,1,0,598
+598,"DENOV, Mr Yoto",27.0,Male,0,3,1,0,599
+599,"DENVER, Mr John",33.0,Male,0,4,0,1,600
+600,"DERRETT, Mr Arthur Henry",28.0,Male,0,4,0,1,601
+601,"DESLANDES, Mr Percival Stainer",38.0,Male,0,4,0,1,602
+602,"DESVERNINE, Mr Louis Gabriel",20.0,Male,0,4,0,0,603
+603,"DEVANEY, Miss Margaret Bedelia",20.0,Female,1,3,1,0,604
+604,"DI NAPOLI, Mr E.",24.0,Male,0,4,0,0,605
+605,"DIAPER, Mr John Joseph",27.0,Male,1,4,0,1,606
+606,"DIBDEN, Mr William",18.0,Male,0,2,1,0,607
+607,"DICK, Mr Albert Adrian",31.0,Male,1,1,1,0,608
+608,"DICK, Mrs Vera",17.0,Male,1,1,1,0,609
+609,"DICKSON, Mr William",37.0,Male,0,4,0,1,610
+610,"DIKA, Mr Mirko",17.0,Male,0,3,1,0,611
+611,"DILLON, Mr Thomas Patrick",33.0,Male,1,4,0,1,612
+612,"DIMIć, Mr Jovan",42.0,Male,0,3,1,0,613
+613,"DINCHEV, Mr Vulcho",43.0,Male,0,3,1,0,614
+614,"DINENAGE, Mr James Richard",49.0,Male,0,4,0,1,615
+615,"DODD, Mr Edward Charles",39.0,Male,0,4,0,1,616
+616,"DODD, Mr George Charles",44.0,Male,0,4,0,1,617
+617,"DODDS, Mr Henry Watson",26.0,Male,0,4,0,1,618
+618,"DODGE, Dr Washington",52.0,Male,1,1,1,0,619
+619,"DODGE, Master Washington",4.0,Male,1,1,1,0,620
+620,"DODGE, Mrs Ruth",38.0,Male,1,1,1,0,621
+621,"DOEL, Mr Frederick",22.0,Male,1,4,0,1,622
+622,"DOHERTY, Mr William John",22.0,Male,0,3,1,0,623
+623,"DOLBY, Mr Joseph",38.0,Male,0,4,0,1,624
+624,"DOLING, Miss Elsie",18.0,Female,1,2,1,0,625
+625,"DOLING, Mrs Ada Julia Elizabeth",34.0,Male,1,2,1,0,626
+626,"DONATI, Sig. Italo Francesco",17.0,Male,0,4,0,0,627
+627,"DONAUGHE, Mr Hugh",34.0,Male,0,4,0,1,628
+628,"DONOGHUE, Mr Florence Thomas",31.0,Male,0,4,0,1,629
+629,"DONOHOE, Miss Bridget",21.0,Female,0,3,1,0,630
+630,"DOOLY, Mr Patrick",37.0,Male,0,3,1,0,631
+631,"DORE, Mr Albert James",22.0,Male,1,4,0,1,632
+632,"DORKING, Mr Edward Arthur",18.0,Male,1,3,1,0,633
+633,"DORNIER, Mr Louis Auguste",20.0,Male,0,4,0,0,634
+634,"DOUGHTY, Mr Walter Thomas",22.0,Male,0,4,0,1,635
+635,"DOUGLAS, Mr Walter Donald",50.0,Male,0,1,1,0,636
+636,"DOUGLAS, Mrs Mahala",48.0,Male,1,1,1,0,637
+637,"DOUGLAS, Mrs Mary Hélène",27.0,Male,1,1,1,0,638
+638,"DOUGLASS, Mr William",31.0,Male,0,4,0,1,639
+639,"DOUTON, Mr William Joseph",55.0,Male,0,2,1,0,640
+640,"DOWDELL, Miss Elizabeth",31.0,Female,1,3,1,0,641
+641,"DOYLE, Miss Elizabeth",28.0,Female,0,3,1,0,642
+642,"DOYLE, Mr Laurence",27.0,Male,0,4,0,1,643
+643,"DRAžENOVIć, Mr Jozef",33.0,Male,0,3,1,0,644
+644,"DREW, Master Marshall Brines",8.0,Male,1,2,1,0,645
+645,"DREW, Mr James Vivian",42.0,Male,0,2,1,0,646
+646,"DREW, Mrs Maria Louisa Thorne",34.0,Male,1,2,1,0,647
+647,"DRISCOLL, Miss Bridget",27.0,Female,1,3,1,0,648
+648,"DROPKIN, Miss Jennie",24.0,Female,1,3,1,0,649
+649,"DUFF GORDON,  Lucy Christiana, Lady",48.0,Female,1,1,1,0,650
+650,"DUFF GORDON, Sir Cosmo Edmund",49.0,Male,1,1,1,0,651
+651,"DUFFY, Mr William Luke",36.0,Male,0,4,0,1,652
+652,"DULLES, Mr William Crothers",39.0,Male,0,1,1,0,653
+653,"DUNFORD, Mr William",48.0,Male,0,4,0,1,654
+654,"DUNLOP, Mr Joseph",47.0,Male,0,4,0,1,655
+655,"DUQUEMIN, Mr Joseph Pierre",24.0,Male,1,3,1,0,656
+656,"DURáN I MONé, Sra. Asuncion",27.0,Female,1,2,1,0,657
+657,"DURáN I MONé, Sra. Florentina",30.0,Female,1,2,1,0,658
+658,"DWAN, Mr Frank",65.0,Male,0,3,1,0,659
+659,"DYER EDWARDES, Mr Thomas",65.0,Male,0,1,1,0,660
+660,"DYER EDWARDES, Mrs Clementina Georgina Lucy Drummond",53.0,Male,0,1,1,0,661
+661,"DYER, Mr Henry Ryland",24.0,Male,0,4,0,1,662
+662,"DYER, Mr William Henry",33.0,Male,0,4,0,1,663
+663,"DYKER, Mr Adolf Fredrik",23.0,Male,0,3,1,0,664
+664,"DYKER, Mrs Anna Elisabeth Judith",22.0,Male,1,3,1,0,665
+665,"DYMOND, Mr Frank",36.0,Male,1,4,0,1,666
+666,"DāHIR, Mr Ṭannūs",28.0,Male,0,3,1,0,667
+667,"DīBū, Mr Ilyās",29.0,Male,0,3,1,0,668
+668,"EAGLE, Mr Alfred James Jacob",27.0,Male,0,4,0,1,669
+669,"EARNSHAW, Mrs Olive",23.0,Male,1,1,1,0,670
+670,"EASTMAN, Mr Charles",44.0,Male,0,4,0,1,671
+671,"EDBROOKE, Mr Francis Samuel Jacob",23.0,Male,0,4,0,1,672
+672,"EDE, Mr George Bulkeley",23.0,Male,0,4,0,1,673
+673,"EDGE, Mr Frederick William",39.0,Male,0,4,0,1,674
+674,"EDVARDSSON, Mr Gustaf Hjalmar",18.0,Male,0,3,1,0,675
+675,"EDWARDS, Mr Charles Essex",39.0,Male,0,4,0,1,676
+676,"EGG, Mr William Henry",48.0,Male,0,4,0,1,677
+677,"EITEMILLER, Mr George Floyd",25.0,Male,0,2,1,0,678
+678,"EKLUND, Mr Hans Linus",16.0,Male,0,3,1,0,679
+679,"EKSTRöM, Mr Johan",45.0,Male,0,3,1,0,680
+680,"ELIAS NASRALLAH, Mr Tannous",22.0,Male,0,3,1,0,681
+681,"ELIAS, Mr Joseph",39.0,Male,0,3,1,0,682
+682,"ELIAS, Mr Joseph jr.",15.0,Male,0,3,1,0,683
+683,"ELLIOTT, Mr Everett Edward",23.0,Male,0,4,0,1,684
+684,"ELLIS, Mr John Bertie",28.0,Male,1,4,0,1,685
+685,"ELLISON, Mr Joseph",29.0,Male,0,4,0,1,686
+686,"ELSBURY, Mr William James",48.0,Male,0,3,1,0,687
+687,"EMANUEL, Miss Virginia Ethel",6.0,Female,1,3,1,0,688
+688,"ENANDER, Mr Ingvar",21.0,Male,0,2,1,0,689
+689,"ENDRES, Miss Caroline Louise",39.0,Female,1,1,1,0,690
+690,"ENNES, Mr William",28.0,Male,0,4,0,1,691
+691,"ENNIS, Mr Walter",34.0,Male,0,4,0,1,692
+692,"ERVINE, Mr Albert George",18.0,Male,0,4,0,1,693
+693,"ESTANISLAU, Mr Manuel Gonçalves",37.0,Male,0,3,1,0,694
+694,"ETCHES, Mr Henry Samuel",43.0,Male,1,4,0,1,695
+695,"ETTLINGER, Mr Peter",31.0,Male,0,4,0,1,696
+696,"EUSTIS, Miss Elizabeth Mussey",54.0,Female,1,1,1,0,697
+697,"EVANS, Miss",,Female,0,2,1,0,698
+698,"EVANS, Miss Edith Corse",36.0,Female,0,1,1,0,699
+699,"EVANS, Mr Alfred Frank",25.0,Male,1,4,0,1,700
+700,"EVANS, Mr Frank Oliver",27.0,Male,1,4,0,1,701
+701,"EVANS, Mr George Richard",27.0,Male,0,4,0,1,702
+702,"EVANS, Mr William Thomas",33.0,Male,0,4,0,1,703
+703,"EVERETT, Mr Thomas James",37.0,Male,0,3,1,0,704
+704,"FAHLSTRøM, Mr Arne Joma",18.0,Male,0,2,1,0,705
+705,"FAIRALL, Mr Henry Charles",40.0,Male,0,4,0,1,706
+706,"FARDON, Mr Charles Richard",46.0,Male,0,3,1,0,707
+707,"FARENDEN, Mr Ernest John",22.0,Male,0,4,0,1,708
+708,"FARLEY, Mr John",31.0,Male,0,4,0,1,709
+709,"FARQUHARSON, Mr William Edward",39.0,Male,0,4,0,1,710
+710,"FARRELL, Mr James",26.0,Male,0,3,1,0,711
+711,"FARTHING, Mr John",48.0,Male,0,1,1,0,712
+712,"FAULKNER, Mr William Stephen",37.0,Male,1,4,0,1,713
+713,"FAUNTHORPE, Mr Harry Bartram",31.0,Male,0,2,1,0,714
+714,"FAY, Mr Thomas Joseph",30.0,Male,0,4,0,1,715
+715,"FEI, Sig. Carlo",19.0,Male,0,4,0,0,716
+716,"FELLOWES, Mr Alfred James",28.0,Male,0,4,0,1,717
+717,"FELTHAM, Mr George William",41.0,Male,0,4,0,1,718
+718,"FERRARY, Mr Antonio",33.0,Male,0,4,0,1,719
+719,"FERRIS, Mr George",34.0,Male,0,4,0,1,720
+720,"FERRIS, Mr William",39.0,Male,0,4,0,1,721
+721,"FERRON, Mr Nicholas",32.0,Male,0,4,0,1,722
+722,"FILLBROOK, Mr Joseph Charles",18.0,Male,0,2,1,0,723
+723,"FINCH, Mr Henry Herman",18.0,Male,0,4,0,1,724
+724,"FINOLI, Mr Luigi",41.0,Male,1,3,1,0,725
+725,"FIORAVANTE, Sig. Giuseppe Bertoldo",23.0,Male,0,4,0,0,726
+726,"FISCHER, Mr Eberhard Thelander",18.0,Male,0,3,1,0,727
+727,"FISH, Mr B.",38.0,Male,0,4,0,1,728
+728,"FISHER, Mr R.",24.0,Male,0,4,0,1,729
+729,"FITZPATRICK, Mr Cecil William",21.0,Male,1,4,0,1,730
+730,"FITZPATRICK, Mr Hugh Joseph",29.0,Male,0,4,0,1,731
+731,"FLACK, Mr John",30.0,Male,0,4,0,1,732
+732,"FLAHERTY, Mr Edward",52.0,Male,1,4,0,1,733
+733,"FLEET, Mr Frederick",24.0,Male,1,4,0,1,734
+734,"FLEGENHEIM, Mrs Antoinette",48.0,Male,1,1,1,0,735
+735,"FLEMING, Miss Honor",22.0,Female,0,3,1,0,736
+736,"FLEMING, Miss Margaret",42.0,Female,1,1,1,0,737
+737,"FLEMMING, Mr William",32.0,Male,0,4,0,1,738
+738,"FLETCHER, Miss N.",,Female,0,1,1,0,739
+739,"FLETCHER, Mr Percy William",25.0,Male,0,4,0,1,740
+740,"FLETCHER, Mr Robert",38.0,Male,0,4,0,1,741
+741,"FLINN, Mr Michael",34.0,Male,0,4,0,1,742
+742,"FLYNN, Mr James",28.0,Male,0,3,1,0,743
+743,"FLYNN, Mr John",48.0,Male,0,3,1,0,744
+744,"FLYNN, Mr John Irwin",36.0,Male,1,1,1,0,745
+745,"FOLEY, Mr John",46.0,Male,1,4,0,1,746
+746,"FOLEY, Mr Joseph",19.0,Male,0,3,1,0,747
+747,"FOLEY, Mr Wilfred Cyril",21.0,Male,1,4,0,1,748
+748,"FOLEY, Mr William",20.0,Male,0,3,1,0,749
+749,"FOO, Mr Choong",32.0,Male,1,3,1,0,750
+750,"FORD, Miss Dollina Margaret",20.0,Female,0,3,1,0,751
+751,"FORD, Miss Robina Maggie",7.0,Female,0,3,1,0,752
+752,"FORD, Mr Arthur",23.0,Male,0,3,1,0,753
+753,"FORD, Mr Edward Watson",18.0,Male,0,3,1,0,754
+754,"FORD, Mr Ernest",33.0,Male,0,4,0,1,755
+755,"FORD, Mr Francis",44.0,Male,0,4,0,1,756
+756,"FORD, Mr H.",22.0,Male,0,4,0,1,757
+757,"FORD, Mr Thomas",33.0,Male,0,4,0,1,758
+758,"FORD, Mr William Neal Thomas",14.0,Male,0,3,1,0,759
+759,"FORD, Mrs Margaret Ann Watson",54.0,Male,0,3,1,0,760
+760,"FOREMAN, Mr Benjamin Laventall",30.0,Male,0,1,1,0,761
+761,"FORMAN, Mr J.",,Male,0,1,1,0,762
+762,"FORMAN, Mrs",,Male,0,1,1,0,763
+763,"FORTUNE, Miss Alice Elizabeth",24.0,Female,1,1,1,0,764
+764,"FORTUNE, Miss Ethel Flora",28.0,Female,1,1,1,0,765
+765,"FORTUNE, Miss Mabel Helen",23.0,Female,1,1,1,0,766
+766,"FORTUNE, Mr Charles Alexander",19.0,Male,0,1,1,0,767
+767,"FORTUNE, Mr Mark",64.0,Male,0,1,1,0,768
+768,"FORTUNE, Mrs Mary",60.0,Male,1,1,1,0,769
+769,"FORWARD, Mr James",27.0,Male,1,4,0,1,770
+770,"FOSTER, Mr Alfred Charles",37.0,Male,0,4,0,1,771
+771,"FOX, Mr Patrick",28.0,Male,0,3,1,0,772
+772,"FOX, Mr Stanley Harrington",38.0,Male,0,2,1,0,773
+773,"FOX, Mr William Thomas",27.0,Male,0,4,0,1,774
+774,"FRANCATELLI, Miss Laura Mabel",31.0,Female,1,1,1,0,775
+775,"FRANKLIN, Mr Alan Vincent",28.0,Male,0,4,0,1,776
+776,"FRANKLIN, Mr Thomas Parnham",37.0,Male,0,1,1,0,777
+777,"FRASER, Mr J.",30.0,Male,0,4,0,1,778
+778,"FRASER, Mr James",30.0,Male,0,4,0,1,779
+779,"FRAUENTHAL, Dr Henry William",49.0,Male,1,1,1,0,780
+780,"FRAUENTHAL, Mr Isaac Gerald",43.0,Male,1,1,1,0,781
+781,"FRAUENTHAL, Mrs Clara",42.0,Male,1,1,1,0,782
+782,"FREDERICKS, Mr Walter Francis",21.0,Male,1,4,0,1,783
+783,"FREEMAN, Mr Ernest Edward Samuel",45.0,Male,0,4,0,1,784
+784,"FROST, Mr Anthony Wood",38.0,Male,0,2,1,0,785
+785,"FRY, Mr Richard Thomas",39.0,Male,0,1,1,0,786
+786,"FRYER, Mr Albert Ernest",29.0,Male,1,4,0,1,787
+787,"FRöLICHER, Miss Hedwig Margaritha",22.0,Female,1,1,1,0,788
+788,"FRöLICHER-STEHLI, Mr Maximilian Josef",60.0,Male,1,1,1,0,789
+789,"FRöLICHER-STEHLI, Mrs Margaretha Emerentia",48.0,Male,1,1,1,0,790
+790,"FUNK, Miss Annie Clemmer",38.0,Female,0,2,1,0,791
+791,"FUTRELLE, Mr Jacques Heath",37.0,Male,0,1,1,0,792
+792,"FUTRELLE, Mrs Lily May",35.0,Male,1,1,1,0,793
+793,"FYNNEY, Mr Joseph J.",36.0,Male,0,2,1,0,794
+794,"GALE, Mr Harry",37.0,Male,0,2,1,0,795
+795,"GALE, Mr Shadrach",33.0,Male,0,2,1,0,796
+796,"GALLAGHER, Mr Martin",29.0,Male,0,3,1,0,797
+797,"GAMBELL, Mr William",29.0,Male,0,4,0,1,798
+798,"GARFIRTH, Mr John",21.0,Male,0,3,1,0,799
+799,"GARSIDE, Miss Ethel",39.0,Female,1,2,1,0,800
+800,"GASKELL, Mr William Alfred",19.0,Male,0,2,1,0,801
+801,"GASS, Mr David",45.0,Male,0,4,0,1,802
+802,"GATTI, Sig. Gaspare Antonio Pietro",37.0,Male,0,4,0,0,803
+803,"GAVEY, Mr Laurence",26.0,Male,0,2,1,0,804
+804,"GEDDES, Mr Richard Charles",32.0,Male,0,4,0,1,805
+805,"GEE, Mr Arthur H.",47.0,Male,0,1,1,0,806
+806,"GEER, Mr Alfred Emest",26.0,Male,0,4,0,1,807
+807,"GEORGIEV, Mr Stenyu",,Male,0,3,1,0,808
+808,"GIBBONS, Mr Jacob William",36.0,Male,1,4,0,1,809
+809,"GIBSON, Miss Dorothy Winifred",22.0,Female,1,1,1,0,810
+810,"GIBSON, Mr Thomas",20.0,Male,0,4,0,1,811
+811,"GIBSON, Mr William",43.0,Male,0,4,0,1,812
+812,"GIBSON, Mrs Pauline Caroline",45.0,Male,1,1,1,0,813
+813,"GIEGER, Miss Amalie Henriette",35.0,Female,1,1,1,0,814
+814,"GIGLIO, Mr Victor Gaitan Andrea",23.0,Male,0,1,1,0,815
+815,"GILARDINO, Sig. Vincenzo Pio",31.0,Male,0,4,0,0,816
+816,"GILBERT, Mr William",46.0,Male,0,2,1,0,817
+817,"GILES, Mr Edgar",18.0,Male,0,2,1,0,818
+818,"GILES, Mr Frederick Edward",20.0,Male,0,2,1,0,819
+819,"GILES, Mr John Robert",32.0,Male,0,4,0,1,820
+820,"GILES, Mr Ralph",24.0,Male,0,2,1,0,821
+821,"GILINSKI, Mr Eliezer",23.0,Male,0,3,1,0,822
+822,"GILL, Mr John",24.0,Male,0,2,1,0,823
+823,"GILL, Mr Joseph Stanley",38.0,Male,0,4,0,1,824
+824,"GILL, Mr Patrick",38.0,Male,0,4,0,1,825
+825,"GILLESPIE, Mr William Henry",31.0,Male,0,2,1,0,826
+826,"GILNAGH, Miss Kate",17.0,Female,1,3,1,0,827
+827,"GIVARD, Mr Hans Kristensen",27.0,Male,0,2,1,0,828
+828,"GLYNN, Miss Mary Agatha",18.0,Female,1,3,1,0,829
+829,"GODLEY, Mr George Auguste",38.0,Male,1,4,0,1,830
+830,"GODWIN, Mr Frederick Charles",36.0,Male,0,4,0,1,831
+831,"GOLD, Mrs Jane Kate Coulson",45.0,Male,1,4,0,1,832
+832,"GOLDENBERG, Mr Samuel Levi",47.0,Male,1,1,1,0,833
+833,"GOLDENBERG, Mrs Nella Carlynne",46.0,Male,1,1,1,0,834
+834,"GOLDER, Mr Martin William",35.0,Male,0,4,0,1,835
+835,"GOLDSCHMIDT, Mr George B.",71.0,Male,0,1,1,0,836
+836,"GOLDSMITH, Master Frank John William",9.0,Male,1,3,1,0,837
+837,"GOLDSMITH, Mr Frank John",33.0,Male,0,3,1,0,838
+838,"GOLDSMITH, Mr Nathan",41.0,Male,0,3,1,0,839
+839,"GOLDSMITH, Mrs Emily Alice",31.0,Male,1,3,1,0,840
+840,"GOLLOP, Mr Percival Salisbury",30.0,Male,0,4,0,1,841
+841,"GOODWIN, Master Harold Victor",10.0,Male,0,3,1,0,842
+842,"GOODWIN, Master Sidney Leslie",1.0,Male,0,3,1,0,843
+843,"GOODWIN, Master William Frederick",13.0,Male,0,3,1,0,844
+844,"GOODWIN, Miss Jessie Allis Mary",12.0,Female,0,3,1,0,845
+845,"GOODWIN, Miss Lillian Augusta",16.0,Female,0,3,1,0,846
+846,"GOODWIN, Mr Charles Edward",14.0,Male,0,3,1,0,847
+847,"GOODWIN, Mr Frederick Joseph",42.0,Male,0,3,1,0,848
+848,"GOODWIN, Mrs Augusta",43.0,Male,0,3,1,0,849
+849,"GORDON, Mr John",30.0,Male,0,4,0,1,850
+850,"GOREE, Mr Frank",40.0,Male,0,4,0,1,851
+851,"GORMAN, Mr David",33.0,Male,0,4,0,1,852
+852,"GOSHAWK, Mr Alfred James",40.0,Male,0,4,0,1,853
+853,"GOSLING, Mr Bertram James",22.0,Male,0,4,0,1,854
+854,"GOSLING, Mr Frank Henry",25.0,Male,0,4,0,1,855
+855,"GRACEY, Mr John",41.0,Male,0,4,0,1,856
+856,"GRACIE, Colonel Archibald",53.0,Male,1,1,1,0,857
+857,"GRADIDGE, Mr Ernest Edward",22.0,Male,0,4,0,1,858
+858,"GRAHAM, Miss Margaret Edith",19.0,Female,1,1,1,0,859
+859,"GRAHAM, Mr George Edward",38.0,Male,0,1,1,0,860
+860,"GRAHAM, Mr Thomas Gibson",28.0,Male,1,4,0,1,861
+861,"GRAHAM, Mrs Edith",58.0,Male,1,1,1,0,862
+862,"GREEN, Mr George",41.0,Male,0,3,1,0,863
+863,"GREEN, Mr George",20.0,Male,0,4,0,1,864
+864,"GREENBERG, Mr Samuel",51.0,Male,0,2,1,0,865
+865,"GREENFIELD, Mr William Bertram",23.0,Male,1,1,1,0,866
+866,"GREENFIELD, Mrs Blanche",45.0,Male,1,1,1,0,867
+867,"GREGG, Mr William",43.0,Male,0,4,0,1,868
+868,"GREGORY, Mr David",43.0,Male,0,4,0,1,869
+869,"GREGSON, Miss Mary Josephine",45.0,Female,1,4,0,1,870
+870,"GROSCLAUDE, Mr Gérald",24.0,Male,0,4,0,0,871
+871,"GRøNNESTAD, Mr Daniel Danielsen",32.0,Male,0,3,1,0,872
+872,"GUEST, Mr Stephen",22.0,Male,0,3,1,0,873
+873,"GUGGENHEIM, Mr Benjamin",46.0,Male,0,1,1,0,874
+874,"GUMERY, Mr George",24.0,Male,0,4,0,1,875
+875,"GUNN, Mr Joseph Alfred",30.0,Male,0,4,0,1,876
+876,"GUSTAFSSON, Mr Alfred Ossian",19.0,Male,0,3,1,0,877
+877,"GUSTAFSSON, Mr Anders Vilhelm",37.0,Male,0,3,1,0,878
+878,"GUSTAFSSON, Mr Johan Birger",28.0,Male,0,3,1,0,879
+879,"GUSTAFSSON, Mr Karl Gideon",19.0,Male,0,3,1,0,880
+880,"GUY, Mr Elgar John",29.0,Male,1,4,0,1,881
+881,"GWINN, Mr William Logan",37.0,Male,0,4,0,1,882
+882,"HAAS, Miss Aloisia",24.0,Female,0,3,1,0,883
+883,"HADDOCK, Mr Herbert James",51.0,Male,0,4,0,1,884
+884,"HADLEY, Mr John",50.0,Male,0,4,0,1,885
+885,"HAGGAN, Mr John",35.0,Male,1,4,0,1,886
+886,"HAGLAND, Mr Ingvald Olai Olsen",28.0,Male,0,3,1,0,887
+887,"HAGLAND, Mr Konrad Mathias Reiersen",19.0,Male,0,3,1,0,888
+888,"HAINES, Mr Albert",31.0,Male,1,4,0,1,889
+889,"HAKKARAINEN, Mr Pekka Pietari",28.0,Male,0,3,1,0,890
+890,"HAKKARAINEN, Mrs Elin Matilda",24.0,Male,1,3,1,0,891
+891,"HALE, Mr John",25.0,Male,0,4,0,1,892
+892,"HALE, Mr Reginald",31.0,Male,0,2,1,0,893
+893,"HALFORD, Mr Richard",27.0,Male,1,4,0,1,894
+894,"HALL, Mr Frank Alfred James",40.0,Male,0,4,0,1,895
+895,"HALL, Mr George",38.0,Male,0,4,0,1,896
+896,"HALL, Mr J.",32.0,Male,0,4,0,1,897
+897,"HALLETT, Mr George Alexander",23.0,Male,0,4,0,1,898
+898,"HALPIN, Mr Joseph",24.0,Male,0,4,0,1,899
+899,"HAMBLYN, Mr Ernest William",47.0,Male,0,4,0,1,900
+900,"HAMILTON, Mr Ernest",25.0,Male,0,4,0,1,901
+901,"HAMILTON, Mr William J.",24.0,Male,0,4,0,1,902
+902,"HAMPE, Mr Léon Jérome",19.0,Male,0,3,1,0,903
+903,"HANDS, Mr Bernard",54.0,Male,0,4,0,1,904
+904,"HANLEY, Mr William",25.0,Male,0,4,0,1,905
+905,"HANNAM, Mr George",30.0,Male,0,4,0,1,906
+906,"HANSEN, Mr Claus Peter",41.0,Male,0,3,1,0,907
+907,"HANSEN, Mr Henry Damsgaard",20.0,Male,0,3,1,0,908
+908,"HANSEN, Mr Jens Henrik Marius Juul",25.0,Male,0,3,1,0,909
+909,"HANSEN, Mrs Jennie Louise",45.0,Male,1,3,1,0,910
+910,"HARBECK, Mr William H.",45.0,Male,0,2,1,0,911
+911,"HARDER, Mr George Achilles",25.0,Male,1,1,1,0,912
+912,"HARDER, Mr William",39.0,Male,1,4,0,1,913
+913,"HARDER, Mrs Dorothy",21.0,Male,1,1,1,0,914
+914,"HARDING, Mr Alfred John",21.0,Male,0,4,0,1,915
+915,"HARDWICK, Mr Reginald",21.0,Male,1,4,0,1,916
+916,"HARDY, Mr John",40.0,Male,1,4,0,1,917
+917,"HARGADON, Miss Kate",17.0,Female,0,3,1,0,918
+918,"HARKIN, Mr Samuel",36.0,Male,0,4,0,1,919
+919,"HARKNETT, Miss Alice Phoebe",21.0,Female,0,3,1,0,920
+920,"HARMES, Mr Robert",31.0,Male,0,4,0,1,921
+921,"HARPER, Miss Annie Jessie",6.0,Female,1,2,1,0,922
+922,"HARPER, Mr Henry Sleeper",48.0,Male,1,1,1,0,923
+923,"HARPER, Mrs Myra Raymond",49.0,Male,1,1,1,0,924
+924,"HARPER, Rev. John",39.0,Male,0,2,1,0,925
+925,"HARRINGTON, Mr Charles Henry",37.0,Male,0,1,1,0,926
+926,"HARRIS, Mr Amos",24.0,Male,0,4,0,1,927
+927,"HARRIS, Mr Charles William",19.0,Male,0,4,0,1,928
+928,"HARRIS, Mr Clifford Henry",17.0,Male,0,4,0,1,929
+929,"HARRIS, Mr Edward John",29.0,Male,0,4,0,1,930
+930,"HARRIS, Mr Edward Matthew",17.0,Male,0,4,0,1,931
+931,"HARRIS, Mr Fred",39.0,Male,1,4,0,1,932
+932,"HARRIS, Mr George",62.0,Male,1,2,1,0,933
+933,"HARRIS, Mr Henry Burkhardt",45.0,Male,0,1,1,0,934
+934,"HARRIS, Mr Joseph",32.0,Male,0,4,0,1,935
+935,"HARRIS, Mr Walter",45.0,Male,0,2,1,0,936
+936,"HARRIS, Mrs Irene",35.0,Male,1,1,1,0,937
+937,"HARRISON, Mr Aragõa Drummond",40.0,Male,1,4,0,1,938
+938,"HARRISON, Mr Norman E.",38.0,Male,0,4,0,1,939
+939,"HARRISON, Mr William Henry",45.0,Male,0,1,1,0,940
+940,"HART, Miss Eva Miriam",7.0,Female,1,2,1,0,941
+941,"HART, Mr Benjamin",47.0,Male,0,2,1,0,942
+942,"HART, Mr Henry",30.0,Male,0,3,1,0,943
+943,"HART, Mr James",54.0,Male,0,4,0,1,944
+944,"HART, Mr John Edward",31.0,Male,1,4,0,1,945
+945,"HART, Mrs Emily Esther Louisa",48.0,Male,1,2,1,0,946
+946,"HARTLEY, Mr Wallace Henry",33.0,Male,0,2,1,0,947
+947,"HARTNELL, Mr Fred",21.0,Male,1,4,0,1,948
+948,"HARVEY, Mr Herbert Gifford",34.0,Male,0,4,0,1,949
+949,"HARVEY, Mr John",26.0,Male,0,4,0,1,950
+950,"HASSAB, Mr Hammad",27.0,Male,1,1,1,0,951
+951,"HATCH, Mr Hugh",21.0,Male,0,4,0,1,952
+952,"HAVELING, Mr A.",26.0,Male,0,4,0,1,953
+953,"HAWKESWORTH, Mr James",52.0,Male,0,4,0,1,954
+954,"HAWKESWORTH, Mr William Walter",43.0,Male,0,4,0,1,955
+955,"HAWKSFORD, Mr Walter James",45.0,Male,1,1,1,0,956
+956,"HAYS, Miss Margaret Bechstein",24.0,Female,1,1,1,0,957
+957,"HAYS, Mr Charles Melville",55.0,Male,0,1,1,0,958
+958,"HAYS, Mrs Clara Jennings",52.0,Male,1,1,1,0,959
+959,"HAYTER, Mr Arthur",44.0,Male,0,4,0,1,960
+960,"HEAD, Mr Alfred",24.0,Male,0,4,0,1,961
+961,"HEAD, Mr Christopher",42.0,Male,0,1,1,0,962
+962,"HEALY, Miss Honor",33.0,Female,1,3,1,0,963
+963,"HEBB, Mr William Albert Thomas",22.0,Male,1,4,0,1,964
+964,"HEDDLES, Mr William",39.0,Male,0,4,0,1,965
+965,"HEDLEY, Mr Robert",45.0,Male,0,4,0,1,966
+966,"HEDMAN, Mr Oskar Arvid",27.0,Male,1,3,1,0,967
+967,"HEE, Mr Ling",24.0,Male,1,3,1,0,968
+968,"HEGARTY, Miss Hanora",20.0,Female,0,3,1,0,969
+969,"HEIKKINEN, Miss Laina Maria",16.0,Female,1,3,1,0,970
+970,"HEINEN, Mr Joseph Dominichus",30.0,Male,0,4,0,1,971
+971,"HEININEN, Miss Wendla Maria",23.0,Female,0,3,1,0,972
+972,"HELLSTRöM, Miss Hilda Maria",22.0,Female,1,3,1,0,973
+973,"HEMMING, Mr Samuel Ernest",43.0,Male,1,4,0,1,974
+974,"HENDEKOVIć, Mr Ignjac",30.0,Male,0,3,1,0,975
+975,"HENDRICKSON, Mr Charles Osker",28.0,Male,1,4,0,1,976
+976,"HENDY, Mr Edward Martin",39.0,Male,0,4,0,1,977
+977,"HENRIKSSON, Miss Jenny Lovisa",28.0,Female,0,3,1,0,978
+978,"HENRY, Miss Bridget",22.0,Female,0,3,1,0,979
+979,"HENRY, Mr James",47.0,Male,0,4,0,1,980
+980,"HENSFORD, Mr Herbert George Ernest",26.0,Male,0,4,0,1,981
+981,"HEPBURN, Mr William",27.0,Male,0,4,0,1,982
+982,"HERD, Mr Hugh",35.0,Male,0,4,0,1,983
+983,"HERMAN, Miss Alice",24.0,Female,1,2,1,0,984
+984,"HERMAN, Miss Kate",24.0,Female,1,2,1,0,985
+985,"HERMAN, Mr Samuel",50.0,Male,0,2,1,0,986
+986,"HERMAN, Mrs Jane",50.0,Male,1,2,1,0,987
+987,"HESKETH, Mr John Henry",33.0,Male,0,4,0,1,988
+988,"HESLIN, Mr James",51.0,Male,0,4,0,1,989
+989,"HEWITT, Mr Thomas",37.0,Male,0,4,0,1,990
+990,"HEWLETT, Mrs Mary Dunbar",56.0,Male,1,2,1,0,991
+991,"HICHENS, Mr Robert",29.0,Male,1,4,0,1,992
+992,"HICKMAN, Mr Leonard Mark",24.0,Male,0,2,1,0,993
+993,"HICKMAN, Mr Lewis",30.0,Male,0,2,1,0,994
+994,"HICKMAN, Mr Stanley George",21.0,Male,0,2,1,0,995
+995,"HILL, Mr Henry Parkinson",37.0,Male,0,4,0,1,996
+996,"HILL, Mr James",25.0,Male,0,4,0,1,997
+997,"HILL, Mr James Colston",43.0,Male,0,4,0,1,998
+998,"HILLIARD, Mr Herbert Henry",44.0,Male,0,1,1,0,999
+999,"HILTUNEN, Miss Martta Maria",18.0,Female,0,2,1,0,1000
+1000,"HINCKLEY, Mr George Herbert",40.0,Male,0,4,0,1,1001
+1001,"HINDS, Mr Charles",42.0,Male,0,4,0,1,1002
+1002,"HINE, Mr William Edward",36.0,Male,0,4,0,1,1003
+1003,"HINTON, Mr Stephen William",30.0,Male,0,4,0,1,1004
+1004,"HIPKINS, Mr William Edward",55.0,Male,0,1,1,0,1005
+1005,"HIPPACH, Miss Gertrude Isabelle",17.0,Female,1,1,1,0,1006
+1006,"HIPPACH, Mrs Ida Sophia",44.0,Male,1,1,1,0,1007
+1007,"HIRVONEN, Miss Hildur Elisabeth",2.0,Female,1,3,1,0,1008
+1008,"HIRVONEN, Mrs Helga Elisabeth Lindqvist",22.0,Male,1,3,1,0,1009
+1009,"HISCOCK, Mr Sydney George",25.0,Male,0,4,0,1,1010
+1010,"HOARE, Mr Leonard James",18.0,Male,0,4,0,1,1011
+1011,"HOCKING, Miss Ellen",20.0,Female,1,2,1,0,1012
+1012,"HOCKING, Mr Richard George",23.0,Male,0,2,1,0,1013
+1013,"HOCKING, Mr Samuel James Metcalfe",36.0,Male,0,2,1,0,1014
+1014,"HOCKING, Mrs Eliza",54.0,Male,1,2,1,0,1015
+1015,"HODGE, Mr Charley",29.0,Male,0,4,0,1,1016
+1016,"HODGES, Mr Henry Price",50.0,Male,0,2,1,0,1017
+1017,"HODGES, Mr W.",26.0,Male,0,4,0,1,1018
+1018,"HODGKINSON, Mr Leonard",46.0,Male,0,4,0,1,1019
+1019,"HOGAN, Mr Albert John",19.0,Male,0,4,0,1,1020
+1020,"HOGEBOOM, Mrs Anna Louisa",51.0,Male,1,1,1,0,1021
+1021,"HOGG, Mr Charles William",43.0,Male,0,4,0,1,1022
+1022,"HOGG, Mr George Alfred",29.0,Male,1,4,0,1,1023
+1023,"HOGUE, Mr E.",22.0,Male,0,4,0,1,1024
+1024,"HOLD, Mr Stephen",44.0,Male,0,2,1,0,1025
+1025,"HOLD, Mrs Annie Margaret",29.0,Male,1,2,1,0,1026
+1026,"HOLDEN, Mr Frank",29.0,Male,0,4,0,1,1027
+1027,"HOLLAND, Mr James",30.0,Male,0,4,0,1,1028
+1028,"HOLLAND, Mr T.",28.0,Male,0,4,0,1,1029
+1029,"HOLLAND, Mr Thomas",28.0,Male,0,4,0,1,1030
+1030,"HOLLOWAY, Mr Sidney",24.0,Male,0,4,0,1,1031
+1031,"HOLM, Mr John Fredrik Alexander",43.0,Male,0,3,1,0,1032
+1032,"HOLMAN, Mr Harry",29.0,Male,0,4,0,1,1033
+1033,"HOLMAN, Mr Thomas",24.0,Male,0,4,0,1,1034
+1034,"HOLME, Mr Nicholas",36.0,Male,0,4,0,1,1035
+1035,"HOLTEN, Mr Johan Martin",18.0,Male,0,3,1,0,1036
+1036,"HOLVERSON, Mr Alexander Oskar",42.0,Male,0,1,1,0,1037
+1037,"HOLVERSON, Mrs Mary Alice",35.0,Male,1,1,1,0,1038
+1038,"HOMER, Mr Harry Haven",40.0,Male,1,1,1,0,1039
+1039,"HONKANEN, Miss Eliina",28.0,Female,1,3,1,0,1040
+1040,"HOOD, Mr Ambrose",21.0,Male,0,2,1,0,1041
+1041,"HOPGOOD, Mr Roland John C.",29.0,Male,0,4,0,1,1042
+1042,"HOPKINS, Mr Frederick William",14.0,Male,0,4,0,1,1043
+1043,"HOPKINS, Mr Robert John",43.0,Male,1,4,0,1,1044
+1044,"HORGAN, Mr John",22.0,Male,0,3,1,0,1045
+1045,"HORNER, Mr Alex",38.0,Male,0,4,0,1,1046
+1046,"HORSWILL, Mr Albert Edward James",33.0,Male,1,4,0,1,1047
+1047,"HOSGOOD, Mr Richard William",22.0,Male,0,4,0,1,1048
+1048,"HOSKING, Mr George Fox",36.0,Male,0,4,0,1,1049
+1049,"HOSONO, Mr Masabumi",41.0,Male,1,2,1,0,1050
+1050,"HOUSE, Mr William Charles",45.0,Male,0,4,0,1,1051
+1051,"HOWARD, Miss May Elizabeth",26.0,Female,1,3,1,0,1052
+1052,"HOWARD, Mr Benjamin",63.0,Male,0,2,1,0,1053
+1053,"HOWARD, Mrs Ellen Truelove",61.0,Male,0,2,1,0,1054
+1054,"HOWELL, Mr Arthur Albert",31.0,Male,0,4,0,1,1055
+1055,"HOYT, Mr Frederick Maxfield",38.0,Male,1,1,1,0,1056
+1056,"HOYT, Mr William Fisher",43.0,Male,0,1,1,0,1057
+1057,"HOYT, Mrs Jane Anne",33.0,Male,1,1,1,0,1058
+1058,"HUGHES, Mr William Thomas",34.0,Male,0,4,0,1,1059
+1059,"HUMBLEN, Mr Adolf Mathias Nicolai Olsen",42.0,Male,0,3,1,0,1060
+1060,"HUMBY, Mr Frederick",17.0,Male,0,4,0,1,1061
+1061,"HUME, Mr John Law",21.0,Male,0,2,1,0,1062
+1062,"HUMPHREYS, Mr Humphrey",31.0,Male,0,4,0,1,1063
+1063,"HUMPHREYS, Mr Sidney",52.0,Male,1,4,0,1,1064
+1064,"HUNT, Mr Albert Sylvanus",23.0,Male,1,4,0,1,1065
+1065,"HUNT, Mr George Henry",34.0,Male,0,2,1,0,1066
+1066,"HUNT, Mr Tom",27.0,Male,0,4,0,1,1067
+1067,"HURST, Mr Charles John",40.0,Male,0,4,0,1,1068
+1068,"HURST, Mr Walter",23.0,Male,1,4,0,1,1069
+1069,"HUTCHINSON, Mr James",31.0,Male,0,4,0,1,1070
+1070,"HUTCHINSON, Mr John Hall",28.0,Male,0,4,0,1,1071
+1071,"HUTTON, Mr George",37.0,Male,0,4,0,1,1072
+1072,"HYLAND, Mr Leo James",19.0,Male,1,4,0,1,1073
+1073,"HYMAN, Mr Joseph Abraham",31.0,Male,1,3,1,0,1074
+1074,"HäMäLäINEN, Master Viljo Unto Johannes",1.0,Male,1,2,1,0,1075
+1075,"HäMäLäINEN, Mrs Anna Lydia Amanda",23.0,Male,1,2,1,0,1076
+1076,"IBRāHīM, Mr Husayn Mahmūd Husayn",11.0,Male,0,3,1,0,1077
+1077,"IBRāHīM, Mrs Sāfiyah",18.0,Male,1,3,1,0,1078
+1078,"IBRāHīM-SHAWAH, Mr Yūsuf Hānī",33.0,Male,0,3,1,0,1079
+1079,"ICARD, Miss Rose Amélie",39.0,Female,1,1,1,0,1080
+1080,"IDE, Mr Harry John",31.0,Male,0,4,0,1,1081
+1081,"ILETT, Miss Bertha",17.0,Female,1,2,1,0,1082
+1082,"ILIEV, Mr Ilyo",32.0,Male,0,3,1,0,1083
+1083,"ILMAKANGAS, Miss Ida Livija",17.0,Female,0,3,1,0,1084
+1084,"ILMAKANGAS, Miss Pieta Sofia",25.0,Female,0,3,1,0,1085
+1085,"INGRAM, Mr George",19.0,Male,0,4,0,1,1086
+1086,"INGROUILLE, Mr Henry",21.0,Male,0,4,0,1,1087
+1087,"INGS, Mr William Ernest",20.0,Male,0,4,0,1,1088
+1088,"INSTANCE, Mr Thomas",31.0,Male,0,4,0,1,1089
+1089,"ISHAM, Miss Ann Elizabeth",50.0,Female,0,1,1,0,1090
+1090,"ISMAY, Mr Joseph Bruce",49.0,Male,1,1,1,0,1091
+1091,"IVYANOV, Mr Kostya",20.0,Male,0,3,1,0,1092
+1092,"JABBUR (ZABOUR), Miss Hileni",16.0,Female,0,3,1,0,1093
+1093,"JABBUR (ZABOUR), Miss Thamine",19.0,Female,0,3,1,0,1094
+1094,"JACKOPSON, Mr John Henry",30.0,Male,0,4,0,1,1095
+1095,"JACKSON, Mr Cecil",22.0,Male,0,4,0,1,1096
+1096,"JACOBSEN, Mrs Gunhilde Oline 'Lena'",63.0,Male,0,3,1,0,1097
+1097,"JACOBSOHN, Mr Sidney Samuel",42.0,Male,0,2,1,0,1098
+1098,"JACOBSOHN, Mrs Amy Frances Christy",24.0,Male,1,2,1,0,1099
+1099,"JAGO, Mr Joseph",59.0,Male,0,4,0,1,1100
+1100,"JAILLET, Mr Henri Marie",38.0,Male,0,4,0,0,1101
+1101,"JALšEVAC, Mr Ivan",30.0,Male,1,3,1,0,1102
+1102,"JAMES, Mr Thomas",36.0,Male,0,4,0,1,1103
+1103,"JAMES, Mr Thomas",27.0,Male,0,4,0,1,1104
+1104,"JAMESON, Mr William",48.0,Male,0,4,0,1,1105
+1105,"JANAWAY, Mr William Frank",35.0,Male,0,4,0,1,1106
+1106,"JANIN, Mr Claude Marie",29.0,Male,0,4,0,0,1107
+1107,"JANSSON, Mr Carl Olof",21.0,Male,1,3,1,0,1108
+1108,"JARDIM, Mr José Neto",21.0,Male,0,3,1,0,1109
+1109,"JARVIS, Mr Denzil John",46.0,Male,0,2,1,0,1110
+1110,"JEFFERY, Mr William Alfred",28.0,Male,0,4,0,0,1111
+1111,"JEFFERYS, Mr Clifford Thomas",24.0,Male,0,2,1,0,1112
+1112,"JEFFERYS, Mr Ernest Wilfred",21.0,Male,0,2,1,0,1113
+1113,"JENKIN, Mr Stephen Curnow",32.0,Male,0,2,1,0,1114
+1114,"JENNER, Mr F.",31.0,Male,0,4,0,1,1115
+1115,"JENNER, Mr Thomas Henry (Harry)",55.0,Male,0,4,0,1,1116
+1116,"JENSEN, Mr Charles Valdemar",24.0,Male,0,4,0,1,1117
+1117,"JENSEN, Mr Hans Peder",20.0,Male,0,3,1,0,1118
+1118,"JENSEN, Mr Niels Rasmus",48.0,Male,0,3,1,0,1119
+1119,"JENSEN, Mr Svend Lauritz",16.0,Male,0,3,1,0,1120
+1120,"JERMYN, Miss Annie Jane",26.0,Female,1,3,1,0,1121
+1121,"JERWAN, Mrs Marie Marthe",23.0,Male,1,2,1,0,1122
+1122,"JESSOP, Miss Violet Constance",24.0,Female,1,4,0,1,1123
+1123,"JEWELL, Mr Archie",23.0,Male,1,4,0,1,1124
+1124,"JOAS, Mr N.",39.0,Male,0,4,0,1,1125
+1125,"JOHANNESEN, Mr Bernt Johannes",29.0,Male,1,3,1,0,1126
+1126,"JOHANSON, Mr Jakob Alfred",34.0,Male,0,3,1,0,1127
+1127,"JOHANSSON, Mr Erik",22.0,Male,0,3,1,0,1128
+1128,"JOHANSSON, Mr Gustaf Joël",33.0,Male,0,3,1,0,1129
+1129,"JOHANSSON, Mr Karl Johan",31.0,Male,0,3,1,0,1130
+1130,"JOHANSSON, Mr Nils",30.0,Male,0,3,1,0,1131
+1131,"JOHANSSON, Mr Oscar Wilhelm",32.0,Male,1,3,1,0,1132
+1132,"JOHNSON, Master Harold Theodor",4.0,Male,1,3,1,0,1133
+1133,"JOHNSON, Miss Eleanor Ileen",1.0,Female,1,3,1,0,1134
+1134,"JOHNSON, Mr August",49.0,Male,0,3,1,0,1135
+1135,"JOHNSON, Mr Malkolm Joackim",33.0,Male,0,3,1,0,1136
+1136,"JOHNSON, Mr William Cahoone Jr.",19.0,Male,0,3,1,0,1137
+1137,"JOHNSON, Mrs Aliina Vilhelmina",27.0,Male,1,3,1,0,1138
+1138,"JOHNSTON, Master William Andrew",8.0,Male,0,3,1,0,1139
+1139,"JOHNSTON, Miss Catherine Nellie",7.0,Female,0,3,1,0,1140
+1140,"JOHNSTON, Mr Andrew Emslie",35.0,Male,0,3,1,0,1141
+1141,"JOHNSTON, Mrs Eliza",36.0,Male,0,3,1,0,1142
+1142,"JOHNSTONE, Mr James",52.0,Male,1,4,0,1,1143
+1143,"JONES, Mr Albert Hugh Brabner",17.0,Male,0,4,0,1,1144
+1144,"JONES, Mr Arthur Ernest",37.0,Male,0,4,0,1,1145
+1145,"JONES, Mr Charles Cresson",46.0,Male,0,1,1,0,1146
+1146,"JONES, Mr Harry Owen Glendower",36.0,Male,0,4,0,1,1147
+1147,"JONES, Mr Thomas William",34.0,Male,1,4,0,1,1148
+1148,"JONES, Mr Victor Reginald",20.0,Male,0,4,0,1,1149
+1149,"JONSSON, Mr Karl",25.0,Male,1,3,1,0,1150
+1150,"JOSEPH, Mr Kirkpatrick",37.0,Male,0,4,0,1,1151
+1151,"JOUANNAULT, Mr Georges Jules",24.0,Male,0,4,0,0,1152
+1152,"JOUGHIN, Mr Charles John",33.0,Male,1,4,0,1,1153
+1153,"JUDD, Mr Charles Edward",31.0,Male,1,4,0,1,1154
+1154,"JUKES, Mr Henry James",38.0,Male,0,4,0,1,1155
+1155,"JULIAN, Mr Henry Forbes",50.0,Male,0,1,1,0,1156
+1156,"JUPE, Mr Boykett Herbert",30.0,Male,0,4,0,1,1157
+1157,"JUSSILA, Miss Katriina",20.0,Female,0,3,1,0,1158
+1158,"JUSSILA, Miss Mari Aina",21.0,Female,0,3,1,0,1159
+1159,"JUSSILA, Mr Eiriik",32.0,Male,1,3,1,0,1160
+1160,"JöNSSON, Mr Nils Hilding",27.0,Male,0,3,1,0,1161
+1161,"KALLIO, Mr Nikolai Erland",17.0,Male,0,3,1,0,1162
+1162,"KALVIK, Mr Johannes Halvorsen",21.0,Male,0,3,1,0,1163
+1163,"KANTOR, Mr Sinai",34.0,Male,0,2,1,0,1164
+1164,"KANTOR, Mrs Miriam",24.0,Male,1,2,1,0,1165
+1165,"KARAJIć, Mr Milan",30.0,Male,0,3,1,0,1166
+1166,"KARLSSON, Mr Einar Gervasius",21.0,Male,1,3,1,0,1167
+1167,"KARLSSON, Mr Julius Konrad Eugen",33.0,Male,0,3,1,0,1168
+1168,"KARLSSON, Mr Nils August",22.0,Male,0,3,1,0,1169
+1169,"KARNES, Mrs Claire",22.0,Male,0,2,1,0,1170
+1170,"KARUN, Miss Manca",5.0,Female,1,3,1,0,1171
+1171,"KARUN, Mr Franz",39.0,Male,1,3,1,0,1172
+1172,"KASPER, Mr F.",40.0,Male,1,4,0,1,1173
+1173,"KATAVELOS, Mr Vasilios G.",19.0,Male,0,3,1,0,1174
+1174,"KAVANAGH, Mr William",27.0,Male,0,4,0,1,1175
+1175,"KEANE, Miss Nora Agnes",46.0,Female,1,2,1,0,1176
+1176,"KEANE, Mr Andrew",23.0,Male,0,3,1,0,1177
+1177,"KEANE, Mr Daniel",35.0,Male,0,2,1,0,1178
+1178,"KEARL, Mr Charles Henry",44.0,Male,0,4,0,1,1179
+1179,"KEARL, Mr George Edward",25.0,Male,0,4,0,1,1180
+1180,"KEEGAN, Mr James",38.0,Male,0,4,0,1,1181
+1181,"KEEN, Mr Percy Edward",30.0,Male,1,4,0,1,1182
+1182,"KEENAN, Mr John",58.0,Male,0,4,0,1,1183
+1183,"KEENAN, Mr Patrick",35.0,Male,0,4,0,1,1184
+1184,"KEENAN, Mr William",32.0,Male,0,4,0,1,1185
+1185,"KEENAN, Mr William",43.0,Male,0,4,0,1,1186
+1186,"KEEPING, Mr Edwin Herbert",33.0,Male,0,1,1,0,1187
+1187,"KELLAND, Mr Thomas",19.0,Male,0,4,0,1,1188
+1188,"KELLY, Miss Anna Katherine",20.0,Female,1,3,1,0,1189
+1189,"KELLY, Miss Mary",22.0,Female,1,3,1,0,1190
+1190,"KELLY, Mr James",44.0,Male,0,4,0,1,1191
+1191,"KELLY, Mr James",19.0,Male,0,3,1,0,1192
+1192,"KELLY, Mr James",44.0,Male,0,3,1,0,1193
+1193,"KELLY, Mr William Patrick",23.0,Male,0,4,0,1,1194
+1194,"KELLY, Mrs Fanny Maria",48.0,Male,1,2,1,0,1195
+1195,"KEMISH, Mr George",22.0,Male,1,4,0,1,1196
+1196,"KEMP, Mr Thomas Hulman",43.0,Male,0,4,0,1,1197
+1197,"KENNEDY, Mr John",24.0,Male,1,3,1,0,1198
+1198,"KENNELL, Mr Charles",30.0,Male,0,4,0,1,1199
+1199,"KENT, Mr Edward Austin",58.0,Male,0,1,1,0,1200
+1200,"KENYON, Mr Frederick Roland",41.0,Male,0,1,1,0,1201
+1201,"KENYON, Mrs Marion Estelle",40.0,Male,1,1,1,0,1202
+1202,"KENZLER, Mr August",44.0,Male,0,4,0,1,1203
+1203,"KERLEY, Mr William Thomas",28.0,Male,0,4,0,1,1204
+1204,"KERNAGHAN, Mr David",30.0,Male,0,4,0,1,1205
+1205,"KERNEY, Mr William",39.0,Male,0,4,0,1,1206
+1206,"KERR, Mr Thomas Russell",26.0,Male,0,4,0,1,1207
+1207,"KETCHLEY, Mr Henry",36.0,Male,0,4,0,1,1208
+1208,"KHALIL, Mr Betros",25.0,Male,0,3,1,0,1209
+1209,"KHALIL, Mrs Zahie",20.0,Male,0,3,1,0,1210
+1210,"KHALīL 'ATTA ALLāH, Mr Sulaymān",27.0,Male,0,3,1,0,1211
+1211,"KIERAN, Mr Edgar Michael",34.0,Male,0,4,0,1,1212
+1212,"KIERAN, Mr James William",35.0,Male,0,4,0,1,1213
+1213,"KIERNAN, Mr John Joseph",26.0,Male,0,3,1,0,1214
+1214,"KIERNAN, Mr Philip",22.0,Male,0,3,1,0,1215
+1215,"KILFORD, Mr P.",29.0,Male,0,4,0,1,1216
+1216,"KILGANNON, Mr Thomas",21.0,Male,0,3,1,0,1217
+1217,"KIMBALL, Mr Edwin Nelson Jr.",42.0,Male,1,1,1,0,1218
+1218,"KIMBALL, Mrs Susan Gertrude",45.0,Male,1,1,1,0,1219
+1219,"KINCHENTEN, Mr Frederick Charles",36.0,Male,0,4,0,1,1220
+1220,"KING, Mr Alfred John Moffett",18.0,Male,0,4,0,1,1221
+1221,"KING, Mr Ernest Waldron",28.0,Male,0,4,0,1,1222
+1222,"KING, Mr Thomas Walter",42.0,Male,0,4,0,1,1223
+1223,"KINGSCOTE, Mr William Ford",48.0,Male,0,4,0,1,1224
+1224,"KINK, Miss Maria",23.0,Female,0,3,1,0,1225
+1225,"KINK, Mr Anton",29.0,Male,1,3,1,0,1226
+1226,"KINK, Mr Vincenz",26.0,Male,0,3,1,0,1227
+1227,"KINK-HEILMANN, Miss Luise Gretchen",4.0,Female,1,3,1,0,1228
+1228,"KINK-HEILMANN, Mrs Luise",26.0,Male,1,3,1,0,1229
+1229,"KINSELLA, Mr Louis",30.0,Male,0,4,0,1,1230
+1230,"KINSTRY, Mr Charles",30.0,Male,0,4,0,1,1231
+1231,"KIRKALDY, Mr Thomas Benjamin",35.0,Male,0,4,0,1,1232
+1232,"KIRKHAM, Mr James",43.0,Male,0,4,0,1,1233
+1233,"KIRKLAND, Fr Charles Leonard",71.0,Male,0,2,1,0,1234
+1234,"KITCHING, Mr Arthur Alfred",31.0,Male,0,4,0,1,1235
+1235,"KLABER, Mr Herman",41.0,Male,0,1,1,0,1236
+1236,"KLASéN, Miss Gertrud Emilia",1.0,Female,0,3,1,0,1237
+1237,"KLASéN, Mr Klas Albin",18.0,Male,0,3,1,0,1238
+1238,"KLASéN, Mrs Hulda Kristina Eugenia",36.0,Male,0,3,1,0,1239
+1239,"KLEIN, Mr Herbert",34.0,Male,0,4,0,1,1240
+1240,"KNEESE, Miss",,Female,0,2,1,0,1241
+1241,"KNIGHT, Mr George",46.0,Male,1,4,0,1,1242
+1242,"KNIGHT, Mr Leonard George",21.0,Male,0,4,0,1,1243
+1243,"KNIGHT, Mr Robert",42.0,Male,0,2,1,0,1244
+1244,"KNOWLES, Mr Thomas",44.0,Male,1,4,0,1,1245
+1245,"KOLEV, Mr Petr",36.0,Male,0,3,1,0,1246
+1246,"KOLEV, Mr Sotir",24.0,Male,0,3,1,0,1247
+1247,"KRAEFF, Mr Theodor",,Male,0,3,1,0,1248
+1248,"KREKORIAN, Mr Neshan",25.0,Male,1,3,1,0,1249
+1249,"KREUCHEN, Miss Emilie",29.0,Female,1,1,1,0,1250
+1250,"KRINS, Mr Georges Alexandre",23.0,Male,0,2,1,0,1251
+1251,"KUTSCHER (LITHMAN), Mr Simon",27.0,Male,0,3,1,0,1252
+1252,"KVILLNER, Mr Johan Henrik Johannesson",31.0,Male,0,2,1,0,1253
+1253,"LACEY, Mr Bertie William",19.0,Male,0,4,0,1,1254
+1254,"LAHHūD ISHAQ MU'AWWAD, Mr Sarkīs",35.0,Male,0,3,1,0,1255
+1255,"LAHTINEN, Mrs Anna Amelia",34.0,Male,0,2,1,0,1256
+1256,"LAHTINEN, Rev. William",35.0,Male,0,2,1,0,1257
+1257,"LAHY, Mr T.",41.0,Male,0,4,0,1,1258
+1258,"LAITINEN, Miss Kristina Sofia",38.0,Female,0,3,1,0,1259
+1259,"LAKE, Mr William",46.0,Male,0,4,0,1,1260
+1260,"LAM, Mr Ali",38.0,Male,1,3,1,0,1261
+1261,"LAM, Mr Len",23.0,Male,0,3,1,0,1262
+1262,"LAMB, Mr John J.",31.0,Male,0,2,1,0,1263
+1263,"LANDERGREN, Miss Aurora Adelia",22.0,Female,1,3,1,0,1264
+1264,"LANE, Mr Albert Edward",33.0,Male,0,4,0,1,1265
+1265,"LANE, Mr Patrick",16.0,Male,0,3,1,0,1266
+1266,"LANG, Mr Fang",32.0,Male,1,3,1,0,1267
+1267,"LAROCHE, Miss Louise",1.0,Female,1,2,1,0,1268
+1268,"LAROCHE, Miss Simonne Marie Anne Andrée",3.0,Female,1,2,1,0,1269
+1269,"LAROCHE, Mr Joseph Philippe Lemercier",25.0,Male,0,2,1,0,1270
+1270,"LAROCHE, Mrs Juliette Marie Louise",22.0,Male,1,2,1,0,1271
+1271,"LARSSON, Mr August Viktor",29.0,Male,0,3,1,0,1272
+1272,"LARSSON, Mr Bengt Edvin",29.0,Male,0,3,1,0,1273
+1273,"LATIMER, Mr Andrew",55.0,Male,0,4,0,1,1274
+1274,"LAVINGTON, Miss Elizabeth",40.0,Female,1,4,0,1,1275
+1275,"LAWRANCE, Mr Arthur",36.0,Male,0,4,0,1,1276
+1276,"LEADER, Dr Alice May",49.0,Female,1,1,1,0,1277
+1277,"LEADER, Mr Archibald",22.0,Male,0,4,0,1,1278
+1278,"LEATHER, Mrs Elizabeth Mary",50.0,Male,1,4,0,1,1279
+1279,"LEE, Mr Henry Reginald",29.0,Male,1,4,0,1,1280
+1280,"LEE, Mr Herbert Henry",17.0,Male,0,4,0,1,1281
+1281,"LEE, Mr Reginald Robinson",41.0,Male,1,4,0,1,1282
+1282,"LEFEBVRE, Master Henry",5.0,Male,0,3,1,0,1283
+1283,"LEFEBVRE, Miss Ida",3.0,Female,0,3,1,0,1284
+1284,"LEFEBVRE, Miss Jeannie",8.0,Female,0,3,1,0,1285
+1285,"LEFEBVRE, Miss Mathilde",12.0,Female,0,3,1,0,1286
+1286,"LEFEBVRE, Mr Paul Georges",35.0,Male,0,4,0,1,1287
+1287,"LEFEBVRE, Mrs Frances Marie",40.0,Male,0,3,1,0,1288
+1288,"LEHMANN, Miss Bertha",17.0,Female,1,2,1,0,1289
+1289,"LEINONEN, Mr Antti Gustaf",32.0,Male,0,3,1,0,1290
+1290,"LEITCH, Miss Jessie Wills",31.0,Female,1,2,1,0,1291
+1291,"LEMORE, Mrs Amelia",39.0,Male,1,2,1,0,1292
+1292,"LENNON, Mr Denis",20.0,Male,0,3,1,0,1293
+1293,"LENOX-CONYNGHAM, Master Dennis Hugh",10.0,Male,0,1,1,0,1294
+1294,"LENOX-CONYNGHAM, Miss Eileen",11.0,Female,0,1,1,0,1295
+1295,"LENOX-CONYNGHAM, Miss Harriet Alice Katherine",34.0,Female,0,1,1,0,1296
+1296,"LENOX-CONYNGHAM, Mrs Barbara Josephine",44.0,Male,0,1,1,0,1297
+1297,"LEONARD, Mr Matthew",25.0,Male,0,4,0,1,1298
+1298,"LEROY, Miss Berthe",27.0,Female,1,1,1,0,1299
+1299,"LESTER, Mr James",41.0,Male,0,3,1,0,1300
+1300,"LESUEUR, Mr Louis Gustave Joseph",35.0,Male,1,1,1,0,1301
+1301,"LEVETT, Mr George Alfred",26.0,Male,0,4,0,1,1302
+1302,"LEWIS, Mr Arthur Ernest Read",27.0,Male,1,4,0,1,1303
+1303,"LEWIS, Mr James",34.0,Male,0,4,0,1,1304
+1304,"LEWY, Mr Ervin G.",30.0,Male,0,1,1,0,1305
+1305,"LEYSON, Mr Robert William Norman",25.0,Male,0,2,1,0,1306
+1306,"LIEVENS, Mr René Aimé",24.0,Male,0,3,1,0,1307
+1307,"LIGHT, Mr Charles Edward",24.0,Male,0,4,0,1,1308
+1308,"LIGHT, Mr Christopher William",20.0,Male,0,4,0,1,1309
+1309,"LIGHT, Mr W.",47.0,Male,0,4,0,1,1310
+1310,"LIGHTOLLER, Mr Charles Herbert",38.0,Male,1,4,0,1,1311
+1311,"LIND, Mr Erik Gustaf",42.0,Male,0,1,1,0,1312
+1312,"LINDAHL, Miss Agda Thorilda Viktoria",25.0,Female,0,3,1,0,1313
+1313,"LINDBLOM, Miss Augusta Charlotta",45.0,Female,0,3,1,0,1314
+1314,"LINDELL, Mr Edvard Bengtsson",36.0,Male,0,3,1,0,1315
+1315,"LINDELL, Mrs Elin Gerda",30.0,Male,0,3,1,0,1316
+1316,"LINDQVIST, Mr Eino William",20.0,Male,1,3,1,0,1317
+1317,"LINDSAY, Mr William Charles",30.0,Male,1,4,0,1,1318
+1318,"LINDSTRöM, Mrs Sigrid",55.0,Male,1,1,1,0,1319
+1319,"LINEHAN, Mr Michael",21.0,Male,0,3,1,0,1320
+1320,"LINES, Miss Mary Conover",16.0,Female,1,1,1,0,1321
+1321,"LINES, Mrs Elizabeth Lindsey",50.0,Male,1,1,1,0,1322
+1322,"LING, Mr Lee",28.0,Male,0,3,1,0,1323
+1323,"LINGANE, Mr John",61.0,Male,0,2,1,0,1324
+1324,"LINHART, Mr Wenzel",28.0,Male,0,3,1,0,1325
+1325,"LITTLE, Mr James",49.0,Male,0,4,0,1,1326
+1326,"LITTLE, Mr James",28.0,Male,0,4,0,1,1327
+1327,"LITTLEJOHN, Mr Alexander James",40.0,Male,1,4,0,1,1328
+1328,"LIVSHIN, Mr David",25.0,Male,0,3,1,0,1329
+1329,"LLOYD, Mr Humphrey",41.0,Male,0,4,0,1,1330
+1330,"LLOYD, Mr William",29.0,Male,0,4,0,1,1331
+1331,"LOBB, Mr William Arthur",31.0,Male,0,3,1,0,1332
+1332,"LOBB, Mrs Cordelia",34.0,Male,0,3,1,0,1333
+1333,"LOCKE, Mr Albert George",33.0,Male,0,4,0,1,1334
+1334,"LOCKYER, Mr Edward Thomas",19.0,Male,0,3,1,0,1335
+1335,"LONG, Mr Frank",31.0,Male,0,4,0,1,1336
+1336,"LONG, Mr Milton Clyde",29.0,Male,0,1,1,0,1337
+1337,"LONG, Mr William",36.0,Male,0,4,0,1,1338
+1338,"LONGLEY, Miss Gretchen Fiske",21.0,Female,1,1,1,0,1339
+1339,"LONGMUIR, Mr John Dickson",19.0,Male,0,4,0,1,1340
+1340,"LORING, Mr Joseph Holland",30.0,Male,0,1,1,0,1341
+1341,"LOUCH, Mr Charles",50.0,Male,0,2,1,0,1342
+1342,"LOUCH, Mrs Alice Adelaide",42.0,Male,1,2,1,0,1343
+1343,"LOUGHRAN, Mr Joseph",28.0,Male,0,4,0,1,1344
+1344,"LOVELL, Mr John",37.0,Male,0,4,0,1,1345
+1345,"LOVELL, Mr John Hall",20.0,Male,0,3,1,0,1346
+1346,"LOWE, Mr Harold Godfrey",29.0,Male,1,4,0,1,1347
+1347,"LOWERY, Mr David",28.0,Male,0,4,0,1,1348
+1348,"LUCAS, Mr William Arthur",25.0,Male,1,4,0,1,1349
+1349,"LUCAS, Mr William Watson",31.0,Male,1,4,0,1,1350
+1350,"LULIć, Mr Nikola",29.0,Male,1,3,1,0,1351
+1351,"LUNDAHL, Mr Johan Svensson",50.0,Male,0,3,1,0,1352
+1352,"LUNDIN, Miss Olga Elida",23.0,Female,1,3,1,0,1353
+1353,"LUNDSTRöM, Mr Thure Edvin",32.0,Male,1,3,1,0,1354
+1354,"LURETTE, Miss Eugénie Elise",59.0,Female,1,1,1,0,1355
+1355,"LYDIATT, Mr Charles",45.0,Male,0,4,0,1,1356
+1356,"LYMPEROPOULUS, Mr Panagiotis K.",30.0,Male,0,3,1,0,1357
+1357,"LYNTAKOFF, Mr Stanko",44.0,Male,0,3,1,0,1358
+1358,"LYONS, Mr William Henry",25.0,Male,0,4,0,1,1359
+1359,"LYTLE, Mr Thomas",31.0,Male,0,4,0,1,1360
+1360,"LéVY, Mr René Jacques",36.0,Male,0,2,1,0,1361
+1361,"MABEY, Mr John Charles",23.0,Male,0,4,0,1,1362
+1362,"MACK, Mrs Mary",57.0,Male,0,2,1,0,1363
+1363,"MACKAY, Mr George William",20.0,Male,0,3,1,0,1364
+1364,"MACKIE, Mr George William",34.0,Male,0,4,0,1,1365
+1365,"MACKIE, Mr William Dickson",32.0,Male,0,4,0,1,1366
+1366,"MADIGAN, Miss Margaret",21.0,Female,1,3,1,0,1367
+1367,"MADILL, Miss Georgette Alexandra",16.0,Female,1,1,1,0,1368
+1368,"MADSEN, Mr Fridtjof Arne",24.0,Male,1,3,1,0,1369
+1369,"MAGUIRE, Mr John Edward",30.0,Male,0,1,1,0,1370
+1370,"MAHON, Miss Bridget Delia",20.0,Female,0,3,1,0,1371
+1371,"MAIONI, Miss Roberta Elizabeth Mary",20.0,Female,1,1,1,0,1372
+1372,"MAJOR, Mr Thomas Edgar",36.0,Male,0,4,0,1,1373
+1373,"MAJOR, Mr William James",32.0,Male,1,4,0,1,1374
+1374,"MALACHARD, Mr Jean-Noël",25.0,Male,0,2,1,0,1375
+1375,"MALLET, Master André Clement",1.0,Male,1,2,1,0,1376
+1376,"MALLET, Mr Albert Denis Pierre",45.0,Male,0,2,1,0,1377
+1377,"MALLET, Mrs Antonine Marie",24.0,Male,1,2,1,0,1378
+1378,"MANGAN, Miss Mary",32.0,Female,0,3,1,0,1379
+1379,"MANGIAVACCHI, Mr Emilio Giovanni Andrea Onorato",47.0,Male,0,2,1,0,1380
+1380,"MANLY, Mr A.",23.0,Male,0,4,0,1,1381
+1381,"MANN, Mr Joseph",26.0,Male,0,4,0,1,1382
+1382,"MANN, Mr Samuel",40.0,Male,0,4,0,1,1383
+1383,"MANNION, Miss Margaret",28.0,Female,1,3,1,0,1384
+1384,"MANTLE, Mr Roland Frederick",40.0,Male,0,4,0,1,1385
+1385,"MARCH, Mr John Starr",50.0,Male,0,4,0,1,1386
+1386,"MARDIROSIAN, Mr Sarkis",25.0,Male,0,3,1,0,1387
+1387,"MARETT, Mr George John",26.0,Male,0,4,0,1,1388
+1388,"MARINKO, Mr Dmitri",23.0,Male,0,3,1,0,1389
+1389,"MARKOFF, Mr Marin",35.0,Male,0,3,1,0,1390
+1390,"MARKS, Mr James",27.0,Male,0,4,0,1,1391
+1391,"MARKUN, Mr Johann",33.0,Male,0,3,1,0,1392
+1392,"MARRIOTT, Mr John William",21.0,Male,0,4,0,1,1393
+1393,"MARSDEN, Miss Evelyn",28.0,Female,1,4,0,1,1394
+1394,"MARSH, Mr Frederick Charles",39.0,Male,0,4,0,1,1395
+1395,"MARTIN, Miss Mabel Elvina",20.0,Female,1,4,0,0,1396
+1396,"MARTIN, Mr John",33.0,Male,0,4,0,1,1397
+1397,"MARTIN, Mrs Annie Martha",39.0,Male,1,4,0,1,1398
+1398,"MARVIN, Mr Daniel Warner",18.0,Male,0,1,1,0,1399
+1399,"MARVIN, Mrs Mary Graham Carmichael",18.0,Male,1,1,1,0,1400
+1400,"MARéCHAL, Mr Pierre",29.0,Male,1,1,1,0,1401
+1401,"MASKELL, Mr Leopold Adolphus",25.0,Male,0,4,0,1,1402
+1402,"MASON, Mr Frank Archibald Robert",32.0,Male,1,4,0,1,1403
+1403,"MASON, Mr J.",39.0,Male,0,4,0,1,1404
+1404,"MASSEY, Mr James",35.0,Male,0,4,0,1,1405
+1405,"MATHERS, Mr John",26.0,Male,0,4,0,1,1406
+1406,"MATHERSON, Mr David",33.0,Male,0,4,0,1,1407
+1407,"MATHIAS, Mr Montague Vincent",29.0,Male,0,4,0,1,1408
+1408,"MATINOFF, Mr Nicola",30.0,Male,0,3,1,0,1409
+1409,"MATTHEWS, Mr William John",23.0,Male,0,2,1,0,1410
+1410,"MATTMANN, Sig. Adolf",20.0,Male,0,4,0,0,1411
+1411,"MAUGé, Mr Paul Achille Maurice Germain",25.0,Male,1,4,0,0,1412
+1412,"MAWHINNEY, Mr John",45.0,Male,0,4,0,1,1413
+1413,"MAXWELL, Mr John",29.0,Male,0,4,0,1,1414
+1414,"MAXWELL, Mr William",39.0,Male,0,4,0,1,1415
+1415,"MAY, Mr Arthur William",22.0,Male,0,4,0,1,1416
+1416,"MAY, Mr Arthur William",59.0,Male,0,4,0,1,1417
+1417,"MAY, Mr Richard W.",,Male,0,1,1,0,1418
+1418,"MAY, Mr Stanley",,Male,0,1,1,0,1419
+1419,"MAYBERY, Mr Frank Hubert",36.0,Male,0,2,1,0,1420
+1420,"MAYES, Mr William",29.0,Male,0,4,0,1,1421
+1421,"MAYNARD, Mr Isaac Hiram",31.0,Male,1,4,0,1,1422
+1422,"MAYNé, Mlle Berthe Antonine",24.0,Female,1,1,1,0,1423
+1423,"MAYO, Mr William Peter",28.0,Male,0,4,0,1,1424
+1424,"MAYTUM, Mr Alfred",53.0,Male,0,4,0,1,1425
+1425,"MAYZES, Mr Thomas Jubilee",25.0,Male,1,4,0,1,1426
+1426,"MCALLISTER, Mr Hugh",34.0,Male,0,4,0,1,1427
+1427,"MCALLISTOR, Mr Daniel",29.0,Male,0,4,0,1,1428
+1428,"MCANDREW, Mr Thomas Patrick",38.0,Male,0,4,0,1,1429
+1429,"MCANDREWS, Mr William",23.0,Male,0,4,0,1,1430
+1430,"MCARTHUR, Mr James",29.0,Male,0,4,0,1,1431
+1431,"MCBARTY, Mr Thomas",,Male,0,4,0,1,1432
+1432,"MCCAFFRY, Mr Thomas Francis",46.0,Male,0,1,1,0,1433
+1433,"MCCARRON, Mr David",32.0,Male,0,4,0,1,1434
+1434,"MCCARTHY, Miss Catherine",24.0,Female,1,3,1,0,1435
+1435,"MCCARTHY, Mr Frederick James",38.0,Male,0,4,0,1,1436
+1436,"MCCARTHY, Mr Timothy John",54.0,Male,0,1,1,0,1437
+1437,"MCCARTHY, Mr William",48.0,Male,1,4,0,1,1438
+1438,"MCCARTNEY, Mr John",49.0,Male,0,4,0,1,1439
+1439,"MCCASTLIN, Mr William",28.0,Male,0,4,0,1,1440
+1440,"MCCAWLEY, Mr Thomas W.",36.0,Male,0,4,0,1,1441
+1441,"MCCORMACK, Mr Thomas Joseph",19.0,Male,1,3,1,0,1442
+1442,"MCCOY, Miss Agnes",29.0,Female,1,3,1,0,1443
+1443,"MCCOY, Miss Alice",26.0,Female,1,3,1,0,1444
+1444,"MCCOY, Mr Bernard",24.0,Male,1,3,1,0,1445
+1445,"MCCRAE, Mr Arthur Gordon",32.0,Male,0,2,1,0,1446
+1446,"MCCRIE, Mr James Matthew",32.0,Male,0,2,1,0,1447
+1447,"MCDERMOTT, Miss Bridget Delia",31.0,Female,1,3,1,0,1448
+1448,"MCDONALD, Mr Daniel",26.0,Male,0,4,0,1,1449
+1449,"MCDONALD, Mr George",30.0,Male,0,4,0,1,1450
+1450,"MCELROY, Mr Hugh Walter",37.0,Male,0,4,0,1,1451
+1451,"MCENSPIE, Mr James",48.0,Male,0,4,0,1,1452
+1452,"MCENTEE, Mr Charles",37.0,Male,0,4,0,1,1453
+1453,"MCERLINE, Mr John",49.0,Male,0,4,0,1,1454
+1454,"MCEVOY, Mr Michael",20.0,Male,0,3,1,0,1455
+1455,"MCGANN, Mr James",29.0,Male,1,4,0,1,1456
+1456,"MCGARVEY, Mr Edward Joseph",34.0,Male,0,4,0,1,1457
+1457,"MCGAW, Mr Erroll Victor",30.0,Male,0,4,0,1,1458
+1458,"MCGAW, Mr Samuel",34.0,Male,0,4,0,1,1459
+1459,"MCGEE, Mr Patrick",32.0,Male,0,4,0,1,1460
+1460,"MCGEE, Mr Samuel",48.0,Male,0,4,0,1,1461
+1461,"MCGILL, Mr John",36.0,Male,0,4,0,1,1462
+1462,"MCGILL, Mr Thomas",29.0,Male,0,4,0,1,1463
+1463,"MCGIVERN, Mr Henry",41.0,Male,0,4,0,1,1464
+1464,"MCGIVERN, Mr Thomas",43.0,Male,0,4,0,1,1465
+1465,"MCGONAGAL, Mr W.",49.0,Male,0,4,0,1,1466
+1466,"MCGOUGH, Mr Frank",25.0,Male,0,4,0,1,1467
+1467,"MCGOUGH, Mr George Francis 'Paddy'",36.0,Male,1,4,0,1,1468
+1468,"MCGOUGH, Mr James Robert",35.0,Male,1,1,1,0,1469
+1469,"MCGOVERN, Miss Mary",20.0,Female,1,3,1,0,1470
+1470,"MCGOWAN, Miss Anna Louise",17.0,Female,1,3,1,0,1471
+1471,"MCGOWAN, Miss Catherine",42.0,Female,0,3,1,0,1472
+1472,"MCGOWN, Mr Barney",43.0,Male,0,4,0,1,1473
+1473,"MCGRADY, Mr James",27.0,Male,0,4,0,1,1474
+1474,"MCGREEVY, Mr Richard",26.0,Male,0,4,0,1,1475
+1475,"MCGROGAN, Mr John",45.0,Male,0,4,0,1,1476
+1476,"MCILROY, Mr Barney",36.0,Male,0,4,0,1,1477
+1477,"MCILROY, Mr James",40.0,Male,0,4,0,1,1478
+1478,"MCILROY, Mr Robert",26.0,Male,0,4,0,1,1479
+1479,"MCILROY, Mr William",40.0,Male,0,4,0,1,1480
+1480,"MCILWAINE, Mr James",25.0,Male,0,4,0,1,1481
+1481,"MCINERNEY, Mr Thomas",38.0,Male,0,4,0,1,1482
+1482,"MCINTOSH, Mr Joseph",48.0,Male,0,4,0,1,1483
+1483,"MCINTYRE, Mr William",21.0,Male,1,4,0,1,1484
+1484,"MCKANE, Mr Peter Daniel",46.0,Male,0,2,1,0,1485
+1485,"MCKAY, Mr Charles Donald",30.0,Male,1,4,0,1,1486
+1486,"MCKENNA, Mr Barney",24.0,Male,0,4,0,1,1487
+1487,"MCKENNA, Mr Patrick",40.0,Male,0,4,0,1,1488
+1488,"MCKINNEY, Mr Peter",40.0,Male,0,4,0,1,1489
+1489,"MCLAREN, Mrs Hypatia",42.0,Male,1,4,0,1,1490
+1490,"MCMAHON, Mr Martin",19.0,Male,0,3,1,0,1491
+1491,"MCMICKEN, Mr Arthur",26.0,Male,1,4,0,1,1492
+1492,"MCMICKEN, Mr Benjamin Tucker",21.0,Male,0,4,0,1,1493
+1493,"MCMILLAN, Mr Samuel",29.0,Male,0,4,0,1,1494
+1494,"MCMILLAN, Mr William",35.0,Male,0,4,0,1,1495
+1495,"MCMILLEN, Mr Thomas",55.0,Male,0,4,0,1,1496
+1496,"MCMULLAN, Mr Patrick",30.0,Male,0,4,0,1,1497
+1497,"MCMULLAN, Mr William",40.0,Male,0,4,0,1,1498
+1498,"MCMULLIN, Mr John Richard",36.0,Male,0,4,0,1,1499
+1499,"MCMURRAY, Mr William",44.0,Male,0,4,0,1,1500
+1500,"MCNAMEE, Mr Neal",27.0,Male,0,3,1,0,1501
+1501,"MCNAMEE, Mrs Eileen",19.0,Male,0,3,1,0,1502
+1502,"MCNEILL, Miss Bridget",32.0,Female,0,3,1,0,1503
+1503,"MCQUILLAN, Mr William",26.0,Male,0,4,0,1,1504
+1504,"MCRAE, Mr William Alexander",32.0,Male,0,4,0,1,1505
+1505,"MCREYNOLDS, Mr William Thomas Carson",22.0,Male,0,4,0,1,1506
+1506,"MCTEER, Mr John",38.0,Male,0,4,0,1,1507
+1507,"MEANWELL, Mrs Marian",62.0,Male,0,3,1,0,1508
+1508,"MECHAN, Mr William",38.0,Male,0,4,0,1,1509
+1509,"MEEHAN, Mr John",22.0,Male,0,3,1,0,1510
+1510,"MEEK, Mrs Annie Louisa",32.0,Male,0,3,1,0,1511
+1511,"MEISNERE, Mr Simon",34.0,Male,0,3,1,0,1512
+1512,"MELLINGER, Miss Violet Madeline",13.0,Female,1,2,1,0,1513
+1513,"MELLINGER, Mrs Elizabeth Anne",42.0,Male,1,2,1,0,1514
+1514,"MELLOR, Mr Arthur",34.0,Male,0,4,0,1,1515
+1515,"MELLORS, Mr William John",19.0,Male,1,2,1,0,1516
+1516,"MEO (MARTINO), Mr Alfonzo",48.0,Male,0,3,1,0,1517
+1517,"MERNAGH, Mr Robert",28.0,Male,0,3,1,0,1518
+1518,"MEWE, Mr W. J.",35.0,Male,0,4,0,1,1519
+1519,"MEYER, Mr August",31.0,Male,0,2,1,0,1520
+1520,"MEYER, Mr Edgar Joseph",28.0,Male,0,1,1,0,1521
+1521,"MEYER, Mrs Leila",25.0,Male,1,1,1,0,1522
+1522,"MIDDLETON, Mr Alfred Pirrie",27.0,Male,0,4,0,1,1523
+1523,"MIDDLETON, Mr Mark Victor",24.0,Male,0,4,0,1,1524
+1524,"MIDTSJø, Mr Karl Albert",21.0,Male,1,3,1,0,1525
+1525,"MIHOFF, Mr Stoytcho",28.0,Male,0,3,1,0,1526
+1526,"MILES, Mr Frank",23.0,Male,0,3,1,0,1527
+1527,"MILFORD, Mr George",28.0,Male,0,4,0,1,1528
+1528,"MILLAR, Mr Robert",26.0,Male,0,4,0,1,1529
+1529,"MILLAR, Mr Thomas",32.0,Male,0,4,0,1,1530
+1530,"MILLER, Mr William",32.0,Male,0,4,0,1,1531
+1531,"MILLET, Mr Francis Davis",65.0,Male,0,1,1,0,1532
+1532,"MILLFORD, Mr Daniel",26.0,Male,0,4,0,1,1533
+1533,"MILLING, Mr Jacob Christian",48.0,Male,0,2,1,0,1534
+1534,"MILLS, Mr Christopher",51.0,Male,1,4,0,1,1535
+1535,"MINAHAN, Dr William Edward",44.0,Male,0,1,1,0,1536
+1536,"MINAHAN, Miss Ida Daisy",33.0,Female,1,1,1,0,1537
+1537,"MINAHAN, Mrs Lillian Mae",37.0,Male,1,1,1,0,1538
+1538,"MINEFF, Mr Ivan",24.0,Male,0,3,1,0,1539
+1539,"MINKOFF, Mr Lazar",21.0,Male,0,3,1,0,1540
+1540,"MINTRAM, Mr William",46.0,Male,0,4,0,1,1541
+1541,"MISH'ALāNī, Mr Ibrāhīm Mansūr",53.0,Male,0,4,0,1,1542
+1542,"MITCHELL, Mr Henry Michael",71.0,Male,0,2,1,0,1543
+1543,"MITCHELL, Mr Lorenzo Horace",19.0,Male,0,4,0,1,1544
+1544,"MITKOFF, Mr Mito",23.0,Male,0,3,1,0,1545
+1545,"MOCK, Mr Philipp Edmund",30.0,Male,1,1,1,0,1546
+1546,"MOCKLER, Miss Ellen Mary",23.0,Female,1,3,1,0,1547
+1547,"MOEN, Mr Sigurd Hansen",27.0,Male,0,3,1,0,1548
+1548,"MOLSON, Mr Harry Markland",55.0,Male,0,1,1,0,1549
+1549,"MONRóS, Sr. Joan Javier",20.0,Male,0,4,0,0,1550
+1550,"MONTEVERDI, Sig. Giovanni",23.0,Male,0,4,0,0,1551
+1551,"MONTVILA, Fr Juozas",27.0,Male,0,2,1,0,1552
+1552,"MOODY, Mr James Paul",24.0,Male,0,4,0,1,1553
+1553,"MOOR, Master Meier",7.0,Male,1,3,1,0,1554
+1554,"MOOR, Mrs Beila",29.0,Male,1,3,1,0,1555
+1555,"MOORE, Mr Alfred Ernest",38.0,Male,0,4,0,1,1556
+1556,"MOORE, Mr Clarence",47.0,Male,0,1,1,0,1557
+1557,"MOORE, Mr George Alfred",32.0,Male,1,4,0,1,1558
+1558,"MOORE, Mr J.",29.0,Male,1,4,0,1,1559
+1559,"MOORE, Mr Leonard Charles",19.0,Male,0,3,1,0,1560
+1560,"MOORE, Mr Ralph",22.0,Male,0,4,0,1,1561
+1561,"MOORES, Mr Richard Henry",44.0,Male,0,4,0,1,1562
+1562,"MORAN, Miss Bridget",28.0,Female,1,3,1,0,1563
+1563,"MORAN, Mr Daniel J.",28.0,Male,0,3,1,0,1564
+1564,"MORAWECK, Dr Ernest",54.0,Male,0,2,1,0,1565
+1565,"MORGAN (BIRD), Mr Charles Frederick",44.0,Male,0,4,0,1,1566
+1566,"MORGAN, Mr Arthur Herbert",27.0,Male,0,4,0,1,1567
+1567,"MORGAN, Mr Patrick",26.0,Male,0,4,0,1,1568
+1568,"MORGAN, Mr Thomas A.",26.0,Male,0,4,0,1,1569
+1569,"MORLEY, Mr Henry Samuel",38.0,Male,0,2,1,0,1570
+1570,"MORLEY, Mr William",34.0,Male,0,3,1,0,1571
+1571,"MORRELL, Mr James",24.0,Male,0,4,0,1,1572
+1572,"MORRIS, Mr Frank Herbert",28.0,Male,1,4,0,1,1573
+1573,"MORRIS, Mr William Edward",23.0,Male,0,4,0,1,1574
+1574,"MORRISON, Mr Thomas",26.0,Male,0,4,0,1,1575
+1575,"MORROW, Mr Thomas Rowan",31.0,Male,0,3,1,0,1576
+1576,"MOSS, Mr Albert Johan",29.0,Male,1,3,1,0,1577
+1577,"MOSS, Mr William",35.0,Male,0,4,0,1,1578
+1578,"MOUSSA, Mrs Mantoura Boulos",35.0,Male,1,3,1,0,1579
+1579,"MOUTAL, Mr Rahamin Haim",28.0,Male,0,3,1,0,1580
+1580,"MOYES, Mr William Young",24.0,Male,0,4,0,1,1581
+1581,"MUBāRIK, Master Halīm",4.0,Male,1,3,1,0,1582
+1582,"MUBāRIK, Master Jirjis",7.0,Male,1,3,1,0,1583
+1583,"MUBāRIK, Mrs Amīnah",25.0,Male,1,3,1,0,1584
+1584,"MUDD, Mr Thomas Cupper",16.0,Male,0,2,1,0,1585
+1585,"MULLEN,",,Unknown,0,2,1,0,1586
+1586,"MULLHOLLAND, Mr Daniel",48.0,Male,0,4,0,1,1587
+1587,"MULLHOLLAND, Mr J.",45.0,Male,0,4,0,1,1588
+1588,"MULLIN, Miss Catherine",21.0,Female,1,3,1,0,1589
+1589,"MULLIN, Miss Mary",18.0,Female,0,3,1,0,1590
+1590,"MULLIN, Mr Thomas",20.0,Male,0,4,0,1,1591
+1591,"MULVIHILL, Miss Bridget Elizabeth",25.0,Female,1,3,1,0,1592
+1592,"MURDLIN, Mr Joseph",22.0,Male,0,3,1,0,1593
+1593,"MURDOCH, Mr William McMaster",39.0,Male,0,4,0,1,1594
+1594,"MURDOCK, Mr William John",37.0,Male,1,4,0,1,1595
+1595,"MURPHY, Miss Catherine",18.0,Female,1,3,1,0,1596
+1596,"MURPHY, Miss Margaret",25.0,Female,1,3,1,0,1597
+1597,"MURPHY, Miss Nora",31.0,Female,1,3,1,0,1598
+1598,"MURPHY, Mr Thomas",35.0,Male,0,4,0,1,1599
+1599,"MUSLAMāNī, Mrs Fatīmah Muhammad",22.0,Male,1,3,1,0,1600
+1600,"MYHRMAN, Mr Pehr Fabian Oliver Malkolm",18.0,Male,0,3,1,0,1601
+1601,"MYLES, Mr Thomas Francis",63.0,Male,0,2,1,0,1602
+1602,"MäENPää, Mr Matti Alexanteri",22.0,Male,0,3,1,0,1603
+1603,"MäKINEN, Mr Kalle Edvard",29.0,Male,0,3,1,0,1604
+1604,"MüLLER, Mr Ludwig",37.0,Male,0,4,0,1,1605
+1605,"MāMā, Mr Hannā Mikā'īl",20.0,Male,1,3,1,0,1606
+1606,"NAIDENOFF, Mr Penko",22.0,Male,0,3,1,0,1607
+1607,"NAJīB QIYāMAH, Miss Adāl",15.0,Female,1,3,1,0,1608
+1608,"NAKHLI, Mr Toufik",17.0,Male,0,3,1,0,1609
+1609,"NAKID, Miss Mariayam",1.0,Female,1,3,1,0,1610
+1610,"NAKID, Mr Sa'īd Antūn",20.0,Male,1,3,1,0,1611
+1611,"NAKID, Mrs Wadi'ah",19.0,Male,1,3,1,0,1612
+1612,"NANCARROW, Mr William Henry",36.0,Male,0,3,1,0,1613
+1613,"NANKOFF, Mr Minko",32.0,Male,0,3,1,0,1614
+1614,"NANNINI, Sig. Francesco Luigi Arcangelo",42.0,Male,0,4,0,0,1615
+1615,"NASR 'ALMā, Mr Mustafà",20.0,Male,0,3,1,0,1616
+1616,"NASR-RIZQ, Mr Su'ādah Ḥannā",20.0,Male,0,3,1,0,1617
+1617,"NATSCH, Mr Charles",36.0,Male,0,1,1,0,1618
+1618,"NAUGHTON, Miss Hannah",21.0,Female,0,3,1,0,1619
+1619,"NAVRATIL, Master Edmond Roger",2.0,Male,1,2,1,0,1620
+1620,"NAVRATIL, Master Michel Marcel",3.0,Male,1,2,1,0,1621
+1621,"NAVRATIL, Mr Michel",31.0,Male,0,2,1,0,1622
+1622,"NAṣR ALLāH, Mr Niqūlā Khalīl",29.0,Male,0,2,1,0,1623
+1623,"NAṣR ALLāH, Mrs Adāl",17.0,Male,1,2,1,0,1624
+1624,"NAṣR ALLāH, Mrs Zād",45.0,Male,1,3,1,0,1625
+1625,"NEAL, Mr Harold Bentley",25.0,Male,1,4,0,1,1626
+1626,"NEILL, Mr Thomas",42.0,Male,0,4,0,1,1627
+1627,"NENKOV, Mr Hristo",22.0,Male,0,3,1,0,1628
+1628,"NESSON, Mr Israel",26.0,Male,0,2,1,0,1629
+1629,"NETTLETON, Mr George Walter",30.0,Male,0,4,0,1,1630
+1630,"NEWELL, Miss Madeleine",31.0,Female,1,1,1,0,1631
+1631,"NEWELL, Miss Marjorie Anne",23.0,Female,1,1,1,0,1632
+1632,"NEWELL, Mr Arthur Webster",58.0,Male,0,1,1,0,1633
+1633,"NEWMAN, Mr Charles Thomas",32.0,Male,0,4,0,1,1634
+1634,"NEWSOM, Miss Helen Monypeny",19.0,Female,1,1,1,0,1635
+1635,"NICHOLLS, Mr Joseph Charles",19.0,Male,0,2,1,0,1636
+1636,"NICHOLLS, Mr Sidney",39.0,Male,0,4,0,1,1637
+1637,"NICHOLS, Mr Albert William Stanley",47.0,Male,0,4,0,1,1638
+1638,"NICHOLS, Mr Arthur",45.0,Male,0,4,0,1,1639
+1639,"NICHOLS, Mr Walter Henry",35.0,Male,1,4,0,1,1640
+1640,"NICHOLS, Mrs Emily",48.0,Male,0,1,1,0,1641
+1641,"NICHOLSON, Mr Arthur Ernest",59.0,Male,0,1,1,0,1642
+1642,"NIEMINEN, Miss Manta Josefina",29.0,Female,0,3,1,0,1643
+1643,"NIKLASSON, Mr Samuel",28.0,Male,0,3,1,0,1644
+1644,"NILSSON, Miss Berta Olivia",18.0,Female,1,3,1,0,1645
+1645,"NILSSON, Miss Helmina Josefina",26.0,Female,1,3,1,0,1646
+1646,"NILSSON, Mr August Ferdinand",21.0,Male,0,3,1,0,1647
+1647,"NISKANEN, Mr Juho",,Male,1,3,1,0,1648
+1648,"NIVEN, Mr John Brown",30.0,Male,0,4,0,1,1649
+1649,"NOEL, Major Gerard Thomas",55.0,Male,0,1,1,0,1650
+1650,"NOEL, Master William Henry Middleton",13.0,Male,0,1,1,0,1651
+1651,"NOFAL, Mr Mansouer",20.0,Male,0,3,1,0,1652
+1652,"NOLAN, Mr Michael",31.0,Male,0,4,0,1,1653
+1653,"NOON, Mr John Thomas",42.0,Male,0,4,0,1,1654
+1654,"NORMAN, Mr Robert Douglas",27.0,Male,0,2,1,0,1655
+1655,"NORRIS, Mr James",22.0,Male,0,4,0,1,1656
+1656,"NOSS, Mr Bertram Arthur",20.0,Male,0,4,0,1,1657
+1657,"NOSS, Mr Henry",30.0,Male,1,4,0,1,1658
+1658,"NOSWORTHY, Mr Richard Cater",21.0,Male,0,3,1,0,1659
+1659,"NOURNEY, Mr Alfred",20.0,Male,1,1,1,0,1660
+1660,"NUTBEAN, Mr William",30.0,Male,1,4,0,1,1661
+1661,"NYE, Mrs Elizabeth",29.0,Male,1,2,1,0,1662
+1662,"NYSTEN, Miss Anna Sofia",22.0,Female,1,3,1,0,1663
+1663,"NYSVEEN, Mr Johannes Hansen",60.0,Male,0,3,1,0,1664
+1664,"NīQūLA YāRID, Master Ilyās",11.0,Male,1,3,1,0,1665
+1665,"NīQūLA YāRID, Miss Jamīlah",14.0,Female,1,3,1,0,1666
+1666,"O'BRIEN, Mr Denis",22.0,Male,0,3,1,0,1667
+1667,"O'BRIEN, Mr Thomas",26.0,Male,0,3,1,0,1668
+1668,"O'BRIEN, Mrs Hannah",27.0,Male,1,3,1,0,1669
+1669,"O'CONNELL, Mr Patrick Denis",18.0,Male,0,3,1,0,1670
+1670,"O'CONNOR, Mr John",29.0,Male,1,4,0,1,1671
+1671,"O'CONNOR, Mr Maurice",15.0,Male,0,3,1,0,1672
+1672,"O'CONNOR, Mr Patrick",23.0,Male,0,3,1,0,1673
+1673,"O'CONNOR, Mr Thomas Peter",44.0,Male,0,4,0,1,1674
+1674,"O'DWYER, Miss Ellen",22.0,Female,1,3,1,0,1675
+1675,"O'FLANNIGAN, Mr Thomas",39.0,Male,0,4,0,1,1676
+1676,"O'KEEFE, Mr Arthur",44.0,Male,0,3,1,0,1677
+1677,"O'KEEFFE, Mr Patrick",21.0,Male,1,3,1,0,1678
+1678,"O'LEARY, Miss Hanora",16.0,Female,1,3,1,0,1679
+1679,"O'LOUGHLIN, Dr William Francis Norman",63.0,Male,0,4,0,1,1680
+1680,"O'SULLIVAN, Miss Bridget Mary",21.0,Female,0,3,1,0,1681
+1681,"ODELL, Master Jack",11.0,Male,0,1,1,0,1682
+1682,"ODELL, Miss Kate",,Female,0,1,1,0,1683
+1683,"ODELL, Mrs Lily May",,Male,0,1,1,0,1684
+1684,"OLIVA Y OCANA, Doña Fermina",39.0,Female,1,1,1,0,1685
+1685,"OLIVE, Mr Charles",31.0,Male,0,4,0,1,1686
+1686,"OLIVE, Mr Ernest Roskelly",27.0,Male,0,4,0,1,1687
+1687,"OLIVER, Mr Harry",41.0,Male,1,4,0,1,1688
+1688,"OLLIVER, Mr Alfred John",27.0,Male,1,4,0,1,1689
+1689,"OLSEN, Master Artur Karl",9.0,Male,1,3,1,0,1690
+1690,"OLSEN, Mr Henry Margido",28.0,Male,0,3,1,0,1691
+1691,"OLSEN, Mr Karl Siegwart Andreas",42.0,Male,0,3,1,0,1692
+1692,"OLSEN, Mr Ole Martin",27.0,Male,0,3,1,0,1693
+1693,"OLSSON, Miss Elina",31.0,Female,0,3,1,0,1694
+1694,"OLSSON, Mr Nils Johan Göransson",28.0,Male,0,3,1,0,1695
+1695,"OLSVIGEN, Mr Thor Anderson",20.0,Male,0,3,1,0,1696
+1696,"OMONT, Mr Alfred Fernand",29.0,Male,1,1,1,0,1697
+1697,"OREšKOVIć, Miss Jelka",30.0,Female,0,3,1,0,1698
+1698,"OREšKOVIć, Miss Marija",19.0,Female,0,3,1,0,1699
+1699,"OREšKOVIć, Mr Luka",20.0,Male,0,3,1,0,1700
+1700,"ORPET, Mr Walter Hayward",31.0,Male,0,4,0,1,1701
+1701,"ORR, Mr James",39.0,Male,0,4,0,1,1702
+1702,"OSBORNE, Miss D.",,Female,0,2,1,0,1703
+1703,"OSBORNE, Mr William Edward",33.0,Male,0,4,0,1,1704
+1704,"OSMAN, Mr Frank",27.0,Male,1,4,0,1,1705
+1705,"OSMAN, Mrs Mara",31.0,Male,1,3,1,0,1706
+1706,"OSéN, Mr Olaf Elon",16.0,Male,0,3,1,0,1707
+1707,"OTHEN, Mr Charles Alfred",36.0,Male,1,4,0,1,1708
+1708,"OTTER, Mr Richard",38.0,Male,0,2,1,0,1709
+1709,"OVIéS Y RODRíGUEZ, Mr Servando José Florentino",36.0,Male,0,1,1,0,1710
+1710,"OWEN, Mr Lewis",49.0,Male,0,4,0,1,1711
+1711,"OXENHAM, Mr Percy Thomas",22.0,Male,1,2,1,0,1712
+1712,"PACEY, Mr Reginald lvan",17.0,Male,0,4,0,1,1713
+1713,"PACHERA, Sig. Jean Baptiste Stanislas",19.0,Male,0,4,0,0,1714
+1714,"PADRON MANENT, Mr Julian",26.0,Male,1,2,1,0,1715
+1715,"PAICE, Mr Richard Charles John",32.0,Male,0,4,0,1,1716
+1716,"PAIN, Dr Alfred",23.0,Male,0,2,1,0,1717
+1717,"PAINTER, Mr Charles",32.0,Male,0,4,0,1,1718
+1718,"PAINTER, Mr Frank",29.0,Male,0,4,0,1,1719
+1719,"PAINTIN, Mr James Arthur",29.0,Male,0,4,0,1,1720
+1720,"PALLES, Mr Thomas Henry Michael",45.0,Male,0,4,0,1,1721
+1721,"PALLàS I CASTELLó, Sr. Emili",29.0,Male,1,2,1,0,1722
+1722,"PALMQUIST, Mr Oskar Leander Johansson",26.0,Male,1,3,1,0,1723
+1723,"PANULA, Master Eino Viljam",1.0,Male,0,3,1,0,1724
+1724,"PANULA, Master Jaako Arnold",15.0,Male,0,3,1,0,1725
+1725,"PANULA, Master Juha Niilo",7.0,Male,0,3,1,0,1726
+1726,"PANULA, Master Urho Abraham",2.0,Male,0,3,1,0,1727
+1727,"PANULA, Mr Ernesti Arvid",16.0,Male,0,3,1,0,1728
+1728,"PANULA, Mrs Maija Emelia Abrahamintytar",41.0,Male,0,3,1,0,1729
+1729,"PARKER, Mr Clifford Richard",17.0,Male,0,2,1,0,1730
+1730,"PARKES, Mr Francis",21.0,Male,0,2,1,0,1731
+1731,"PARR, Mr William Henry Marsh",29.0,Male,0,1,1,0,1732
+1732,"PARRISH, Mrs Lutie Davis",59.0,Male,1,2,1,0,1733
+1733,"PARSONS, Mr Edward",37.0,Male,0,4,0,1,1734
+1734,"PARSONS, Mr Frank Alfred",26.0,Male,0,4,0,1,1735
+1735,"PARSONS, Mr Richard Henry",18.0,Male,0,4,0,1,1736
+1736,"PARTNER, Mr Austin",40.0,Male,0,1,1,0,1737
+1737,"PASCOE, Mr Charles Henry",45.0,Male,1,4,0,1,1738
+1738,"PASIC, Mr Jakob",21.0,Male,0,3,1,0,1739
+1739,"PATCHETT, Mr George",18.0,Male,0,3,1,0,1740
+1740,"PATON, Mr Matthew",26.0,Male,0,4,0,1,1741
+1741,"PAVLOVIć, Mr Stefo",32.0,Male,0,3,1,0,1742
+1742,"PAYNE, Mr Vivian Ponsonby",23.0,Male,0,1,1,0,1743
+1743,"PEACOCK, Master Albert Edward",0.0,Male,0,3,1,0,1744
+1744,"PEACOCK, Miss Treasteall",4.0,Female,0,3,1,0,1745
+1745,"PEACOCK, Mrs Edith",26.0,Male,0,3,1,0,1746
+1746,"PEARCE, Mr Alfred Ernest",24.0,Male,0,4,0,1,1747
+1747,"PEARCE, Mr Ernest",31.0,Male,0,3,1,0,1748
+1748,"PEARCE, Mr John",33.0,Male,1,4,0,1,1749
+1749,"PEARCEY, Mr Albert Victor",25.0,Male,1,4,0,1,1750
+1750,"PEARS, Mr Thomas",29.0,Male,0,1,1,0,1751
+1751,"PEARS, Mrs Edith",22.0,Male,1,1,1,0,1752
+1752,"PEDERSEN, Mr Olaf",28.0,Male,0,3,1,0,1753
+1753,"PEDRINI, Sig. Alessandro",21.0,Male,0,4,0,0,1754
+1754,"PEDUZZI, Mr Joseph",24.0,Male,0,3,1,0,1755
+1755,"PEKONIEMI, Mr Edvard",21.0,Male,0,3,1,0,1756
+1756,"PELHAM, Mr George",39.0,Male,1,4,0,1,1757
+1757,"PELTOMäKI, Mr Nikolai Johannes",25.0,Male,0,3,1,0,1758
+1758,"PENGELLY, Mr Frederick William",19.0,Male,0,2,1,0,1759
+1759,"PENNAL, Mr Thomas Frederick Cohen",34.0,Male,0,4,0,1,1760
+1760,"PENNEY, Mr Alfred",28.0,Male,0,4,0,1,1761
+1761,"PENNY, Mr William Farr",31.0,Male,0,4,0,1,1762
+1762,"PENROSE, Mr John Poole",49.0,Male,0,4,0,1,1763
+1763,"PERACCHIO, Sig. Alberto",20.0,Male,0,4,0,0,1764
+1764,"PERACCHIO, Sig. Sebastiano",17.0,Male,0,4,0,0,1765
+1765,"PERKIN, Mr John Henry",23.0,Male,0,3,1,0,1766
+1766,"PERKINS, Mr Laurence Alexander",22.0,Male,0,4,0,1,1767
+1767,"PERKIS, Mr Walter John",37.0,Male,1,4,0,1,1768
+1768,"PERNOT, Mr René",39.0,Male,0,2,1,0,1769
+1769,"PEROTTI, Sig. Alfonso",20.0,Male,0,4,0,0,1770
+1770,"PERREAULT, Miss Mary Anne",33.0,Female,1,1,1,0,1771
+1771,"PERREN, Mr William Charles",47.0,Male,0,4,0,1,1772
+1772,"PERRITON, Mr Hubert Prouse",32.0,Male,0,4,0,1,1773
+1773,"PERRY, Mr Edgar Lionel",19.0,Male,1,4,0,1,1774
+1774,"PERRY, Mr Henry Frederick",23.0,Male,0,4,0,1,1775
+1775,"PERSSON, Mr Ernst Ulrik",25.0,Male,1,3,1,0,1776
+1776,"PERUSCHITZ, Fr Josef",41.0,Male,0,2,1,0,1777
+1777,"PETERANEC KRAMARIć, Miss Mathilda",28.0,Female,0,3,1,0,1778
+1778,"PETERS, Miss Catherine",27.0,Female,0,3,1,0,1779
+1779,"PETERS, Mr William Chapman",26.0,Male,1,4,0,1,1780
+1780,"PETERSEN, Mr Marius",24.0,Male,0,3,1,0,1781
+1781,"PETROFF, Mr Nedialco",19.0,Male,0,3,1,0,1782
+1782,"PETROFF, Mr Pastcho",29.0,Male,0,3,1,0,1783
+1783,"PETTERSSON, Miss Elin Natalia",18.0,Female,0,3,1,0,1784
+1784,"PETTERSSON, Mr Johan Emil",25.0,Male,0,3,1,0,1785
+1785,"PETTY, Mr Edwin Henry",25.0,Male,0,4,0,1,1786
+1786,"PEUCHEN, Major Arthur Godfrey",52.0,Male,1,1,1,0,1787
+1787,"PEñASCO Y CASTELLANA, Mr Victor",24.0,Male,0,1,1,0,1788
+1788,"PEñASCO Y CASTELLANA, Mrs Maria Josefa Perezde Soto y Vallejo",22.0,Male,1,1,1,0,1789
+1789,"PFROPPER, Mr Richard Paul Jozef",30.0,Male,1,4,0,1,1790
+1790,"PHILLIMORE, Mr Harold Charles William",23.0,Male,1,4,0,1,1791
+1791,"PHILLIPS, Miss Alice Frances Louisa",21.0,Female,1,2,1,0,1792
+1792,"PHILLIPS, Miss Kate Florence",19.0,Female,1,2,1,0,1793
+1793,"PHILLIPS, Mr Escott Robert",43.0,Male,0,2,1,0,1794
+1794,"PHILLIPS, Mr George",27.0,Male,0,4,0,1,1795
+1795,"PHILLIPS, Mr James",27.0,Male,0,4,0,1,1796
+1796,"PHILLIPS, Mr John George",25.0,Male,0,4,0,1,1797
+1797,"PHILLIPS, Mr Walter John",37.0,Male,0,4,0,0,1798
+1798,"PHILLIPS, Mr William",26.0,Male,0,4,0,1,1799
+1799,"PIATTI, Sig. Louis",17.0,Male,0,4,0,0,1800
+1800,"PIAZZA, Sig. Pompeo Gaspro",33.0,Male,0,4,0,0,1801
+1801,"PICARD, Mr Benoît",33.0,Male,1,3,1,0,1802
+1802,"PIDGEON, Mr William",39.0,Male,0,4,0,1,1803
+1803,"PIERCE, Mr Robert",40.0,Male,0,4,0,1,1804
+1804,"PINSKY, Mrs Rosa",32.0,Male,1,2,1,0,1805
+1805,"PITFIELD, Mr William James",25.0,Male,0,4,0,1,1806
+1806,"PITMAN, Mr Herbert John",34.0,Male,1,4,0,1,1807
+1807,"PLATT, Mr Wilfred George",17.0,Male,0,4,0,1,1808
+1808,"PLOTCHARSKY, Mr Vasil",27.0,Male,0,3,1,0,1809
+1809,"POCRNIć, Mr Mate",17.0,Male,0,3,1,0,1810
+1810,"POCRNIć, Mr Tome",24.0,Male,0,3,1,0,1811
+1811,"PODESTA, Mr Alfred John Alexander",24.0,Male,1,4,0,1,1812
+1812,"POGGI, Sig. Emilio",28.0,Male,0,4,0,0,1813
+1813,"POINGDESTRE, Mr John Thomas",27.0,Male,1,4,0,1,1814
+1814,"POND, Mr George",32.0,Male,0,4,0,1,1815
+1815,"PONESELL, Mr Martin",24.0,Male,0,2,1,0,1816
+1816,"POOK, Mr Percy Robert",36.0,Male,0,4,0,1,1817
+1817,"PORT, Mr Frank",22.0,Male,1,4,0,1,1818
+1818,"PORTALUPPI, Mr Emilio Ilario Giuseppe",30.0,Male,1,2,1,0,1819
+1819,"PORTER, Mr Walter Chamberlain",46.0,Male,0,1,1,0,1820
+1820,"PORTEUS, Mr Thomas Henry",33.0,Male,0,4,0,1,1821
+1821,"POTTER, Mrs Lily Alexenia",56.0,Male,1,1,1,0,1822
+1822,"PRANGNELL, Mr George Alexander",30.0,Male,1,4,0,1,1823
+1823,"PRENTICE, Mr Frank Winnold",23.0,Male,1,4,0,1,1824
+1824,"PRESTON, Mr Thomas Charles Alfred",20.0,Male,0,4,0,1,1825
+1825,"PRICE, Mr Ernest Cyril",17.0,Male,0,4,0,0,1826
+1826,"PRICHARD, Mrs Alice Maud",36.0,Male,1,4,0,1,1827
+1827,"PRIDEAUX, Mr John Arthur (Jack)",23.0,Male,0,4,0,1,1828
+1828,"PRIEST, Mr Arthur John",24.0,Male,1,4,0,1,1829
+1829,"PRIOR, Mr Harold John Arnold",20.0,Male,1,4,0,1,1830
+1830,"PROCTOR, Mr Charles",45.0,Male,0,4,0,1,1831
+1831,"PROUDFOOT, Mr Richard Royston",21.0,Male,0,4,0,1,1832
+1832,"PRYCE, Mr Charles William",22.0,Male,0,4,0,1,1833
+1833,"PUGH, Mr Alfred",20.0,Male,1,4,0,1,1834
+1834,"PUGH, Mr Arthur Percy",31.0,Male,0,4,0,1,1835
+1835,"PULBAUM, Mr Franz",27.0,Male,0,2,1,0,1836
+1836,"PULNER, Mr Uscher",16.0,Male,0,3,1,0,1837
+1837,"PUSEY, Mr William Robert Holland",22.0,Male,1,4,0,1,1838
+1838,"PUZEY, Mr John Edward",44.0,Male,0,4,0,1,1839
+1839,"PåLSSON, Master Gösta Leonard",2.0,Male,0,3,1,0,1840
+1840,"PåLSSON, Master Paul Folke",6.0,Male,0,3,1,0,1841
+1841,"PåLSSON, Miss Stina Viola",3.0,Female,0,3,1,0,1842
+1842,"PåLSSON, Miss Torborg Danira",8.0,Female,0,3,1,0,1843
+1843,"PåLSSON, Mrs Alma Cornelia",29.0,Male,0,3,1,0,1844
+1844,"QUICK, Miss Phyllis May",2.0,Female,1,2,1,0,1845
+1845,"QUICK, Miss Winnifred Vera",8.0,Female,1,2,1,0,1846
+1846,"QUICK, Mrs Jane",33.0,Male,1,2,1,0,1847
+1847,"QUINN, Mr John",36.0,Male,0,4,0,1,1848
+1848,"RADEFF, Mr Alexander",27.0,Male,0,3,1,0,1849
+1849,"RAFūL-BūLUS, Mr Bākhūs",21.0,Male,0,3,1,0,1850
+1850,"RANDALL, Mr Frank Henry",29.0,Male,0,4,0,1,1851
+1851,"RANGER, Mr Thomas",29.0,Male,1,4,0,1,1852
+1852,"RANSOM, Mr James Augustus",50.0,Male,0,4,0,1,1853
+1853,"RATTENBURY, Mr William Henry",38.0,Male,0,4,0,1,1854
+1854,"RATTI, Sig. Enrico",21.0,Male,0,4,0,0,1855
+1855,"RAY, Mr Frederick Dent",32.0,Male,1,4,0,1,1856
+1856,"READ, Mr Joseph",20.0,Male,0,4,0,1,1857
+1857,"REED, Mr James George",18.0,Male,0,3,1,0,1858
+1858,"REED, Mr Thomas Charles Prowse",54.0,Male,0,4,0,1,1859
+1859,"REEVES, Mr David",36.0,Male,0,2,1,0,1860
+1860,"REEVES, Mr Frederick Simms",34.0,Male,0,4,0,1,1861
+1861,"REEVES, Mr Frederick Vernon Hilton",20.0,Male,0,4,0,1,1862
+1862,"REID, Mr James",36.0,Male,0,4,0,1,1863
+1863,"REID, Mr Robert Thomas",31.0,Male,0,4,0,1,1864
+1864,"REKIC, Mr Tido",38.0,Male,0,3,1,0,1865
+1865,"REMESCH, Miss",,Female,0,2,1,0,1866
+1866,"RENOUF, Mr Peter Henry",33.0,Male,0,2,1,0,1867
+1867,"RENOUF, Mrs Lillian",30.0,Male,1,2,1,0,1868
+1868,"RENTOWL, Mr Philip Charles Thomas",26.0,Male,0,4,0,1,1869
+1869,"REUCHLIN, Jonkh Johan George",37.0,Male,0,1,1,0,1870
+1870,"REVELL, Mr William James Francis",31.0,Male,0,4,0,1,1871
+1871,"REYNALDO, Sra. Encarnación",29.0,Female,1,2,1,0,1872
+1872,"REYNOLDS, Mr Harold",21.0,Male,0,3,1,0,1873
+1873,"RHEIMS, Mr George Alexander Lucien",33.0,Male,1,1,1,0,1874
+1874,"RICALDONE, Sig. Rinaldo Renato",22.0,Male,0,4,0,0,1875
+1875,"RICE, Master Albert",10.0,Male,0,3,1,0,1876
+1876,"RICE, Master Arthur",4.0,Male,0,3,1,0,1877
+1877,"RICE, Master Eric",6.0,Male,0,3,1,0,1878
+1878,"RICE, Master Francis",2.0,Male,0,3,1,0,1879
+1879,"RICE, Master George",8.0,Male,0,3,1,0,1880
+1880,"RICE, Mr Charles John",32.0,Male,1,4,0,1,1881
+1881,"RICE, Mr John Reginald",25.0,Male,0,4,0,1,1882
+1882,"RICE, Mr Percy",19.0,Male,0,4,0,1,1883
+1883,"RICE, Mrs Margaret",39.0,Male,0,3,1,0,1884
+1884,"RICHARD, Mr Emile Phillippe",23.0,Male,0,2,1,0,1885
+1885,"RICHARD, Mr McMullan",23.0,Male,0,4,0,1,1886
+1886,"RICHARDS, Master Sibley George",0.0,Male,1,2,1,0,1887
+1887,"RICHARDS, Master William Rowe",3.0,Male,1,2,1,0,1888
+1888,"RICHARDS, Mr Joseph James",30.0,Male,0,4,0,1,1889
+1889,"RICHARDS, Mrs Emily",24.0,Male,1,2,1,0,1890
+1890,"RICKMAN, Mr George Albert",36.0,Male,0,4,0,1,1891
+1891,"RICKS, Mr Cyril Gordon",22.0,Male,0,4,0,1,1892
+1892,"RIDOUT, Mr Walter George",29.0,Male,0,4,0,1,1893
+1893,"RIDSDALE, Miss Lucy",58.0,Female,1,2,1,0,1894
+1894,"RIGHINI, Mr Sante",28.0,Male,0,1,1,0,1895
+1895,"RIGOZZI, Mr Abele",22.0,Male,0,4,0,0,1896
+1896,"RIIHIVUORI, Miss Susanna Juhantytär",22.0,Female,0,3,1,0,1897
+1897,"RIMMER, Mr Gilbert",29.0,Male,0,4,0,1,1898
+1898,"RINTAMäKI, Mr Matti",35.0,Male,0,3,1,0,1899
+1899,"RIORDAN, Miss Hannah",21.0,Female,1,3,1,0,1900
+1900,"RISIEN, Mr Samuel Beard",69.0,Male,0,3,1,0,1901
+1901,"RISIEN, Mrs Emma Jane",64.0,Male,0,3,1,0,1902
+1902,"ROBERT, Mrs Elisabeth Walton",43.0,Male,1,1,1,0,1903
+1903,"ROBERTON, Mr George Edward",19.0,Male,0,4,0,1,1904
+1904,"ROBERTS, Mr Frank John",36.0,Male,0,4,0,1,1905
+1905,"ROBERTS, Mr Hugh H.",41.0,Male,0,4,0,1,1906
+1906,"ROBERTS, Mr Robert George",35.0,Male,0,4,0,1,1907
+1907,"ROBERTS, Mrs Mary Kezia",41.0,Male,1,4,0,1,1908
+1908,"ROBINS, Mr Alexander",50.0,Male,0,3,1,0,1909
+1909,"ROBINS, Mr Victor",45.0,Male,0,1,1,0,1910
+1910,"ROBINS, Mrs Charity",48.0,Male,0,3,1,0,1911
+1911,"ROBINSON, Mr James William",30.0,Male,0,4,0,1,1912
+1912,"ROBINSON, Mr Samuel",43.0,Male,0,4,0,1,1913
+1913,"ROBINSON, Mr Thomas",30.0,Male,0,4,0,1,1914
+1914,"ROBINSON, Mrs Annie",47.0,Male,1,4,0,1,1915
+1915,"ROEBLING, Mr Washington Augustus",31.0,Male,0,1,1,0,1916
+1916,"ROGAN, Mr Patrick",43.0,Male,0,4,0,1,1917
+1917,"ROGERS, Mr Edward James William",31.0,Male,0,4,0,1,1918
+1918,"ROGERS, Mr Michael Joseph",26.0,Male,0,4,0,1,1919
+1919,"ROGERS, Mr Reginald Harry",18.0,Male,0,2,1,0,1920
+1920,"ROGERS, Mr William John",29.0,Male,0,3,1,0,1921
+1921,"ROMAINE, Mr Charles Hallace",45.0,Male,1,1,1,0,1922
+1922,"ROMMETVEDT, Mr Knud Paust",49.0,Male,0,3,1,0,1923
+1923,"RONDBERG, Mr Edvard Larsson",22.0,Male,0,3,1,0,1924
+1924,"ROOD, Mr Hugh Roscoe",39.0,Male,0,1,1,0,1925
+1925,"ROSBLOM, Miss Salli Helena",2.0,Female,0,3,1,0,1926
+1926,"ROSBLOM, Mr Viktor Richard",18.0,Male,0,3,1,0,1927
+1927,"ROSBLOM, Mrs Helena Wilhelmina",41.0,Male,0,3,1,0,1928
+1928,"ROSENBAUM, Miss Edith Louise",32.0,Female,1,1,1,0,1929
+1929,"ROSENSHINE, Mr George",45.0,Male,0,1,1,0,1930
+1930,"ROSS, Mr Horace Leopold",38.0,Male,1,4,0,1,1931
+1931,"ROSS, Mr John Hugo",36.0,Male,0,1,1,0,1932
+1932,"ROTH, Miss Sarah",26.0,Female,1,3,1,0,1933
+1933,"ROTHES,  Lucy Noël Martha, Countess of",33.0,Female,1,1,1,0,1934
+1934,"ROTHSCHILD, Mr Martin",46.0,Male,0,1,1,0,1935
+1935,"ROTHSCHILD, Mrs Elizabeth Jane Anne",54.0,Male,1,1,1,0,1936
+1936,"ROTTA, Sig. Angelo Mario",23.0,Male,0,4,0,0,1937
+1937,"ROUS, Mr Arthur John",26.0,Male,0,4,0,1,1938
+1938,"ROUSE, Mr Richard Henry",55.0,Male,0,3,1,0,1939
+1939,"ROUSSEAU, Mr Pierre",48.0,Male,0,4,0,0,1940
+1940,"ROWE, Mr Alfred G.",59.0,Male,0,1,1,0,1941
+1941,"ROWE, Mr Edgar Maurice",31.0,Male,0,4,0,1,1942
+1942,"ROWE, Mr George Thomas",31.0,Male,1,4,0,1,1943
+1943,"RUDD, Mr Henry",24.0,Male,0,4,0,1,1944
+1944,"RUGG, Miss Emily",22.0,Female,1,2,1,0,1945
+1945,"RULE, Mr Samuel James",58.0,Male,1,4,0,1,1946
+1946,"RUSH, Mr Alfred George John",17.0,Male,0,3,1,0,1947
+1947,"RUSSELL, Mr Boysie Richard",17.0,Male,0,4,0,1,1948
+1948,"RUTTER, Mr Sidney Frank",26.0,Male,0,4,0,1,1949
+1949,"RYAN, Mr Edward",24.0,Male,1,3,1,0,1950
+1950,"RYAN, Mr Patrick",32.0,Male,0,3,1,0,1951
+1951,"RYAN, Mr Thomas",28.0,Male,0,4,0,1,1952
+1952,"RYERSON, Master John Borie",13.0,Male,1,1,1,0,1953
+1953,"RYERSON, Miss Emily Borie",18.0,Female,1,1,1,0,1954
+1954,"RYERSON, Miss Susan Parker",21.0,Female,1,1,1,0,1955
+1955,"RYERSON, Mr Arthur Larned",61.0,Male,0,1,1,0,1956
+1956,"RYERSON, Mr William Edwy",33.0,Male,1,4,0,1,1957
+1957,"RYERSON, Mrs Emily Maria",48.0,Male,1,1,1,0,1958
+1958,"SAAD, Mr Amin Houssein",30.0,Male,0,3,1,0,1959
+1959,"SAALFELD, Mr Adolphe",47.0,Male,1,1,1,0,1960
+1960,"SACCAGGI, Sig. Giovanni Giuseppe Emilio",24.0,Male,0,4,0,0,1961
+1961,"SADLIER, Mr Matthew",19.0,Male,0,3,1,0,1962
+1962,"SADOWITZ, Mr Henry",17.0,Male,0,3,1,0,1963
+1963,"SAGE, Master Anthony William",12.0,Male,0,3,1,0,1964
+1964,"SAGE, Master Thomas Henry",5.0,Male,0,3,1,0,1965
+1965,"SAGE, Miss Constance Gladys",7.0,Female,0,3,1,0,1966
+1966,"SAGE, Miss Dorothy Florence",14.0,Female,0,3,1,0,1967
+1967,"SAGE, Miss Elizabeth Ada",10.0,Female,0,3,1,0,1968
+1968,"SAGE, Miss Stella Anne",20.0,Female,0,3,1,0,1969
+1969,"SAGE, Mr Douglas Bullen",18.0,Male,0,3,1,0,1970
+1970,"SAGE, Mr Frederick",16.0,Male,0,3,1,0,1971
+1971,"SAGE, Mr George John",19.0,Male,0,3,1,0,1972
+1972,"SAGE, Mr John George",44.0,Male,0,3,1,0,1973
+1973,"SAGE, Mrs Annie Elizabeth",44.0,Male,0,3,1,0,1974
+1974,"SALANDER, Mr Karl Johan",24.0,Male,0,3,1,0,1975
+1975,"SALKJELSVIK, Miss Anna Kristine",21.0,Female,1,3,1,0,1976
+1976,"SALOMON, Mr Abraham Lincoln",43.0,Male,1,1,1,0,1977
+1977,"SALONEN, Mr Johan Werner",29.0,Male,0,3,1,0,1978
+1978,"SALUSSOLIA, Mr Govanni",25.0,Male,0,4,0,0,1979
+1979,"SAMAAN, Mr Elias",17.0,Male,0,3,1,0,1980
+1980,"SAMAAN, Mr Hanna Elias",40.0,Male,0,3,1,0,1981
+1981,"SAMAAN, Mr Youssef",16.0,Male,0,3,1,0,1982
+1982,"SAMUEL, Mr Owen Wilmore",47.0,Male,0,4,0,1,1983
+1983,"SANDERSON, Mr Harold Arthur",52.0,Male,0,1,1,0,1984
+1984,"SANDSTRöM, Miss Beatrice Irene",1.0,Female,1,3,1,0,1985
+1985,"SANDSTRöM, Miss Marguerite Rut",4.0,Female,1,3,1,0,1986
+1986,"SANDSTRöM, Mrs Agnes Charlotta",24.0,Male,1,3,1,0,1987
+1987,"SANGSTER, Mr Charles Edward",30.0,Male,0,4,0,1,1988
+1988,"SAP, Mr Julius",21.0,Male,1,3,1,0,1989
+1989,"SARTORI, Sig. Lazar",24.0,Male,0,4,0,0,1990
+1990,"SAUNDERCOCK, Mr William Henry",19.0,Male,0,3,1,0,1991
+1991,"SAUNDERS, Mr F.",22.0,Male,0,4,0,1,1992
+1992,"SAUNDERS, Mr Walter Ernest",25.0,Male,0,4,0,1,1993
+1993,"SAUNDERS, Mr William Ernest",32.0,Male,0,4,0,1,1994
+1994,"SAUNDERS, Mr William Henry",31.0,Male,0,4,0,1,1995
+1995,"SAVAGE, Mr Charles James",23.0,Male,1,4,0,1,1996
+1996,"SAWYER, Mr Frederick Charles",24.0,Male,0,3,1,0,1997
+1997,"SAWYER, Mr Robert James",31.0,Male,0,4,0,1,1998
+1998,"SCANLAN, Mr James",20.0,Male,0,3,1,0,1999
+1999,"SCARROTT, Mr Joseph George",33.0,Male,1,4,0,1,2000
+2000,"SCAVINO, Sig. Candido",42.0,Male,0,4,0,0,2001
+2001,"SCHABERT, Mrs Emma",35.0,Male,1,1,1,0,2002
+2002,"SCHEERLINCK, Mr Jean",29.0,Male,1,3,1,0,2003
+2003,"SCHMIDT, Mr Augustus",22.0,Male,0,2,1,0,2004
+2004,"SCOTT, Mr Archibald",42.0,Male,0,4,0,1,2005
+2005,"SCOTT, Mr Frederick William",28.0,Male,1,4,0,1,2006
+2006,"SCOTT, Mr John",20.0,Male,0,4,0,1,2007
+2007,"SCOVELL, Mr Robert",55.0,Male,0,4,0,1,2008
+2008,"SDYCOFF, Mr Todor",42.0,Male,0,3,1,0,2009
+2009,"SEDGWICK, Mr Charles Frederick Waddington",28.0,Male,0,2,1,0,2010
+2010,"SEDUNARY, Mr Samuel Francis",25.0,Male,0,4,0,1,2011
+2011,"SELF, Mr Albert Charles Edward",24.0,Male,1,4,0,1,2012
+2012,"SELF, Mr Alfred Henry",39.0,Male,0,4,0,1,2013
+2013,"SEMAN, Master Betros",10.0,Male,0,3,1,0,2014
+2014,"SENIOR, Mr Harry",31.0,Male,1,4,0,1,2015
+2015,"SERREPLAà, Miss Augusta Jeanne",30.0,Female,1,1,1,0,2016
+2016,"SESIA, Sig. Giacomo",24.0,Male,0,4,0,0,2017
+2017,"SEWARD, Mr Frederic Kimber",34.0,Male,1,1,1,0,2018
+2018,"SEWARD, Mr Wilfred Deable",25.0,Male,1,4,0,1,2019
+2019,"SHANNON, Mr Andrew John",35.0,Male,0,3,1,0,2020
+2020,"SHANNON, Mr David",30.0,Male,0,4,0,1,2021
+2021,"SHARP, Mr Percival",29.0,Male,0,2,1,0,2022
+2022,"SHAUGHNESSY, Mr Patrick",25.0,Male,0,3,1,0,2023
+2023,"SHAW, Mr Andrew",37.0,Male,0,4,0,1,2024
+2024,"SHAW, Mr Henry",41.0,Male,0,4,0,1,2025
+2025,"SHAW, Mr James",40.0,Male,0,4,0,1,2026
+2026,"SHEA, Mr John Joseph",39.0,Male,0,4,0,1,2027
+2027,"SHEA, Mr Thomas",32.0,Male,0,4,0,1,2028
+2028,"SHEATH, Mr Frederick",20.0,Male,1,4,0,1,2029
+2029,"SHELLARD, Mr Frederick Blainey",55.0,Male,0,3,1,0,2030
+2030,"SHELLEY, Mrs Imanita Parrish",24.0,Male,1,2,1,0,2031
+2031,"SHEPHERD, Mr Jonathan",32.0,Male,0,4,0,1,2032
+2032,"SHIERS, Mr Alfred Charles",25.0,Male,1,4,0,1,2033
+2033,"SHIHāB, Mr Al-Amīr Fāris",26.0,Male,0,3,1,0,2034
+2034,"SHILLABEER, Mr Charles Frederick",19.0,Male,0,4,0,1,2035
+2035,"SHINE, Miss Ellen",20.0,Female,1,3,1,0,2036
+2036,"SHORNEY, Mr Charles Joseph",22.0,Male,0,3,1,0,2037
+2037,"SHULVER, Mr Christopher Arthur",28.0,Male,1,4,0,1,2038
+2038,"SHUTES, Miss Elizabeth Weed",40.0,Female,1,1,1,0,2039
+2039,"SIEBERT, Mr Sidney Conrad",29.0,Male,0,4,0,1,2040
+2040,"SILVERTHORNE, Mr Spencer Victor",35.0,Male,1,1,1,0,2041
+2041,"SILVEY, Mr William Baird",51.0,Male,0,1,1,0,2042
+2042,"SILVEY, Mrs Alice Gray",39.0,Male,1,1,1,0,2043
+2043,"SILVéN, Miss Lyyli Karoliina",17.0,Female,1,2,1,0,2044
+2044,"SIMMONS, Mr Andrew George James",31.0,Male,1,4,0,1,2045
+2045,"SIMMONS, Mr Frederick Charles",24.0,Male,0,4,0,1,2046
+2046,"SIMMONS, Mr John",40.0,Male,0,3,1,0,2047
+2047,"SIMMONS, Mr William Simon Catcott",37.0,Male,0,4,0,1,2048
+2048,"SIMMS, Mr William",38.0,Male,0,4,0,1,2049
+2049,"SIMONIUS-BLUMER, Mr Colonel (Oberst) Alfons",56.0,Male,1,1,1,0,2050
+2050,"SIMPSON, Dr John Edward",37.0,Male,0,4,0,1,2051
+2051,"SIMS, Mr W.",30.0,Male,0,4,0,1,2052
+2052,"SINCOCK, Miss Maude",20.0,Female,1,2,1,0,2053
+2053,"SINKKONEN, Miss Anna",30.0,Female,1,2,1,0,2054
+2054,"SIRAYANIAN, Mr Orsen",22.0,Male,0,3,1,0,2055
+2055,"SIROTA, Mr Morris",19.0,Male,0,3,1,0,2056
+2056,"SIVIC, Mr Husein",40.0,Male,0,3,1,0,2057
+2057,"SIVIER, Mr William",23.0,Male,0,4,0,1,2058
+2058,"SIVOLA, Mr Antti Wilhelm",21.0,Male,0,3,1,0,2059
+2059,"SJöBLOM, Miss Anna Sofia",18.0,Female,1,3,1,0,2060
+2060,"SJöSTEDT, Mr Ernst Adolf",59.0,Male,0,2,1,0,2061
+2061,"SKEATES, Mr William",23.0,Male,0,4,0,1,2062
+2062,"SKINNER, Mr Edward",41.0,Male,0,4,0,1,2063
+2063,"SKOOG, Master Harald",5.0,Male,0,3,1,0,2064
+2064,"SKOOG, Master Karl Thorsten",11.0,Male,0,3,1,0,2065
+2065,"SKOOG, Miss Mabel",9.0,Female,0,3,1,0,2066
+2066,"SKOOG, Miss Margit Elizabeth",2.0,Female,0,3,1,0,2067
+2067,"SKOOG, Mr Wilhelm Johansson",40.0,Male,0,3,1,0,2068
+2068,"SKOOG, Mrs Anna Bernhardina",43.0,Male,0,3,1,0,2069
+2069,"SLABENOFF, Mr Petco",42.0,Male,0,3,1,0,2070
+2070,"SLADE, Mr Alfred Edward",25.0,Male,0,4,0,1,2071
+2071,"SLADE, Mr Bertram",28.0,Male,0,4,0,1,2072
+2072,"SLADE, Mr Thomas",28.0,Male,0,4,0,1,2073
+2073,"SLAYTER, Miss Hilda Mary",30.0,Female,1,2,1,0,2074
+2074,"SLEMEN, Mr Richard James",35.0,Male,0,2,1,0,2075
+2075,"SLIGHT, Mr Harry John",33.0,Male,0,4,0,1,2076
+2076,"SLIGHT, Mr William Henry James",36.0,Male,0,4,0,1,2077
+2077,"SLOAN, Miss Mary Jane",45.0,Female,1,4,0,1,2078
+2078,"SLOAN, Mr Peter",31.0,Male,0,4,0,1,2079
+2079,"SLOAN, Mr Thomas",,Male,0,4,0,1,2080
+2080,"SLOCOMBE, Mrs Maude Louise",30.0,Male,1,4,0,1,2081
+2081,"SLOCOVSKI, Mr Selman Francis",20.0,Male,0,3,1,0,2082
+2082,"SLOPER, Mr William Thompson",28.0,Male,1,1,1,0,2083
+2083,"SMALL, Mr William McMillan",42.0,Male,0,4,0,1,2084
+2084,"SMART, Mr John Montgomery",56.0,Male,0,1,1,0,2085
+2085,"SMILJANIć, Mr Mile",37.0,Male,0,3,1,0,2086
+2086,"SMILLIE, Mr John Downing",28.0,Male,0,4,0,1,2087
+2087,"SMITH, Captain Edward John",62.0,Male,0,4,0,1,2088
+2088,"SMITH, Miss Kate Elizabeth",44.0,Female,1,4,0,1,2089
+2089,"SMITH, Miss Marion",49.0,Female,1,2,1,0,2090
+2090,"SMITH, Mr Charles Edwin",39.0,Male,0,4,0,1,2091
+2091,"SMITH, Mr Charles Henry James",45.0,Male,0,4,0,1,2092
+2092,"SMITH, Mr Ernest George",27.0,Male,0,4,0,1,2093
+2093,"SMITH, Mr James Clinch",56.0,Male,0,1,1,0,2094
+2094,"SMITH, Mr James Muil",39.0,Male,0,4,0,1,2095
+2095,"SMITH, Mr James William",24.0,Male,0,4,0,1,2096
+2096,"SMITH, Mr John Richard Jago",35.0,Male,0,4,0,1,2097
+2097,"SMITH, Mr Joseph",25.0,Male,0,4,0,1,2098
+2098,"SMITH, Mr Lucian Philip",24.0,Male,0,1,1,0,2099
+2099,"SMITH, Mr Reginald George",33.0,Male,0,4,0,1,2100
+2100,"SMITH, Mr Richard William",57.0,Male,0,1,1,0,2101
+2101,"SMITH, Mr Walter",44.0,Male,0,4,0,1,2102
+2102,"SMITH, Mr William",26.0,Male,0,4,0,1,2103
+2103,"SMITH, Mrs Mary Eloise",18.0,Male,1,1,1,0,2104
+2104,"SMITHER, Mr Harry James",22.0,Male,0,4,0,1,2105
+2105,"SMYTH, Miss Julia",18.0,Female,1,3,1,0,2106
+2106,"SMYTH, Mr John",33.0,Male,0,4,0,1,2107
+2107,"SMYTH, Mr Thomas",26.0,Male,0,3,1,0,2108
+2108,"SNAPE, Mrs Lucy Violet",22.0,Male,0,4,0,1,2109
+2109,"SNELLGROVE, Mr George",41.0,Male,0,4,0,1,2110
+2110,"SNOOK, Mr William Henry",25.0,Male,0,4,0,1,2111
+2111,"SNOW, Mr Eustace Philip",21.0,Male,1,4,0,1,2112
+2112,"SNYDER, Mr John Pillsbury",24.0,Male,1,1,1,0,2113
+2113,"SNYDER, Mrs Nelle",23.0,Male,1,1,1,0,2114
+2114,"SOBEY, Mr Samuel James Hayden",25.0,Male,0,2,1,0,2115
+2115,"SOMERTON, Mr Francis William",30.0,Male,0,3,1,0,2116
+2116,"SPARKMAN, Mr Henry William",36.0,Male,1,4,0,1,2117
+2117,"SPECTOR, Mr Woolf",23.0,Male,0,3,1,0,2118
+2118,"SPEDDEN, Master Robert Douglas",6.0,Male,1,1,1,0,2119
+2119,"SPEDDEN, Mr Frederic Oakley",45.0,Male,1,1,1,0,2120
+2120,"SPEDDEN, Mrs Margaretta Corning",39.0,Male,1,1,1,0,2121
+2121,"SPENCER, Mr William Augustus",57.0,Male,0,1,1,0,2122
+2122,"SPENCER, Mrs Marie Eugenie",48.0,Male,1,1,1,0,2123
+2123,"SPINNER, Mr Henry John",31.0,Male,0,3,1,0,2124
+2124,"STAGG, Mr John Henry",38.0,Male,0,4,0,1,2125
+2125,"STANBROOK, Mr  Augustus George",31.0,Male,0,4,0,1,2126
+2126,"STANEFF, Mr Ivan",23.0,Male,0,3,1,0,2127
+2127,"STANKOVIć, Mr Ivan",33.0,Male,0,3,1,0,2128
+2128,"STANLEY, Miss Amy Zillah Elsie",24.0,Female,1,3,1,0,2129
+2129,"STANLEY, Mr Rowland Edwin",22.0,Male,0,3,1,0,2130
+2130,"STANTON, Mr Samuel Ward",42.0,Male,0,2,1,0,2131
+2131,"STAP, Miss Sarah Agnes",47.0,Female,1,4,0,1,2132
+2132,"STARKEY, Mr Henry",46.0,Male,0,4,0,1,2133
+2133,"STEAD, Mr William Thomas",62.0,Male,0,1,1,0,2134
+2134,"STEBBINGS, Mr Sydney Frederick",36.0,Male,0,4,0,1,2135
+2135,"STEEL, Mr Robert Edward",30.0,Male,0,4,0,1,2136
+2136,"STENGEL, Mr Charles Emil Henry",54.0,Male,1,1,1,0,2137
+2137,"STENGEL, Mrs Annie May",43.0,Male,1,1,1,0,2138
+2138,"STEPHENSON, Mrs Martha",52.0,Male,1,1,1,0,2139
+2139,"STEVENS, Mr George",,Male,0,1,1,0,2140
+2140,"STEVENSON, Mr Andrew",28.0,Male,0,4,0,1,2141
+2141,"STEVENSON, Mr James",40.0,Male,0,4,0,1,2142
+2142,"STEVENSON, Mr John",49.0,Male,0,4,0,1,2143
+2143,"STEWART, Mr Albert Ankeny",64.0,Male,0,1,1,0,2144
+2144,"STEWART, Mr John",28.0,Male,1,4,0,1,2145
+2145,"STEWART, Mr John",30.0,Male,0,4,0,1,2146
+2146,"STEWART, Mr Matthew",25.0,Male,0,4,0,1,2147
+2147,"STOCKER, Mr Henry Dorey",20.0,Male,0,4,0,1,2148
+2148,"STOKES, Mr Philip Joseph",24.0,Male,0,2,1,0,2149
+2149,"STONE, Mr Edmund",33.0,Male,0,4,0,1,2150
+2150,"STONE, Mr Edward Thomas",29.0,Male,0,4,0,1,2151
+2151,"STONE, Mrs Martha Evelyn",61.0,Male,1,1,1,0,2152
+2152,"STOREY, Mr Thomas",59.0,Male,0,3,1,0,2153
+2153,"STOYTCHEFF, Mr Ilia",19.0,Male,0,3,1,0,2154
+2154,"STRANDBERG, Miss Ida Sofia",22.0,Female,0,3,1,0,2155
+2155,"STRANDéN, Mr Juho Niilosson",30.0,Male,1,3,1,0,2156
+2156,"STRANGE, Mr Samuel",38.0,Male,0,4,0,1,2157
+2157,"STRAUS, Mr Isidor",67.0,Male,0,1,1,0,2158
+2158,"STRAUS, Mrs Rosalie Ida",63.0,Male,0,1,1,0,2159
+2159,"STREET, Mr Thomas Albert",25.0,Male,1,4,0,1,2160
+2160,"STRILIć, Mr Ivan",26.0,Male,0,3,1,0,2161
+2161,"STROUD, Mr Edward Alfred Orlando",19.0,Male,0,4,0,1,2162
+2162,"STROUD, Mr Harry John",35.0,Male,0,4,0,1,2163
+2163,"STRUGNELL, Mr John Herbert",34.0,Male,0,4,0,1,2164
+2164,"STRöM, Miss Telma Matilda",2.0,Female,0,3,1,0,2165
+2165,"STRöM, Mrs Elna Matilda",29.0,Male,0,3,1,0,2166
+2166,"STUBBINGS, Mr Harry Robert",31.0,Male,0,4,0,1,2167
+2167,"STUBBS, Mr James Henry",28.0,Male,0,4,0,1,2168
+2168,"STäHELIN-MAEGLIN, Dr Max",32.0,Male,1,1,1,0,2169
+2169,"SUNDERLAND, Mr Victor Francis",20.0,Male,1,3,1,0,2170
+2170,"SUNDMAN, Mr Johan Julian",45.0,Male,1,3,1,0,2171
+2171,"SUTEHALL, Mr Henry",25.0,Male,0,3,1,0,2172
+2172,"SUTTON, Mr Frederick",61.0,Male,0,1,1,0,2173
+2173,"SVENSSON, Mr Johan",74.0,Male,0,3,1,0,2174
+2174,"SVENSSON, Mr Johan Cervin",14.0,Male,1,3,1,0,2175
+2175,"SVENSSON, Mr Olof",24.0,Male,0,3,1,0,2176
+2176,"SWAN, Mr William",48.0,Male,0,4,0,1,2177
+2177,"SWANE, Mr George",19.0,Male,0,2,1,0,2178
+2178,"SWARBRICK, Mr Joseph",22.0,Male,0,4,0,1,2179
+2179,"SWARBRICK, Mr William J.",24.0,Male,0,4,0,1,2180
+2180,"SWEET, Mr George Frederick",14.0,Male,0,2,1,0,2181
+2181,"SWIFT, Mrs Margaret Welles",46.0,Male,1,1,1,0,2182
+2182,"SYMONDS, Mr John Crane",44.0,Male,0,4,0,1,2183
+2183,"SYMONS, Mr George Thomas Macdonald",24.0,Male,1,4,0,1,2184
+2184,"SäGESSER, Mlle Emma",24.0,Female,1,1,1,0,2185
+2185,"SæTHER, Mr Simon Sivertsen",43.0,Male,0,3,1,0,2186
+2186,"SøHOLT, Mr Peter Andreas Lauritz Andersen",19.0,Male,0,3,1,0,2187
+2187,"TAGGART, Mr William",23.0,Male,0,4,0,1,2188
+2188,"TALBOT, Mr George Frederick Charles",20.0,Male,0,4,0,1,2189
+2189,"TAMLYN, Mr Frederick",23.0,Male,0,4,0,1,2190
+2190,"TANNūS, Master As'ad",0.0,Male,1,3,1,0,2191
+2191,"TANNūS, Mr Bashīr",30.0,Male,0,3,1,0,2192
+2192,"TANNūS, Mrs Thamīn",16.0,Male,1,3,1,0,2193
+2193,"TAUSSIG, Miss Ruth",18.0,Female,1,1,1,0,2194
+2194,"TAUSSIG, Mr Emil",54.0,Male,0,1,1,0,2195
+2195,"TAUSSIG, Mrs Tillie",39.0,Male,1,1,1,0,2196
+2196,"TAYLOR, Mr Bernard Cuthbert",22.0,Male,0,4,0,1,2197
+2197,"TAYLOR, Mr Charles William Frederick",40.0,Male,0,4,0,1,2198
+2198,"TAYLOR, Mr Elmer Zebley",48.0,Male,1,1,1,0,2199
+2199,"TAYLOR, Mr George",23.0,Male,1,4,0,1,2200
+2200,"TAYLOR, Mr J.",42.0,Male,0,4,0,1,2201
+2201,"TAYLOR, Mr John Henry",49.0,Male,0,4,0,1,2202
+2202,"TAYLOR, Mr Leonard",19.0,Male,0,4,0,1,2203
+2203,"TAYLOR, Mr Percy Cornelius",40.0,Male,0,2,1,0,2204
+2204,"TAYLOR, Mr William Henry",28.0,Male,1,4,0,1,2205
+2205,"TAYLOR, Mr William John",31.0,Male,0,4,0,1,2206
+2206,"TAYLOR, Mrs Juliet Cummins",49.0,Male,1,1,1,0,2207
+2207,"TENGLIN, Mr Gunnar Isidor",25.0,Male,1,3,1,0,2208
+2208,"TERRELL, Mr Bertram",19.0,Male,0,4,0,1,2209
+2209,"TERRILL, Mr Frank",27.0,Male,1,4,0,1,2210
+2210,"TESTONI, Sig. Ercole",23.0,Male,0,4,0,0,2211
+2211,"TEUTON, Mr Thomas Moore",35.0,Male,0,4,0,1,2212
+2212,"THALER, Mr Montague Donald",17.0,Male,0,4,0,1,2213
+2213,"THAYER, Mr John Borland",49.0,Male,0,1,1,0,2214
+2214,"THAYER, Mr John Borland",17.0,Male,1,1,1,0,2215
+2215,"THAYER, Mrs Marian Longstreth",39.0,Male,1,1,1,0,2216
+2216,"THEISSINGER, Mr Alfred",46.0,Male,1,4,0,1,2217
+2217,"THEOBALD, Mr Thomas Leonard",34.0,Male,0,3,1,0,2218
+2218,"THOMAS, Mr Albert Charles",23.0,Male,1,4,0,1,2219
+2219,"THOMAS, Mr Benjamin James",30.0,Male,1,4,0,1,2220
+2220,"THOMAS, Mr John",25.0,Male,0,4,0,1,2221
+2221,"THOMAS, Mr Joseph Wakefield",23.0,Male,0,4,0,1,2222
+2222,"THOMAS, Mr William",49.0,Male,0,4,0,1,2223
+2223,"THOMPSON, Mr Alexander Mellis",36.0,Male,0,3,1,0,2224
+2224,"THOMPSON, Mr Herbert Henry",25.0,Male,0,4,0,1,2225
+2225,"THOMPSON, Mr Joey",,Male,0,1,1,0,2226
+2226,"THOMPSON, Mr John William",36.0,Male,1,4,0,1,2227
+2227,"THORLEY, Mr William Gordon",41.0,Male,0,4,0,1,2228
+2228,"THORN, Mr Harry",25.0,Male,0,4,0,1,2229
+2229,"THORNE, Miss Gertrude Maybelle",37.0,Female,1,1,1,0,2230
+2230,"THORNEYCROFT, Mr Percival",36.0,Male,0,3,1,0,2231
+2231,"THORNEYCROFT, Mrs Florence Kate",32.0,Male,1,3,1,0,2232
+2232,"THRELFALL, Mr Thomas",44.0,Male,1,4,0,1,2233
+2233,"THRESHER, Mr George Terrill",25.0,Male,1,4,0,1,2234
+2234,"TIETZ, Sig. Carlo/Karl",27.0,Male,0,4,0,0,2235
+2235,"TIKKANEN, Mr Juho",32.0,Male,0,3,1,0,2236
+2236,"TINSLEY, Mr Thomas",40.0,Male,0,4,0,1,2237
+2237,"TIZARD, Mr Arthur Leopold",31.0,Male,0,4,0,1,2238
+2238,"TOBIN, Mr Roger",20.0,Male,0,3,1,0,2239
+2239,"TODOROFF, Mr Lalio",23.0,Male,0,3,1,0,2240
+2240,"TOMLIN, Mr Ernest Portage",21.0,Male,0,3,1,0,2241
+2241,"TOMS, Mr Fred",29.0,Male,1,4,0,1,2242
+2242,"TOOMEY, Miss Ellen Mary",50.0,Female,1,2,1,0,2243
+2243,"TOPP, Mr Thomas",27.0,Male,0,4,0,1,2244
+2244,"TORFA, Mr Assad",20.0,Male,0,3,1,0,2245
+2245,"TOSHACK, Mr James Adamson",30.0,Male,0,4,0,1,2246
+2246,"TOTEVSKI, Mr Hristo Danchev",25.0,Male,0,3,1,0,2247
+2247,"TOVEY, Miss",,Female,0,2,1,0,2248
+2248,"TOZER, Mr James",32.0,Male,0,4,0,1,2249
+2249,"TRIGGS, Mr Robert",41.0,Male,1,4,0,1,2250
+2250,"TROUPIANSKY, Mr Moses Aaron",23.0,Male,0,2,1,0,2251
+2251,"TROUT, Mrs Jessie Laird",27.0,Male,1,2,1,0,2252
+2252,"TROUTT, Miss Edwina Celia",27.0,Female,1,2,1,0,2253
+2253,"TU'MAH AL-SAYQALī, Mr Assāf Jirjis",29.0,Male,0,3,1,0,2254
+2254,"TU'MAH, Master Jirjis Yūsuf",8.0,Male,1,3,1,0,2255
+2255,"TU'MAH, Miss Mariyam",9.0,Female,1,3,1,0,2256
+2256,"TU'MAH, Mrs Hinnah",27.0,Male,1,3,1,0,2257
+2257,"TUCKER, Mr Gilbert Milligan jr",31.0,Male,1,1,1,0,2258
+2258,"TURJA, Miss Anna Sofia",18.0,Female,1,3,1,0,2259
+2259,"TURKULA, Mrs Hedwig",64.0,Male,1,3,1,0,2260
+2260,"TURLEY, Mr Richard",37.0,Male,0,4,0,1,2261
+2261,"TURNER, Mr George Frederick",42.0,Male,0,4,0,1,2262
+2262,"TURNER, Mr Leopold Olerenshaw",28.0,Male,0,4,0,1,2263
+2263,"TURPIN, Mr William John",29.0,Male,0,2,1,0,2264
+2264,"TURPIN, Mrs Dorothy Ann",26.0,Male,0,2,1,0,2265
+2265,"TURVEY, Mr Charles Thomas",17.0,Male,0,4,0,0,2266
+2266,"TURčIN, Mr Stjepan",36.0,Male,0,3,1,0,2267
+2267,"TöRBER, Mr Ernst Wilhelm",41.0,Male,0,3,1,0,2268
+2268,"TöRNQVIST, Mr Johan Vilhelm Henrik",26.0,Male,1,3,1,0,2269
+2269,"URBINI, Sig. Roberto",20.0,Male,0,4,0,0,2270
+2270,"URUCHURTU, Don. Manuel Ramirez",39.0,Male,0,1,1,0,2271
+2271,"VALLER, Mr Arthur",25.0,Male,0,4,0,1,2272
+2272,"VALVASSORI, Sig. Ettore Luigi",35.0,Male,0,4,0,0,2273
+2273,"VAN BILLIARD, Master James William",10.0,Male,0,3,1,0,2274
+2274,"VAN BILLIARD, Master Walter John",9.0,Male,0,3,1,0,2275
+2275,"VAN BILLIARD, Mr Austin Blyler",35.0,Male,0,3,1,0,2276
+2276,"VAN DE VELDE, Mr Johannes Josef",35.0,Male,0,3,1,0,2277
+2277,"VAN DEN STEEN, Mr Leo Peter",28.0,Male,0,3,1,0,2278
+2278,"VAN DER BRUGGE, Mr Wessel Adrianus",38.0,Male,0,4,0,1,2279
+2279,"VAN DER HOEF, Mr Wyckoff",61.0,Male,0,1,1,0,2280
+2280,"VAN IMPE, Miss Catharina",10.0,Female,0,3,1,0,2281
+2281,"VAN IMPE, Mr Jean Baptiste",36.0,Male,0,3,1,0,2282
+2282,"VAN IMPE, Mrs Rosalie Paula",30.0,Male,0,3,1,0,2283
+2283,"VAN MELCKEBEKE, Mr Philemon",23.0,Male,0,3,1,0,2284
+2284,"VANDERCRUYSSEN, Mr Victor",46.0,Male,0,3,1,0,2285
+2285,"VANDERPLANCKE, Miss Augusta Maria",18.0,Female,0,3,1,0,2286
+2286,"VANDERPLANCKE, Mr Julius",31.0,Male,0,3,1,0,2287
+2287,"VANDERPLANCKE, Mr Leo Edmondus",15.0,Male,0,3,1,0,2288
+2288,"VANDERPLANCKE, Mrs Emelie Maria",31.0,Male,0,3,1,0,2289
+2289,"VANDEWALLE, Mr Nestor Cyriel",28.0,Male,0,3,1,0,2290
+2290,"VARTANIAN, Mr David",22.0,Male,1,3,1,0,2291
+2291,"VEAL, Mr Arthur",36.0,Male,0,4,0,1,2292
+2292,"VEAL, Mr James",40.0,Male,0,2,1,0,2293
+2293,"VEAL, Mr Thomas Henry Edom",38.0,Male,0,4,0,1,2294
+2294,"VEAR, Mr Henry",33.0,Male,0,4,0,1,2295
+2295,"VEAR, Mr William",34.0,Male,0,4,0,1,2296
+2296,"VESTRöM, Miss Hulda Amanda Adolfina",14.0,Female,0,3,1,0,2297
+2297,"VICAT, Sig. Alphonse Jean Eugene",21.0,Male,0,4,0,0,2298
+2298,"VIGOTT, Mr Philip Francis",32.0,Male,1,4,0,1,2299
+2299,"VILLVARLANGE, Mr Pierre Léon Gabriel",19.0,Male,0,4,0,0,2300
+2300,"VINE, Mr Herbert Thomas Gordon",17.0,Male,0,4,0,0,2301
+2301,"VIONI, Sig. Roberto",25.0,Male,0,4,0,0,2302
+2302,"VOVK, Mr Janko",21.0,Male,0,3,1,0,2303
+2303,"VULCHEV, Mr Minko Anghelov",26.0,Male,0,3,1,0,2304
+2304,"VöGELIN-DUBACH, Sig. Johannes",35.0,Male,0,4,0,0,2305
+2305,"WAELENS, Mr Achille",22.0,Male,0,3,1,0,2306
+2306,"WAKE, Mr Percy",37.0,Male,0,4,0,1,2307
+2307,"WALKER, Mr Robert",43.0,Male,0,4,0,1,2308
+2308,"WALKER, Mr William Anderson",48.0,Male,0,1,1,0,2309
+2309,"WALLACE, Mr Robert",26.0,Male,0,4,0,1,2310
+2310,"WALLCROFT, Miss Ellen 'Nellie'",36.0,Female,1,2,1,0,2311
+2311,"WALLIS, Mrs Catherine Jane",36.0,Male,0,4,0,1,2312
+2312,"WALLS, Mr James",32.0,Male,0,4,0,1,2313
+2313,"WALPOLE, Mr James",48.0,Male,0,4,0,1,2314
+2314,"WALSH, Miss Catherine",42.0,Female,0,4,0,1,2315
+2315,"WARD, Miss Annie Moore",37.0,Female,1,1,1,0,2316
+2316,"WARD, Mr Arthur",23.0,Male,0,4,0,1,2317
+2317,"WARD, Mr Edward Bryon",34.0,Male,0,4,0,1,2318
+2318,"WARD, Mr James William",31.0,Male,0,4,0,1,2319
+2319,"WARD, Mr Percy Thomas",40.0,Male,0,4,0,1,2320
+2320,"WARD, Mr William",24.0,Male,0,4,0,1,2321
+2321,"WARD, Mr William",37.0,Male,1,4,0,1,2322
+2322,"WARDNER, Mr Fred Albert",40.0,Male,0,4,0,1,2323
+2323,"WARE, Mr Frederick",35.0,Male,0,3,1,0,2324
+2324,"WARE, Mr John James",46.0,Male,0,2,1,0,2325
+2325,"WARE, Mr William Jeffery",22.0,Male,0,2,1,0,2326
+2326,"WARE, Mrs Florence Louise",32.0,Male,1,2,1,0,2327
+2327,"WAREHAM, Mr Robert Arthur",37.0,Male,0,4,0,1,2328
+2328,"WARREN, Mr Charles William",31.0,Male,0,3,1,0,2329
+2329,"WARREN, Mr Frank Manley",63.0,Male,0,1,1,0,2330
+2330,"WARREN, Mrs Anna Sophia",60.0,Male,1,1,1,0,2331
+2331,"WARWICK, Mr Tom",25.0,Male,0,4,0,1,2332
+2332,"WATERIDGE, Mr Edward Lewis",26.0,Male,0,4,0,1,2333
+2333,"WATSON, Mr Ennis Hastings",18.0,Male,0,2,1,0,2334
+2334,"WATSON, Mr William",27.0,Male,0,4,0,1,2335
+2335,"WATSON, Mr William Albert",14.0,Male,0,4,0,1,2336
+2336,"WATT, Miss Robertha Josephine",12.0,Female,1,2,1,0,2337
+2337,"WATT, Mrs Elizabeth",40.0,Male,1,2,1,0,2338
+2338,"WAUGH, Mr James",26.0,Male,0,4,0,1,2339
+2339,"WAZNAH, Mr Yūsuf Ahmad",23.0,Male,0,3,1,0,2340
+2340,"WEATHERSTON, Mr Thomas Herbert",25.0,Male,0,4,0,1,2341
+2341,"WEBB, Mr Brook Holding",50.0,Male,0,4,0,1,2342
+2342,"WEBB, Mr Samuel Francis",28.0,Male,0,4,0,1,2343
+2343,"WEBBER, Miss Susan",38.0,Female,1,2,1,0,2344
+2344,"WEBBER, Mr Francis Albert",30.0,Male,0,4,0,1,2345
+2345,"WEBBER, Mr James",66.0,Male,0,3,1,0,2346
+2346,"WEIKMAN, Mr Augustus Henry",52.0,Male,1,4,0,1,2347
+2347,"WEIR, Colonel John",61.0,Male,0,1,1,0,2348
+2348,"WEISZ, Mr Léopold",37.0,Male,0,2,1,0,2349
+2349,"WEISZ, Mrs Mathilde Françoise",37.0,Male,1,2,1,0,2350
+2350,"WELCH, Mr William Harold",21.0,Male,0,4,0,1,2351
+2351,"WELLER, Mr William Clifford",30.0,Male,1,4,0,1,2352
+2352,"WELLS, Master Ralph Lester",2.0,Male,1,2,1,0,2353
+2353,"WELLS, Miss Joan",4.0,Female,1,2,1,0,2354
+2354,"WELLS, Mrs Addie Dart",29.0,Male,1,2,1,0,2355
+2355,"WELSH, Mr Patrick",50.0,Male,0,4,0,1,2356
+2356,"WENDEL, Mr Olof Edvin",20.0,Male,0,3,1,0,2357
+2357,"WENNERSTRöM, Mr August",27.0,Male,1,3,1,0,2358
+2358,"WEST, Miss Barbara Joyce",0.0,Female,1,2,1,0,2359
+2359,"WEST, Miss Constance Miriam",4.0,Female,1,2,1,0,2360
+2360,"WEST, Mr Edwy Arthur",36.0,Male,0,2,1,0,2361
+2361,"WEST, Mrs Ada Mary",33.0,Male,1,2,1,0,2362
+2362,"WHEADON, Mr Edward Henry",65.0,Male,0,2,1,0,2363
+2363,"WHEAT, Mr Joseph Thomas",30.0,Male,1,4,0,1,2364
+2364,"WHEELER, Mr Edwin Charles",26.0,Male,0,2,1,0,2365
+2365,"WHEELTON, Mr Edenser Edward",28.0,Male,1,4,0,1,2366
+2366,"WHILEMS, Mr Charles",31.0,Male,1,2,1,0,2367
+2367,"WHINNERY, Mr Hugh",41.0,Male,0,4,0,1,2368
+2368,"WHITE, Mr Albert",17.0,Male,0,4,0,1,2369
+2369,"WHITE, Mr Alfred",32.0,Male,1,4,0,1,2370
+2370,"WHITE, Mr Arthur",37.0,Male,0,4,0,1,2371
+2371,"WHITE, Mr Edward Joseph",27.0,Male,0,4,0,1,2372
+2372,"WHITE, Mr Frank Leonard",27.0,Male,0,4,0,1,2373
+2373,"WHITE, Mr Leonard Lisle Oliver",32.0,Male,0,4,0,1,2374
+2374,"WHITE, Mr Percival Wayland",54.0,Male,0,1,1,0,2375
+2375,"WHITE, Mr Richard Frasar",21.0,Male,0,1,1,0,2376
+2376,"WHITE, Mr William George",23.0,Male,1,4,0,1,2377
+2377,"WHITE, Mrs Ella",55.0,Male,1,1,1,0,2378
+2378,"WHITELEY, Mr Thomas Arthur",18.0,Male,1,4,0,1,2379
+2379,"WHITFORD, Mr Alfred Henry",39.0,Male,0,4,0,1,2380
+2380,"WICK, Col. George Dennick",57.0,Male,0,1,1,0,2381
+2381,"WICK, Miss Mary Natalie",31.0,Female,1,1,1,0,2382
+2382,"WICK, Mrs Mary Peebles",45.0,Male,1,1,1,0,2383
+2383,"WIDEGREN, Mr Carl Peter",51.0,Male,0,3,1,0,2384
+2384,"WIDENER, Mr George Dunton",50.0,Male,0,1,1,0,2385
+2385,"WIDENER, Mr Harry Elkins",27.0,Male,0,1,1,0,2386
+2386,"WIDENER, Mrs Eleanor",50.0,Male,1,1,1,0,2387
+2387,"WIDGERY, Mr Isaac George",37.0,Male,1,4,0,1,2388
+2388,"WIKLUND, Mr Jakob Alfred",17.0,Male,0,3,1,0,2389
+2389,"WIKLUND, Mr Karl Johan",18.0,Male,0,3,1,0,2390
+2390,"WILDE, Mr Henry Tingle",39.0,Male,0,4,0,1,2391
+2391,"WILDING, Mr Edward",,Male,0,1,1,0,2392
+2392,"WILKES, Mrs Ellen",47.0,Male,1,3,1,0,2393
+2393,"WILKINSON, Mrs Elizabeth Anne",30.0,Male,1,2,1,0,2394
+2394,"WILLARD, Miss Constance",21.0,Female,1,1,1,0,2395
+2395,"WILLER, Mr Aaron",37.0,Male,0,3,1,0,2396
+2396,"WILLEY, Mr Edward John",21.0,Male,0,3,1,0,2397
+2397,"WILLIAMS, Mr Arthur John",42.0,Male,0,4,0,1,2398
+2398,"WILLIAMS, Mr Charles Duane",51.0,Male,0,1,1,0,2399
+2399,"WILLIAMS, Mr Charles Eugene",23.0,Male,1,2,1,0,2400
+2400,"WILLIAMS, Mr Fletcher Fellowes Lambert",43.0,Male,0,1,1,0,2401
+2401,"WILLIAMS, Mr Howard Hugh",28.0,Male,0,3,1,0,2402
+2402,"WILLIAMS, Mr Leslie",24.0,Male,0,3,1,0,2403
+2403,"WILLIAMS, Mr Richard Norris",21.0,Male,1,1,1,0,2404
+2404,"WILLIAMS, Mr Samuel Solomon",28.0,Male,0,4,0,1,2405
+2405,"WILLIAMS, Mr Walter John",28.0,Male,1,4,0,1,2406
+2406,"WILLIAMSON, Mr James Bertram",35.0,Male,0,4,0,1,2407
+2407,"WILLIS, Mr William",59.0,Male,0,4,0,1,2408
+2408,"WILLSHER, Mr William Aubrey",33.0,Male,0,4,0,1,2409
+2409,"WILSON, Miss Helen Alice",33.0,Female,1,1,1,0,2410
+2410,"WILSON, Mr Herbert 'Bertie'",28.0,Male,0,4,0,1,2411
+2411,"WILTON, Mr William Edward",53.0,Male,0,4,0,1,2412
+2412,"WINDEBANK, Mr Alfred Edgar",38.0,Male,1,4,0,1,2413
+2413,"WINDELøV, Mr Einar",21.0,Male,0,3,1,0,2414
+2414,"WINSER, Mr Rowland",36.0,Male,0,4,0,1,2415
+2415,"WIRZ, Mr Albert",17.0,Male,0,3,1,0,2416
+2416,"WISEMAN, Mr Philippe",53.0,Male,0,3,1,0,2417
+2417,"WITCHER, Mr Albert Ernest",39.0,Male,0,4,0,1,2418
+2418,"WITT, Mr Henry Dennis",37.0,Male,0,4,0,1,2419
+2419,"WITTER, Mr James William Cheetham",31.0,Male,1,4,0,1,2420
+2420,"WITTEVRONGEL, Mr Camilius Aloysius",36.0,Male,0,3,1,0,2421
+2421,"WITTMAN, Mr Henry",38.0,Male,0,4,0,1,2422
+2422,"WITTS, Mr William Francis",35.0,Male,0,4,0,1,2423
+2423,"WOOD, Mr Henry",31.0,Male,0,4,0,1,2424
+2424,"WOOD, Mr James Thomas",49.0,Male,0,4,0,1,2425
+2425,"WOODFORD, Mr Frederick Ernest",40.0,Male,0,4,0,1,2426
+2426,"WOODMEY, Mr Robert",41.0,Male,0,4,0,1,2427
+2427,"WOODS, Mr Hugh",28.0,Male,0,4,0,1,2428
+2428,"WOODWARD, Mr John Wesley",32.0,Male,0,2,1,0,2429
+2429,"WOODY, Mr Oscar Scott",41.0,Male,0,4,0,1,2430
+2430,"WOOLNER, Mr Hugh",45.0,Male,1,1,1,0,2431
+2431,"WORMALD, Mr Henry Frederick Charles",45.0,Male,0,4,0,1,2432
+2432,"WORTHMAN, Mr William Henry",37.0,Male,0,4,0,1,2433
+2433,"WOTTON, Mr Henry Swaffin",54.0,Male,0,1,1,0,2434
+2434,"WRAPSON, Mr Frederick Bernard",18.0,Male,0,4,0,1,2435
+2435,"WRIGHT, Miss Marion",26.0,Female,1,2,1,0,2436
+2436,"WRIGHT, Mr Frederick",24.0,Male,0,4,0,1,2437
+2437,"WRIGHT, Mr George",62.0,Male,0,1,1,0,2438
+2438,"WRIGHT, Mr William",47.0,Male,1,4,0,1,2439
+2439,"WYETH, Mr James Robert",25.0,Male,0,4,0,1,2440
+2440,"WYNN, Mr William",41.0,Male,1,4,0,1,2441
+2441,"YAZBAK, Mr Antūn Mūsà",27.0,Male,0,3,1,0,2442
+2442,"YAZBAK, Mrs Sīlānah Iskandar Nāsīf Abī Dāghir",17.0,Male,1,3,1,0,2443
+2443,"YEARSLEY, Mr Harry",40.0,Male,1,4,0,1,2444
+2444,"YONKOV, Mr Lazar “Lalyo”",23.0,Male,0,3,1,0,2445
+2445,"YOUNG, Miss Marie Grice",36.0,Female,1,1,1,0,2446
+2446,"YOUNG, Mr Francis James",32.0,Male,0,4,0,1,2447
+2447,"YOUSSIFF (SAM'AAN), Mr Gerios",45.0,Male,0,3,1,0,2448
+2448,"YVOIS, Miss Henriette Virginie",22.0,Female,0,2,1,0,2449
+2449,"YūSUF, Master Michael (Shafīq) Peter",4.0,Male,1,3,1,0,2450
+2450,"YūSUF, Miss Nabīah (Mary)",2.0,Female,1,3,1,0,2451
+2451,"YūSUF, Mrs Kātrīn",23.0,Male,1,3,1,0,2452
+2452,"ZAKARIAN, Mr Mapriededer",22.0,Male,0,3,1,0,2453
+2453,"ZAKARIAN, Mr Ortin",27.0,Male,0,3,1,0,2454
+2454,"ZANETTI, Sig. Minio",20.0,Male,0,4,0,0,2455
+2455,"ZARRACCHI, Sig. L.",26.0,Male,0,4,0,0,2456
+2456,"ZIMMERMANN, Mr Leo",29.0,Male,0,3,1,0,2457
+2457,"ÄIJö-NIRVA, Mr Isakki Antonpoika",41.0,Male,0,3,1,0,2458
+2458,"ÅDAHL, Mr Mauritz",30.0,Male,0,3,1,0,2459
+2459,"ÖDAHL, Mr Nils Martin",23.0,Male,0,3,1,0,2460
+2460,"ÖHMAN, Miss Velin Matilda",22.0,Female,1,3,1,0,2461
+2461,"ØSTBY, Miss Helen Ragnhild",22.0,Female,1,1,1,0,2462
+2462,"ØSTBY, Mr Engelhart Cornelius",64.0,Male,0,1,1,0,2463
+2463,"ČALIć, Mr Jovo",17.0,Male,0,3,1,0,2464
+2464,"ČALIć, Mr Petar",17.0,Male,0,3,1,0,2465
+2465,"ČAčIć, Miss Manda",21.0,Female,0,3,1,0,2466
+2466,"ČAčIć, Miss Marija",36.0,Female,0,3,1,0,2467
+2467,"ČAčIć, Mr Jego Grga",18.0,Male,0,3,1,0,2468
+2468,"ČAčIć, Mr Luka",38.0,Male,0,3,1,0,2469
+2469,"ČOR, Mr Bartol",35.0,Male,0,3,1,0,2470
+2470,"ČOR, Mr Ivan",27.0,Male,0,3,1,0,2471
+2471,"ČOR, Mr Liudevit",19.0,Male,0,3,1,0,2472
+2472,"ČULUMOVIć, Mr Jeso",17.0,Male,0,3,1,0,2473
+2473,"ḤANNā AL-HāJ, Mr Mansūr",35.0,Male,0,3,1,0,2474
+2474,"ḤANNā, Mr Mubārik Sulaymān Abī Āsī",27.0,Male,1,3,1,0,2475
+2475,"ṬANNūS MU'AWWAD, Mr Ḥannā",34.0,Male,0,3,1,0,2476
+2476,"ṬANNūS, Mr Ṭannūs Ḥannā Mu'awwad",16.0,Male,0,3,1,0,2477
