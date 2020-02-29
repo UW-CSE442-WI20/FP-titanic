@@ -1,7 +1,48 @@
+@font-face {
+  font-family: "metric-test-regular";
+  src: url("./fonts/metric-test-regular.woff") format('woff');
+  font-style: normal;
+}
 
-/* .container {
-  /* width: 890px; */
-/* } */
+@font-face {
+  font-family: "metric-test-regular";
+  src: url("./fonts/metric-test-regular-italic.woff") format('woff');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "metric-test-light";
+  src: url("./fonts/metric-test-light.woff") format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "metric-test-regular";
+  src: url("./fonts/metric-test-light-italic.woff") format('woff');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "metric-test-semibold";
+  src: url("./fonts/metric-test-semibold.woff") format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "metric-test-semibold";
+  src: url("./fonts/metric-test-semibold.woff") format('woff');
+  font-style: italic;
+}
+
+@font-feature-values {
+  if() {
+
+  }
+}
+
+.container {
+  width: 1080px;
+}
 
 #graphic {
   padding-top: 60px;
@@ -21,6 +62,7 @@
 }
 
 .note {
+  font-family: "metric-test-light";
   font-size: 10px;
   font-style: italic;
   line-height: 12px;
@@ -37,11 +79,22 @@
 
 .cover {
   height: 200px;
-  margin-top: 200px;
-  margin-bottom: 200px;
-  font-family: "TiemposTextWeb-Regular","Georgia";
-  font-size: 16px;
-  line-height: 23px;
+  margin-top: 250px;
+  /* margin-bottom: 200px; */
+  /* font-family: "TiemposTextWeb-Regular","san-serif"; */
+  font-family: "metric-test-light";
+  font-size: 24px;
+  /* line-height: 23px; */
+  color: #262626;
+}
+
+.cover .title{
+  height: 200px;
+  /* margin-top: 200px; */
+  /* margin-bottom: 200px; */
+  font-family: "metric-test-semibold";
+  font-size: 72px;
+  line-height: 72px;
   color: #262626;
 }
 
@@ -49,21 +102,23 @@
   width: 300px;
   height: 50vh;
   margin-bottom: 200px;
-  font-family: "TiemposTextWeb-Regular","Georgia";
+  /* font-family: "TiemposTextWeb-Regular","san-serif"; */
+  font-family: "metric-test-regular";
   font-size: 16px;
   line-height: 23px;
   /* color: #767678; */
-  color: #262626;
+  color: white;
+  mix-blend-mode: difference;
 
   /* trigger: 0.33; */
 }
 
 #sections .title {
-  font-family: Arial,Helvetica,"san-serif";
+  font-family: "metric-test-semibold";
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 2px;
-  color: #262626;
+  color: white;
   line-height: 1.2em;
 }
 
