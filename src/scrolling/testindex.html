@@ -6,13 +6,22 @@
 
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
   <link rel="stylesheet" type="text/css" href="testtitanic.css"/>
+  <link rel="stylesheet" type="text/css" href="index.css"/>
 </head>
 <body>
-<div class="cover">
-  <div class="title">Titanic Scrolling D3 Visualisation</div>
-    A short demo of a scrolling data story using the Kaggle Titanic Data source - SCROLL TO START<br/><br/>
-</div>
+
 <div class="container">
+  <div class="header">
+    <img src="logo.png" alt="logo" />
+    <!-- <h1>My website name</h1> -->
+  </div>
+    
+  <div class="cover">
+    <div class="title">Titanic Scrolling<br/>D3 Visualisation</div>
+      A short demo of a scrolling data story using<br/>
+       the Kaggle Titanic Data source<br/><br/>
+      - SCROLL TO START
+  </div>
   
   <div id='graphic'>
     <div id='vis'>
@@ -30,17 +39,17 @@
         <div class="note">* There were actually approx. 1317 passengers on board but this is the total in the data.</div>
       </section>
       <section class="step">
-        <div class="title">Test Graph 2: Nationality</div>
+        <div class="title">Test Graph 2: Gender</div>
         There were more men than women on board.
       </section>
       <section class="step">
-        <div class="title">Test Graph 3: Gender</div>
+        <div class="title">Test Graph 3: Age Group</div>
         Age ranged from 5 months to 80 years but the majority were aged between 15 and 45 years old.
       </section>
-      <!-- <section class="step">
-        <div class="title">Passenger Class</div>
+      <section class="step">
+        <div class="title">Test Graph 4: Class group</div>
         There was a much larger proportion of passengers in 3rd class but 1st and 2nd class numbers were similar.
-      </section> -->
+      </section>
      <!--  <section class="step">
         <div class="title">Tragedy</div>
         Only 342 passengers survived - that's 38%.<br><br>Who had the best chances?

@@ -1,0 +1,19 @@
+.header img {
+    /* float: left; */
+    position: relative;
+    /* width: 100px; */
+    height: 100px;
+    /* background:; */
+    top: 10px;
+    bottom: 20px;
+  }
+  
+  .header h1 {
+    position: relative;
+    top: 18px;
+    left: 10px;
+  }
+
+body {
+    background-image: linear-gradient(white,#E7EBEC, #141832, black);
+}
