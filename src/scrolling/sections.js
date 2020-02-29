@@ -62,7 +62,6 @@ var scrollVis = function () {
   //set up sections for scrolling.
   var set_up_sections = function (my_data) {
     // variables to be sent to draw_dots when the scroll index changes.
-<<<<<<< HEAD
     activateFunctions[0] = ["none","both",0];  // cover
     activateFunctions[1] = ["all","both",100];   // sections - test 1
     activateFunctions[2] = ["sex","both",1000]; // sections - test 2
@@ -71,13 +70,6 @@ var scrollVis = function () {
     activateFunctions[5] = ["none","both",0];  // extrablack
     activateFunctions[6] = ["none","both",0];  // extrablack
     // activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
-=======
-    activateFunctions[0] = ["none","both",0];  // blank
-    activateFunctions[1] = ["all","both",0];   // all, survived not shown
-    activateFunctions[2] = ["sex","both",2000]; // sex, survived not shown
-    activateFunctions[3] = ["age","both",2000]; // age, survived not shown
-    activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
->>>>>>> 01048d7a806acd86a1feecae92b4b90948bf4588
     // activateFunctions[5] = ["all","survived",2000]; // all, show survived
     // activateFunctions[6] = ["sex","survived",2000]; // sex, show survived
     // activateFunctions[7] = ["age","survived",2000]; // age, show survived
