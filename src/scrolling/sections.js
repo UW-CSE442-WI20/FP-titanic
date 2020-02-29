@@ -7,13 +7,16 @@ var scrollVis = function () {
   var top_bottom_margin = 60;
   var height = 520;
   var format = d3.format(".0%");
+
   // define scroll index tracking vars - JV
   var lastIndex = -1;
   var activeIndex = 0;
+
   // define scales - one set of scales for all charts.
   var x0_scale = d3.scaleBand().padding(0.1).range([0, width-(left_right_margin*2)]);
   var x1_scale = d3.scaleLinear();
   var y_scale = d3.scaleLinear().range([height - (top_bottom_margin*2),0]);
+
   // define colours
   //all_colours - used during 1st section when survival rates not needed variable == "both".
   var all_colours = { Men: '#1f78b4', Women: '#a6cee3',all:"grey",
@@ -21,6 +24,7 @@ var scrollVis = function () {
   "1st Class": "#9e9ac8", "2nd Class":"#756bb1","3rd Class":"#54278f"};
   //survival colours - used during 2nd section when looking at survival rates.
   var survival_colours = {0:"#fb9a99", 1: "#404040"}
+
   // define functions for the current scroll setting - inherited from JV
   var activateFunctions = [];
   //define data object and svg.
@@ -62,7 +66,7 @@ var scrollVis = function () {
     activateFunctions[1] = ["all","both",0];   // all, survived not shown
     activateFunctions[2] = ["sex","both",2000]; // sex, survived not shown
     activateFunctions[3] = ["age","both",2000]; // age, survived not shown
-    // activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
+    activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
     // activateFunctions[5] = ["all","survived",2000]; // all, show survived
     // activateFunctions[6] = ["sex","survived",2000]; // sex, show survived
     // activateFunctions[7] = ["age","survived",2000]; // age, show survived
@@ -90,7 +94,7 @@ var scrollVis = function () {
     lastIndex = activeIndex;
   };
 
-  var draw_dots = function (data_class, fill_type,transition){
+  var draw_dots = function (data_class, fill_type, transition){
     //define data - empty if none (ie first scroll index).
     if(data_class == "none"){
       var my_data = [];
@@ -174,7 +178,6 @@ var scrollVis = function () {
     d3.select(".x_axis")
       .attr("transform", "translate(" + left_right_margin + "," + ((top_bottom_margin *1.2)+ y_scale.range()[0]) + ")")
       .call(d3.axisBottom(x0_scale));
-
   };
 
   // return chart function
@@ -209,7 +212,7 @@ function display(data) {
 }
 
 // load data and display
-d3.csv('https://raw.githubusercontent.com/BMPMS/Titanic_scroll/master/data/titanic_data.csv', display);
+d3.csv('https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/src/data/titanic_data.csv', display);
 
 //data functions.  returns 6 different datasets, all with 891 entries (passenger count)
 //data is split into sections - ie ["male","female"], given a per_row count - ie two_per_row
