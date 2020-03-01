@@ -15,5 +15,17 @@
   }
 
 body {
-    background-image: linear-gradient(white,#E7EBEC, #141832, black);
+    /* background-image: linear-gradient(white,#E7EBEC, #141832, black); */
+    background-color: #E7EBEC;
+}
+
+div {border-color: green;}
+
+.video {
+    background-image: linear-gradient(transparent, #141832, black);
+}
+
+.extrablack {
+    height: 800px;
+    background-color: black;
 }

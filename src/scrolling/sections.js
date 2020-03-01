@@ -62,11 +62,14 @@ var scrollVis = function () {
   //set up sections for scrolling.
   var set_up_sections = function (my_data) {
     // variables to be sent to draw_dots when the scroll index changes.
-    activateFunctions[0] = ["none","both",0];  // blank
-    activateFunctions[1] = ["all","both",0];   // all, survived not shown
-    activateFunctions[2] = ["sex","both",2000]; // sex, survived not shown
-    activateFunctions[3] = ["age","both",2000]; // age, survived not shown
-    activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
+    activateFunctions[0] = ["none","both",0];  // cover
+    activateFunctions[1] = ["all","both",100];   // sections - test 1
+    activateFunctions[2] = ["sex","both",1000]; // sections - test 2
+    activateFunctions[3] = ["age","both",1000]; // sections - test 3
+    activateFunctions[4] = ["none","both",0];  // watchvideo
+    activateFunctions[5] = ["none","both",0];  // extrablack
+    activateFunctions[6] = ["none","both",0];  // extrablack
+    // activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
     // activateFunctions[5] = ["all","survived",2000]; // all, show survived
     // activateFunctions[6] = ["sex","survived",2000]; // sex, show survived
     // activateFunctions[7] = ["age","survived",2000]; // age, show survived
@@ -81,6 +84,10 @@ var scrollVis = function () {
 
   chart.update = function (index, progress) {
     var show_image = [1]; //only show images on scroll index 1 and 5.
+    if (index == 2) {
+      d3.select("body").attr("background-color", "green");
+    }
+    
     if(show_image.indexOf(index) >= 0){
       d3.select(".ship_image").attr("visibility","visible");
     } else {
