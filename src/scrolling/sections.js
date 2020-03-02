@@ -234,9 +234,9 @@ d3.csv('https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/src/d
 
 function convert_data(my_data){
 
-  var all_per_row = 45;
-  var two_per_row = 20;
-  var three_per_row = 14;
+  var all_per_row = 50;
+  var two_per_row = 25;
+  var three_per_row = 17;
   var five_per_row = 10;
 
   var all = get_positions(my_data,all_per_row,[]);
