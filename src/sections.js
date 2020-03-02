@@ -84,9 +84,6 @@ var scrollVis = function () {
 
   chart.update = function (index, progress) {
     var show_image = [1]; //only show images on scroll index 1 and 5.
-    if (index == 2) {
-      d3.select("body").attr("background-color", "green");
-    }
     
     if(show_image.indexOf(index) >= 0){
       d3.select(".ship_image").attr("visibility","visible");
@@ -94,10 +91,19 @@ var scrollVis = function () {
       d3.select(".ship_image").attr("visibility","hidden");
     }
     activeIndex = index;
-    console.log("activeIndex = " + activeIndex);
+    // console.log("activeIndex = " + activeIndex);
     var sign = (activeIndex - lastIndex) < 0 ? -1 : 1;
-    //call draw dots with pre-defined variables
-    draw_dots(activateFunctions[index][0],activateFunctions[index][1],activateFunctions[index][2]);
+    // console.log("section index = " + index);
+
+    // customize change graphs
+    if (index <= 4) {
+      //call draw dots with pre-defined variables
+      vis.selectAll("*").remove(); // clear sunburst in case scrolling back up 
+      draw_dots(activateFunctions[index][0],activateFunctions[index][1],activateFunctions[index][2]);
+      // lastIndex = activeIndex;
+    } else if (index >= 7) {
+      drawSun(); // draw sunburst
+    }
     lastIndex = activeIndex;
   };
 

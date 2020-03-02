@@ -29,3 +29,20 @@ div {border-color: green;}
     height: 800px;
     background-color: black;
 }
+
+#sunbucket {
+    display: inline-block;
+    position: fixed;
+    top: 60px;
+    z-index: 1;
+    margin-left: 500px;
+    height: 800px;
+    width: 800px;
+    /* background-color: #ddd; */
+}
+
+#sunburst {
+    height: 600px;
+    width: 600px;
+
+}

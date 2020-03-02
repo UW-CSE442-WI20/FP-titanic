@@ -21,8 +21,7 @@ var colors = {
 // Total size of all segments; we set this later, after loading the data.
 var totalSize = 0; 
 
-var vis = d3v3.select("#sunburst")
-    .append("svg:svg")
+var vis = d3v3.select("#sunchart").append("svg:svg")
     .attr("width", width)
     .attr("height", height)
     .append("svg:g")
@@ -39,17 +38,13 @@ var arc = d3v3.svg.arc()
     .innerRadius(function(d) { return Math.sqrt(d.y); })
     .outerRadius(function(d) { return Math.sqrt(d.y + d.dy); });
 
-
 // Use d3v3.text and d3v3.csv.parseRows so that we do not need to have a header
 // row, and can receive the csv as an array of arrays.
-function drawSun() {
-  d3v3.text("https://gist.githubusercontent.com/kerryrodden/7090426/raw/e4b2455cdb442cd4172ad69f8df7f9c86abfe6a0/visit-sequences.csv", function(text) {
-    var csv = d3v3.csv.parseRows(text);
-    var json = buildHierarchy(csv);
-    createVisualization(json);
-  });
-}
-
+d3v3.text("https://gist.githubusercontent.com/kerryrodden/7090426/raw/e4b2455cdb442cd4172ad69f8df7f9c86abfe6a0/visit-sequences.csv", function(text) {
+  var csv = d3v3.csv.parseRows(text);
+  var json = buildHierarchy(csv);
+  createVisualization(json);
+});
 
 // Main function to draw and set up the visualization, once we have the data.
 function createVisualization(json) {

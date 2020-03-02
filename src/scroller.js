@@ -99,8 +99,8 @@ function scroller() {
     console.log("temp = " + temp)
     var sectionIndex = d3.bisect(sectionPositions, pos);
     // sectionIndex = Math.min(sections.size() - 1, sectionIndex);
-    sectionIndex = Math.min(sections.size() + 1, Math.round(temp));
-    // sectionIndex = Math.round(temp);
+    // sectionIndex = Math.min(sections.size() + 1, Math.round(temp));
+    sectionIndex = Math.round(temp);
     console.log("sections.size() = " + sections.size())
     console.log("sectionIndex = " + sectionIndex)
 
