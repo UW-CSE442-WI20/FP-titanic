@@ -17,10 +17,12 @@ body {
 }
 
 .start{
-  height: 150px;
+  height: 200px;
   font-family: 'Special Elite', cursive;
   font-size: 30px;
   line-height: 30px;
+  margin-right: 80px;
+  text-align: right;
   color: #262626;
 }
 

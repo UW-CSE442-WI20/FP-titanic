@@ -62,13 +62,22 @@
   line-height: 12px;
 }
 
-#sections {
+#sections_distribution {
   position: relative;
   display: inline-block;
   width: 550px;
   top: 0px;
   z-index: 90;
   padding-bottom: 200px;
+}
+
+#sections {
+    position: relative;
+    display: inline-block;
+    top: 0px;
+    z-index: 90;
+    padding-bottom: 400px;
+    font-family: 'Special Elite', cursive;
 }
 
 .cover {
@@ -96,6 +105,7 @@
   width: 400px;
   height: 50vh;
   margin-bottom: 200px;
+  margin-left: 600px;
   /* font-family: "TiemposTextWeb-Regular","san-serif"; */
   /* font-family: "metric-test-regular"; */
   font-family: 'Special Elite', cursive;
@@ -108,7 +118,7 @@
   /* trigger: 0.33; */
 }
 
-#sections .title {
+#sections_distribution .title {
   /* font-family: "metric-test-semibold"; */
   font-family: 'Special Elite', cursive;
   font-size: 32px;
@@ -127,7 +137,7 @@
   position: fixed;
   top: 60px;
   z-index: 1;
-  margin-left: 600px;
+  margin-left: -50px;
   height: 600px;
   width: 800px;
   /* background-color: #ddd; */
