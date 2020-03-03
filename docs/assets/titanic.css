@@ -1,36 +1,36 @@
 @font-face {
   font-family: "metric-test-regular";
-  src: url("./fonts/metric-test-regular.woff") format('woff');
+  src: url("../fonts/metric-test-regular.woff") format('woff');
   font-style: normal;
 }
 
 @font-face {
   font-family: "metric-test-regular";
-  src: url("./fonts/metric-test-regular-italic.woff") format('woff');
+  src: url("../fonts/metric-test-regular-italic.woff") format('woff');
   font-style: italic;
 }
 
 @font-face {
   font-family: "metric-test-light";
-  src: url("./fonts/metric-test-light.woff") format('woff');
+  src: url("../fonts/metric-test-light.woff") format('woff');
   font-style: normal;
 }
 
 @font-face {
   font-family: "metric-test-regular";
-  src: url("./fonts/metric-test-light-italic.woff") format('woff');
+  src: url("../fonts/metric-test-light-italic.woff") format('woff');
   font-style: italic;
 }
 
 @font-face {
   font-family: "metric-test-semibold";
-  src: url("./fonts/metric-test-semibold.woff") format('woff');
+  src: url("../fonts/metric-test-semibold.woff") format('woff');
   font-style: normal;
 }
 
 @font-face {
   font-family: "metric-test-semibold";
-  src: url("./fonts/metric-test-semibold.woff") format('woff');
+  src: url("../fonts/metric-test-semibold.woff") format('woff');
   font-style: italic;
 }
 

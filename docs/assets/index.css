@@ -16,7 +16,7 @@
 
 body {
     /* background-image: linear-gradient(white,#E7EBEC, #141832, black); */
-    background-color: #E7EBEC;
+    background-color: white;
 }
 
 div {border-color: green;}

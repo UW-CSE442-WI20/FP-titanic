@@ -53,7 +53,7 @@ var scrollVis = function () {
     //background image
     svg.append("svg:image")
       .attr("class","ship_image")
-      .attr("xlink:href", "./ship_image.png")
+      .attr("xlink:href", "./img/ship_image.png")
       .attr("height",389)
       .attr("width", 600)
       .attr("x", 0)
@@ -66,10 +66,9 @@ var scrollVis = function () {
     activateFunctions[1] = ["all","both",100];   // sections - test 1
     activateFunctions[2] = ["sex","both",1000]; // sections - test 2
     activateFunctions[3] = ["age","both",1000]; // sections - test 3
-    activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
-    activateFunctions[5] = ["none","both",0];  // watchvideo
+    activateFunctions[4] = ["none","both",0];  // watchvideo
+    activateFunctions[5] = ["none","both",0];  // extrablack
     activateFunctions[6] = ["none","both",0];  // extrablack
-    activateFunctions[7] = ["none","both",0];  // extrablack
     // activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
     // activateFunctions[5] = ["all","survived",2000]; // all, show survived
     // activateFunctions[6] = ["sex","survived",2000]; // sex, show survived
@@ -99,10 +98,15 @@ var scrollVis = function () {
     // customize change graphs
     if (index <= 4) {
       //call draw dots with pre-defined variables
+      d3.select("sunbucket").remove(); // clear sunburst in case scrolling back up 
       vis.selectAll("*").remove(); // clear sunburst in case scrolling back up 
       draw_dots(activateFunctions[index][0],activateFunctions[index][1],activateFunctions[index][2]);
       // lastIndex = activeIndex;
-    } else if (index >= 7) {
+    } else if (index == 6) {
+      d3.select("sunbucket").remove(); // clear sunburst in case scrolling back up 
+      vis.selectAll("*").remove(); // clear sunburst in case scrolling back up 
+
+    } else if (index == 7) {
       drawSun(); // draw sunburst
     }
     lastIndex = activeIndex;
@@ -226,7 +230,7 @@ function display(data) {
 }
 
 // load data and display
-d3.csv('https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/src/data/clean2.csv', display);
+d3.csv('https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/titanic_data.csv', display);
 
 //data functions.  returns 6 different datasets, all with 891 entries (passenger count)
 //data is split into sections - ie ["male","female"], given a per_row count - ie two_per_row
@@ -240,13 +244,13 @@ d3.csv('https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/src/d
 
 function convert_data(my_data){
 
-  var all_per_row = 50;
-  var two_per_row = 25;
-  var three_per_row = 17;
+  var all_per_row = 45;
+  var two_per_row = 20;
+  var three_per_row = 14;
   var five_per_row = 10;
 
   var all = get_positions(my_data,all_per_row,[]);
-  var sex = get_positions(my_data,two_per_row,["Male","Female"],"Sex");
+  var sex = get_positions(my_data,two_per_row,["male","female"],"Sex");
   var age = get_positions(my_data,five_per_row,[0,15,30,45,70],"Age");
   var p_class = get_positions(my_data,three_per_row,[1,2,3],"Pclass");
   var ch_1_2 = age_class(my_data,two_per_row);
@@ -258,12 +262,12 @@ function convert_data(my_data){
 
     var positions = [];
     var filtered_data = my_data.filter(function(d){
-      return (d.Age < 15 && d.Pclass < 3) || (d.Sex == "Female" && d.Age >= 15 && d.Pclass < 3)
+      return (d.Age < 15 && d.Pclass < 3) || (d.Sex == "female" && d.Age >= 15 && d.Pclass < 3)
     })
 
     positions = positions.concat(populate(filtered_data,"1st or 2nd Class women and children","",col_per_row));
     var filtered_data = my_data.filter(function(d){
-      return (d.Age < 15 && d.Pclass == 3) || (d.Sex == "Female" && d.Age >= 15 && d.Pclass == 3) || (d.Sex == "Male" && d.Age >= 15)
+      return (d.Age < 15 && d.Pclass == 3) || (d.Sex == "female" && d.Age >= 15 && d.Pclass == 3) || (d.Sex == "male" && d.Age >= 15)
     })
     positions = positions.concat(populate(filtered_data,"Remaining Passengers","",col_per_row))
     return positions;
@@ -317,7 +321,7 @@ function convert_data(my_data){
 
     my_data = my_data.sort(function(a,b){return d3.descending(a.Survived, b.Survived)});
     var my_row = 0, my_column = 0;
-    var sex_labels = {"Male": "Men","Female": "Women"}
+    var sex_labels = {"male": "Men","female": "Women"}
     var current_positions = [];
     for(d in my_data){
       if(isNaN(d) == false){
