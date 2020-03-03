@@ -1,11 +1,13 @@
-{/* <script src="./d3v3cloud.js"></script>   */}
+/* <script src="./d3v3cloud.js"></script>   */
 
-var margin = {top: 20, right: 20, bottom: 40, left: 20},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var mg = {top: 20, right: 20, bottom: 20, left: 500},
+    width = 600 - mg.left - mg.right,
+    height = 300 - mg.top - mg.bottom;
 
+var cloudlayout = d3v3.layout.cloud()
 
-d3v3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/src/testdata.csv", function(error, data) {
+function drawCloud() {
+  d3v3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/assets/wordclouddata.csv", function(error, data) {
 
   var categories = d3v3.keys(d3v3.nest().key(function(d) { return d.Count; }).map(data));
   // var color = d3v3.scale.ordinal().range(["#66c2a5","#fc8d62","#8da0cb","#e78ac3","#a6d854"]);
@@ -15,8 +17,8 @@ d3v3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/src
             .range(["#222", "#333", "#444","#555", "#666", "#777", "#888","#999" , "#aaa", "#bbb","#ccc", "#ddd"]);
   var fontSize = d3v3.scale.pow().exponent(8).domain([0,100]).range([10,100]);
 
-  var layout = d3v3.layout.cloud()
-      .timeInterval(10)
+  // var cloudlayout = d3v3.layout.cloud()
+      cloudlayout.timeInterval(10)
       .size([width, height])
       .words(data)
       .rotate(function(d) { return 0; })
@@ -27,17 +29,18 @@ d3v3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/src
       .on("end", draw)
       .start();
 
-  var svg = d3v3.select('#wordcloud').append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+  var wsvg = d3v3.select('#wordcloud').append("svg")
+  
+      .attr("width", width + mg.left + mg.right)
+      .attr("height", height + mg.top + mg.bottom)
       .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      .attr("transform", "translate(" + mg.left + "," + mg.top + ")");
 
-  var wordcloud = svg.append("g")
+  var wordcloud = wsvg.append("g")
       .attr('class','wordcloud')
       .attr("transform", "translate(" + width/2 + "," + height/2 + ")");
 
-  svg.append("g")
+  wsvg.append("g")
     //   .attr("class", "x axis")
     //   .attr("transform", "translate(0," + height + ")")
     //   .call(xAxis)
@@ -51,7 +54,7 @@ d3v3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/src
   function draw(words) {
     wordcloud.selectAll("text")
         .data(words)
-      .enter().append("text")
+        .enter().append("text")
         .attr('class','word')
         .style("font-size", function(d) { return d.size + "px"; })
         .style("font-family", function(d) { return d.font; })
@@ -64,3 +67,6 @@ d3v3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/src
   console.log("svg draw")
 
 });
+}
+
+
