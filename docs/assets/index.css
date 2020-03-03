@@ -37,6 +37,14 @@ div {border-color: green;}
     background-color: black;
 }
 
+.geo-path {
+				stroke: white;
+				stroke-width: 0.5px;
+				stroke-opacity: 1;
+				fill: #C0AA91;
+				fill-opacity: 1;
+			}
+
 #sunbucket {
     display: inline-block;
     position: fixed;
