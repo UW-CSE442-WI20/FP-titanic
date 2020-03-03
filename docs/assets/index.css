@@ -57,6 +57,13 @@ div {border-color: green;}
     padding-top: 103px;
 }
 
+h5 {
+    background-color: rgb(41, 80, 80);
+    color: white;
+    font-weight: bolder;
+    display: inline;
+}
+
 #scroll-title {
     display: block;
     text-transform: uppercase;
