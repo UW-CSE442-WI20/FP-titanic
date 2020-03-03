@@ -75,8 +75,9 @@
     position: relative;
     display: inline-block;
     top: 0px;
+    /* height: 300px; */
+    /* margin-bottom: 300px; */
     z-index: 90;
-    /* padding-bottom: 400px; */
     font-family: 'Special Elite', cursive;
 }
 
@@ -99,6 +100,16 @@
   font-size: 72px;
   line-height: 72px;
   color: #262626;
+}
+
+#intro {
+  position: relative;
+  display: inline-block;
+  top: 0px;
+  height: 300px;
+  margin-bottom: 300px;
+  z-index: 90;
+  font-family: 'Special Elite', cursive;
 }
 
 .step {

@@ -66,11 +66,13 @@ var scrollVis = function () {
   var set_up_sections = function (my_data) {
     // variables to be sent to draw_dots when the scroll index changes.
     activateFunctions[0] = ["none","both",0];  // cover
-    activateFunctions[1] = ["all","both",100];   // sections - test 1
-    activateFunctions[2] = ["sex","both",1000]; // sections - test 2
-    activateFunctions[3] = ["age","both",1000]; // sections - test 3
-    activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
-    activateFunctions[5] = ["none","both",0];  // watchvideo
+    activateFunctions[1] = ["none","both",0];  // watchvideo
+    activateFunctions[2] = ["none","both",0];  // watchvideo
+    activateFunctions[2] = ["all","both",100];   // sections - test 1
+    activateFunctions[3] = ["sex","both",1000]; // sections - test 2
+    activateFunctions[4] = ["age","both",1000]; // sections - test 3
+    activateFunctions[5] = ["p_class","both",2000]; // class, survived not shown
+    // activateFunctions[5] = ["none","both",0];  // watchvideo
     activateFunctions[6] = ["none","both",0];  // extrablack
     activateFunctions[7] = ["none","both",0];  // extrablack
     // activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
@@ -112,7 +114,7 @@ var scrollVis = function () {
     // console.log("section index = " + index);
 
     // customize change graphs
-    if (index <= 4) {
+    if (index == 2 || index == 3 || index == 4) {
       //call draw dots with pre-defined variables
       svg.selectAll("*").attr("visibility","");
       showimage(index);

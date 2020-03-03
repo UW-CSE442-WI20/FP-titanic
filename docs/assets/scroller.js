@@ -94,7 +94,7 @@ function scroller() {
     var pos = window.pageYOffset - containerStart + 500;
     console.log("window.pageYOffset = " + window.pageYOffset)
     // var temp = pos / 500;
-    var temp = window.pageYOffset / 600;
+    var temp = (window.pageYOffset-200) / 600;
     pos = temp;
     console.log("temp = " + temp)
     var sectionIndex = d3.bisect(sectionPositions, pos);
