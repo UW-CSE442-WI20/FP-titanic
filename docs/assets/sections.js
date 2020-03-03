@@ -19,9 +19,10 @@ var scrollVis = function () {
 
   // define colours
   //all_colours - used during 1st section when survival rates not needed variable == "both".
-  var all_colours = { Men: '#1f78b4', Women: '#a6cee3',all:"grey",
+  var all_colours = { Men: '#1f78b4', Women: '#a6cee3',all:"grey", passenger:"green", crew: "blue",
   "0 - 15":"#addd8e","15 - 30":"#78c679","30 - 45":"#41ab5d","45 - 70":"#238443",">= 70":"#005a32",
   "1st Class": "#9e9ac8", "2nd Class":"#756bb1","3rd Class":"#54278f"};
+
   //survival colours - used during 2nd section when looking at survival rates.
   var crew_colours = { Men: '#054a78', Women: '#558dab', all: "3#e4142",
   "0 - 15":"#5e8c41","15 - 30":"#3b943d","30 - 45":"#1f8239","45 - 70":"#0b5e27",">= 70":"#01331d", "Crew Class":"#2a0c52"};
@@ -75,6 +76,8 @@ var scrollVis = function () {
     // activateFunctions[5] = ["none","both",0];  // watchvideo
     activateFunctions[6] = ["none","both",0];  // extrablack
     activateFunctions[7] = ["none","both",0];  // extrablack
+    activateFunctions[8] = ["passenger", "both", 100]; // Passenger filter
+    activateFunctions[9] = ["crew", "both", 100]; // Crew filter
     // activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
     // activateFunctions[5] = ["all","survived",2000]; // all, show survived
     // activateFunctions[6] = ["sex","survived",2000]; // sex, show survived
@@ -156,20 +159,20 @@ var scrollVis = function () {
     //set radius
     var my_radius = 4.5;
     //data,exit,enter and merge for bar labels
-    var my_group = svg.selectAll(".labels_group")
+    var bar_group = svg.selectAll(".labels_group")
                       .data(x0_scale.domain(),function(d){return d});
 
-    my_group.exit().remove();
+    bar_group.exit().remove();
     //enter new groups
-    var enter = my_group.enter()
+    var enter = bar_group.enter()
                         .append("g")
                         .attr("class","labels_group")
     //append rectangles to new group
     enter.append("text").attr("class","bar_text")
     //merge and remove
-    my_group = my_group.merge(enter);
+    bar_group = bar_group.merge(enter);
     //set for bar text attributes
-    my_group.select(".bar_text")
+    bar_group.select(".bar_text")
             .attr("visibility","hidden") //hidden initially
             .attr("x",function(d){ return x0_scale(d) + (x0_scale.bandwidth()*0.45)})
             .attr("y",function(d){return y_scale(d3.max(my_data,function(m){if(m[data_class]==d){return m.row}})) - 15})
@@ -194,21 +197,22 @@ var scrollVis = function () {
             .transition()
             .delay(transition*1.2)
             .attr("visibility","visible") //now that the dots and text have moved, make text visible.
+
     //repeat data,exit,enter and merge for dots
-    var my_group = svg.selectAll(".dots_group")
+    var dot_group = svg.selectAll(".dots_group")
                       .data(my_data);
 
-    my_group.exit().remove();
+    dot_group.exit().remove();
     //enter new groups
-    var enter = my_group.enter()
+    var enter = dot_group.enter()
                         .append("g")
                         .attr("class","dots_group")
     //append rectangles to new group
     enter.append("circle").attr("class","circle_dot")
     //merge and remove
-    my_group = my_group.merge(enter);
+    dot_group = dot_group.merge(enter);
     //define circle dot attributes
-    my_group.select(".circle_dot")
+    dot_group.select(".circle_dot")
             .transition()
             .duration(transition)
             .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
@@ -226,6 +230,97 @@ var scrollVis = function () {
             }})
             .attr("r",my_radius)
             .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
+            
+
+    // Case when passenger is chosen
+    d3.selectAll("#passenger").on("click", function() {
+      dot_group.select(".circle_dot")
+            .transition()
+            .duration(transition)            
+            .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
+            if(d.passenger == 1) {
+              return "orange"
+            } else {
+              return "grey"
+            }})
+
+      bar_group.select(".bar_text")
+              .transition()
+              .delay(transition*0.1)
+              .attr("fill",function(d){ //fill dependent on whether survival is being shown.
+                if(fill_type == "both"){
+                  return "orange"
+                } else {
+                  return survival_colours[1] //if survival, show 'Survived' colour as text = survived %
+              }})
+              .text(function(d){
+                //number of passengers in this group.
+                var group_count = my_data.filter(function(m){if(m[data_class]==d && m["passenger"] == 1){return m}}).length;
+                if(fill_type == "both"){
+                  return group_count //if no survival, show no of passengers.
+                } else {
+                  //otherwise, calculate the passengers who survived and show survival rate - format defined on line 9
+                  var survival_count =  my_data.filter(function(m){if(m[data_class]==d && m.survived == 1){return m}}).length;
+                  return format(survival_count/group_count)
+                }
+                })
+            
+    });
+
+    // Case when crew is chosen
+    d3.selectAll("#crew").on("click", function() {
+      dot_group.select(".circle_dot")
+            .transition()
+            .duration(transition)
+            .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
+            .attr("cy",function(d){return y_scale(d.row)})
+            .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
+            if(d.passenger == 1) {
+              return "grey"
+            } else {
+              return "orange"
+            }})
+            .attr("r",my_radius)
+            .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
+
+      bar_group.select(".bar_text")
+                .transition()
+                .delay(transition*0.1)
+                .attr("fill",function(d){ //fill dependent on whether survival is being shown.
+                  if(fill_type == "both"){
+                    return "orange"
+                  } else {
+                    return survival_colours[1] //if survival, show 'Survived' colour as text = survived %
+                }})
+                .text(function(d){
+                  //number of passengers in this group.
+                  var group_count = my_data.filter(function(m){if(m[data_class]==d && m["passenger"] == 0){return m}}).length;
+                  if(fill_type == "both"){
+                    return group_count //if no survival, show no of passengers.
+                  } else {
+                    //otherwise, calculate the passengers who survived and show survival rate - format defined on line 9
+                    var survival_count =  my_data.filter(function(m){if(m[data_class]==d && m.survived == 1){return m}}).length;
+                    return format(survival_count/group_count)
+                  }
+                  })
+    });
+
+    // Case when all are chosen
+    d3.select("#all").on("click", function() {
+      dot_group.select(".circle_dot")
+            .transition()
+            .duration(transition)
+            .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
+            .attr("cy",function(d){return y_scale(d.row)})
+            .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
+              if(d.passenger == 1) {
+                return all_colours[d[data_class]]
+              } else {
+                return crew_colours[d[data_class]]
+              }})
+            .attr("r",my_radius)
+            .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
+    });
 
     //reset x_axis
     d3.select(".x_axis")
