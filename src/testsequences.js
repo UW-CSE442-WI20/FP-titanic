@@ -26,7 +26,7 @@ var vis = d3v3.select("#sunburst")
     .attr("width", width)
     .attr("height", height)
     .append("svg:g")
-    .attr("id", "container")
+    .attr("id", "contain")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 var partition = d3v3.layout.partition()
@@ -43,6 +43,8 @@ var arc = d3v3.svg.arc()
 // Use d3v3.text and d3v3.csv.parseRows so that we do not need to have a header
 // row, and can receive the csv as an array of arrays.
 function drawSun() {
+  // vis.selectAll("*").attr("visibility","hidden") ; // clear sunburst in case scrolling back up 
+
   d3v3.text("https://gist.githubusercontent.com/kerryrodden/7090426/raw/e4b2455cdb442cd4172ad69f8df7f9c86abfe6a0/visit-sequences.csv", function(text) {
     var csv = d3v3.csv.parseRows(text);
     var json = buildHierarchy(csv);
@@ -53,7 +55,7 @@ function drawSun() {
 
 // Main function to draw and set up the visualization, once we have the data.
 function createVisualization(json) {
-
+  vis.selectAll("*").remove();
   // Basic setup of page elements.
   initializeBreadcrumbTrail();
   drawLegend();
@@ -82,9 +84,14 @@ function createVisualization(json) {
       .on("mouseover", mouseover);
 
   // Add the mouseleave handler to the bounding circle.
-  d3v3.select("#container").on("mouseleave", mouseleave);
+  d3v3.select("#contain").on("mouseleave", mouseleave);
 
   // Get total size of the tree = value of root node from partition.
+  if (path.node().__data__ === null) {       //if t=undefined, call tt
+    console.log(t)      //call t
+  } else {
+    console.log(path.node().__data__)
+  }
   totalSize = path.node().__data__.value;
  };
 

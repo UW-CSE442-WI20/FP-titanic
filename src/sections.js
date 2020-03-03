@@ -98,10 +98,15 @@ var scrollVis = function () {
     // customize change graphs
     if (index <= 4) {
       //call draw dots with pre-defined variables
+      d3.select("sunbucket").remove(); // clear sunburst in case scrolling back up 
       vis.selectAll("*").remove(); // clear sunburst in case scrolling back up 
       draw_dots(activateFunctions[index][0],activateFunctions[index][1],activateFunctions[index][2]);
       // lastIndex = activeIndex;
-    } else if (index >= 7) {
+    } else if (index == 6) {
+      d3.select("sunbucket").remove(); // clear sunburst in case scrolling back up 
+      vis.selectAll("*").remove(); // clear sunburst in case scrolling back up 
+
+    } else if (index == 7) {
       drawSun(); // draw sunburst
     }
     lastIndex = activeIndex;
