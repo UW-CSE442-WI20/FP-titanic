@@ -93,23 +93,25 @@
 }
 
 .step {
-  width: 300px;
+  width: 400px;
   height: 50vh;
   margin-bottom: 200px;
   /* font-family: "TiemposTextWeb-Regular","san-serif"; */
-  font-family: "metric-test-regular";
+  /* font-family: "metric-test-regular"; */
+  font-family: 'Special Elite', cursive;
   font-size: 16px;
-  line-height: 23px;
+  line-height: 20px;
   /* color: #767678; */
-  color: black;
+  color: rgba(49, 49, 49, 0.856);
   mix-blend-mode: difference;
 
   /* trigger: 0.33; */
 }
 
 #sections .title {
-  font-family: "metric-test-semibold";
-  font-size: 16px;
+  /* font-family: "metric-test-semibold"; */
+  font-family: 'Special Elite', cursive;
+  font-size: 32px;
   font-weight: bold;
   margin-bottom: 2px;
   color: black;

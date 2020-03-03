@@ -14,21 +14,30 @@
   <link rel="stylesheet" type="text/css" href="./assets/titanic.css"/>
   <link rel="stylesheet" type="text/css" href="./assets/index.css"/>
   <link rel="stylesheet" type="text/css" href="./assets/sequences.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
   <div class="header">
-    <img src="./img/logo.png" alt="logo" />
-    <!-- <h1>My website name</h1> -->
+    <img class="logo" src="./img/titanic_logo.png" />
+    <div class="start">
+      You think you know the story.<br>
+      Now <b>START SCROLLING</b> to discover the truth
+      <div id="scroll-down">
+        <span class="arrow-down"></span>
+      <span id="scroll-title">Scroll down</span>
+    </div>
+    </div>
   </div>
     
-  <div class="cover">
+  <!-- <div class="cover">
+    <img class="logo" src="./img/logo.png" />
     <div class="title">Titanic<br/>Scroll-Telling</div>
       A short demo of a scrolling data story using<br/>
        the Kaggle Titanic Data source<br/><br/>
       - SCROLL TO START
-  </div>
+  </div> -->
   
   <div id='graphic'>
     <div id='vis'>
@@ -41,9 +50,11 @@
          A short demo of a scrolling data story using the Kaggle Titanic Data source - SCROLL TO START<br/><br/>
       </section> -->
       <section class="step">
-        <div class="title">Test Graph 1: total</div>
-        On the 10th April HMS Titanic started on her journey from Southampton.  There were 891* passengers on board. <br><br>
-        <div class="note">* There were actually approx. 1317 passengers on board but this is the total in the data.</div>
+        <div class="title">How many passengers on board?</div>
+        This graph shows all of Titanic’s passengers and crews. As a homage to those who died, you can also hover over the dots
+        to see their names. We believe that each of these persons deserve proper recognition and respect, regardless of their
+        status, gender, age, and sex.
+        <!-- <div class="note">* There were actually approx. 1317 passengers on board but this is the total in the data.</div> -->
       </section>
       <section class="step">
         <div class="title">Test Graph 2: Gender</div>
