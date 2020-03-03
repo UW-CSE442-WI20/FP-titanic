@@ -78,11 +78,8 @@ var scrollVis = function () {
     // activateFunctions[10] = ["w_ch_1_2","survived",2000];//conclusion 2 - 1st and 2nd class women & children
 
   };
-  //part inherited from JV.
-  //change is that I am repositioning the dots depending on the data every time the scroll index changes.
-  //in JV version, all the charts are drawn initially and then shown.
 
-  chart.update = function (index, progress) {
+  var showimage = function (index) {
     var show_image = [1]; //only show images on scroll index 1 and 5.
     
     if(show_image.indexOf(index) >= 0){
@@ -90,24 +87,51 @@ var scrollVis = function () {
     } else {
       d3.select(".ship_image").attr("visibility","hidden");
     }
+  }
+
+  //part inherited from JV.
+  //change is that I am repositioning the dots depending on the data every time the scroll index changes.
+  //in JV version, all the charts are drawn initially and then shown.
+
+  chart.update = function (index, progress) {
+    // var show_image = [1]; //only show images on scroll index 1 and 5.
+    
+    // if(show_image.indexOf(index) >= 0){
+    //   d3.select(".ship_image").attr("visibility","visible");
+    // } else {
+    //   d3.select(".ship_image").attr("visibility","hidden");
+    // }
+    showimage(index);
     activeIndex = index;
     // console.log("activeIndex = " + activeIndex);
     var sign = (activeIndex - lastIndex) < 0 ? -1 : 1;
     // console.log("section index = " + index);
 
     // customize change graphs
-    if (index <= 4) {
+    if (index <= 3) {
       //call draw dots with pre-defined variables
+      svg.selectAll("*").attr("visibility","");
+      showimage(index);
       d3.select("sunbucket").remove(); // clear sunburst in case scrolling back up 
       vis.selectAll("*").remove(); // clear sunburst in case scrolling back up 
       draw_dots(activateFunctions[index][0],activateFunctions[index][1],activateFunctions[index][2]);
       // lastIndex = activeIndex;
-    } else if (index == 6) {
+    } else if (index == 4) {
+      svg.selectAll("*").attr("visibility","hidden");
+      d3.select("sunbucket").remove(); // clear sunburst in case scrolling back up 
+      vis.selectAll("*").remove();
+      d3.select("wordcloud").remove();
+      // drawCloud();
+    } else if (index == 8) {
+      svg.selectAll("*").attr("visibility","hidden");
+      d3.select("wordcloud").remove();
+      drawSun(); // draw sunburst
+    } else {
+      svg.selectAll("*").attr("visibility","hidden");
+      cloudlayout.stop()
+      d3.select("wordcloud").remove();
       d3.select("sunbucket").remove(); // clear sunburst in case scrolling back up 
       vis.selectAll("*").remove(); // clear sunburst in case scrolling back up 
-
-    } else if (index == 7) {
-      drawSun(); // draw sunburst
     }
     lastIndex = activeIndex;
   };
