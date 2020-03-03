@@ -114,7 +114,7 @@ var scrollVis = function () {
     // console.log("section index = " + index);
 
     // customize change graphs
-    if (index == 2 || index == 3 || index == 4) {
+    if (index == 2 || index == 3 || index == 4 || index == 5) {
       //call draw dots with pre-defined variables
       svg.selectAll("*").attr("visibility","");
       showimage(index);
@@ -122,13 +122,13 @@ var scrollVis = function () {
       vis.selectAll("*").remove(); // clear sunburst in case scrolling back up 
       draw_dots(activateFunctions[index][0],activateFunctions[index][1],activateFunctions[index][2]);
       // lastIndex = activeIndex;
-    } else if (index == 5) {
+    } else if (index == 6) {
       svg.selectAll("*").attr("visibility","hidden");
       d3.select("sunbucket").remove(); // clear sunburst in case scrolling back up 
       vis.selectAll("*").remove();
       d3.select("wordcloud").remove();
       // drawCloud();
-    } else if (index == 9) {
+    } else if (index == 10) {
       svg.selectAll("*").attr("visibility","hidden");
       d3.select("wordcloud").remove();
       drawSun(); // draw sunburst
