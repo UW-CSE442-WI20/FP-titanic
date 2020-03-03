@@ -23,6 +23,9 @@ var scrollVis = function () {
   "0 - 15":"#addd8e","15 - 30":"#78c679","30 - 45":"#41ab5d","45 - 70":"#238443",">= 70":"#005a32",
   "1st Class": "#9e9ac8", "2nd Class":"#756bb1","3rd Class":"#54278f"};
   //survival colours - used during 2nd section when looking at survival rates.
+  var crew_colours = { Men: '#054a78', Women: '#558dab', all: "3#e4142",
+  "0 - 15":"#5e8c41","15 - 30":"#3b943d","30 - 45":"#1f8239","45 - 70":"#0b5e27",">= 70":"#01331d", "Crew Class":"#2a0c52"};
+  
   var survival_colours = {0:"#fb9a99", 1: "#404040"}
 
   // define functions for the current scroll setting - inherited from JV
@@ -66,9 +69,10 @@ var scrollVis = function () {
     activateFunctions[1] = ["all","both",100];   // sections - test 1
     activateFunctions[2] = ["sex","both",1000]; // sections - test 2
     activateFunctions[3] = ["age","both",1000]; // sections - test 3
-    activateFunctions[4] = ["none","both",0];  // watchvideo
-    activateFunctions[5] = ["none","both",0];  // extrablack
+    activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
+    activateFunctions[5] = ["none","both",0];  // watchvideo
     activateFunctions[6] = ["none","both",0];  // extrablack
+    activateFunctions[7] = ["none","both",0];  // extrablack
     // activateFunctions[4] = ["p_class","both",2000]; // class, survived not shown
     // activateFunctions[5] = ["all","survived",2000]; // all, show survived
     // activateFunctions[6] = ["sex","survived",2000]; // sex, show survived
@@ -108,7 +112,7 @@ var scrollVis = function () {
     // console.log("section index = " + index);
 
     // customize change graphs
-    if (index <= 3) {
+    if (index <= 4) {
       //call draw dots with pre-defined variables
       svg.selectAll("*").attr("visibility","");
       showimage(index);
@@ -116,13 +120,13 @@ var scrollVis = function () {
       vis.selectAll("*").remove(); // clear sunburst in case scrolling back up 
       draw_dots(activateFunctions[index][0],activateFunctions[index][1],activateFunctions[index][2]);
       // lastIndex = activeIndex;
-    } else if (index == 4) {
+    } else if (index == 5) {
       svg.selectAll("*").attr("visibility","hidden");
       d3.select("sunbucket").remove(); // clear sunburst in case scrolling back up 
       vis.selectAll("*").remove();
       d3.select("wordcloud").remove();
       // drawCloud();
-    } else if (index == 8) {
+    } else if (index == 9) {
       svg.selectAll("*").attr("visibility","hidden");
       d3.select("wordcloud").remove();
       drawSun(); // draw sunburst
@@ -208,10 +212,15 @@ var scrollVis = function () {
             .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
             .attr("cy",function(d){return y_scale(d.row)})
             .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
-              if(fill_type == "both"){
-                return all_colours[d[data_class]]
-              } else {
-                return survival_colours[d.survived]
+            //   if(fill_type == "both"){
+            //     return all_colours[d[data_class]]
+            //   } else {
+            //     return survival_colours[d.survived]
+            // }
+            if(d.passenger == 1) {
+              return all_colours[d[data_class]]
+            } else {
+              return crew_colours[d[data_class]]
             }})
             .attr("r",my_radius)
             .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
@@ -254,7 +263,8 @@ function display(data) {
 }
 
 // load data and display
-d3.csv('https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/titanic_data.csv', display);
+//d3.csv('https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/titanic_data.csv', display);
+d3.csv('https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/clean2.csv', display);
 
 //data functions.  returns 6 different datasets, all with 891 entries (passenger count)
 //data is split into sections - ie ["male","female"], given a per_row count - ie two_per_row
@@ -270,13 +280,17 @@ function convert_data(my_data){
 
   var all_per_row = 45;
   var two_per_row = 20;
-  var three_per_row = 14;
+  var four_per_row = 14;
   var five_per_row = 10;
+  // var all_per_row = 100;
+  // var two_per_row = 70;
+  // var four_per_row = 30;
+  // var five_per_row = 25;
 
   var all = get_positions(my_data,all_per_row,[]);
-  var sex = get_positions(my_data,two_per_row,["male","female"],"Sex");
+  var sex = get_positions(my_data,two_per_row,["Male","Female"],"Sex");
   var age = get_positions(my_data,five_per_row,[0,15,30,45,70],"Age");
-  var p_class = get_positions(my_data,three_per_row,[1,2,3],"Pclass");
+  var p_class = get_positions(my_data,four_per_row,[1,2,3,4],"Pclass");
   var ch_1_2 = age_class(my_data,two_per_row);
   var w_ch_1_2 = women_children_class(my_data,two_per_row);
 
@@ -286,12 +300,12 @@ function convert_data(my_data){
 
     var positions = [];
     var filtered_data = my_data.filter(function(d){
-      return (d.Age < 15 && d.Pclass < 3) || (d.Sex == "female" && d.Age >= 15 && d.Pclass < 3)
+      return (d.Age < 15 && d.Pclass < 4) || (d.Sex == "Female" && d.Age >= 15 && d.Pclass < 4)
     })
 
     positions = positions.concat(populate(filtered_data,"1st or 2nd Class women and children","",col_per_row));
     var filtered_data = my_data.filter(function(d){
-      return (d.Age < 15 && d.Pclass == 3) || (d.Sex == "female" && d.Age >= 15 && d.Pclass == 3) || (d.Sex == "male" && d.Age >= 15)
+      return (d.Age < 15 && d.Pclass == 4) || (d.Sex == "Female" && d.Age >= 15 && d.Pclass == 4) || (d.Sex == "Male" && d.Age >= 15)
     })
     positions = positions.concat(populate(filtered_data,"Remaining Passengers","",col_per_row))
     return positions;
@@ -300,19 +314,19 @@ function convert_data(my_data){
   function age_class(my_data,col_per_row){
     var positions = [];
     var filtered_data = my_data.filter(function(d){
-      return (d.Age < 15 && d.Pclass < 3)
+      return (d.Age < 15 && d.Pclass < 4)
     })
     positions = positions.concat(populate(filtered_data,"1st or 2nd Class children","",col_per_row));
     var filtered_data = my_data.filter(function(d){
-      return (d.Age < 15 && d.Pclass == 3) || (d.Age >= 15)
+      return (d.Age < 15 && d.Pclass == 4) || (d.Age >= 15)
     })
     positions = positions.concat(populate(filtered_data,"Remaining Passengers","",col_per_row))
     return positions;
   }
 
   function get_positions(my_data,col_per_row,variables,field){
-
-    var p_class_labels = {1:"1st Class",2: "2nd Class",3:"3rd Class"};
+    console.log("Field : " + field)
+    var p_class_labels = {1:"1st Class",2: "2nd Class",3:"3rd Class", 4:"Crew Class"};
     var positions = [], band = "",p_class="";
     if (variables.length == 0){
       positions = populate(my_data,"","",col_per_row);
@@ -344,8 +358,10 @@ function convert_data(my_data){
   function populate(my_data,band,p_class,col_per_row){
 
     my_data = my_data.sort(function(a,b){return d3.descending(a.Survived, b.Survived)});
+    my_data = my_data.sort(function(a,b){return d3.descending(b.Passenger, a.Passenger)});
+
     var my_row = 0, my_column = 0;
-    var sex_labels = {"male": "Men","female": "Women"}
+    var sex_labels = {"Male": "Men","Female": "Women"}
     var current_positions = [];
     for(d in my_data){
       if(isNaN(d) == false){
@@ -355,9 +371,11 @@ function convert_data(my_data){
         }
         current_positions.push ({
           id: my_data[d].PassengerId,
+          name: my_data[d].Name,
           row: my_row,
           column: my_column,
           survived: my_data[d].Survived,
+          passenger: my_data[d].Passenger,
           age: band,
           sex: sex_labels[my_data[d].Sex],
           all: "all",
