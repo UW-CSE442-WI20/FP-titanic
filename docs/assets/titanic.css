@@ -68,7 +68,7 @@
   width: 550px;
   top: 0px;
   z-index: 90;
-  padding-bottom: 200px;
+  /* padding-bottom: 200px; */
 }
 
 #sections {
@@ -76,7 +76,7 @@
     display: inline-block;
     top: 0px;
     z-index: 90;
-    padding-bottom: 400px;
+    /* padding-bottom: 400px; */
     font-family: 'Special Elite', cursive;
 }
 
@@ -118,7 +118,7 @@
   /* trigger: 0.33; */
 }
 
-#sections_distribution .title {
+#sections_distribution .title, #sections .title {
   /* font-family: "metric-test-semibold"; */
   font-family: 'Special Elite', cursive;
   font-size: 32px;
