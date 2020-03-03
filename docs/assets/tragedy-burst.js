@@ -43,13 +43,28 @@ var ORANGE_COLOR = "#FF715B";
 var PINK_COLOR = "#DD7A92";
 var LABEL_SIZE = "1.45em";
   
-window.onload = function () {
-    // hide all buttons by default, done in CSS
-    // $("#bottom-panel").css('opacity', 0);
-    loadInitialData();
+// window.onload = function () {
+//     // hide all buttons by default, done in CSS
+//     // $("#bottom-panel").css('opacity', 0);
+//     loo
+//     setInterval(loop, 15000);
+// }
+
+loadInitialData()
+setInterval(loop, 9000);
+
+function loop() {
+    resetInitialViz()
+    loadInitialData()
+}
+
+function resetInitialViz() {
+    d3.select("#canvas").select("svg").remove()
+    // svg.selectAll("text").remove();
+    //d3.select("#counter-label")
 }
   
-var loadInitialData = function () {
+function loadInitialData() {
     d3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/per10.csv", function(error, data) {
         if (error) {
             console.log(errors);
