@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+
+		.x.axis path {
+		  display: none;
+		}
+		
+	</style>
+
+
+	<title>Titanic Analysis</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./fullpageassets/fullPage.css" />
+  <link rel="stylesheet" type="text/css" href="./fullpageassets/index.css"/>
+  <link rel="stylesheet" type="text/css" href="./fullpageassets/sequences.css"/>
+  <link rel="stylesheet" type="text/css" href="./fullpageassets/titanic.css"/>
+  <link rel="stylesheet" type="text/css" href="./fullpageassets/old_index.css"/>
+
+  <script type="text/javascript" src="./fullpageassets/fullPage.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script>
+    var d3v3 = window.d3;
+    window.d3 = null;
+  </script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script>
+    var d3v4 = window.d3;
+    window.d3 = null;
+  </script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+	<script type="text/javascript">
+		var headerColor = '#fff',
+			contentColor = '#fff';
+
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['title', 'section1', 'section2', 'section3'],
+				sectionsColor: [headerColor, contentColor, contentColor, contentColor],
+				navigation: true,
+				navigationPosition: 'right',
+				navigationTooltips: ['Start', 'Section1', 'Section2', 'Section3']
+			});
+		});
+	</script>	
+  
+	
+</head>
+<body>
+  <div id="fullpage">
+    <!-- <div class="section" id="header-section">
+      <div id="header">
+				<h1>Titanic Analysis</h1>
+      </div> -->
+      
+    <div class="section" id="header-section">
+      <div class="container">
+        <img class="logo" src="./img/titanic_logo.png" />
+        <div class="start">
+          You think you know the story.<br>
+          Now <b>START SCROLLING</b> to discover the truth
+          <div id="scroll-down">
+            <span class="arrow-down"></span>
+          <span id="scroll-title">Scroll down</span>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div id="intro">
+          Titanic is one of the highest grossing and most iconic Hollywood movies of the 20th century. The story of Jack and Rose
+          is engrained in the memory of millions as the modern love story. However, people will probably be surprised as Jack and
+          Rose are not even real. As we idolized over the movie, we don’t really understand the facts and figure behind the
+          sinking of the S.S.Titanic, one of the most tragic and influential sea disasters of the early 20th century. The legacy
+          of this accident lives on today as modern ships and cruises are all equipped with better technology and procedures. <br><br>
+          
+          Through this interactive experience, we want to tell the story and pay our respects to those who perish in this tragic
+          accident with the hope that their story will not only be a constant reminder of the need of proper safety procedure, but
+          also the need for a more inclusive and fair society. As you scroll through the interactive graphs, we will layout facts
+          and statistics of the accident which includes deep dive of the passenger and crew’s nationality, age, gender, social
+          class and how these factors affect their survival.
+        </div>
+        </div>
+      </div>
+
+    <div class="section">
+      <div class="container">
+        <div id="sections_distribution">
+          <!-- <div id='vis'></div> -->
+          <section class="step">
+            <div class="title">How many passengers on board?</div>
+            This graph shows <button id = "all"> all </button> of Titanic’s <button id = "passenger">passengers</button> and <button id = "crew"> crews </button>. 
+            As a homage to those who died, you can also hover over the dots
+            to see their names. We believe that each of these persons deserve proper recognition and respect, regardless of their
+            status, gender, age, and sex.
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div id="sections_distribution">
+          <section class="step">
+            <div class="title">There were more men than women on board.</div>
+            This graph shows the gender distribution of the <button id = "passenger">passengers</button> and <button id = "crew">crews</button>. 
+            Gender inequality was a major problem back in the early 20th
+            century as women often were not able to work or travel without permission without authorization from their husbands.
+            Moreover, women are generally poorer as they were not able to get access to high paying jobs. We want to see how gender
+            inequality back in the 1920s affected the passenger distribution of titanic. We see that there are far more males than
+            females (in fact almost twice as much).
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div id="sections_distribution">
+          <section class="step">
+            <div class="title">The majority were aged between 15 and 45 years old.</div>
+            This graph shows the distribution of the <button id = "passenger">passengers</button> and <button id = "crew">crews</button> age group distribution. 
+            Titanic was a passenger liner that operated between England and
+            the United States. It carried some of the wealthiest people in Europe, but also at the same time carried immigrants into
+            the US. It is thus no surprise that working age individuals (age 15 - 30) account for the majority of the passenger as
+            the early 20th century was a time where European migration into the US was at a high due to wars and instability in
+            Europe.
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div id="sections_distribution">
+          <section class="step">
+            <div class="title">There was a much larger proportion of passengers in 3rd class.</div>
+            This graph shows the distribution of passenger class. Even though Titanic was infamous as one of the most luxurious
+            ships back at its day, it actually made a lot of its earnings carrying poor immigrants from Europe to the US. The rooms
+            and accomodation that these people had (3rd class passengers) were much less luxurious and often lacking. Data shows
+            that there is a much larger proportion of 3rd class passengers compared to other classes, but 1st and 2nd class
+            passenger numbers were similar.
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div id="sections_distribution">
+          <div id="sections">
+            <div class="title">Where are the passengers from?</div>
+            In the 21st century, we are used to thinking that globalization and movement of people is a recent trend. However, it
+            was because of early pioneer innovation such as Titanic that people can move almost anywhere they want and within
+            reasonable time. We see that the Titanic had a very diverse set of nationalities. It not only had passengers from
+            Europe, but also from far away places such as Asia and the middle east.
+            <h5>Overall</h5> and <h5>First Class</h5> and <h5>Second Class</h5> and <h5>Third Class</h5>
+            <br><br>
+      
+            <div id="titanic_map"></div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+            <script src="./fullpageassets/map.js"></script>
+          </div>
+          <!-- <div id="titanic_map"></div>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+          <script src="./assets/map.js"></script> -->
+      
+          <div class="title">Arguably the most famous shipwreck in the world, the luxury ocean liner RMS Titanic struck an iceberg on April 14, 1912.
+          She sank in 2 hours killing 1,500 people.</div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div id="sections_distribution">
+        <div id="sections">
+          <div class="title">Arguably the most famous shipwreck in the world, the luxury ocean liner RMS Titanic struck an iceberg on April 14, 1912.
+            She sank in 2 hours killing 1,500 people.</div>
+          <div id="counter-header">
+            There are a total of <span id="counter-label">0</span> passengers in the titanic
+          </div>
+          <div id="canvas"></div>
+          <script src="./assets/tragedy-burst.js"></script>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="section">
+    <div class="extrablack">
+      <div class="container">
+        <div class="title">Test some graph</div>
+        <div class="text">
+          Test some graphTest some graphTest some graphTest some graphTest some graphTest some graphTest some graph Test some graphTest some graph<br>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+
+  <!-- <div class="section">
+    <div class="extrablack">
+      <div class="container">
+        <div class="title">Test Sunburst</div>
+        <div class="text">
+          Test Sunburst Test Sunburst Test Sunburst Test Sunburst Test Sunburst Test SunburstTest Sunburst Test Sunburst Test Sunburst<br>
+        </div>
+        <div id="sunbucket">
+          <div id="sunmain">
+            <div id="sequence"></div>
+            <div id="sunburst">
+              <div id="explanation" style="visibility: hidden;">
+                <span id="percentage"></span><br/>
+                survival rate
+              </div>
+            </div>
+          </div>
+          <div id="sidebar">
+            <input type="checkbox" id="togglelegend"> Legend<br/>
+            <div id="legend" style="visibility: hidden;"></div>
+          </div>
+        </div>
+      </div>
+        
+    </div>
+  </div> -->
+
+</div>
+  
+  
+</body>
+
+<!-- Scripts -->
+<script src="./fullpageassets/fullpagesections.js"></script>
+<script type="text/javascript" src="./fullpageassets/testsequences.js"></script>
+
+</html>
