@@ -1,0 +1,206 @@
+var overall_nationality = [
+    {
+        "country": "Australia",
+        "region": "Australia",
+        "total": 1,
+        "latitude": -25.2744,
+        "longitude": 133.7751
+    },
+    {
+        "country": "Austria",
+        "region": "Europe",
+        "total": 1,
+        "latitude": 47.5162,
+        "longitude": 14.5501
+    },
+    {
+        "country": "Belgium",
+        "region": "Europe",
+        "total": 8,
+        "latitude": 50.5039,
+        "longitude": 4.4699
+    },
+    {
+        "country": "Canada",
+        "region": "North America",
+        "total": 26,
+        "latitude": 56.1304,
+        "longitude": -106.3468
+    },
+    {
+        "country": "Croatia",
+        "region": "Europe",
+        "total": 9,
+        "latitude": 45.1000,
+        "longitude": 15.2000
+    },
+    {
+        "country": "Denmark",
+        "region": "Europe",
+        "total": 7,
+        "latitude": 56.2639,
+        "longitude": 9.5018
+    },
+    {
+        "country": "Egypt",
+        "region": "Africa",
+        "total": 1,
+        "latitude": 26.8206,
+        "longitude": 30.8025
+    },
+    {
+        "country": "England",
+        "region": "Europe",
+        "total": 317,
+        "latitude": 52.3555,
+        "longitude": -1.1743
+    },
+    {
+        "country": "Finland",
+        "region": "Europe",
+        "total": 34,
+        "latitude": 61.9241,
+        "longitude": 25.7482
+    },
+    {
+        "country": "France",
+        "region": "Europe",
+        "total": 15,
+        "latitude": 46.2276,
+        "longitude": 2.2137
+    },
+    {
+        "country": "Germany",
+        "region": "Europe",
+        "total": 5,
+        "latitude": 51.1657,
+        "longitude": 10.4515
+    },
+    {
+        "country": "Hungary",
+        "region": "Europe",
+        "total": 1,
+        "latitude": 47.1625,
+        "longitude": 19.5033
+    },
+    {
+        "country": "Ireland",
+        "region": "Europe",
+        "total": 129,
+        "latitude": 53.1424,
+        "longitude": -7.6921
+    },
+    {
+        "country": "Italy",
+        "region": "Europe",
+        "total": 9,
+        "latitude": 41.8719,
+        "longitude": 12.5674
+    },
+    {
+        "country": "Japan",
+        "region": "Asia",
+        "total": 1,
+        "latitude": 36.2048,
+        "longitude": 138.2529
+    },
+    {
+        "country": "Latvia",
+        "region": "Europe",
+        "total": 1,
+        "latitude": 56.8796,
+        "longitude": 24.6032
+    },
+    {
+        "country": "Lithuania",
+        "region": "Europe",
+        "total": 2,
+        "latitude": 55.1694,
+        "longitude": 23.8813
+    },
+    {
+        "country": "Norway",
+        "region": "Europe",
+        "total": 19,
+        "latitude": 60.4720,
+        "longitude": 8.4689
+    },
+    {
+        "country": "Poland",
+        "region": "Europe",
+        "total": 6,
+        "latitude": 51.9194,
+        "longitude": 19.1451
+    },
+    {
+        "country": "Portugal",
+        "region": "Europe",
+        "total": 1,
+        "latitude": 39.3999,
+        "longitude": -8.2245
+    },
+    {
+        "country": "Russia",
+        "region": "Asia",
+        "total": 4,
+        "latitude": 61.5240,
+        "longitude": 105.3188
+    },
+    {
+        "country": "Slovakia",
+        "region": "Europe",
+        "total": 1,
+        "latitude": 48.6690,
+        "longitude": 19.6990
+    },
+    {
+        "country": "South Africa",
+        "region": "Africa",
+        "total": 4,
+        "latitude": -30.5595,
+        "longitude": -22.9375
+    },
+    {
+        "country": "Sweden",
+        "region": "Europe",
+        "total": 76,
+        "latitude": 60.1282,
+        "longitude": 18.6435
+    },
+    {
+        "country": "Swiss",
+        "region": "Europe",
+        "total": 6,
+        "latitude": 46.8182,
+        "longitude": 8.2275
+    },
+    {
+        "country": "Syria",
+        "region": "Asia",
+        "total": 87,
+        "latitude": 34.8021,
+        "longitude": 38.9968
+    },
+    {
+        "country": "USA",
+        "region": "North America",
+        "total": 181,
+        "latitude": 37.0902,
+        "longitude": -95.7129
+    },
+    {
+        "country": "Uruguay",
+        "region": "South America",
+        "total": 3,
+        "latitude": -32.5228,
+        "longitude": -55.7658
+    }
+    // ,
+    // {
+    //     "country": "Unknown",
+    //     "region": "Unknown",
+    //     "total": 400,
+    //     "latitude": 45.1000,
+    //     "longitude": 15.2000
+    // }
+];
