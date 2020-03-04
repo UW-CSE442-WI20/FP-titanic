@@ -36,6 +36,8 @@
 
 .container {
   width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #graphic {
@@ -106,16 +108,18 @@
   position: relative;
   display: inline-block;
   top: 0px;
-  height: 300px;
-  margin-bottom: 300px;
-  z-index: 90;
+  /* height: 300px; */
+  /* margin-bottom: 300px; */
+  margin: auto;
+  /* z-index: 90; */
   font-family: 'Special Elite', cursive;
 }
 
 .step {
   width: 400px;
-  height: 50vh;
-  margin-bottom: 200px;
+  /* height: 50vh; */
+  margin-bottom: auto;
+  margin-top: auto;
   margin-left: 800px;
   /* font-family: "TiemposTextWeb-Regular","san-serif"; */
   /* font-family: "metric-test-regular"; */
@@ -124,7 +128,7 @@
   line-height: 20px;
   /* color: #767678; */
   color: rgba(49, 49, 49, 0.856);
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
 
   /* trigger: 0.33; */
 }
@@ -134,6 +138,8 @@
   font-family: 'Special Elite', cursive;
   font-size: 32px;
   font-weight: bold;
+  /* margin-left: auto;
+  margin-right: auto; */
   margin-bottom: 2px;
   color: black;
   line-height: 1.2em;
@@ -145,13 +151,15 @@
 
 #vis {
   display: inline-block;
-  position: fixed;
+  position: relative;
   top: 60px;
   z-index: 1;
-  margin-left: -80px;
+  /* margin-left: -80px; */
+  margin-top: auto;
+  margin-bottom: auto;
   height: 600px;
-  width: 800px;
-  /* background-color: #ddd; */
+  width: 600px;
+  background-color: red;
 }
 
 .highlight {
