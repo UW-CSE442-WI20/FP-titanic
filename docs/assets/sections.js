@@ -2,10 +2,10 @@
 
 var scrollVis = function () {
   // define constants (proportions copied from JV)
-  var width = 600;
+  var width = 800;
   var left_right_margin = 30;
   var top_bottom_margin = 60;
-  var height = 520;
+  var height = 600;
   var format = d3.format(".0%");
 
   // define scroll index tracking vars - JV
@@ -69,9 +69,9 @@ var scrollVis = function () {
     activateFunctions[0] = ["none","both",0];  // cover
     activateFunctions[1] = ["none","both",0];  // watchvideo
     activateFunctions[2] = ["none","both",0];  // watchvideo
-    activateFunctions[2] = ["all","both",100];   // sections - test 1
-    activateFunctions[3] = ["sex","both",1000]; // sections - test 2
-    activateFunctions[4] = ["age","both",1000]; // sections - test 3
+    activateFunctions[2] = ["all","both",500];   // sections - test 1
+    activateFunctions[3] = ["sex","both",500]; // sections - test 2
+    activateFunctions[4] = ["age","both",500]; // sections - test 3
     activateFunctions[5] = ["p_class","both",2000]; // class, survived not shown
     // activateFunctions[5] = ["none","both",0];  // watchvideo
     activateFunctions[6] = ["none","both",0];  // extrablack
@@ -131,7 +131,7 @@ var scrollVis = function () {
       vis.selectAll("*").remove();
       d3.select("wordcloud").remove();
       // drawCloud();
-    } else if (index == 10) {
+    } else if (index == 9) {
       svg.selectAll("*").attr("visibility","hidden");
       d3.select("wordcloud").remove();
       drawSun(); // draw sunburst
@@ -155,9 +155,9 @@ var scrollVis = function () {
     //reset scale domains and x1_scale range.
     x0_scale.domain(d3.set(my_data,function(d){return d[data_class]}).values());
     x1_scale.domain([0,d3.max(my_data,function(d){return d.column})+1]).range([0, x0_scale.bandwidth()]);
-    y_scale.domain([0,43]);
+    y_scale.domain([0,115]);
     //set radius
-    var my_radius = 4.5;
+    var my_radius = 2;
     //data,exit,enter and merge for bar labels
     var bar_group = svg.selectAll(".labels_group")
                       .data(x0_scale.domain(),function(d){return d});

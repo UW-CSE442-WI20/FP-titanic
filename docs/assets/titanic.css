@@ -116,7 +116,7 @@
   width: 400px;
   height: 50vh;
   margin-bottom: 200px;
-  margin-left: 600px;
+  margin-left: 800px;
   /* font-family: "TiemposTextWeb-Regular","san-serif"; */
   /* font-family: "metric-test-regular"; */
   font-family: 'Special Elite', cursive;
@@ -148,7 +148,7 @@
   position: fixed;
   top: 60px;
   z-index: 1;
-  margin-left: -50px;
+  margin-left: -80px;
   height: 600px;
   width: 800px;
   /* background-color: #ddd; */
