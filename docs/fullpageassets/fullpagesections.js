@@ -32,6 +32,9 @@ var scrollVis = function (rawData) {
     //define data object and svg.
     var vis_data = {};
     // var svg = ""
+    var div = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
     
   
     // vis_data = convert_data(rawData);
@@ -258,7 +261,22 @@ var scrollVis = function (rawData) {
                 }              
               })
               .attr("r",my_radius)
-              .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
+              .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")")
+              .on("mouseover", function(d) {
+                console.log("mouseover")
+                div.transition()
+                  .duration(200)
+                  .style("opacity", .9);
+                div.html(d.name)
+                  .style("left", (d3v4.event.pageX) + "px")
+                  .style("top", (d3v4.event.pageY - 28) + "px");
+                })
+              .on("mouseout", function(d) {
+                div.transition()
+                  .duration(500)
+                  .style("opacity", 0);
+                });
+              ;
               
 
       // Case when passenger is chosen
@@ -360,6 +378,23 @@ var scrollVis = function (rawData) {
           .attr("transform", "translate(" + left_right_margin + "," + ((top_bottom_margin *1.2)+ y_scale.range()[0]) + ")")
           .call(d3v4.axisBottom(x0_scale));
       };
+
+
+      // add the dots with tooltips
+      // svg.selectAll("dot")
+      //     .on("mouseover", function(d) {
+      //       div.transition()
+      //         .duration(200)
+      //         .style("opacity", .9);
+      //       div.html(formatTime(d.date) + "<br/>" + d.close)
+      //         .style("left", (d3.event.pageX) + "px")
+      //         .style("top", (d3.event.pageY - 28) + "px");
+      //       })
+      //     .on("mouseout", function(d) {
+      //       div.transition()
+      //         .duration(500)
+      //         .style("opacity", 0);
+      //       });
     return chart;
 }
 
