@@ -173,19 +173,17 @@
           <!-- <div id="titanic_map"></div>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
           <script src="./assets/map.js"></script> -->
-      
-          <div class="title">Arguably the most famous shipwreck in the world, the luxury ocean liner RMS Titanic struck an iceberg on April 14, 1912.
-          She sank in 2 hours killing 1,500 people.</div>
         </div>
       </div>
   </div>
 
-  <div class="section">
+  <!-- <div class="section">
     <div class="container">
       <div id="sections_distribution">
         <div id="sections">
           <div class="title">Arguably the most famous shipwreck in the world, the luxury ocean liner RMS Titanic struck an iceberg on April 14, 1912.
             She sank in 2 hours killing 1,500 people.</div>
+            
           <div id="counter-header">
             There are a total of <span id="counter-label">0</span> passengers in the titanic
           </div>
@@ -194,7 +192,28 @@
         </div>
       </div>
     </div>
-    
+  </div> -->
+
+  <div class="section">
+    <div class="container">
+      <div id="sections_distribution">
+        <div id="sections">
+          <div class="title">How many of the passengers survived?</div>
+          <br><br>
+
+          <div id="toolbar" align="center">
+            <button id="all" class="button active">All</button>
+            <button id="Gender" class="button">By Gender</button>
+            <button id="Age" class="button">By Age</button>
+            <button id="Class" class="button">By Class</button>
+            <button id="Survived" class="button">By Survival</button>
+          </div>
+          <br><br>
+          <p id="tragedy-description" align='center'> Based on our data, overall 40% of the passengers survived</p>
+          <div id="bubbles"></div>
+          <script src="./fullpageassets/tragedy-circles-graph.js"></script>
+        </div>
+    </div>
   </div>
 
   <div class="section">
