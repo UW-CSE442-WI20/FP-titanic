@@ -46,16 +46,21 @@ div {border-color: green;}
             }
             
 .cities,  .cityCover{
-				fill: #1A818C;
-			}
+    fill: #1A818C;
+}
 
-			.label {
-				font-size: 18px;
-				text-anchor: middle;
-				fill: #707070;
-				font-family: 'Special Elite', cursive;
-				font-weight: 400;
-			}
+.cities:hover {
+    stroke: black;
+    stroke-width: 2px;
+}
+
+.label {
+	font-size: 18px;
+	text-anchor: middle;
+	fill: #707070;
+	font-family: 'Special Elite', cursive;
+	font-weight: 400;
+}
 
 #sunbucket {
     display: inline-block;
