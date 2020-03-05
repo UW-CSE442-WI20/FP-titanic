@@ -4,6 +4,10 @@
     left: 10px;
 }
 
+.selected {
+    fill: none;
+}
+
 body {
     /* background-image: linear-gradient(white,#E7EBEC, #141832, black); */
     background-color: white;

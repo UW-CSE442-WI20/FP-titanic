@@ -16,6 +16,7 @@ var scrollVis = function () {
   var x0_scale = d3.scaleBand().padding(0.1).range([0, width-(left_right_margin*2)]);
   var x1_scale = d3.scaleLinear();
   var y_scale = d3.scaleLinear().range([height - (top_bottom_margin*2),0]);
+  console.log("x_0 = " + x0_scale + ", x1 = " + x1_scale + "y = " + y_scale);
 
   // define colours
   //all_colours - used during 1st section when survival rates not needed variable == "both".
@@ -162,6 +163,8 @@ var scrollVis = function () {
     //data,exit,enter and merge for bar labels
     var bar_group = svg.selectAll(".labels_group")
                       .data(x0_scale.domain(),function(d){return d});
+
+    console.log("label? = ")                 
 
     bar_group.exit().remove();
     //enter new groups

@@ -1,8 +1,8 @@
-var scrollVis = function () {
+var scrollVis = function (rawData) {
     // define constants (proportions copied from JV)
-    var width = 800;
+    var width = 600;
     var left_right_margin = 30;
-    var top_bottom_margin = 60;
+    var top_bottom_margin = 30;
     var height = 600;
     var format = d3v4.format(".0%");
   
@@ -31,216 +31,343 @@ var scrollVis = function () {
     var activateFunctions = [];
     //define data object and svg.
     var vis_data = {};
-    var svg = "";
+    // var svg = ""
+    
   
-    //initialise chart - function inherited from JV, content not.
-    var chart = function (selection) {
-  
-      selection.each(function (rawData) {
-        //define svg.
-        svg = d3v4.select(this).append("svg")
-                             .attr('width', width)
-                             .attr('height', height);
-        // perform preprocessing on raw data - comments on logic below
-        vis_data = convert_data(rawData);
-        // single_elements(vis_data); //draw elements that are not data dependent.
-        // set_up_sections(vis_data);
-        draw_dots("all","both",500);
+    // vis_data = convert_data(rawData);
+    // console.log("visdata")
+    console.log("svg")
+    var chart = function() {
+      vis_data = convert_data(rawData);
+      console.log("visdata")
+
+      // graph 1
+      var svg1 = d3v4.select("#vis").append("svg")
+              .attr('width', width)
+              .attr('height', height);
+      svg1.append("g").attr("class", "x_axis");
+      //x axis
+      // svg1.append("g").attr("class", "x_axis").attr("x_axis", x0_scale.domain());
+      draw_dots(svg1, "all","both",500, 0);
+
+      // graph 2
+      var svg2 = d3v4.select("#secondvis").append("svg")
+              .attr('width', width)
+              .attr('height', height)
+      svg2.append("g").attr("class", "x_axis");
+      draw_dots(svg2, "sex","both",500, 0);
+
+      // graph 3
+      var svg3 = d3v4.select("#thirdvis").append("svg")
+              .attr('width', width)
+              .attr('height', height)
+      svg3.append("g").attr("class", "x_axis");
+      draw_dots(svg3, "age","both",500, 0);
+
+      // graph 4
+      var svg4 = d3v4.select("#forthvis").append("svg")
+              .attr('width', width)
+              .attr('height', height)
+      svg4.append("g").attr("class", "x_axis");
+      draw_dots(svg4, "p_class","both",2000, 0);
+
+      d3v4.select("#passenger1").on("click", function() {
+        draw_dots(svg1, "all","both",500, 1);
       });
-  
-    };
+      
+      d3v4.select("#crew1").on("click", function() {
+        draw_dots(svg1, "all","both",500, 2);
+      });
 
-    var draw_dots = function (data_class, fill_type, transition){
-    //define data - empty if none (ie first scroll index).
-    if(data_class == "none"){
-        var my_data = [];
-    } else {
-        var my_data = vis_data[data_class];
+      d3v4.select("#all1").on("click", function() {
+        draw_dots(svg1, "all","both",500, 0);
+      });
+      
+      d3v4.select("#passenger2").on("click", function() {
+        draw_dots(svg2, "sex","both",500, 1);
+      });
+      
+      d3v4.select("#crew2").on("click", function() {
+        draw_dots(svg2, "sex","both",500, 2);
+      });
+
+      d3v4.select("#all2").on("click", function() {
+        draw_dots(svg2, "sex","both",500, 0);
+      });
+      
+      d3v4.select("#passenger3").on("click", function() {
+        draw_dots(svg3, "age","both",500, 1);
+      });
+      
+      d3v4.select("#crew3").on("click", function() {
+        draw_dots(svg3, "age","both",500, 2);
+      });
+
+      d3v4.select("#all3").on("click", function() {
+        draw_dots(svg3, "age","both",500, 0);
+      });
     }
-    //reset scale domains and x1_scale range.
-    x0_scale.domain(d3v4.set(my_data,function(d){return d[data_class]}).values());
-    x1_scale.domain([0,d3v4.max(my_data,function(d){return d.column})+1]).range([0, x0_scale.bandwidth()]);
-    y_scale.domain([0,115]);
-    //set radius
-    var my_radius = 2;
-    //data,exit,enter and merge for bar labels
-    var bar_group = svg.selectAll(".labels_group")
-                        .data(x0_scale.domain(),function(d){return d});
 
-    bar_group.exit().remove();
-    //enter new groups
-    var enter = bar_group.enter()
-                        .append("g")
-                        .attr("class","labels_group")
-    //append rectangles to new group
-    enter.append("text").attr("class","bar_text")
-    //merge and remove
-    bar_group = bar_group.merge(enter);
-    //set for bar text attributes
-    bar_group.select(".bar_text")
-            .attr("visibility","hidden") //hidden initially
-            .attr("x",function(d){ return x0_scale(d) + (x0_scale.bandwidth()*0.45)})
-            .attr("y",function(d){return y_scale(d3v4.max(my_data,function(m){if(m[data_class]==d){return m.row}})) - 15})
-            .attr("fill",function(d){ //fill dependent on whether survival is being shown.
-                if(fill_type == "both"){
-                return all_colours[d]
-                } else {
-                return survival_colours[1] //if survival, show 'Survived' colour as text = survived %
-            }})
-            .text(function(d){
-                //number of passengers in this group.
-                var group_count = my_data.filter(function(m){if(m[data_class]==d){return m}}).length;
-                if(fill_type == "both"){
-                return group_count //if no survival, show no of passengers.
-                } else {
-                //otherwise, calculate the passengers who survived and show survival rate - format defined on line 9
-                var survival_count =  my_data.filter(function(m){if(m[data_class]==d && m.survived == 1){return m}}).length;
-                return format(survival_count/group_count)
-                }
-                })
-            .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")")
-            .transition()
-            .delay(transition*1.2)
-            .attr("visibility","visible") //now that the dots and text have moved, make text visible.
+    
+    
 
-    //repeat data,exit,enter and merge for dots
-    var dot_group = svg.selectAll(".dots_group")
-                        .data(my_data);
+    //initialise chart - function inherited from JV, content not.
+    // var chart = function (selection) {
+  
+    //   selection.each(function (rawData) {
+    //     //define svg.
+    //     svg = d3v4.select("#vis").append("svg")
+    //                          .attr('width', width)
+    //                          .attr('height', height);
+    //     // perform preprocessing on raw data - comments on logic below
+    //     vis_data = convert_data(rawData);
+    //     // single_elements(vis_data); //draw elements that are not data dependent.
+    //     // set_up_sections(vis_data);
+    //     draw_dots("all","both",500);
+    //   });
+  
+    // };
+    // chart.update = function() {
+    //   console.log("chart update")
+    //   draw_dots("all","both",500);
+    // }
 
-    dot_group.exit().remove();
-    //enter new groups
-    var enter = dot_group.enter()
-                        .append("g")
-                        .attr("class","dots_group")
-    //append rectangles to new group
-    enter.append("circle").attr("class","circle_dot")
-    //merge and remove
-    dot_group = dot_group.merge(enter);
-    //define circle dot attributes
-    dot_group.select(".circle_dot")
-            .transition()
-            .duration(transition)
-            .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
-            .attr("cy",function(d){return y_scale(d.row)})
-            .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
-            //   if(fill_type == "both"){
-            //     return all_colours[d[data_class]]
-            //   } else {
-            //     return survival_colours[d.survived]
-            // }
-            if(d.passenger == 1) {
-                return all_colours[d[data_class]]
-            } else {
-                return crew_colours[d[data_class]]
-            }})
-            .attr("r",my_radius)
-            .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
-            
+    var draw_dots = function (svg, data_class, fill_type, transition, status){
+      svg.select("x_axis").attr("x_axis", x0_scale.domain())
+      console.log("entering draw dots")
+      //define data - empty if none (ie first scroll index).
+      if(data_class == "none"){
+          var my_data = [];
+      } else {
+          var my_data = vis_data[data_class];
+      }
+      //reset scale domains and x1_scale range.
+      x0_scale.domain(d3v4.set(my_data,function(d){return d[data_class]}).values());
+      x1_scale.domain([0,d3v4.max(my_data,function(d){return d.column})+1]).range([0, x0_scale.bandwidth()]);
+      y_scale.domain([0,115]);
+      //set radius
+      var my_radius = 2;
+      //data,exit,enter and merge for bar labels
+      var bar_group = svg.selectAll(".labels_group")
+                          .data(x0_scale.domain(),function(d){return d});
 
-    // Case when passenger is chosen
-    d3v4.selectAll("#passenger").on("click", function() {
-        dot_group.select(".circle_dot")
-            .transition()
-            .duration(transition)            
-            .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
-            if(d.passenger == 1) {
-                return "orange"
-            } else {
-                return "grey"
-            }})
+      console.log("label? = " + x0_scale.domain())
 
-        bar_group.select(".bar_text")
-                .transition()
-                .delay(transition*0.1)
-                .attr("fill",function(d){ //fill dependent on whether survival is being shown.
-                if(fill_type == "both"){
-                    return "orange"
-                } else {
-                    return survival_colours[1] //if survival, show 'Survived' colour as text = survived %
-                }})
-                .text(function(d){
-                //number of passengers in this group.
-                var group_count = my_data.filter(function(m){if(m[data_class]==d && m["passenger"] == 1){return m}}).length;
-                if(fill_type == "both"){
-                    return group_count //if no survival, show no of passengers.
-                } else {
-                    //otherwise, calculate the passengers who survived and show survival rate - format defined on line 9
-                    var survival_count =  my_data.filter(function(m){if(m[data_class]==d && m.survived == 1){return m}}).length;
-                    return format(survival_count/group_count)
-                }
-                })
-            
-    });
-
-    // Case when crew is chosen
-    d3v4.selectAll("#crew").on("click", function() {
-        dot_group.select(".circle_dot")
-            .transition()
-            .duration(transition)
-            .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
-            .attr("cy",function(d){return y_scale(d.row)})
-            .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
-            if(d.passenger == 1) {
-                return "grey"
-            } else {
-                return "orange"
-            }})
-            .attr("r",my_radius)
-            .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
-
-        bar_group.select(".bar_text")
-                .transition()
-                .delay(transition*0.1)
-                .attr("fill",function(d){ //fill dependent on whether survival is being shown.
+      console.log("draw dots")
+      bar_group.exit().remove();
+      //enter new groups
+      var enter = bar_group.enter()
+                          .append("g")
+                          .attr("class","labels_group")
+      //append rectangles to new group
+      enter.append("text").attr("class","bar_text").attr("visibility", "hidden")
+      //merge and remove
+      bar_group = bar_group.merge(enter);
+      //set for bar text attributes
+      bar_group.select(".bar_text")
+              .attr("visibility","hidden") //hidden initially
+              .attr("x",function(d){ return x0_scale(d) + (x0_scale.bandwidth()*0.45)})
+              .attr("y",function(d){return y_scale(d3v4.max(my_data,function(m){if(m[data_class]==d){return m.row}})) - 15})
+              .attr("fill",function(d){ //fill dependent on whether survival is being shown.
+                  if (status == 0) {
                     if(fill_type == "both"){
-                    return "orange"
+                    return all_colours[d]
                     } else {
-                    return survival_colours[1] //if survival, show 'Survived' colour as text = survived %
-                }})
-                .text(function(d){
-                    //number of passengers in this group.
-                    var group_count = my_data.filter(function(m){if(m[data_class]==d && m["passenger"] == 0){return m}}).length;
-                    if(fill_type == "both"){
-                    return group_count //if no survival, show no of passengers.
-                    } else {
-                    //otherwise, calculate the passengers who survived and show survival rate - format defined on line 9
-                    var survival_count =  my_data.filter(function(m){if(m[data_class]==d && m.survived == 1){return m}}).length;
-                    return format(survival_count/group_count)
+                    return survival_colours[1]
                     }
-                    })
-    });
+                  } else if (status == 1) {
+                    if(fill_type == "both"){
+                    return "orange"
+                    } else {
+                    return survival_colours[1]
+                    }
+                  } else {
+                    if(fill_type == "both"){
+                    return "orange"
+                    } else {
+                    return survival_colours[1] 
+                    }
+                  }
+                  
+              })
+              .text(function(d){
+                  //number of passengers in this group.
+                  if (status == 0) {
+                    var group_count = my_data.filter(function(m){if(m[data_class]==d){return m}}).length;
+                  } else if (status == 1) {
+                    var group_count = my_data.filter(function(m){if(m[data_class]==d & m["passenger"] == 1){return m}}).length;
+                  } else {
+                    var group_count = my_data.filter(function(m){if(m[data_class]==d & m["passenger"] == 0){return m}}).length;
+                  }
+                  if(fill_type == "both"){
+                  return group_count //if no survival, show no of passengers.
+                  } else {
+                  //otherwise, calculate the passengers who survived and show survival rate - format defined on line 9
+                  var survival_count =  my_data.filter(function(m){if(m[data_class]==d && m.survived == 1){return m}}).length;
+                  return format(survival_count/group_count)
+                  }
+                  })
+              .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")")
+              .transition()
+              .delay(transition*1.2)
+              .attr("visibility","visible") //now that the dots and text have moved, make text visible.
 
-    // Case when all are chosen
-    d3v4.select("#all").on("click", function() {
-        dot_group.select(".circle_dot")
-            .transition()
-            .duration(transition)
-            .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
-            .attr("cy",function(d){return y_scale(d.row)})
-            .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
-                if(d.passenger == 1) {
-                return all_colours[d[data_class]]
+      //repeat data,exit,enter and merge for dots
+      var dot_group = svg.selectAll(".dots_group")
+                          .data(my_data);
+
+      dot_group.exit().remove();
+      //enter new groups
+      var enter = dot_group.enter()
+                          .append("g")
+                          .attr("class","dots_group")
+      //append rectangles to new group
+      enter.append("circle").attr("class","circle_dot")
+      //merge and remove
+      dot_group = dot_group.merge(enter);
+      //define circle dot attributes
+      dot_group.select(".circle_dot")
+              // .transition()
+              // .duration(transition)
+              .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
+              .attr("cy",function(d){return y_scale(d.row)})
+              .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
+              //   if(fill_type == "both"){
+              //     return all_colours[d[data_class]]
+              //   } else {
+              //     return survival_colours[d.survived]
+              // }
+                if (status == 0) {
+                  if(d.passenger == 1) {
+                    return all_colours[d[data_class]]
+                  } else {
+                    return crew_colours[d[data_class]]
+                  }
+                } else if (status == 1) {
+                  if(d.passenger == 1) {
+                    return "orange"
+                  } else {
+                    return "grey"
+                  }
                 } else {
-                return crew_colours[d[data_class]]
-                }})
-            .attr("r",my_radius)
-            .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
-    });
+                  if(d.passenger == 1) {
+                    return "grey"
+                  } else {
+                    return "orange"
+                  }
+                }              
+              })
+              .attr("r",my_radius)
+              .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
+              
 
-    //reset x_axis
-    d3v4.select(".x_axis")
-        .attr("transform", "translate(" + left_right_margin + "," + ((top_bottom_margin *1.2)+ y_scale.range()[0]) + ")")
-        .call(d3v4.axisBottom(x0_scale));
-    };
+      // Case when passenger is chosen
+      // d3v4.selectAll("#passenger").on("click", function() {
+          // dot_group.select(".circle_dot")
+          //     // .transition()
+          //     // .duration(transition)            
+          //     .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
+          //     if(d.passenger == 1) {
+          //         return "orange"
+          //     } else {
+          //         return "grey"
+          //     }})
 
+          // bar_group.select(".bar_text")
+          //         .transition()
+          //         .delay(transition*0.1)
+          //         .attr("fill",function(d){ //fill dependent on whether survival is being shown.
+          //         if(fill_type == "both"){
+          //             return "orange"
+          //         } else {
+          //             return survival_colours[1] //if survival, show 'Survived' colour as text = survived %
+          //         }})
+          //         .text(function(d){
+          //         //number of passengers in this group.
+          //         var group_count = my_data.filter(function(m){if(m[data_class]==d && m["passenger"] == 1){return m}}).length;
+          //         if(fill_type == "both"){
+          //             return group_count //if no survival, show no of passengers.
+          //         } else {
+          //             //otherwise, calculate the passengers who survived and show survival rate - format defined on line 9
+          //             var survival_count =  my_data.filter(function(m){if(m[data_class]==d && m.survived == 1){return m}}).length;
+          //             return format(survival_count/group_count)
+          //         }
+          //         })
+          // draw_dots(svg, data_class, fill_type, transition, 1)
+              
+      // });
+
+      // Case when crew is chosen
+      // d3v4.selectAll("#crew").on("click", function() {
+      //     dot_group.select(".circle_dot")
+      //         // .transition()
+      //         // .duration(transition)
+      //         .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
+      //         .attr("cy",function(d){return y_scale(d.row)})
+      //         .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
+      //         if(d.passenger == 1) {
+      //             return "grey"
+      //         } else {
+      //             return "orange"
+      //         }})
+      //         .attr("r",my_radius)
+      //         .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
+
+      //     bar_group.select(".bar_text")
+      //             .transition()
+      //             .delay(transition*0.1)
+      //             .attr("fill",function(d){ //fill dependent on whether survival is being shown.
+      //                 if(fill_type == "both"){
+      //                 return "orange"
+      //                 } else {
+      //                 return survival_colours[1] //if survival, show 'Survived' colour as text = survived %
+      //             }})
+      //             .text(function(d){
+      //                 //number of passengers in this group.
+      //                 var group_count = my_data.filter(function(m){if(m[data_class]==d && m["passenger"] == 0){return m}}).length;
+      //                 if(fill_type == "both"){
+      //                 return group_count //if no survival, show no of passengers.
+      //                 } else {
+      //                 //otherwise, calculate the passengers who survived and show survival rate - format defined on line 9
+      //                 var survival_count =  my_data.filter(function(m){if(m[data_class]==d && m.survived == 1){return m}}).length;
+      //                 return format(survival_count/group_count)
+      //                 }
+      //                 })
+      // });
+
+      // Case when all are chosen
+      // d3v4.select("#all").on("click", function() {
+      //     dot_group.select(".circle_dot")
+      //         // .transition()
+      //         // .duration(transition)
+      //         .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
+      //         .attr("cy",function(d){return y_scale(d.row)})
+      //         .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
+      //             if(d.passenger == 1) {
+      //             return all_colours[d[data_class]]
+      //             } else {
+      //             return crew_colours[d[data_class]]
+      //             }})
+      //         .attr("r",my_radius)
+      //         .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
+      // });
+
+      //reset x_axis
+      // svg.append("g")
+      //   .attr("transform", "translate(0," + height + ")")
+      //   .call(d3.axisBottom(x));
+      svg.select(".x_axis")
+          .attr("transform", "translate(" + left_right_margin + "," + ((top_bottom_margin *1.2)+ y_scale.range()[0]) + ")")
+          .call(d3v4.axisBottom(x0_scale));
+      };
     return chart;
-
 }
+
 
 function display(data) {
     // create a new plot and
     // display it
-    var plot = scrollVis();
+    var plot = scrollVis(data);
     d3v4.select('#vis')
       .datum(data)
       .call(plot);

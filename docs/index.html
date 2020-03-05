@@ -124,7 +124,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
     <script src="./assets/map.js"></script> --> 
 
-  <div id="sections">
+  <!-- <div id="sections">
     <div class="title">Arguably the most famous shipwreck in the world, the luxury ocean liner RMS Titanic struck an iceberg on April 14, 1912.
       She sank in 2 hours killing 1,500 people.</div>
     <div id="counter-header">
@@ -132,6 +132,23 @@
     </div>
     <div id="canvas"></div>
     <script src="./assets/tragedy-burst.js"></script>
+  </div> -->
+
+  <div id="sections">
+    <div class="title"> How many of the passengers survived? </div>
+    <br><br>
+    <div id="toolbar" align="center">
+      <button id="all" class="button active">All</button>
+      <button id="Gender" class="button">By Gender</button>
+      <button id="Age" class="button">By Age</button>
+      <button id="Class" class="button">By Class</button>
+      <button id="Survived" class="button">By Survival</button>
+    </div>
+    <br><br>
+    <p id="tragedy-description" align='center'> Based on our data, overall 40% of the passengers survived</p>
+    <div id="bubbles"></div>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="./assets/tragedy-circles-graph.js"></script>
   </div>
 
   <!-- Tragedy Distribution () -->
