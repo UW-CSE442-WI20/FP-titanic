@@ -231,8 +231,6 @@ var scrollVis = function (rawData) {
       dot_group = dot_group.merge(enter);
       //define circle dot attributes
       dot_group.select(".circle_dot")
-              // .transition()
-              // .duration(transition)
               .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
               .attr("cy",function(d){return y_scale(d.row)})
               .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)

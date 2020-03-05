@@ -54,11 +54,13 @@
 
 .x_axis text {
   font-size: 16px;
+  font-family: 'Special Elite', cursive;
 }
 
 .bar_text {
   font-size: 30px; 
   text-anchor: middle;
+  font-family: 'Special Elite', cursive;
 }
 
 .note {
@@ -222,4 +224,9 @@
   font-size: 16px;
   line-height: 23px;
   color: white;
+}
+
+button {
+  font-family: 'Special Elite', cursive;
+  font-size: 16px;
 }

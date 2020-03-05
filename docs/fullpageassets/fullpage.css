@@ -239,7 +239,7 @@ html.fp-enabled,
 }
 
 /* animation transition */
-.fullpage-wrapper {
+/* .fullpage-wrapper {
 	width: 100%!important;
 	transform: none!important;
 }
@@ -263,4 +263,4 @@ html.fp-enabled,
 
 .header-section {
     transition: none;
-}
+} */
