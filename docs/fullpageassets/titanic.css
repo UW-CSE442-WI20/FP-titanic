@@ -116,6 +116,8 @@
 }
 
 .step {
+  display: inline-block;
+  position: relative;
   width: 400px;
   /* height: 50vh; */
   margin-bottom: auto;
@@ -159,7 +161,7 @@
   margin-bottom: auto;
   height: 600px;
   width: 600px;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .highlight {

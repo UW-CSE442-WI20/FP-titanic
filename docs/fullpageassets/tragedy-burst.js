@@ -59,13 +59,13 @@ function loop() {
 }
 
 function resetInitialViz() {
-    d3.select("#canvas").select("svg").remove()
+    d3v4.select("#canvas").select("svg").remove()
     // svg.selectAll("text").remove();
-    //d3.select("#counter-label")
+    //d3v4.select("#counter-label")
 }
   
 function loadInitialData() {
-    d3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/per10.csv", function(error, data) {
+    d3v4.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/per10.csv", function(error, data) {
         if (error) {
             console.log(errors);
         } 
@@ -78,20 +78,20 @@ function loadInitialData() {
 };
   
 var generateInitialViz = function() {
-    svg = d3.select("#canvas")
+    svg = d3v4.select("#canvas")
                 .append("svg")
                 .attr("width", CANVAS_WIDTH)
                 .attr("height", CANVAS_HEIGHT)
                 .attr("class", "svg-canvas");
     svg.selectAll("text").remove();
   
-    var format = d3.format(",d");
-    d3.select("#counter-label")
+    var format = d3v4.format(",d");
+    d3v4.select("#counter-label")
       .transition()
       .duration(COUNTER_DURATION)
       .tween("text", function () {
-        var that = d3.select(this),
-            i = d3.interpolateNumber(that.text().replace(/,/g, ""), totalCount);
+        var that = d3v4.select(this),
+            i = d3v4.interpolateNumber(that.text().replace(/,/g, ""), totalCount);
         return function (t) { that.text(format(i(t))); };
       });
   
@@ -99,10 +99,10 @@ var generateInitialViz = function() {
     var counter = 0;
   
     
-    var simulation = d3.forceSimulation(nodes)
-                        .force("charge", d3.forceManyBody().strength([CHARGE_BETWEEN_CIRCLES]))
-                        .force("x", d3.forceX())
-                        .force("y", d3.forceY())
+    var simulation = d3v4.forceSimulation(nodes)
+                        .force("charge", d3v4.forceManyBody().strength([CHARGE_BETWEEN_CIRCLES]))
+                        .force("x", d3v4.forceX())
+                        .force("y", d3v4.forceY())
                         .on("tick", ticked);
     
     function ticked() {
