@@ -2,7 +2,7 @@ var scrollVis = function (rawData) {
     // define constants (proportions copied from JV)
     var width = 600;
     var left_right_margin = 30;
-    var top_bottom_margin = 60;
+    var top_bottom_margin = 30;
     var height = 600;
     var format = d3v4.format(".0%");
   
