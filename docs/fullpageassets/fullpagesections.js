@@ -2,7 +2,7 @@ var scrollVis = function (rawData) {
     // define constants (proportions copied from JV)
     var width = 600;
     var left_right_margin = 30;
-    var top_bottom_margin = 60;
+    var top_bottom_margin = 30;
     var height = 600;
     var format = d3v4.format(".0%");
   
@@ -45,24 +45,30 @@ var scrollVis = function (rawData) {
       var svg1 = d3v4.select("#vis").append("svg")
               .attr('width', width)
               .attr('height', height);
+      svg1.append("g").attr("class", "x_axis");
+      //x axis
+      // svg1.append("g").attr("class", "x_axis").attr("x_axis", x0_scale.domain());
       draw_dots(svg1, "all","both",500, 0);
 
       // graph 2
       var svg2 = d3v4.select("#secondvis").append("svg")
               .attr('width', width)
               .attr('height', height)
+      svg2.append("g").attr("class", "x_axis");
       draw_dots(svg2, "sex","both",500, 0);
 
       // graph 3
       var svg3 = d3v4.select("#thirdvis").append("svg")
               .attr('width', width)
               .attr('height', height)
+      svg3.append("g").attr("class", "x_axis");
       draw_dots(svg3, "age","both",500, 0);
 
       // graph 4
       var svg4 = d3v4.select("#forthvis").append("svg")
               .attr('width', width)
               .attr('height', height)
+      svg4.append("g").attr("class", "x_axis");
       draw_dots(svg4, "p_class","both",2000, 0);
 
       d3v4.select("#passenger1").on("click", function() {
@@ -127,6 +133,7 @@ var scrollVis = function (rawData) {
     // }
 
     var draw_dots = function (svg, data_class, fill_type, transition, status){
+      svg.select("x_axis").attr("x_axis", x0_scale.domain())
       console.log("entering draw dots")
       //define data - empty if none (ie first scroll index).
       if(data_class == "none"){
@@ -145,6 +152,8 @@ var scrollVis = function (rawData) {
       var bar_group = svg.selectAll(".labels_group")
                           .data(x0_scale.domain(),function(d){return d});
 
+      console.log("label? = " + x0_scale.domain())
+
       console.log("draw dots")
       bar_group.exit().remove();
       //enter new groups
@@ -152,7 +161,7 @@ var scrollVis = function (rawData) {
                           .append("g")
                           .attr("class","labels_group")
       //append rectangles to new group
-      enter.append("text").attr("class","bar_text")
+      enter.append("text").attr("class","bar_text").attr("visibility", "hidden")
       //merge and remove
       bar_group = bar_group.merge(enter);
       //set for bar text attributes
@@ -253,7 +262,10 @@ var scrollVis = function (rawData) {
               .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
 
       //reset x_axis
-      d3v4.select(".x_axis")
+      // svg.append("g")
+      //   .attr("transform", "translate(0," + height + ")")
+      //   .call(d3.axisBottom(x));
+      svg.select(".x_axis")
           .attr("transform", "translate(" + left_right_margin + "," + ((top_bottom_margin *1.2)+ y_scale.range()[0]) + ")")
           .call(d3v4.axisBottom(x0_scale));
       };
