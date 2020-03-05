@@ -32,7 +32,7 @@ var scrollVis = function (rawData) {
     //define data object and svg.
     var vis_data = {};
     // var svg = ""
-    var div = d3.select("body").append("div")
+    var tooltip = d3.select("body").append("div")
       .attr("class", "tooltip")
       .style("opacity", 0);
     
@@ -268,17 +268,18 @@ var scrollVis = function (rawData) {
                 d3.select(this)
                  .style("stroke-width", "1px")
                  .style("stroke", "#000");
-                div.transition()
+                tooltip.style("display", "inline")
+                  .transition()
                   .duration(200)
-                  .style("opacity", .9);
-                div.html(d.name)
+                  .style("opacity", 0.9);
+                tooltip.html(d.name)
                   .style("left", (d3v4.event.pageX) + "px")
                   .style("top", (d3v4.event.pageY - 28) + "px");
                 })
               .on("mouseout", function(d) {
                 d3.select(this)
                   .style("stroke-width", "0px");
-                div.transition()
+                tooltip.transition()
                   .duration(500)
                   .style("opacity", 0);
                 });

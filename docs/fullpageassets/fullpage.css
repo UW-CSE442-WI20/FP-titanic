@@ -19,8 +19,8 @@ html.fp-enabled,
 }
 .fp-section {
     position: relative;
-    -webkit-box-sizing: border-box; /* Safari<=5 Android<=3 */
-    -moz-box-sizing: border-box; /* <=28 */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     transition: all 0.3s ease-out;
     transition-delay: .44s;
@@ -259,4 +259,8 @@ html.fp-enabled,
 	visibility: visible;
 	opacity: 1;
 	z-index: 1;
+}
+
+.header-section {
+    transition: none;
 }
