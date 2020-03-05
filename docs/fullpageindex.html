@@ -18,6 +18,7 @@
   <link rel="stylesheet" type="text/css" href="./fullpageassets/sequences.css"/>
   <link rel="stylesheet" type="text/css" href="./fullpageassets/titanic.css"/>
   <link rel="stylesheet" type="text/css" href="./fullpageassets/old_index.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
 
   <script type="text/javascript" src="./fullpageassets/fullPage.js"></script>
   <script src="https://d3js.org/d3.v3.min.js"></script>
@@ -25,7 +26,7 @@
     var d3v3 = window.d3;
     window.d3 = null;
   </script>
-  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
   <script>
     var d3v4 = window.d3;
     window.d3 = null;
@@ -90,7 +91,8 @@
     <div class="section">
       <div class="container">
         <div id="sections_distribution">
-          <!-- <div id='vis'></div> -->
+          <div id='vis'></div>
+          <!-- <script src="./fullpageassets/fullpagesections.js"></script> -->
           <section class="step">
             <div class="title">How many passengers on board?</div>
             This graph shows <button id = "all"> all </button> of Titanic’s <button id = "passenger">passengers</button> and <button id = "crew"> crews </button>. 
@@ -105,6 +107,7 @@
     <div class="section">
       <div class="container">
         <div id="sections_distribution">
+          <div id='secondvis'></div>
           <section class="step">
             <div class="title">There were more men than women on board.</div>
             This graph shows the gender distribution of the <button id = "passenger">passengers</button> and <button id = "crew">crews</button>. 
@@ -121,6 +124,7 @@
     <div class="section">
       <div class="container">
         <div id="sections_distribution">
+          <div id='thirdvis'></div>
           <section class="step">
             <div class="title">The majority were aged between 15 and 45 years old.</div>
             This graph shows the distribution of the <button id = "passenger">passengers</button> and <button id = "crew">crews</button> age group distribution. 
@@ -137,6 +141,7 @@
     <div class="section">
       <div class="container">
         <div id="sections_distribution">
+          <div id='forthvis'></div>
           <section class="step">
             <div class="title">There was a much larger proportion of passengers in 3rd class.</div>
             This graph shows the distribution of passenger class. Even though Titanic was infamous as one of the most luxurious
@@ -185,7 +190,7 @@
             There are a total of <span id="counter-label">0</span> passengers in the titanic
           </div>
           <div id="canvas"></div>
-          <script src="./assets/tragedy-burst.js"></script>
+          <script src="./fullpageassets/tragedy-burst.js"></script>
         </div>
       </div>
     </div>
@@ -238,6 +243,5 @@
 
 <!-- Scripts -->
 <script src="./fullpageassets/fullpagesections.js"></script>
-<script type="text/javascript" src="./fullpageassets/testsequences.js"></script>
 
 </html>
