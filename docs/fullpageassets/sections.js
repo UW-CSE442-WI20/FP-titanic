@@ -164,6 +164,8 @@ var scrollVis = function () {
     var bar_group = svg.selectAll(".labels_group")
                       .data(x0_scale.domain(),function(d){return d});
 
+    console.log("label? = ")                 
+
     bar_group.exit().remove();
     //enter new groups
     var enter = bar_group.enter()

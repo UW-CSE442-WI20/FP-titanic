@@ -70,6 +70,7 @@
 #sections_distribution {
   position: relative;
   display: inline-block;
+  vertical-align: middle;
   margin-top: auto;
   margin-bottom: auto;
   /* position: relative;
@@ -130,6 +131,7 @@
   width: 40%;
   height: 600px;
   /* height: 50vh; */
+  vertical-align: middle;
   margin-bottom: auto;
   margin-top: auto;
   margin-left: 60%;
