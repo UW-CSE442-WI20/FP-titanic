@@ -1,12 +1,4 @@
-/* body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  background-color: #fff;
-  width: 960px;
-  height: 700px;
-  margin-top: 10px;
-} */
+
 
 #main {
   float: left;
@@ -25,7 +17,6 @@
 
 #legend {
   padding: 10px 0 0 3px;
-  position: relative;
 }
 
 #sequence text, #legend text {
@@ -33,17 +24,28 @@
   fill: #fff;
 }
 
-#chart {
+#sunbucket {
+  /* float: left;
+  overflow: hidden; */
+  width: 600px;
+  display: inline-block;
+  position: absolute;
+  /* z-index: 1; */
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#sunburst {
   position: relative;
 }
 
-#chart path {
+#sunburst path {
   stroke: #fff;
 }
 
 #explanation {
   position: absolute;
-  top: 360px;
+  top: 260px;
   left: 305px;
   width: 140px;
   text-align: center;

@@ -23,11 +23,7 @@
   <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
 
   <script type="text/javascript" src="./fullpageassets/fullPage.js"></script>
-  <script src="https://d3js.org/d3.v3.min.js"></script>
-  <script>
-    var d3v3 = window.d3;
-    window.d3 = null;
-  </script>
+
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script>
     var d3v4 = window.d3;
@@ -35,13 +31,13 @@
   </script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
 	<script type="text/javascript">
-		var headerColor = '#fff',
+		var sunburstColor = '#fff',
 			contentColor = '#fff';
 
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
 				anchors: ['title', 'section1', 'section2', 'section3'],
-				sectionsColor: [headerColor, contentColor, contentColor, contentColor],
+				sectionsColor: [contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, sunburstColor],
 				navigation: true,
 				navigationPosition: 'right',
 				navigationTooltips: ['Start', 'Section1', 'Section2', 'Section3']
@@ -53,11 +49,6 @@
 </head>
 <body>
   <div id="fullpage">
-    <!-- <div class="section" id="header-section">
-      <div id="header">
-				<h1>Titanic Analysis</h1>
-      </div> -->
-      
     <div class="section" id="header-section">
       <div class="container">
         <img class="logo" src="./img/titanic_logo.png" />
@@ -216,29 +207,14 @@
           <script src="./fullpageassets/tragedy-circles-graph.js"></script>
         </div>
     </div>
+    </div>>
   </div>
 
-  <div class="section">
-    <div class="extrablack">
-      <div class="container">
-        <div class="title">Test some graph</div>
-        <div class="text">
-          Test some graphTest some graphTest some graphTest some graphTest some graphTest some graphTest some graph Test some graphTest some graph<br>
-        </div>
-      </div>
-    
-    </div>
-  </div>
-
-  <!-- <div class="section">
-    <div class="extrablack">
-      <div class="container">
-        <div class="title">Test Sunburst</div>
-        <div class="text">
-          Test Sunburst Test Sunburst Test Sunburst Test Sunburst Test Sunburst Test SunburstTest Sunburst Test Sunburst Test Sunburst<br>
-        </div>
+  <div class="section" background='black'>
+    <div class="container">
+      <div id="sections_distribution">
         <div id="sunbucket">
-          <div id="sunmain">
+          <div id="main">
             <div id="sequence"></div>
             <div id="sunburst">
               <div id="explanation" style="visibility: hidden;">
@@ -252,10 +228,15 @@
             <div id="legend" style="visibility: hidden;"></div>
           </div>
         </div>
+        <script src="./fullpageassets/testsequences.js"></script>
+
+        <div class="step">
+          <div class="title">Test your survival rate.</div>
+          Use the sunburst to test your survival rate on Titanic
+        </div>
       </div>
-        
     </div>
-  </div> -->
+  </div>
 
 </div>
   
@@ -264,5 +245,6 @@
 
 <!-- Scripts -->
 <script src="./fullpageassets/fullpagesections.js"></script>
+
 
 </html>

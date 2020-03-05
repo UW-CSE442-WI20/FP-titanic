@@ -41,6 +41,7 @@
   margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
+  transition: all 3s ease-out;
 }
 
 #graphic {
@@ -171,9 +172,8 @@
   /* margin-left: -80px; */
   margin-top: auto;
   margin-bottom: auto;
-  /*height: 600px;
-  width: 600px; */
-  /* background-color: red; */
+  /* -webkit-transition: all 0.3s ease-out; Safari<=6 Android<=4.3 */
+  /* transition: all 3s ease-out; */
 }
 
 .highlight {

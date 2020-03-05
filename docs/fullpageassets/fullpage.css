@@ -22,6 +22,8 @@ html.fp-enabled,
     -webkit-box-sizing: border-box; /* Safari<=5 Android<=3 */
     -moz-box-sizing: border-box; /* <=28 */
     box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    transition-delay: .44s;
 }
 .fp-slide {
     float: left;
@@ -42,6 +44,7 @@ html.fp-enabled,
     display: table;
     table-layout:fixed;
     width: 100%;
+    transition-delay: .44s;
 }
 .fp-tableCell {
     display: table-cell;
@@ -233,4 +236,27 @@ html.fp-enabled,
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+/* animation transition */
+.fullpage-wrapper {
+	width: 100%!important;
+	transform: none!important;
+}
+
+.fp-section {
+	width: 100%!important;
+	position: absolute;
+	left: 0;
+	top: 0;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 0;
+	transition: all .6s ease;
+}
+
+.fp-section.active {
+	visibility: visible;
+	opacity: 1;
+	z-index: 1;
 }

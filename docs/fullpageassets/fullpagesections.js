@@ -264,7 +264,10 @@ var scrollVis = function (rawData) {
               .attr("r",my_radius)
               .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")")
               .on("mouseover", function(d) {
-                console.log("mouseover")
+                console.log("mouseover + " + d.name)
+                d3.select(this)
+                 .style("stroke-width", "1px")
+                 .style("stroke", "#000");
                 div.transition()
                   .duration(200)
                   .style("opacity", .9);
@@ -273,12 +276,14 @@ var scrollVis = function (rawData) {
                   .style("top", (d3v4.event.pageY - 28) + "px");
                 })
               .on("mouseout", function(d) {
+                d3.select(this)
+                  .style("stroke-width", "0px");
                 div.transition()
                   .duration(500)
                   .style("opacity", 0);
                 });
               ;
-              
+
 
       // Case when passenger is chosen
       // d3v4.selectAll("#passenger").on("click", function() {
