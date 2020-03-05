@@ -138,6 +138,7 @@ var scrollVis = function (rawData) {
       x0_scale.domain(d3v4.set(my_data,function(d){return d[data_class]}).values());
       x1_scale.domain([0,d3v4.max(my_data,function(d){return d.column})+1]).range([0, x0_scale.bandwidth()]);
       y_scale.domain([0,115]);
+
       //set radius
       var my_radius = 2;
       //data,exit,enter and merge for bar labels
@@ -250,98 +251,6 @@ var scrollVis = function (rawData) {
               })
               .attr("r",my_radius)
               .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
-              
-
-      // Case when passenger is chosen
-      // d3v4.selectAll("#passenger").on("click", function() {
-          // dot_group.select(".circle_dot")
-          //     // .transition()
-          //     // .duration(transition)            
-          //     .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
-          //     if(d.passenger == 1) {
-          //         return "orange"
-          //     } else {
-          //         return "grey"
-          //     }})
-
-          // bar_group.select(".bar_text")
-          //         .transition()
-          //         .delay(transition*0.1)
-          //         .attr("fill",function(d){ //fill dependent on whether survival is being shown.
-          //         if(fill_type == "both"){
-          //             return "orange"
-          //         } else {
-          //             return survival_colours[1] //if survival, show 'Survived' colour as text = survived %
-          //         }})
-          //         .text(function(d){
-          //         //number of passengers in this group.
-          //         var group_count = my_data.filter(function(m){if(m[data_class]==d && m["passenger"] == 1){return m}}).length;
-          //         if(fill_type == "both"){
-          //             return group_count //if no survival, show no of passengers.
-          //         } else {
-          //             //otherwise, calculate the passengers who survived and show survival rate - format defined on line 9
-          //             var survival_count =  my_data.filter(function(m){if(m[data_class]==d && m.survived == 1){return m}}).length;
-          //             return format(survival_count/group_count)
-          //         }
-          //         })
-          // draw_dots(svg, data_class, fill_type, transition, 1)
-              
-      // });
-
-      // Case when crew is chosen
-      // d3v4.selectAll("#crew").on("click", function() {
-      //     dot_group.select(".circle_dot")
-      //         // .transition()
-      //         // .duration(transition)
-      //         .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
-      //         .attr("cy",function(d){return y_scale(d.row)})
-      //         .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
-      //         if(d.passenger == 1) {
-      //             return "grey"
-      //         } else {
-      //             return "orange"
-      //         }})
-      //         .attr("r",my_radius)
-      //         .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
-
-      //     bar_group.select(".bar_text")
-      //             .transition()
-      //             .delay(transition*0.1)
-      //             .attr("fill",function(d){ //fill dependent on whether survival is being shown.
-      //                 if(fill_type == "both"){
-      //                 return "orange"
-      //                 } else {
-      //                 return survival_colours[1] //if survival, show 'Survived' colour as text = survived %
-      //             }})
-      //             .text(function(d){
-      //                 //number of passengers in this group.
-      //                 var group_count = my_data.filter(function(m){if(m[data_class]==d && m["passenger"] == 0){return m}}).length;
-      //                 if(fill_type == "both"){
-      //                 return group_count //if no survival, show no of passengers.
-      //                 } else {
-      //                 //otherwise, calculate the passengers who survived and show survival rate - format defined on line 9
-      //                 var survival_count =  my_data.filter(function(m){if(m[data_class]==d && m.survived == 1){return m}}).length;
-      //                 return format(survival_count/group_count)
-      //                 }
-      //                 })
-      // });
-
-      // Case when all are chosen
-      // d3v4.select("#all").on("click", function() {
-      //     dot_group.select(".circle_dot")
-      //         // .transition()
-      //         // .duration(transition)
-      //         .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
-      //         .attr("cy",function(d){return y_scale(d.row)})
-      //         .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
-      //             if(d.passenger == 1) {
-      //             return all_colours[d[data_class]]
-      //             } else {
-      //             return crew_colours[d[data_class]]
-      //             }})
-      //         .attr("r",my_radius)
-      //         .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
-      // });
 
       //reset x_axis
       d3v4.select(".x_axis")
