@@ -1,7 +1,8 @@
 // Dimensions of sunburst.
 var width = 750;
 var height = 600;
-var sunradius = Math.min(width, height) / 2;
+// var sunradius = Math.min(width, height) / 2;
+var sunradius = 280;
 
 // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
 var b = {
@@ -13,7 +14,7 @@ var colors = {
   
   "Male": '#1f78b4', "Female": '#a6cee3',
   "0 to 15":"#addd8e","16 to 30":"#78c679","31 to 45":"#41ab5d","46 to 60":"#238443","61 to 75":"#005a32",
-  "first": "#9e9ac8", "second":"#756bb1","third":"#54278f", "crew": "#2a0c52"
+  "First": "#9e9ac8", "Second":"#756bb1","Third":"#54278f", "Crew": "#2a0c52"
   
   // "home": "#5687d1",
   // "product": "#7b615c",

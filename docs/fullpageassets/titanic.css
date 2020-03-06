@@ -88,7 +88,8 @@
 #sections {
     position: relative;
     display: inline-block;
-    top: 0px;
+    /* top: 0px; */
+    margin-top: auto;
     /* height: 300px; */
     /* margin-bottom: 300px; */
     z-index: 90;
