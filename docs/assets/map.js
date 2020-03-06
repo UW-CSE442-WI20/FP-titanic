@@ -563,11 +563,9 @@ function placeCitiesByTotal() {
     loop();
 
     function loop() {
-        d3.select("#first").style("visibility", "hidden");
         placeCities();
         setTimeout(clusterCountry, 7000);
         setTimeout(backToCenter, 12000);
-        document.getElementById("#first").style("visibility", "visible");
     }
 }
 
@@ -944,7 +942,6 @@ function placeCitiesByFirst() {
     }//collide
 
     loop();
-    // setInterval(loop, 15000);
 
     function loop() {
         placeCities();
@@ -1325,7 +1322,6 @@ function placeCitiesBySecond() {
     }//collide
 
     loop();
-    setInterval(loop, 15000);
 
     function loop() {
         placeCities();
@@ -1706,7 +1702,6 @@ function placeCitiesByThird() {
     }//collide
 
     loop();
-    setInterval(loop, 15000);
 
     function loop() {
         placeCities();
@@ -1721,20 +1716,43 @@ function placeCitiesByThird() {
 
 display();
 
+function buttonDissappear() {
+    d3.select("#total").style("visibility", "hidden");
+    d3.select("#first").style("visibility", "hidden");
+    d3.select("#second").style("visibility", "hidden");
+    d3.select("#third").style("visibility", "hidden");
+}
+
+function buttonAppear() {
+    console.log("button appear")
+    d3.select("#total").style("visibility", "visible");
+    d3.select("#first").style("visibility", "visible");
+    d3.select("#second").style("visibility", "visible");
+    d3.select("#third").style("visibility", "visible");
+}
+
 function drawTotal() {
+    buttonDissappear();
     placeCitiesByTotal();
+    setTimeout(buttonAppear, 20000);
 }
 
 function drawFirst() {
+    buttonDissappear();
     placeCitiesByFirst();
+    setTimeout(buttonAppear, 20000);
 }
 
 function drawSecond() {
+    buttonDissappear();
     placeCitiesBySecond();
+    setTimeout(buttonAppear, 20000);
 }
 
 function drawThird() {
+    buttonDissappear();
     placeCitiesByThird();
+    setTimeout(buttonAppear, 20000);
 }
 
 function display() {
