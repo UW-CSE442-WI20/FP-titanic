@@ -21,7 +21,7 @@
     var CHARGE_BETWEEN_CIRCLES = -10;
     
     // animation delays, duration, timings:
-    var COUNTER_DURATION = 4300;
+    var COUNTER_DURATION = 8200;
     var FILTER_DURATION = 1500;
     
     var xInitCircle = [];
