@@ -39,7 +39,7 @@ var arc = d3v4.arc()
 
 // Use d3v4.text and d3v4.csvParseRows so that we do not need to have a header
 // row, and can receive the csv as an array of arrays.
-d3v4.text("https://gist.githubusercontent.com/kerryrodden/766f8f6d31f645c39f488a0befa1e3c8/raw/772804d75940b56752132a0780b5f0cf50691fa1/visit-sequences.csv", function(text) {
+d3v4.text("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/modified-gender-age-class-survived.csv", function(text) {
   var csv = d3v4.csvParseRows(text);
   var json = buildHierarchy(csv);
   createVisualization(json);
