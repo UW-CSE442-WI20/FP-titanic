@@ -82,11 +82,14 @@
         </div>
         <br><br>
         <div id="sections">
-          <div id="counter-header" class="title">
+          <div id="counter-header" class="title" align="center">
             There are a total of <span id="counter-label">0</span> people in the titanic
           </div>
           <div id="canvas"></div>
           <script src="./fullpageassets/tragedy-burst.js"></script>
+          <br>
+          <div id="death-count" class="title" align="center"></div>
+          <p id="circle-represent" align="center"></p>
         </div>
       </div>
     </div>
@@ -211,9 +214,10 @@
             <button id="Class" class="button">By Class</button>
             <button id="Survived" class="button">By Survival</button>
           </div>
-          <br><br>
+          <br>
           <p id="tragedy-description" align='center'> Based on our data, overall 40% of the passengers survived</p>
           <div id="bubbles"></div>
+          <p align="center"> (Each dots represent approximately 10 people) </p>
           <script src="./fullpageassets/tragedy-circles-graph.js"></script>
         </div>
     </div>

@@ -1,4 +1,4 @@
-var w = 1000, h = 500;
+var w = 1000, h = 450;
     
 var radius = 4;
 var color = {0:"#fb9a99", 1: "#404040"}
@@ -36,10 +36,6 @@ d3v4.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/doc
         .style("stroke", function(d, i){ return color[d.Survived]; })
         .style("stroke-width", 3)
         .style("pointer-events", "all")
-        // .call(d3v4.drag()
-        //         .on("start", dragstarted)
-        //         .on("drag", dragged)
-        //         .on("end", dragended));
 
     circles = circles.merge(circlesEnter)
     
@@ -54,35 +50,6 @@ d3v4.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/doc
         .on("tick", ticked);
 
     splitBubbles('all')
-    
-    // function dragstarted(d,i) {
-    //     console.log("draggedstart")
-    //     if (!d3v4.event.active) simulation.alpha(1).restart();
-    //     d.fx = d.x;
-    //     d.fy = d.y;
-    // }
-
-    // function dragged(d,i) {
-    //     console.log("dragged")
-    //     d.fx = d3v4.event.x;
-    //     d.fy = d3v4.event.y;
-    // }
-
-    // function dragended(d,i) {
-    //     console.log("draggedend")
-    //     if (!d3v4.event.active) simulation.alphaTarget(0);
-    //     d.fx = null;
-    //     d.fy = null;
-    //     var me = d3v4.select(this)
-    //     console.log(me.classed("selected"))
-    //     me.classed("selected", !me.classed("selected"))
-        
-    //     d3v4.selectAll("circle")
-    //         .style("fill", function(d, i){ return color[d.Survived]; })
-        
-    //     d3v4.selectAll("circle.selected")
-    //         .style("fill", "none")
-    // } 
     
     function splitBubbles(byVar) {
         centerScale.domain(data.map(function(d){ return d[byVar]; }));
@@ -108,13 +75,15 @@ d3v4.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/doc
 
     function changeTragedyDescription(byVar) {
         if(byVar == 'all' || byVar == 'Survived') {
-            document.getElementById("tragedy-description").innerHTML = "Based on our data, overall 40% of the passengers survived";
+            document.getElementById("tragedy-description").innerHTML = "Overall, 38.76% of the titanic's passengers survived";
         } else if (byVar == 'Gender') {
-            document.getElementById("tragedy-description").innerHTML = "Based on our data, 90% of women survived while only 30% of men survived";
+            document.getElementById("tragedy-description").innerHTML = "67.13% of women survived while only 23.67% of men survived the incident";
         } else if (byVar == 'Class') {
-            document.getElementById("tragedy-description").innerHTML = "Based on our data, class";
+            document.getElementById("tragedy-description").innerHTML = "Based on our data, more than half (57.42%) of 1st class passengers survived while 40.27% of the 2nd class passengers survived. \
+                                                                        The survival rate for 3rd class passengers and crew members were heartbreakingly low, with 25.53% and 18.84% respectively.";
         } else if (byVar == 'Age') {
-            document.getElementById("tragedy-description").innerHTML = "Based on our data, overall 40% of the passengers survived";
+            document.getElementById("tragedy-description").innerHTML = "Around 40.61% of children aged 0-15 survived, 28.76% of younger adults aged 16-30 survived, and 25.69% of older adults aged 31-45 survived. \
+                                                                        People aged 46-60 has 25.69% chance of surviving and the survival rate went really low for people aged 61-75 with only 17.07%.";
         }
     }
 

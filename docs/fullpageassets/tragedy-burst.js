@@ -3,49 +3,33 @@
     // Generic global fields
     var datasets = {
         "total": null,
-        "age": null,
-        "education": null,
-        "intent": null,
-        "race": null,
-        "place": null,
-        "gender": null
     }
 
     // Canvas object and dimensions
     var svg;
     var CANVAS_WIDTH = 1000;
-    var CANVAS_HEIGHT = 600;
-    var CATEGORY_LABEL_OFFSET = 5;
+    var CANVAS_HEIGHT = 300;
     
     // Total data fields
     var totalCount = 0;
     var attributeCounts = {};
     
     // Fields for circle svg
-    var CIRCLE_RADIUS = 6;
-    var CIRCLE_SIZE = CIRCLE_RADIUS * 2;
-    var SPACE_BETWEEN_CIRCLE_INITIAL = 10;
-    var BOTTOM_PADDING = 30;
+    var CIRCLE_RADIUS = 5;
     
     // more negative is more force -> bigger space between circle
     var CHARGE_BETWEEN_CIRCLES = -10;
     
     // animation delays, duration, timings:
-    var DELAY_BETWEEN_FILTERS = 2000;
     var COUNTER_DURATION = 4300;
     var FILTER_DURATION = 1500;
-    var BUTTON_FADE_DURATION = 500;
     
     var xInitCircle = [];
     var yInitCircle = [];
     
     // Styles
-    var NEUTRAL_COLOR = "#ccc";
     var RED_COLOR = "#710606";
     var BLACK_COLOR = "#353238";
-    var ORANGE_COLOR = "#FF715B";
-    var PINK_COLOR = "#DD7A92";
-    var LABEL_SIZE = "1.45em";
 
     window.onload = function () {
         loadInitialData();
@@ -106,17 +90,17 @@
                 // view is done loading
                 // show the navigation buttons
                 simulation.stop();
-                
-
                 svg.selectAll("circle")
                    .transition()
                    .attr("fill", function(d, i) {
-                        if (i >= 98 ) {
+                        if (i >= 96 ) {
                             return "#EF3B2C";
                         } else {
                             return BLACK_COLOR;
                         }
                    })
+                document.getElementById("death-count").innerHTML = "And 1517 of them perished due to the incident";
+                document.getElementById("circle-represent").innerHTML = "(Each circle represents 10 people)";
 
                 // get circles' coordinates
                 svg.selectAll("circle")
@@ -132,7 +116,6 @@
         }
         
         var interval = setInterval(function () {
-            console.log("inteval")
             var d = {
                 x: 2 * Math.random() - 1,
                 y: 2 * Math.random() - 1
