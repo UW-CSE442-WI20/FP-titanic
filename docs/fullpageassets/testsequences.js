@@ -13,7 +13,7 @@ var colors = {
   
   "Male": '#1f78b4', "Female": '#a6cee3',
   "0 to 15":"#addd8e","16 to 30":"#78c679","31 to 45":"#41ab5d","46 to 60":"#238443","61 to 75":"#005a32",
-  "first": "#9e9ac8", "second":"#756bb1","third":"#54278f", "crew": "orange"
+  "first": "#9e9ac8", "second":"#756bb1","third":"#54278f", "crew": "#2a0c52"
   
   // "home": "#5687d1",
   // "product": "#7b615c",
@@ -44,7 +44,7 @@ var arc = d3v4.arc()
 
 // Use d3v4.text and d3v4.csvParseRows so that we do not need to have a header
 // row, and can receive the csv as an array of arrays.
-d3v4.text("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/modified2-gender-age-class-survived.csv", function(text) {
+d3v4.text("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/sunburst-survival-count-copy.csv", function(text) {
   var csv = d3v4.csvParseRows(text);
   var json = buildHierarchy(csv);
   createVisualization(json);

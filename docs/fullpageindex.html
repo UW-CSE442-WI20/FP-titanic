@@ -185,81 +185,65 @@
           <script src="./assets/map.js"></script> -->
         </div>
       </div>
-  </div>
+    </div>
 
-  <!-- <div class="section">
-    <div class="container">
-      <div id="sections_distribution">
-        <div id="sections">
-          <div class="title">Arguably the most famous shipwreck in the world, the luxury ocean liner RMS Titanic struck an iceberg on April 14, 1912.
-            She sank in 2 hours killing 1,500 people.</div>
-            
-          <div id="counter-header">
-            There are a total of <span id="counter-label">0</span> passengers in the titanic
+
+    <div class="section">
+      <div class="container">
+        <div id="sections_distribution">
+          <div id="sections">
+            <div class="title">How many of the passengers survived?</div>
+            <br><br>
+
+            <div id="toolbar" align="center">
+              <button id="all" class="button active">All</button>
+              <button id="Gender" class="button">By Gender</button>
+              <button id="Age" class="button">By Age</button>
+              <button id="Class" class="button">By Class</button>
+              <button id="Survived" class="button">By Survival</button>
+            </div>
+            <br>
+            <p id="tragedy-description" align='center'> Based on our data, overall 40% of the passengers survived</p>
+            <div id="bubbles"></div>
+            <p align="center"> (Each dots represent approximately 10 people) </p>
+            <script src="./fullpageassets/tragedy-circles-graph.js"></script>
           </div>
-          <div id="canvas"></div>
-          <script src="./fullpageassets/tragedy-burst.js"></script>
-        </div>
+      </div>
       </div>
     </div>
-  </div> -->
 
-  <div class="section">
-    <div class="container">
-      <div id="sections_distribution">
-        <div id="sections">
-          <div class="title">How many of the passengers survived?</div>
-          <br><br>
-
-          <div id="toolbar" align="center">
-            <button id="all" class="button active">All</button>
-            <button id="Gender" class="button">By Gender</button>
-            <button id="Age" class="button">By Age</button>
-            <button id="Class" class="button">By Class</button>
-            <button id="Survived" class="button">By Survival</button>
-          </div>
-          <br>
-          <p id="tragedy-description" align='center'> Based on our data, overall 40% of the passengers survived</p>
-          <div id="bubbles"></div>
-          <p align="center"> (Each dots represent approximately 10 people) </p>
-          <script src="./fullpageassets/tragedy-circles-graph.js"></script>
-        </div>
-    </div>
-    </div>>
-  </div>
-
-  <div class="section" background='black'>
-    <div class="container">
-      <div id="sections_distribution">
-        <div id="sidebar">
-          <input type="checkbox" id="togglelegend"> Legend<br/>
-          <div id="legend" style="visibility: hidden;"></div>
-        </div>
-        <div id="sunbucket">
-          <div id="main">
-            <div id="sequence"></div>
-            <div id="sunburst">
-              <div id="explanation" style="visibility: hidden;">
-                <span id="percentage"></span><br/>
-                survival rate
-              </div>
-            </div>
-          </div>
-          <!-- <div id="sidebar">
+    <div class="section" background='black'>
+      <div class="container">
+        <div id="sections_distribution">
+          <div id="sidebar">
             <input type="checkbox" id="togglelegend"> Legend<br/>
             <div id="legend" style="visibility: hidden;"></div>
-          </div> -->
-        </div>
-        <script src="./fullpageassets/testsequences.js"></script>
+          </div>
+          <div id="sunbucket">
+            <div id="main">
+              <div id="sequence"></div>
+              <div id="sunburst">
+                <div id="explanation" style="visibility: hidden;">
+                  <span id="percentage"></span><br/>
+                  survival rate
+                </div>
+              </div>
+            </div>
+            <!-- <div id="sidebar">
+              <input type="checkbox" id="togglelegend"> Legend<br/>
+              <div id="legend" style="visibility: hidden;"></div>
+            </div> -->
+          </div>
+          <script src="./fullpageassets/testsequences.js"></script>
 
-        <div class="step">
-          <div class="title">Test your survival rate.</div>
-          Use the sunburst to test your survival rate on Titanic
+          <div class="step">
+            <div class="title">Test your survival rate.</div>
+            Use the sunburst to test your survival rate on Titanic
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
   
   
