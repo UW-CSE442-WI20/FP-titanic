@@ -1,0 +1,12 @@
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 5px;
+  font: 14px;
+  font-family: 'Special Elite', cursive;
+  background: white;
+  border: 0px;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 2;
+}

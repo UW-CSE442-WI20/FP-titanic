@@ -41,6 +41,7 @@
   margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
+  transition: all 3s ease-out;
 }
 
 #graphic {
@@ -53,11 +54,13 @@
 
 .x_axis text {
   font-size: 16px;
+  font-family: 'Special Elite', cursive;
 }
 
 .bar_text {
   font-size: 30px; 
   text-anchor: middle;
+  font-family: 'Special Elite', cursive;
 }
 
 .note {
@@ -171,9 +174,8 @@
   /* margin-left: -80px; */
   margin-top: auto;
   margin-bottom: auto;
-  /*height: 600px;
-  width: 600px; */
-  /* background-color: red; */
+  /* -webkit-transition: all 0.3s ease-out; Safari<=6 Android<=4.3 */
+  /* transition: all 3s ease-out; */
 }
 
 .highlight {
@@ -222,4 +224,9 @@
   font-size: 16px;
   line-height: 23px;
   color: white;
+}
+
+button {
+  font-family: 'Special Elite', cursive;
+  font-size: 16px;
 }

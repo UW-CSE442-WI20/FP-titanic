@@ -18,14 +18,12 @@
   <link rel="stylesheet" type="text/css" href="./fullpageassets/sequences.css"/>
   <link rel="stylesheet" type="text/css" href="./fullpageassets/titanic.css"/>
   <link rel="stylesheet" type="text/css" href="./fullpageassets/old_index.css"/>
+  <link rel="stylesheet" type="text/css" href="./fullpageassets/tooltip.css"/>
+
   <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
 
   <script type="text/javascript" src="./fullpageassets/fullPage.js"></script>
-  <script src="https://d3js.org/d3.v3.min.js"></script>
-  <script>
-    var d3v3 = window.d3;
-    window.d3 = null;
-  </script>
+
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script>
     var d3v4 = window.d3;
@@ -33,16 +31,18 @@
   </script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
 	<script type="text/javascript">
-		var headerColor = '#fff',
+		var sunburstColor = '#fff',
 			contentColor = '#fff';
 
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
 				anchors: ['title', 'section1', 'section2', 'section3'],
-				sectionsColor: [headerColor, contentColor, contentColor, contentColor],
+				sectionsColor: [contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, sunburstColor],
 				navigation: true,
 				navigationPosition: 'right',
-				navigationTooltips: ['Start', 'Section1', 'Section2', 'Section3']
+        navigationTooltips: ['Start', 'Section1', 'Section2', 'Section3'],
+        easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.12)'
+        
 			});
 		});
 	</script>	
@@ -51,11 +51,6 @@
 </head>
 <body>
   <div id="fullpage">
-    <!-- <div class="section" id="header-section">
-      <div id="header">
-				<h1>Titanic Analysis</h1>
-      </div> -->
-      
     <div class="section" id="header-section">
       <div class="container">
         <img class="logo" src="./img/titanic_logo.png" />
@@ -85,8 +80,19 @@
           and statistics of the accident which includes deep dive of the passenger and crew’s nationality, age, gender, social
           class and how these factors affect their survival.
         </div>
+        <br><br>
+        <div id="sections">
+          <div id="counter-header" class="title" align="center">
+            There are a total of <span id="counter-label">0</span> people in the titanic
+          </div>
+          <div id="canvas"></div>
+          <script src="./fullpageassets/tragedy-burst.js"></script>
+          <br>
+          <div id="death-count" class="title" align="center"></div>
+          <p id="circle-represent" align="center"></p>
         </div>
       </div>
+    </div>
 
     <div class="section">
       <div class="container">
@@ -173,19 +179,17 @@
           <!-- <div id="titanic_map"></div>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
           <script src="./assets/map.js"></script> -->
-      
-          <div class="title">Arguably the most famous shipwreck in the world, the luxury ocean liner RMS Titanic struck an iceberg on April 14, 1912.
-          She sank in 2 hours killing 1,500 people.</div>
         </div>
       </div>
   </div>
 
-  <div class="section">
+  <!-- <div class="section">
     <div class="container">
       <div id="sections_distribution">
         <div id="sections">
           <div class="title">Arguably the most famous shipwreck in the world, the luxury ocean liner RMS Titanic struck an iceberg on April 14, 1912.
             She sank in 2 hours killing 1,500 people.</div>
+            
           <div id="counter-header">
             There are a total of <span id="counter-label">0</span> passengers in the titanic
           </div>
@@ -194,30 +198,37 @@
         </div>
       </div>
     </div>
-    
-  </div>
+  </div> -->
 
   <div class="section">
-    <div class="extrablack">
-      <div class="container">
-        <div class="title">Test some graph</div>
-        <div class="text">
-          Test some graphTest some graphTest some graphTest some graphTest some graphTest some graphTest some graph Test some graphTest some graph<br>
+    <div class="container">
+      <div id="sections_distribution">
+        <div id="sections">
+          <div class="title">How many of the passengers survived?</div>
+          <br><br>
+
+          <div id="toolbar" align="center">
+            <button id="all" class="button active">All</button>
+            <button id="Gender" class="button">By Gender</button>
+            <button id="Age" class="button">By Age</button>
+            <button id="Class" class="button">By Class</button>
+            <button id="Survived" class="button">By Survival</button>
+          </div>
+          <br>
+          <p id="tragedy-description" align='center'> Based on our data, overall 40% of the passengers survived</p>
+          <div id="bubbles"></div>
+          <p align="center"> (Each dots represent approximately 10 people) </p>
+          <script src="./fullpageassets/tragedy-circles-graph.js"></script>
         </div>
-      </div>
-    
     </div>
+    </div>>
   </div>
 
-  <!-- <div class="section">
-    <div class="extrablack">
-      <div class="container">
-        <div class="title">Test Sunburst</div>
-        <div class="text">
-          Test Sunburst Test Sunburst Test Sunburst Test Sunburst Test Sunburst Test SunburstTest Sunburst Test Sunburst Test Sunburst<br>
-        </div>
+  <div class="section" background='black'>
+    <div class="container">
+      <div id="sections_distribution">
         <div id="sunbucket">
-          <div id="sunmain">
+          <div id="main">
             <div id="sequence"></div>
             <div id="sunburst">
               <div id="explanation" style="visibility: hidden;">
@@ -231,10 +242,15 @@
             <div id="legend" style="visibility: hidden;"></div>
           </div>
         </div>
+        <script src="./fullpageassets/testsequences.js"></script>
+
+        <div class="step">
+          <div class="title">Test your survival rate.</div>
+          Use the sunburst to test your survival rate on Titanic
+        </div>
       </div>
-        
     </div>
-  </div> -->
+  </div>
 
 </div>
   
@@ -243,5 +259,6 @@
 
 <!-- Scripts -->
 <script src="./fullpageassets/fullpagesections.js"></script>
+
 
 </html>

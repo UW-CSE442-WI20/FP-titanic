@@ -32,6 +32,9 @@ var scrollVis = function (rawData) {
     //define data object and svg.
     var vis_data = {};
     // var svg = ""
+    var tooltip = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
     
   
     // vis_data = convert_data(rawData);
@@ -145,6 +148,7 @@ var scrollVis = function (rawData) {
       x0_scale.domain(d3v4.set(my_data,function(d){return d[data_class]}).values());
       x1_scale.domain([0,d3v4.max(my_data,function(d){return d.column})+1]).range([0, x0_scale.bandwidth()]);
       y_scale.domain([0,115]);
+
       //set radius
       var my_radius = 2;
       //data,exit,enter and merge for bar labels
@@ -227,8 +231,6 @@ var scrollVis = function (rawData) {
       dot_group = dot_group.merge(enter);
       //define circle dot attributes
       dot_group.select(".circle_dot")
-              // .transition()
-              // .duration(transition)
               .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
               .attr("cy",function(d){return y_scale(d.row)})
               .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
@@ -258,8 +260,29 @@ var scrollVis = function (rawData) {
                 }              
               })
               .attr("r",my_radius)
-              .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
-              
+              .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")")
+              .on("mouseover", function(d) {
+                console.log("mouseover + " + d.name)
+                d3.select(this)
+                 .style("stroke-width", "1px")
+                 .style("stroke", "#000");
+                tooltip.style("display", "inline")
+                  .transition()
+                  .duration(200)
+                  .style("opacity", 0.9);
+                tooltip.html(d.name)
+                  .style("left", (d3v4.event.pageX) + "px")
+                  .style("top", (d3v4.event.pageY - 28) + "px");
+                })
+              .on("mouseout", function(d) {
+                d3.select(this)
+                  .style("stroke-width", "0px");
+                tooltip.transition()
+                  .duration(500)
+                  .style("opacity", 0);
+                });
+              ;
+
 
       // Case when passenger is chosen
       // d3v4.selectAll("#passenger").on("click", function() {
@@ -360,6 +383,23 @@ var scrollVis = function (rawData) {
           .attr("transform", "translate(" + left_right_margin + "," + ((top_bottom_margin *1.2)+ y_scale.range()[0]) + ")")
           .call(d3v4.axisBottom(x0_scale));
       };
+
+
+      // add the dots with tooltips
+      // svg.selectAll("dot")
+      //     .on("mouseover", function(d) {
+      //       div.transition()
+      //         .duration(200)
+      //         .style("opacity", .9);
+      //       div.html(formatTime(d.date) + "<br/>" + d.close)
+      //         .style("left", (d3.event.pageX) + "px")
+      //         .style("top", (d3.event.pageY - 28) + "px");
+      //       })
+      //     .on("mouseout", function(d) {
+      //       div.transition()
+      //         .duration(500)
+      //         .style("opacity", 0);
+      //       });
     return chart;
 }
 
