@@ -197,7 +197,7 @@ function placeCitiesByTotal() {
         bottom: 0,
         left: 0
     };
-    var width = 1200 - margin.left - margin.right,
+    var width = 1000 - margin.left - margin.right,
         height = 800 - margin.top - margin.bottom;
 
     //SVG container
@@ -239,8 +239,8 @@ function placeCitiesByTotal() {
 
     //Variables for the map
     var projection = d3.geo.mercator()
-        .scale(170)
-        .translate([450, 200]);
+        .scale(150)
+        .translate([400, 200]);
 
     var path = d3.geo.path()
         .projection(projection);
@@ -339,7 +339,7 @@ function placeCitiesByTotal() {
     /////////////////////////////////////////////////////////////////////////// 
 
     //Calculate the centers for each region
-    var centers = getCenters("region", [width, height / 0.8]);
+    var centers = getCenters("region", [width / 1.2, height / 1.4]);
     centers.forEach(function (d) {
         d.y = d.y - 100;
         d.x = d.x + 0;
@@ -402,7 +402,7 @@ function placeCitiesByTotal() {
 
         //Around the end of the transition above make the circles see-through a bit
         d3.selectAll(".cities")
-            .transition("dim").duration(2000).delay(4000)
+            .transition("dim").duration(200).delay(400)
             .style("opacity", 0.8);
 
         //"Remove" gooey filter from cities during the transition
@@ -416,7 +416,7 @@ function placeCitiesByTotal() {
 
     }//placeCities
 
-    //Cluster all the cities based on the country
+    //Cluster all the country based on the region
     function clusterCountry() {
         console.log("clusterCountry in total")
 
@@ -723,7 +723,7 @@ function placeCitiesByFirst() {
     /////////////////////////////////////////////////////////////////////////// 
 
     //Calculate the centers for each region
-    var centers = getCenters("region", [width, height / 0.8]);
+    var centers = getCenters("region", [width/1.2, height /1.4]);
     centers.forEach(function (d) {
         d.y = d.y - 100;
         d.x = d.x + 0;
@@ -785,7 +785,7 @@ function placeCitiesByFirst() {
 
         //Around the end of the transition above make the circles see-through a bit
         d3.selectAll(".cities")
-            .transition("dim").duration(2000).delay(4000)
+            .transition("dim").duration(200).delay(400)
             .style("opacity", 0.8);
 
         //"Remove" gooey filter from cities during the transition
@@ -1103,7 +1103,7 @@ function placeCitiesBySecond() {
     /////////////////////////////////////////////////////////////////////////// 
 
     //Calculate the centers for each region
-    var centers = getCenters("region", [width, height / 0.8]);
+    var centers = getCenters("region", [width/1.2, height / 1.4]);
     centers.forEach(function (d) {
         d.y = d.y - 100;
         d.x = d.x + 0;
@@ -1165,7 +1165,7 @@ function placeCitiesBySecond() {
 
         //Around the end of the transition above make the circles see-through a bit
         d3.selectAll(".cities")
-            .transition("dim").duration(2000).delay(4000)
+            .transition("dim").duration(200).delay(400)
             .style("opacity", 0.8);
 
         //"Remove" gooey filter from cities during the transition
@@ -1341,7 +1341,7 @@ function placeCitiesByThird() {
         bottom: 0,
         left: 0
     };
-    var width = 1200 - margin.left - margin.right,
+    var width = 1400 - margin.left - margin.right,
         height = 800 - margin.top - margin.bottom;
 
     //SVG container
@@ -1483,7 +1483,7 @@ function placeCitiesByThird() {
     /////////////////////////////////////////////////////////////////////////// 
 
     //Calculate the centers for each region
-    var centers = getCenters("region", [width, height / 0.8]);
+    var centers = getCenters("region", [width/1.2, height /1.4]);
     centers.forEach(function (d) {
         d.y = d.y - 100;
         d.x = d.x + 0;
@@ -1499,7 +1499,7 @@ function placeCitiesByThird() {
         .enter().append("text")
         .attr("class", "label")
         .style("opacity", 0)
-        .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; })
+        .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; }) // (d.y - 60)
         .text(function (d) { return d.name });
 
     ///////////////////////////////////////////////////////////////////////////
@@ -1545,7 +1545,7 @@ function placeCitiesByThird() {
 
         //Around the end of the transition above make the circles see-through a bit
         d3.selectAll(".cities")
-            .transition("dim").duration(2000).delay(4000)
+            .transition("dim").duration(200).delay(400)
             .style("opacity", 0.8);
 
         //"Remove" gooey filter from cities during the transition
@@ -1704,11 +1704,230 @@ function placeCitiesByThird() {
     loop();
 
     function loop() {
+        drawDonut();
         placeCities();
         setTimeout(clusterCountry, 7000);
         setTimeout(backToCenter, 12000);
     }
+
+    function drawDonut() {
+
+        // total passengers
+        var totals = [
+            { title: "Survived", value: 500, color: "grey" },
+            { title: "Perlished", value: 817, color: "red" }
+        ];
+
+        // // total passengers
+        // var totals = [
+        //     { title: "Survived", value: 500, total: 1317, color: "grey" },
+        //     { title: "Perlished", value: 817, total: 1317, color: "red" }
+        // ];
+
+        // first class
+        var first = [
+            { title: "Survived", value: 198, total: 324, color: "grey" },
+            { title: "Perlished", value: 126, total: 324, color: "red" }
+        ];
+
+        // second class
+        var second = [
+            { title: "Survived", value: 119, total: 280, color: "grey" },
+            { title: "Perlished", value: 161, total: 280, color: "red" }
+        ];
+
+        // third class
+        var third = [
+            { title: "Survived", value: 183, total: 713, color: "grey" },
+            { title: "Perlished", value: 530, total: 713, color: "orange" }
+        ];
+
+        var total_dataset = [
+            { title: "Survived", value: 500, color: "grey" },
+            { title: "Perlished", value: 817, color: "orange" }
+        ];
+
+        var radius = 150;
+
+        //Wrapper for the cities
+        var donuts = svg.append("g")
+            .attr("class", "donuts")
+            .attr("transform", "translate(" + (margin.left + 1150) + "," + (margin.top + 60) + ")");;
+
+        var arc = d3.svg.arc()
+            .outerRadius(radius)
+            .innerRadius(radius * 0.7);
+
+        var pie = d3.layout.pie()
+            .sort(null)
+            .value(function (d) { return d.value; });
+
+        var g = donuts.selectAll(".fan")
+            .data(pie(third))
+            .enter()
+            .append("g")
+            .attr("class", "fan")
+            // .on("mouseover", pieOver)
+            // .on("mouseout", pieOut);
+
+        function pieOver() {
+            d3.select(this)
+                    .transition()
+                    .attr("r", radius * 0.65);
+        }
+
+        function pieOut() {
+            d3.select(this)
+                .transition()
+                .duration(500)
+                .ease('bounce')
+                .attr("r", radius * 0.6);
+        }
+
+        // var eventObj = {
+        //     'mouseover': function (d, i, j) {
+        //         pathAnim(d3.select(this), 1);
+
+        //         var thisDonut = charts.select('.type' + j);
+        //         thisDonut.select('.value').text(function (donut_d) {
+        //             return d.data.val.toFixed(1) + donut_d.unit;
+        //         });
+        //         thisDonut.select('.percentage').text(function (donut_d) {
+        //             return (d.data.val / donut_d.total * 100).toFixed(2) + '%';
+        //         });
+        //     },
+
+        //     'mouseout': function (d, i, j) {
+        //         var thisPath = d3.select(this);
+        //         if (!thisPath.classed('clicked')) {
+        //             pathAnim(thisPath, 0);
+        //         }
+        //         var thisDonut = charts.select('.type' + j);
+        //         setCenterText(thisDonut);
+        //     }
+        // }
+
+        // color of each pie
+        g.append("path")
+            .attr("d", arc)
+            .attr("fill", function (d) { return d.data.color; });
+
+        // center
+        g.append("svg:circle")
+            .attr("r", radius * 0.6)
+            .style("fill", "#E7E7E7")
+            // .on(eventObj);
+        
+        // center text
+        g.append('text')
+            .attr('class', 'center-txt type')
+            .attr('y', radius * -0.16)
+            .attr('text-anchor', 'middle')
+            .style('font-weight', 'bold')
+            .text(function (d) {
+                return "Third Class Passenger";
+        });
+
+        g.append('text')
+            .attr('class', 'center-txt value')
+            .attr('text-anchor', 'middle')
+            .text(function (d) {
+                return d.data.total + " passengers";
+        });
+
+        g.append('text')
+            .attr('class', 'center-txt percentage')
+            .attr('y', radius * 0.16)
+            .attr('text-anchor', 'middle')
+            .style('fill', '#A2A2A2');
+
+        // donuts.select('.value')
+        //     .text(function (d) { return d.data.total; });
+
+        // g.append("text")
+        //     .attr("transform", function (d) { return "translate(" + arc.centroid(d) + ")"; })
+        //     .style("text-anchor", "middle")
+        //     .text(function (d) { return d.data.title; });
+
+    }
 }
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////// Donut Chart /////////////////////////////////
+///////////////////////////////////////////////////////////////////////////	
+
+// function drawDonut() {
+
+//     // total passengers
+//     var totals = [
+//         { title: "Survived", value: 500, color: "grey"},
+//         { title: "Perlished", value: 817, color:"red"}
+//     ];
+
+//     // // total passengers
+//     // var totals = [
+//     //     { title: "Survived", value: 500, total: 1317, color: "grey" },
+//     //     { title: "Perlished", value: 817, total: 1317, color: "red" }
+//     // ];
+
+//     // first class
+//     var first = [
+//         { title: "Survived", value: 198, total: 324, color: "grey"},
+//         { title: "Perlished", value: 126, total: 324, color: "red"}
+//     ];
+
+//     // second class
+//     var second = [
+//         { title: "Survived", value: 119, total: 280, color: "grey"},
+//         { title: "Perlished", value: 161, total: 280, color: "red"}
+//     ];
+
+//     // third class
+//     var third = [
+//         { title: "Survived", value: 183, total: 713, color: "grey"},
+//         { title: "Perlished", value: 530, total: 713, color: "red"}
+//     ];
+
+//     var total_dataset = [
+//         { title: "Survived", value: 500, color: "grey" },
+//         { title: "Perlished", value: 817, color: "orange" }
+//     ];
+
+//     var width = 0;
+//     var height = 500;
+//     var radius = 100;
+
+//     var svg = d3.select("#titanic_map").append("svg")
+//         .attr("width", width)
+//         .attr("height", height)
+//         .append("g")
+//         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+//     var arc = d3.svg.arc()
+//         .outerRadius(radius)
+//         .innerRadius(30);
+
+//     var pie = d3.layout.pie()
+//         .sort(null)
+//         .value(function (d) { return d.value; });
+
+//     var g = svg.selectAll(".fan")
+//         .data(pie(total_dataset))
+//         .enter()
+//         .append("g")
+//         .attr("class", "fan")
+
+//     g.append("path")
+//         .attr("d", arc)
+//         .attr("fill", function (d) { return d.data.color; })
+
+//     g.append("text")
+//         .attr("transform", function (d) { return "translate(" + arc.centroid(d) + ")"; })
+//         .style("text-anchor", "middle")
+//         .text(function (d) { return d.data.title; });
+
+// }
+
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////// Do the loop /////////////////////////////////
@@ -1734,25 +1953,25 @@ function buttonAppear() {
 function drawTotal() {
     buttonDissappear();
     placeCitiesByTotal();
-    setTimeout(buttonAppear, 20000);
+    setTimeout(buttonAppear, 15000);
 }
 
 function drawFirst() {
     buttonDissappear();
     placeCitiesByFirst();
-    setTimeout(buttonAppear, 20000);
+    setTimeout(buttonAppear, 15000);
 }
 
 function drawSecond() {
     buttonDissappear();
     placeCitiesBySecond();
-    setTimeout(buttonAppear, 20000);
+    setTimeout(buttonAppear, 15000);
 }
 
 function drawThird() {
     buttonDissappear();
     placeCitiesByThird();
-    setTimeout(buttonAppear, 20000);
+    setTimeout(buttonAppear, 15000);
 }
 
 function display() {
