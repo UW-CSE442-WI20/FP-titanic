@@ -10,12 +10,17 @@ var b = {
 
 // Mapping of step names to colors.
 var colors = {
-  "home": "#5687d1",
-  "product": "#7b615c",
-  "search": "#de783b",
-  "account": "#6ab975",
-  "other": "#a173d1",
-  "end": "#bbbbbb"
+  
+  "Male": '#1f78b4', "Female": '#a6cee3',
+  "0 to 15":"#addd8e","16 to 30":"#78c679","31 to 45":"#41ab5d","46 to 60":"#238443","61 to 75":"#005a32",
+  "first": "#9e9ac8", "second":"#756bb1","third":"#54278f", "crew": "orange"
+  
+  // "home": "#5687d1",
+  // "product": "#7b615c",
+  // "search": "#de783b",
+  // "account": "#6ab975",
+  // "other": "#a173d1",
+  // "end": "#bbbbbb"
 };
 
 // Total size of all segments; we set this later, after loading the data.
@@ -39,7 +44,7 @@ var arc = d3v4.arc()
 
 // Use d3v4.text and d3v4.csvParseRows so that we do not need to have a header
 // row, and can receive the csv as an array of arrays.
-d3v4.text("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/sunburstdata.csv", function(text) {
+d3v4.text("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/modified2-gender-age-class-survived.csv", function(text) {
   var csv = d3v4.csvParseRows(text);
   var json = buildHierarchy(csv);
   createVisualization(json);
@@ -215,7 +220,7 @@ function drawLegend() {
 
   // Dimensions of legend item: width, height, spacing, radius of rounded rect.
   var li = {
-    w: 75, h: 30, s: 3, r: 3
+    w: 85, h: 30, s: 3, r: 3
   };
 
   var legend = d3v4.select("#legend").append("svg:svg")
@@ -223,7 +228,7 @@ function drawLegend() {
       .attr("height", d3v4.keys(colors).length * (li.h + li.s));
 
   var g = legend.selectAll("g")
-      .data(d3v4.entries(colors))
+      .data(d3v4.entries(colors).sort(function(a,b) { return a.value.pos-b.value.pos}))
       .enter().append("svg:g")
       .attr("transform", function(d, i) {
               return "translate(0," + i * (li.h + li.s) + ")";
