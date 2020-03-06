@@ -32,7 +32,7 @@ var scrollVis = function (rawData) {
     //define data object and svg.
     var vis_data = {};
     // var svg = ""
-    var div = d3.select("body").append("div")
+    var tooltip = d3.select("body").append("div")
       .attr("class", "tooltip")
       .style("opacity", 0);
     
@@ -229,8 +229,6 @@ var scrollVis = function (rawData) {
       dot_group = dot_group.merge(enter);
       //define circle dot attributes
       dot_group.select(".circle_dot")
-              // .transition()
-              // .duration(transition)
               .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
               .attr("cy",function(d){return y_scale(d.row)})
               .attr("fill",function(d){ 
@@ -257,22 +255,123 @@ var scrollVis = function (rawData) {
               .attr("r",my_radius)
               .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")")
               .on("mouseover", function(d) {
-                console.log("mouseover")
-                div.transition()
+                console.log("mouseover + " + d.name)
+                d3.select(this)
+                 .style("stroke-width", "1px")
+                 .style("stroke", "#000");
+                tooltip.style("display", "inline")
+                  .transition()
                   .duration(200)
-                  .style("opacity", .9);
-                div.html(d.name)
+                  .style("opacity", 0.9);
+                tooltip.html(d.name)
                   .style("left", (d3v4.event.pageX) + "px")
                   .style("top", (d3v4.event.pageY - 28) + "px");
                 })
               .on("mouseout", function(d) {
-                console.log("mouseout")
-                div.transition()
+                d3.select(this)
+                  .style("stroke-width", "0px");
+                tooltip.transition()
                   .duration(500)
                   .style("opacity", 0);
                 });
               ;
 
+
+      // Case when passenger is chosen
+      // d3v4.selectAll("#passenger").on("click", function() {
+          // dot_group.select(".circle_dot")
+          //     // .transition()
+          //     // .duration(transition)            
+          //     .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
+          //     if(d.passenger == 1) {
+          //         return "orange"
+          //     } else {
+          //         return "grey"
+          //     }})
+
+          // bar_group.select(".bar_text")
+          //         .transition()
+          //         .delay(transition*0.1)
+          //         .attr("fill",function(d){ //fill dependent on whether survival is being shown.
+          //         if(fill_type == "both"){
+          //             return "orange"
+          //         } else {
+          //             return survival_colours[1] //if survival, show 'Survived' colour as text = survived %
+          //         }})
+          //         .text(function(d){
+          //         //number of passengers in this group.
+          //         var group_count = my_data.filter(function(m){if(m[data_class]==d && m["passenger"] == 1){return m}}).length;
+          //         if(fill_type == "both"){
+          //             return group_count //if no survival, show no of passengers.
+          //         } else {
+          //             //otherwise, calculate the passengers who survived and show survival rate - format defined on line 9
+          //             var survival_count =  my_data.filter(function(m){if(m[data_class]==d && m.survived == 1){return m}}).length;
+          //             return format(survival_count/group_count)
+          //         }
+          //         })
+          // draw_dots(svg, data_class, fill_type, transition, 1)
+              
+      // });
+
+      // Case when crew is chosen
+      // d3v4.selectAll("#crew").on("click", function() {
+      //     dot_group.select(".circle_dot")
+      //         // .transition()
+      //         // .duration(transition)
+      //         .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
+      //         .attr("cy",function(d){return y_scale(d.row)})
+      //         .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
+      //         if(d.passenger == 1) {
+      //             return "grey"
+      //         } else {
+      //             return "orange"
+      //         }})
+      //         .attr("r",my_radius)
+      //         .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
+
+      //     bar_group.select(".bar_text")
+      //             .transition()
+      //             .delay(transition*0.1)
+      //             .attr("fill",function(d){ //fill dependent on whether survival is being shown.
+      //                 if(fill_type == "both"){
+      //                 return "orange"
+      //                 } else {
+      //                 return survival_colours[1] //if survival, show 'Survived' colour as text = survived %
+      //             }})
+      //             .text(function(d){
+      //                 //number of passengers in this group.
+      //                 var group_count = my_data.filter(function(m){if(m[data_class]==d && m["passenger"] == 0){return m}}).length;
+      //                 if(fill_type == "both"){
+      //                 return group_count //if no survival, show no of passengers.
+      //                 } else {
+      //                 //otherwise, calculate the passengers who survived and show survival rate - format defined on line 9
+      //                 var survival_count =  my_data.filter(function(m){if(m[data_class]==d && m.survived == 1){return m}}).length;
+      //                 return format(survival_count/group_count)
+      //                 }
+      //                 })
+      // });
+
+      // Case when all are chosen
+      // d3v4.select("#all").on("click", function() {
+      //     dot_group.select(".circle_dot")
+      //         // .transition()
+      //         // .duration(transition)
+      //         .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
+      //         .attr("cy",function(d){return y_scale(d.row)})
+      //         .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
+      //             if(d.passenger == 1) {
+      //             return all_colours[d[data_class]]
+      //             } else {
+      //             return crew_colours[d[data_class]]
+      //             }})
+      //         .attr("r",my_radius)
+      //         .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")");
+      // });
+
+      //reset x_axis
+      // svg.append("g")
+      //   .attr("transform", "translate(0," + height + ")")
+      //   .call(d3.axisBottom(x));
       svg.select(".x_axis")
           .attr("transform", "translate(" + left_right_margin + "," + ((top_bottom_margin *1.2)+ y_scale.range()[0]) + ")")
           .call(d3v4.axisBottom(x0_scale));
