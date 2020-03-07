@@ -49,8 +49,6 @@ var scrollVis = function (rawData) {
               .attr('width', width)
               .attr('height', height);
       svg1.append("g").attr("class", "x_axis");
-      //x axis
-      // svg1.append("g").attr("class", "x_axis").attr("x_axis", x0_scale.domain());
       draw_dots(svg1, "all","both",500, 0);
 
       // graph 2
@@ -233,12 +231,7 @@ var scrollVis = function (rawData) {
       dot_group.select(".circle_dot")
               .attr("cx",function(d){return (x0_scale(d[data_class])) + x1_scale(d.column)})
               .attr("cy",function(d){return y_scale(d.row)})
-              .attr("fill",function(d){ //different fill depending on whether survived is shown (see above)
-              //   if(fill_type == "both"){
-              //     return all_colours[d[data_class]]
-              //   } else {
-              //     return survival_colours[d.survived]
-              // }
+              .attr("fill",function(d){ 
                 if (status == 0) {
                   if(d.passenger == 1) {
                     return all_colours[d[data_class]]
@@ -384,22 +377,6 @@ var scrollVis = function (rawData) {
           .call(d3v4.axisBottom(x0_scale));
       };
 
-
-      // add the dots with tooltips
-      // svg.selectAll("dot")
-      //     .on("mouseover", function(d) {
-      //       div.transition()
-      //         .duration(200)
-      //         .style("opacity", .9);
-      //       div.html(formatTime(d.date) + "<br/>" + d.close)
-      //         .style("left", (d3.event.pageX) + "px")
-      //         .style("top", (d3.event.pageY - 28) + "px");
-      //       })
-      //     .on("mouseout", function(d) {
-      //       div.transition()
-      //         .duration(500)
-      //         .style("opacity", 0);
-      //       });
     return chart;
 }
 
