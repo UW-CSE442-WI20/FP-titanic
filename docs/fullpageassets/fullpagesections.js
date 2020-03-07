@@ -25,7 +25,7 @@ var scrollVis = function (rawData) {
     var crew_colours = { Men: '#054a78', Women: '#558dab', all: "3#e4142",
     "0 - 15":"#5e8c41","15 - 30":"#3b943d","30 - 45":"#1f8239","45 - 70":"#0b5e27",">= 70":"#01331d", "Crew Class":"#2a0c52"};
     
-    var survival_colours = {0:"#fb9a99", 1: "#404040"}
+    var survival_colours = {0:"#fb9a99", 1: "#404040"};
   
     // define functions for the current scroll setting - inherited from JV
     var activateFunctions = [];
@@ -39,10 +39,10 @@ var scrollVis = function (rawData) {
   
     // vis_data = convert_data(rawData);
     // console.log("visdata")
-    console.log("svg")
+    // console.log("svg")
     var chart = function() {
       vis_data = convert_data(rawData);
-      console.log("visdata")
+      // console.log("visdata")
 
       // graph 1
       var svg1 = d3v4.select("#vis").append("svg")
@@ -135,7 +135,7 @@ var scrollVis = function (rawData) {
 
     var draw_dots = function (svg, data_class, fill_type, transition, status){
       svg.select("x_axis").attr("x_axis", x0_scale.domain())
-      console.log("entering draw dots")
+      // console.log("entering draw dots")
       //define data - empty if none (ie first scroll index).
       if(data_class == "none"){
           var my_data = [];
@@ -153,9 +153,9 @@ var scrollVis = function (rawData) {
       var bar_group = svg.selectAll(".labels_group")
                           .data(x0_scale.domain(),function(d){return d});
 
-      console.log("label? = " + x0_scale.domain())
+      // console.log("label? = " + x0_scale.domain())
 
-      console.log("draw dots")
+      // console.log("draw dots")
       bar_group.exit().remove();
       //enter new groups
       var enter = bar_group.enter()
@@ -255,7 +255,7 @@ var scrollVis = function (rawData) {
               .attr("r",my_radius)
               .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")")
               .on("mouseover", function(d) {
-                console.log("mouseover + " + d.name)
+                // console.log("mouseover + " + d.name)
                 d3.select(this)
                  .style("stroke-width", "1px")
                  .style("stroke", "#000");
@@ -454,7 +454,7 @@ function convert_data(my_data){
   }
 
   function get_positions(my_data,col_per_row,variables,field){
-    console.log("Field : " + field)
+    // console.log("Field : " + field)
     var p_class_labels = {1:"1st Class",2: "2nd Class",3:"3rd Class", 4:"Crew Class"};
     var positions = [], band = "",p_class="";
     if (variables.length == 0){

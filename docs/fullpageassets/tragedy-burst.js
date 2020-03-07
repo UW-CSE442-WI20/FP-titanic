@@ -7,7 +7,7 @@
 
     // Canvas object and dimensions
     var svg;
-    var CANVAS_WIDTH = 1000;
+    var CANVAS_WIDTH = 900;
     var CANVAS_HEIGHT = 300;
     
     // Total data fields
@@ -28,7 +28,7 @@
     var yInitCircle = [];
     
     // Styles
-    var RED_COLOR = "#710606";
+    var RED_COLOR = "#6b1111";
     var BLACK_COLOR = "#353238";
 
     window.onload = function () {
@@ -55,6 +55,7 @@
                     .attr("width", CANVAS_WIDTH)
                     .attr("height", CANVAS_HEIGHT)
                     .attr("class", "svg-canvas");
+
         svg.selectAll("text").remove();
 
         var format = d3v4.format(",d");
@@ -99,7 +100,7 @@
                             return BLACK_COLOR;
                         }
                    })
-                document.getElementById("death-count").innerHTML = "And 1517 of them perished due to the incident";
+                document.getElementById("death-count").innerHTML = "1517 perished due to the sinking of Titanic.";
                 document.getElementById("circle-represent").innerHTML = "(Each circle represents 10 people)";
 
                 // get circles' coordinates

@@ -182,1057 +182,1190 @@ var countriesMap = [
     }
 ];
 
-var populations = [
+var overall_data = [
     {
-        "city": "Tokyo–Yokohama",
-        "country": "Japan",
-        "population": 37843000,
-        "latitude": 35.4437078,
-        "longitude": 139.6380256
+        "country": "Australia",
+        "region": "Australia",
+        "total": 1,
+        "latitude": -25.2744,
+        "longitude": 133.7751
     },
     {
-        "city": "Jakarta",
-        "country": "Indonesia",
-        "population": 30539000,
-        "latitude": -6.2087634,
-        "longitude": 106.845599
+        "country": "Austria",
+        "region": "Europe",
+        "total": 1,
+        "latitude": 47.5162,
+        "longitude": 14.5501
     },
     {
-        "city": "Delhi",
-        "country": "India",
-        "population": 24998000,
-        "latitude": 28.6139391,
-        "longitude": 77.2090212
+        "country": "Belgium",
+        "region": "Europe",
+        "total": 8,
+        "latitude": 50.5039,
+        "longitude": 4.4699
     },
     {
-        "city": "Manila",
-        "country": "Other",
-        "population": 24123000,
-        "latitude": 14.5995124,
-        "longitude": 120.9842195
+        "country": "Canada",
+        "region": "America",
+        "total": 26,
+        "latitude": 56.1304,
+        "longitude": -106.3468
     },
     {
-        "city": "Seoul–Gyeonggi–Incheon",
-        "country": "Other",
-        "population": 23480000,
-        "latitude": 37.4562557,
-        "longitude": 126.7052062
+        "country": "Croatia",
+        "region": "Europe",
+        "total": 9,
+        "latitude": 45.1,
+        "longitude": 15.2
     },
     {
-        "city": "Shanghai",
-        "country": "China",
-        "population": 23416000,
-        "latitude": 31.230416,
-        "longitude": 121.473701
+        "country": "Denmark",
+        "region": "Europe",
+        "total": 7,
+        "latitude": 56.2639,
+        "longitude": 9.5018
     },
     {
-        "city": "Karachi",
-        "country": "Pakistan",
-        "population": 22123000,
-        "latitude": 24.8614622,
-        "longitude": 67.0099388
+        "country": "Egypt",
+        "region": "Africa",
+        "total": 1,
+        "latitude": 26.8206,
+        "longitude": 30.8025
     },
     {
-        "city": "Beijing",
-        "country": "China",
-        "population": 21009000,
-        "latitude": 39.904211,
-        "longitude": 116.407395
+        "country": "England",
+        "region": "Europe",
+        "total": 317,
+        "latitude": 52.3555,
+        "longitude": -1.1743
     },
     {
-        "city": "New York City",
-        "country": "United States",
-        "population": 20630000,
-        "latitude": 40.7127837,
-        "longitude": -74.0059413
+        "country": "Finland",
+        "region": "Europe",
+        "total": 34,
+        "latitude": 61.9241,
+        "longitude": 25.7482
     },
     {
-        "city": "Guangzhou–Foshan",
-        "country": "China",
-        "population": 20597000,
-        "latitude": 23.0402798,
-        "longitude": 113.1018582
+        "country": "France",
+        "region": "Europe",
+        "total": 15,
+        "latitude": 46.2276,
+        "longitude": 2.2137
     },
     {
-        "city": "São Paulo",
-        "country": "Brazil",
-        "population": 20365000,
-        "latitude": -23.5505199,
-        "longitude": -46.6333094
+        "country": "Germany",
+        "region": "Europe",
+        "total": 5,
+        "latitude": 51.1657,
+        "longitude": 10.4515
     },
     {
-        "city": "Mexico City",
-        "country": "Mexico",
-        "population": 20063000,
-        "latitude": 19.4326077,
-        "longitude": -99.133208
+        "country": "Hungary",
+        "region": "Europe",
+        "total": 1,
+        "latitude": 47.1625,
+        "longitude": 19.5033
     },
     {
-        "city": "Mumbai",
-        "country": "India",
-        "population": 17712000,
-        "latitude": 19.0759837,
-        "longitude": 72.8776559
+        "country": "Ireland",
+        "region": "Europe",
+        "total": 124,
+        "latitude": 53.1424,
+        "longitude": -7.6921
     },
     {
-        "city": "Osaka–Kobe–Kyoto",
-        "country": "Japan",
-        "population": 17444000,
-        "latitude": 35.0116363,
-        "longitude": 135.7680294
-    },
-    {
-        "city": "Moscow",
-        "country": "Other",
-        "population": 16170000,
-        "latitude": 55.755826,
-        "longitude": 37.6173
-    },
-    {
-        "city": "Dhaka",
-        "country": "Other",
-        "population": 15669000,
-        "latitude": 23.810332,
-        "longitude": 90.4125181
-    },
-    {
-        "city": "Greater Cairo",
-        "country": "Other",
-        "population": 15600000,
-        "latitude": 30.0444196,
-        "longitude": 31.2357116
-    },
-    {
-        "city": "Los Angeles",
-        "country": "United States",
-        "population": 15058000,
-        "latitude": 34.0522342,
-        "longitude": -118.2436849
-    },
-    {
-        "city": "Bangkok",
-        "country": "Other",
-        "population": 14998000,
-        "latitude": 13.7563309,
-        "longitude": 100.5017651
-    },
-    {
-        "city": "Kolkata",
-        "country": "India",
-        "population": 14667000,
-        "latitude": 22.572646,
-        "longitude": 88.363895
-    },
-    {
-        "city": "Buenos Aires",
-        "country": "Other",
-        "population": 14122000,
-        "latitude": -34.6036844,
-        "longitude": -58.3815591
-    },
-    {
-        "city": "Tehran",
-        "country": "Other",
-        "population": 13532000,
-        "latitude": 35.6891975,
-        "longitude": 51.3889736
-    },
-    {
-        "city": "Istanbul",
-        "country": "Turkey",
-        "population": 13287000,
-        "latitude": 41.0082376,
-        "longitude": 28.9783589
-    },
-    {
-        "city": "Lagos",
-        "country": "Other",
-        "population": 13123000,
-        "latitude": 6.5243793,
-        "longitude": 3.3792057
-    },
-    {
-        "city": "Shenzhen",
-        "country": "China",
-        "population": 12084000,
-        "latitude": 22.543096,
-        "longitude": 114.057865
-    },
-    {
-        "city": "Rio de Janeiro",
-        "country": "Brazil",
-        "population": 11727000,
-        "latitude": -22.9068467,
-        "longitude": -43.1728965
-    },
-    {
-        "city": "Kinshasa",
-        "country": "Other",
-        "population": 11587000,
-        "latitude": -4.4419311,
-        "longitude": 15.2662931
-    },
-    {
-        "city": "Tianjin",
-        "country": "China",
-        "population": 10920000,
-        "latitude": 39.084158,
-        "longitude": 117.200983
-    },
-    {
-        "city": "Paris",
-        "country": "Other",
-        "population": 10858000,
-        "latitude": 48.856614,
-        "longitude": 2.3522219
-    },
-    {
-        "city": "Lima",
-        "country": "Other",
-        "population": 10750000,
-        "latitude": -12.046374,
-        "longitude": -77.0427934
-    },
-    {
-        "city": "Chengdu",
-        "country": "China",
-        "population": 10376000,
-        "latitude": 30.572816,
-        "longitude": 104.066801
-    },
-    {
-        "city": "London",
-        "country": "Other",
-        "population": 10236000,
-        "latitude": 51.5073509,
-        "longitude": -0.1277583
-    },
-    {
-        "city": "Nagoya",
-        "country": "Japan",
-        "population": 10177000,
-        "latitude": 35.1814464,
-        "longitude": 136.906398
-    },
-    {
-        "city": "Lahore",
-        "country": "Pakistan",
-        "population": 10052000,
-        "latitude": 31.5546061,
-        "longitude": 74.3571581
-    },
-    {
-        "city": "Chennai",
-        "country": "India",
-        "population": 9714000,
-        "latitude": 13.0826802,
-        "longitude": 80.2707184
-    },
-    {
-        "city": "Chicago",
-        "country": "United States",
-        "population": 9156000,
-        "latitude": 41.8781136,
-        "longitude": -87.6297982
-    },
-    {
-        "city": "Bogotá",
-        "country": "Other",
-        "population": 8991000,
-        "latitude": 4.7109886,
-        "longitude": -74.072092
-    },
-    {
-        "city": "Ho Chi Minh City",
-        "country": "Other",
-        "population": 8957000,
-        "latitude": 10.8230989,
-        "longitude": 106.6296638
-    },
-    {
-        "city": "Hyderabad",
-        "country": "India",
-        "population": 8754000,
-        "latitude": 17.385044,
-        "longitude": 78.486671
-    },
-    {
-        "city": "Bengaluru",
-        "country": "India",
-        "population": 8728906,
-        "latitude": 12.9715987,
-        "longitude": 77.5945627
-    },
-    {
-        "city": "Dongguan",
-        "country": "China",
-        "population": 8442000,
-        "latitude": 23.020673,
-        "longitude": 113.7518
-    },
-    {
-        "city": "Johannesburg–East Rand",
-        "country": "South Africa",
-        "population": 8432000,
-        "latitude": -26.2041028,
-        "longitude": 28.0473051
-    },
-    {
-        "city": "Wuhan",
-        "country": "China",
-        "population": 7509000,
-        "latitude": 30.593099,
-        "longitude": 114.305393
-    },
-    {
-        "city": "Taipei",
-        "country": "Other",
-        "population": 7438000,
-        "latitude": 25.0329694,
-        "longitude": 121.5654177
-    },
-    {
-        "city": "Hangzhou",
-        "country": "China",
-        "population": 7275000,
-        "latitude": 30.274085,
-        "longitude": 120.15507
-    },
-    {
-        "city": "Hong Kong",
-        "country": "China",
-        "population": 7246000,
-        "latitude": 22.396428,
-        "longitude": 114.109497
-    },
-    {
-        "city": "Chongqing",
-        "country": "China",
-        "population": 7217000,
-        "latitude": 29.56301,
-        "longitude": 106.551556
-    },
-    {
-        "city": "Ahmedabad",
-        "country": "India",
-        "population": 7186000,
-        "latitude": 23.022505,
-        "longitude": 72.5713621
-    },
-    {
-        "city": "Kuala Lumpur",
-        "country": "Other",
-        "population": 7088000,
-        "latitude": 3.139003,
-        "longitude": 101.686855
-    },
-    {
-        "city": "Quanzhou",
-        "country": "China",
-        "population": 6710000,
-        "latitude": 24.874132,
-        "longitude": 118.675676
-    },
-    {
-        "city": "Essen–Düsseldorf",
-        "country": "Other",
-        "population": 6679000,
-        "latitude": 51.4556432,
-        "longitude": 7.0115552
-    },
-    {
-        "city": "Baghdad",
-        "country": "Other",
-        "population": 6625000,
-        "latitude": 33.3128057,
-        "longitude": 44.3614875
-    },
-    {
-        "city": "Toronto",
-        "country": "Other",
-        "population": 6456000,
-        "latitude": 43.653226,
-        "longitude": -79.3831843
-    },
-    {
-        "city": "Santiago",
-        "country": "Other",
-        "population": 6225000,
-        "latitude": -33.4488897,
-        "longitude": -70.6692655
-    },
-    {
-        "city": "Dallas–Fort Worth",
-        "country": "United States",
-        "population": 6174000,
-        "latitude": 32.7554883,
-        "longitude": -97.3307658
-    },
-    {
-        "city": "Madrid",
-        "country": "Other",
-        "population": 6171000,
-        "latitude": 40.4167754,
-        "longitude": -3.7037902
-    },
-    {
-        "city": "Nanjing",
-        "country": "China",
-        "population": 6155000,
-        "latitude": 32.060255,
-        "longitude": 118.796877
-    },
-    {
-        "city": "Shenyang",
-        "country": "China",
-        "population": 6078000,
-        "latitude": 41.805699,
-        "longitude": 123.431472
-    },
-    {
-        "city": "Xi'an–Xianyang",
-        "country": "China",
-        "population": 5977000,
-        "latitude": 34.3243211,
-        "longitude": 108.7051235
-    },
-    {
-        "city": "San Francisco–San Jose",
-        "country": "United States",
-        "population": 5929000,
-        "latitude": 37.7299514,
-        "longitude": -122.4384735
-    },
-    {
-        "city": "Luanda",
-        "country": "Other",
-        "population": 5899000,
-        "latitude": -8.8399876,
-        "longitude": 13.2894368
-    },
-    {
-        "city": "Qingdao–Jimo",
-        "country": "China",
-        "population": 5816000,
-        "latitude": 36.389402,
-        "longitude": 120.447161
-    },
-    {
-        "city": "Houston",
-        "country": "United States",
-        "population": 5764000,
-        "latitude": 29.7604267,
-        "longitude": -95.3698028
-    },
-    {
-        "city": "Miami",
-        "country": "United States",
-        "population": 5764000,
-        "latitude": 25.7616798,
-        "longitude": -80.1917902
-    },
-    {
-        "city": "Bandung",
-        "country": "Indonesia",
-        "population": 5695000,
-        "latitude": -6.9174639,
-        "longitude": 107.6191228
-    },
-    {
-        "city": "Riyadh",
-        "country": "Other",
-        "population": 5666000,
-        "latitude": 24.7135517,
-        "longitude": 46.6752957
-    },
-    {
-        "city": "Pune",
-        "country": "India",
-        "population": 5631000,
-        "latitude": 18.5204303,
-        "longitude": 73.8567437
-    },
-    {
-        "city": "Singapore",
-        "country": "Other",
-        "population": 5624000,
-        "latitude": 1.3553794,
-        "longitude": 103.8677444
-    },
-    {
-        "city": "Philadelphia",
-        "country": "United States",
-        "population": 5570000,
-        "latitude": 39.9525839,
-        "longitude": -75.1652215
-    },
-    {
-        "city": "Surat",
-        "country": "India",
-        "population": 5447000,
-        "latitude": 21.1702401,
-        "longitude": 72.8310607
-    },
-    {
-        "city": "Milan",
         "country": "Italy",
-        "population": 5257000,
-        "latitude": 45.4654219,
-        "longitude": 9.1859243
+        "region": "Europe",
+        "total": 9,
+        "latitude": 41.8719,
+        "longitude": 12.5674
     },
     {
-        "city": "Suzhou",
-        "country": "China",
-        "population": 5246000,
-        "latitude": 31.298979,
-        "longitude": 120.58529
+        "country": "Japan",
+        "region": "Asia",
+        "total": 1,
+        "latitude": 36.2048,
+        "longitude": 138.2529
     },
     {
-        "city": "Saint Petersburg",
-        "country": "Other",
-        "population": 5126000,
-        "latitude": 59.9342802,
-        "longitude": 30.3350986
+        "country": "Latvia",
+        "region": "Europe",
+        "total": 1,
+        "latitude": 56.8796,
+        "longitude": 24.6032
     },
     {
-        "city": "Khartoum",
-        "country": "Other",
-        "population": 5125000,
-        "latitude": 15.5006544,
-        "longitude": 32.5598994
+        "country": "Lithuania",
+        "region": "Europe",
+        "total": 2,
+        "latitude": 55.1694,
+        "longitude": 23.8813
     },
     {
-        "city": "Atlanta",
-        "country": "United States",
-        "population": 5015000,
-        "latitude": 33.7489954,
-        "longitude": -84.3879824
+        "country": "Norway",
+        "region": "Europe",
+        "total": 19,
+        "latitude": 60.472,
+        "longitude": 8.4689
     },
     {
-        "city": "Zhengzhou–Xingyang",
-        "country": "China",
-        "population": 4942000,
-        "latitude": 34.787375,
-        "longitude": 113.383221
+        "country": "Poland",
+        "region": "Europe",
+        "total": 6,
+        "latitude": 51.9194,
+        "longitude": 19.1451
     },
     {
-        "city": "Washington, D.C.",
-        "country": "United States",
-        "population": 4889000,
-        "latitude": 38.9071923,
-        "longitude": -77.0368707
+        "country": "Portugal",
+        "region": "Europe",
+        "total": 1,
+        "latitude": 39.3999,
+        "longitude": -8.2245
     },
     {
-        "city": "Surabaya",
-        "country": "Indonesia",
-        "population": 4881000,
-        "latitude": -7.2574719,
-        "longitude": 112.7520883
+        "country": "Russia",
+        "region": "Asia",
+        "total": 4,
+        "latitude": 61.524,
+        "longitude": 105.3188
     },
     {
-        "city": "Harbin",
-        "country": "China",
-        "population": 4815000,
-        "latitude": 45.803775,
-        "longitude": 126.534967
+        "country": "Slovakia",
+        "region": "Europe",
+        "total": 1,
+        "latitude": 48.669,
+        "longitude": 19.699
     },
     {
-        "city": "Abidjan",
-        "country": "Other",
-        "population": 4800000,
-        "latitude": 5.3599517,
-        "longitude": -4.0082563
-    },
-    {
-        "city": "Yangon",
-        "country": "Other",
-        "population": 4800000,
-        "latitude": 16.8660694,
-        "longitude": 96.195132
-    },
-    {
-        "city": "Nairobi",
-        "country": "Other",
-        "population": 4738000,
-        "latitude": -1.2920659,
-        "longitude": 36.8219462
-    },
-    {
-        "city": "Barcelona",
-        "country": "Other",
-        "population": 4693000,
-        "latitude": 41.3850639,
-        "longitude": 2.1734035
-    },
-    {
-        "city": "Alexandria",
-        "country": "Other",
-        "population": 4689000,
-        "latitude": 31.2000924,
-        "longitude": 29.9187387
-    },
-    {
-        "city": "Kabul",
-        "country": "Other",
-        "population": 4635000,
-        "latitude": 34.5553494,
-        "longitude": 69.207486
-    },
-    {
-        "city": "Guadalajara",
-        "country": "Mexico",
-        "population": 4603000,
-        "latitude": 20.6596988,
-        "longitude": -103.3496092
-    },
-    {
-        "city": "Ankara",
-        "country": "Turkey",
-        "population": 4538000,
-        "latitude": 39.9333635,
-        "longitude": 32.8597419
-    },
-    {
-        "city": "Belo Horizonte",
-        "country": "Brazil",
-        "population": 4517000,
-        "latitude": -19.9166813,
-        "longitude": -43.9344931
-    },
-    {
-        "city": "Boston",
-        "country": "United States",
-        "population": 4478000,
-        "latitude": 42.3600825,
-        "longitude": -71.0588801
-    },
-    {
-        "city": "Xiamen",
-        "country": "China",
-        "population": 4420000,
-        "latitude": 24.479834,
-        "longitude": 118.089425
-    },
-    {
-        "city": "Kuwait City",
-        "country": "Other",
-        "population": 4283000,
-        "latitude": 29.375859,
-        "longitude": 47.9774052
-    },
-    {
-        "city": "Dar es Salaam",
-        "country": "Other",
-        "population": 4219000,
-        "latitude": -6.792354,
-        "longitude": 39.2083284
-    },
-    {
-        "city": "Phoenix",
-        "country": "United States",
-        "population": 4194000,
-        "latitude": 33.4483771,
-        "longitude": -112.0740373
-    },
-    {
-        "city": "Dalian",
-        "country": "China",
-        "population": 4183000,
-        "latitude": 38.914003,
-        "longitude": 121.614682
-    },
-    {
-        "city": "Accra",
-        "country": "Other",
-        "population": 4145000,
-        "latitude": 5.6037168,
-        "longitude": -0.1869644
-    },
-    {
-        "city": "Monterrey",
-        "country": "Mexico",
-        "population": 4083000,
-        "latitude": 25.6866142,
-        "longitude": -100.3161126
-    },
-    {
-        "city": "Berlin",
-        "country": "Other",
-        "population": 4069000,
-        "latitude": 52.5200066,
-        "longitude": 13.404954
-    },
-    {
-        "city": "Sydney",
-        "country": "Other",
-        "population": 4036000,
-        "latitude": -33.8674869,
-        "longitude": 151.2069902
-    },
-    {
-        "city": "Fuzhou",
-        "country": "China",
-        "population": 3962000,
-        "latitude": 26.074508,
-        "longitude": 119.296494
-    },
-    {
-        "city": "Medan",
-        "country": "Indonesia",
-        "population": 3942000,
-        "latitude": 3.5951956,
-        "longitude": 98.6722227
-    },
-    {
-        "city": "Dubai",
-        "country": "Other",
-        "population": 3933000,
-        "latitude": 25.2048493,
-        "longitude": 55.2707828
-    },
-    {
-        "city": "Melbourne",
-        "country": "Other",
-        "population": 3906000,
-        "latitude": -37.814107,
-        "longitude": 144.96328
-    },
-    {
-        "city": "Rome",
-        "country": "Italy",
-        "population": 3906000,
-        "latitude": 41.9027835,
-        "longitude": 12.4963655
-    },
-    {
-        "city": "Busan",
-        "country": "Other",
-        "population": 3906000,
-        "latitude": 35.1795543,
-        "longitude": 129.0756416
-    },
-    {
-        "city": "Cape Town",
         "country": "South Africa",
-        "population": 3812000,
-        "latitude": -33.9248685,
-        "longitude": 18.4240553
+        "region": "Africa",
+        "total": 4,
+        "latitude": -30.5595,
+        "longitude": 22.9375
     },
     {
-        "city": "Jinan",
-        "country": "China",
-        "population": 3789000,
-        "latitude": 36.651216,
-        "longitude": 117.12
+        "country": "Sweden",
+        "region": "Europe",
+        "total": 76,
+        "latitude": 60.1282,
+        "longitude": 18.6435
     },
     {
-        "city": "Ningbo",
-        "country": "China",
-        "population": 3753000,
-        "latitude": 29.868336,
-        "longitude": 121.54399
+        "country": "Swiss",
+        "region": "Europe",
+        "total": 6,
+        "latitude": 46.8182,
+        "longitude": 8.2275
     },
     {
-        "city": "Hanoi",
-        "country": "Other",
-        "population": 3715000,
-        "latitude": 21.0277644,
-        "longitude": 105.8341598
+        "country": "Syria",
+        "region": "Asia",
+        "total": 87,
+        "latitude": 34.8021,
+        "longitude": 38.9968
     },
     {
-        "city": "Naples",
+        "country": "USA",
+        "region": "America",
+        "total": 181,
+        "latitude": 37.0902,
+        "longitude": -95.7129
+    },
+    {
+        "country": "Uruguay",
+        "region": "America",
+        "total": 3,
+        "latitude": -32.5228,
+        "longitude": -55.7658
+    }
+];
+var first_data = [
+    {
+        "country": "Australia",
+        "region": "Australia",
+        "for": 1,
+        "latitude": -25.2744,
+        "longitude": 133.7751,
+        "total": 0,
+        "second": 0,
+        "third": 1
+    },
+    {
+        "country": "Austria",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 47.5162,
+        "longitude": 14.5501,
+        "total": 1,
+        "second": 0,
+        "third": 0
+    },
+    {
+        "country": "Belgium",
+        "region": "Europe",
+        "for": 8,
+        "latitude": 50.5039,
+        "longitude": 4.4699,
+        "total": 1,
+        "second": 1,
+        "third": 6
+    },
+    {
+        "country": "Canada",
+        "region": "America",
+        "for": 26,
+        "latitude": 56.1304,
+        "longitude": -106.3468,
+        "total": 19,
+        "second": 3,
+        "third": 4
+    },
+    {
+        "country": "Croatia",
+        "region": "Europe",
+        "for": 9,
+        "latitude": 45.1,
+        "longitude": 15.2,
+        "total": 0,
+        "second": 0,
+        "third": 9
+    },
+    {
+        "country": "Denmark",
+        "region": "Europe",
+        "for": 7,
+        "latitude": 56.2639,
+        "longitude": 9.5018,
+        "total": 0,
+        "second": 2,
+        "third": 5
+    },
+    {
+        "country": "Egypt",
+        "region": "Africa",
+        "for": 1,
+        "latitude": 26.8206,
+        "longitude": 30.8025,
+        "total": 1,
+        "second": 0,
+        "third": 0
+    },
+    {
+        "country": "England",
+        "region": "Europe",
+        "for": 317,
+        "latitude": 52.3555,
+        "longitude": -1.1743,
+        "total": 46,
+        "second": 154,
+        "third": 117
+    },
+    {
+        "country": "Finland",
+        "region": "Europe",
+        "for": 34,
+        "latitude": 61.9241,
+        "longitude": 25.7482,
+        "total": 0,
+        "second": 5,
+        "third": 29
+    },
+    {
+        "country": "France",
+        "region": "Europe",
+        "for": 15,
+        "latitude": 46.2276,
+        "longitude": 2.2137,
+        "total": 8,
+        "second": 6,
+        "third": 1
+    },
+    {
+        "country": "Germany",
+        "region": "Europe",
+        "for": 5,
+        "latitude": 51.1657,
+        "longitude": 10.4515,
+        "total": 4,
+        "second": 1,
+        "third": 0
+    },
+    {
+        "country": "Hungary",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 47.1625,
+        "longitude": 19.5033,
+        "total": 0,
+        "second": 1,
+        "third": 0
+    },
+    {
+        "country": "Ireland",
+        "region": "Europe",
+        "for": 124,
+        "latitude": 53.1424,
+        "longitude": -7.6921,
+        "total": 6,
+        "second": 12,
+        "third": 106
+    },
+    {
         "country": "Italy",
-        "population": 3706000,
-        "latitude": 40.8517746,
-        "longitude": 14.2681244
+        "region": "Europe",
+        "for": 9,
+        "latitude": 41.8719,
+        "longitude": 12.5674,
+        "total": 3,
+        "second": 4,
+        "third": 2
     },
     {
-        "city": "Taiyuan—Yuci",
-        "country": "China",
-        "population": 3702000,
-        "latitude": 37.697792,
-        "longitude": 112.708241
+        "country": "Japan",
+        "region": "Asia",
+        "for": 1,
+        "latitude": 36.2048,
+        "longitude": 138.2529,
+        "total": 0,
+        "second": 1,
+        "third": 0
     },
     {
-        "city": "Jeddah",
-        "country": "Other",
-        "population": 3677000,
-        "latitude": 21.2854067,
-        "longitude": 39.2375507
+        "country": "Latvia",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 56.8796,
+        "longitude": 24.6032,
+        "total": 0,
+        "second": 0,
+        "third": 1
     },
     {
-        "city": "Detroit",
-        "country": "United States",
-        "population": 3672000,
-        "latitude": 42.331427,
-        "longitude": -83.0457538
+        "country": "Lithuania",
+        "region": "Europe",
+        "for": 2,
+        "latitude": 55.1694,
+        "longitude": 23.8813,
+        "total": 0,
+        "second": 2,
+        "third": 0
     },
     {
-        "city": "Hefei",
-        "country": "China",
-        "population": 3665000,
-        "latitude": 31.820592,
-        "longitude": 117.227219
+        "country": "Norway",
+        "region": "Europe",
+        "for": 19,
+        "latitude": 60.472,
+        "longitude": 8.4689,
+        "total": 1,
+        "second": 0,
+        "third": 18
     },
     {
-        "city": "Changsha",
-        "country": "China",
-        "population": 3657000,
-        "latitude": 28.228209,
-        "longitude": 112.938814
+        "country": "Poland",
+        "region": "Europe",
+        "for": 6,
+        "latitude": 51.9194,
+        "longitude": 19.1451,
+        "total": 1,
+        "second": 0,
+        "third": 5
     },
     {
-        "city": "Kunming–Anning",
-        "country": "China",
-        "population": 3649000,
-        "latitude": 24.919493,
-        "longitude": 102.478494
+        "country": "Portugal",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 39.3999,
+        "longitude": -8.2245,
+        "total": 0,
+        "second": 1,
+        "third": 0
     },
     {
-        "city": "Wuxi",
-        "country": "China",
-        "population": 3597000,
-        "latitude": 31.49117,
-        "longitude": 120.31191
+        "country": "Russia",
+        "region": "Asia",
+        "for": 4,
+        "latitude": 61.524,
+        "longitude": 105.3188,
+        "total": 0,
+        "second": 1,
+        "third": 3
     },
     {
-        "city": "Medellín",
-        "country": "Other",
-        "population": 3568000,
-        "latitude": 6.2530408,
-        "longitude": -75.5645737
+        "country": "Slovakia",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 48.669,
+        "longitude": 19.699,
+        "total": 0,
+        "second": 1,
+        "third": 0
     },
     {
-        "city": "Faisalabad",
-        "country": "Pakistan",
-        "population": 3560000,
-        "latitude": 31.4187142,
-        "longitude": 73.0791073
-    },
-    {
-        "city": "Aleppo",
-        "country": "Other",
-        "population": 3560000,
-        "latitude": 36.2021047,
-        "longitude": 37.1342603
-    },
-    {
-        "city": "Kano",
-        "country": "Other",
-        "population": 3550000,
-        "latitude": 12.0021794,
-        "longitude": 8.5919561
-    },
-    {
-        "city": "Montreal",
-        "country": "Other",
-        "population": 3407963,
-        "latitude": 45.5016889,
-        "longitude": -73.567256
-    },
-    {
-        "city": "Dakar",
-        "country": "Other",
-        "population": 3520000,
-        "latitude": 14.7645042,
-        "longitude": -17.3660286
-    },
-    {
-        "city": "Athens",
-        "country": "Other",
-        "population": 3484000,
-        "latitude": 37.983917,
-        "longitude": 23.7293599
-    },
-    {
-        "city": "Changzhou",
-        "country": "China",
-        "population": 3425000,
-        "latitude": 31.811226,
-        "longitude": 119.974062
-    },
-    {
-        "city": "Durban",
         "country": "South Africa",
-        "population": 3421000,
-        "latitude": -29.8586804,
-        "longitude": 31.0218404
+        "region": "Africa",
+        "for": 4,
+        "latitude": -30.5595,
+        "longitude": 22.9375,
+        "total": 0,
+        "second": 4,
+        "third": 0
     },
     {
-        "city": "Porto Alegre",
-        "country": "Brazil",
-        "population": 3413000,
-        "latitude": -30.0346471,
-        "longitude": -51.2176584
+        "country": "Sweden",
+        "region": "Europe",
+        "for": 76,
+        "latitude": 60.1282,
+        "longitude": 18.6435,
+        "total": 4,
+        "second": 6,
+        "third": 66
     },
     {
-        "city": "Jaipur",
-        "country": "India",
-        "population": 3409000,
-        "latitude": 26.9124336,
-        "longitude": 75.7872709
+        "country": "Swiss",
+        "region": "Europe",
+        "for": 6,
+        "latitude": 46.8182,
+        "longitude": 8.2275,
+        "total": 3,
+        "second": 2,
+        "third": 1
     },
     {
-        "city": "Fortaleza",
-        "country": "Brazil",
-        "population": 3401000,
-        "latitude": -3.7318616,
-        "longitude": -38.5266704
+        "country": "Syria",
+        "region": "Asia",
+        "for": 87,
+        "latitude": 34.8021,
+        "longitude": 38.9968,
+        "total": 0,
+        "second": 2,
+        "third": 85
     },
     {
-        "city": "Addis Ababa",
-        "country": "Other",
-        "population": 3376000,
-        "latitude": 8.9806034,
-        "longitude": 38.7577605
+        "country": "USA",
+        "region": "America",
+        "for": 181,
+        "latitude": 37.0902,
+        "longitude": -95.7129,
+        "total": 132,
+        "second": 22,
+        "third": 27
     },
     {
-        "city": "Changchun",
-        "country": "China",
-        "population": 3368000,
-        "latitude": 43.817072,
-        "longitude": 125.323544
-    },
-    {
-        "city": "Shijiazhuang",
-        "country": "China",
-        "population": 3367000,
-        "latitude": 38.042307,
-        "longitude": 114.51486
-    },
-    {
-        "city": "Recife",
-        "country": "Brazil",
-        "population": 3347000,
-        "latitude": -8.0578381,
-        "longitude": -34.8828969
-    },
-    {
-        "city": "Mashhad",
-        "country": "Other",
-        "population": 3294000,
-        "latitude": 36.2604623,
-        "longitude": 59.6167549
-    },
-    {
-        "city": "Seattle",
-        "country": "United States",
-        "population": 3218000,
-        "latitude": 47.6062095,
-        "longitude": -122.3320708
-    },
-    {
-        "city": "Casablanca",
-        "country": "Other",
-        "population": 3211000,
-        "latitude": 33.5731104,
-        "longitude": -7.5898434
-    },
-    {
-        "city": "Salvador",
-        "country": "Brazil",
-        "population": 3190000,
-        "latitude": -12.9730401,
-        "longitude": -38.502304
-    },
-    {
-        "city": "Ürümqi",
-        "country": "China",
-        "population": 3184000,
-        "latitude": 43.825592,
-        "longitude": 87.616848
-    },
-    {
-        "city": "Lucknow",
-        "country": "India",
-        "population": 3184000,
-        "latitude": 26.8466937,
-        "longitude": 80.946166
-    },
-    {
-        "city": "Chittagong",
-        "country": "Other",
-        "population": 3176000,
-        "latitude": 22.3475365,
-        "longitude": 91.8123324
-    },
-    {
-        "city": "Wenzhou",
-        "country": "China",
-        "population": 3169000,
-        "latitude": 27.993828,
-        "longitude": 120.699362
-    },
-    {
-        "city": "Ibadan",
-        "country": "Other",
-        "population": 3160000,
-        "latitude": 7.3775355,
-        "longitude": 3.9470396
-    },
-    {
-        "city": "İzmir",
-        "country": "Turkey",
-        "population": 3112000,
-        "latitude": 38.423734,
-        "longitude": 27.142826
-    },
-    {
-        "city": "Curitiba",
-        "country": "Brazil",
-        "population": 3102000,
-        "latitude": -25.4289541,
-        "longitude": -49.267137
-    },
-    {
-        "city": "San Diego",
-        "country": "United States",
-        "population": 3086000,
-        "latitude": 32.715738,
-        "longitude": -117.1610838
-    },
-    {
-        "city": "Yaoundé",
-        "country": "Other",
-        "population": 3060000,
-        "latitude": 3.8480325,
-        "longitude": 11.5020752
-    },
-    {
-        "city": "Zhangjiagang–Jiangyin–Jingjiang",
-        "country": "China",
-        "population": 3056000,
-        "latitude": 31.8377775,
-        "longitude": 120.3152942
-    },
-    {
-        "city": "Kanpur",
-        "country": "India",
-        "population": 3037000,
-        "latitude": 26.449923,
-        "longitude": 80.3318736
-    },
-    {
-        "city": "Zhongshan",
-        "country": "China",
-        "population": 3031000,
-        "latitude": 22.516999,
-        "longitude": 113.392725
+        "country": "Uruguay",
+        "region": "America",
+        "for": 3,
+        "latitude": -32.5228,
+        "longitude": -55.7658,
+        "total": 3,
+        "second": 0,
+        "third": 0
     }
 ];
 
+var second_data = [
+    {
+        "country": "Australia",
+        "region": "Australia",
+        "for": 1,
+        "latitude": -25.2744,
+        "longitude": 133.7751,
+        "first": 0,
+        "total": 0,
+        "third": 1
+    },
+    {
+        "country": "Austria",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 47.5162,
+        "longitude": 14.5501,
+        "first": 1,
+        "total": 0,
+        "third": 0
+    },
+    {
+        "country": "Belgium",
+        "region": "Europe",
+        "for": 8,
+        "latitude": 50.5039,
+        "longitude": 4.4699,
+        "first": 1,
+        "total": 1,
+        "third": 6
+    },
+    {
+        "country": "Canada",
+        "region": "America",
+        "for": 26,
+        "latitude": 56.1304,
+        "longitude": -106.3468,
+        "first": 19,
+        "total": 3,
+        "third": 4
+    },
+    {
+        "country": "Croatia",
+        "region": "Europe",
+        "for": 9,
+        "latitude": 45.1,
+        "longitude": 15.2,
+        "first": 0,
+        "total": 0,
+        "third": 9
+    },
+    {
+        "country": "Denmark",
+        "region": "Europe",
+        "for": 7,
+        "latitude": 56.2639,
+        "longitude": 9.5018,
+        "first": 0,
+        "total": 2,
+        "third": 5
+    },
+    {
+        "country": "Egypt",
+        "region": "Africa",
+        "for": 1,
+        "latitude": 26.8206,
+        "longitude": 30.8025,
+        "first": 1,
+        "total": 0,
+        "third": 0
+    },
+    {
+        "country": "England",
+        "region": "Europe",
+        "for": 317,
+        "latitude": 52.3555,
+        "longitude": -1.1743,
+        "first": 46,
+        "total": 154,
+        "third": 117
+    },
+    {
+        "country": "Finland",
+        "region": "Europe",
+        "for": 34,
+        "latitude": 61.9241,
+        "longitude": 25.7482,
+        "first": 0,
+        "total": 5,
+        "third": 29
+    },
+    {
+        "country": "France",
+        "region": "Europe",
+        "for": 15,
+        "latitude": 46.2276,
+        "longitude": 2.2137,
+        "first": 8,
+        "total": 6,
+        "third": 1
+    },
+    {
+        "country": "Germany",
+        "region": "Europe",
+        "for": 5,
+        "latitude": 51.1657,
+        "longitude": 10.4515,
+        "first": 4,
+        "total": 1,
+        "third": 0
+    },
+    {
+        "country": "Hungary",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 47.1625,
+        "longitude": 19.5033,
+        "first": 0,
+        "total": 1,
+        "third": 0
+    },
+    {
+        "country": "Ireland",
+        "region": "Europe",
+        "for": 124,
+        "latitude": 53.1424,
+        "longitude": -7.6921,
+        "first": 6,
+        "total": 12,
+        "third": 106
+    },
+    {
+        "country": "Italy",
+        "region": "Europe",
+        "for": 9,
+        "latitude": 41.8719,
+        "longitude": 12.5674,
+        "first": 3,
+        "total": 4,
+        "third": 2
+    },
+    {
+        "country": "Japan",
+        "region": "Asia",
+        "for": 1,
+        "latitude": 36.2048,
+        "longitude": 138.2529,
+        "first": 0,
+        "total": 1,
+        "third": 0
+    },
+    {
+        "country": "Latvia",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 56.8796,
+        "longitude": 24.6032,
+        "first": 0,
+        "total": 0,
+        "third": 1
+    },
+    {
+        "country": "Lithuania",
+        "region": "Europe",
+        "for": 2,
+        "latitude": 55.1694,
+        "longitude": 23.8813,
+        "first": 0,
+        "total": 2,
+        "third": 0
+    },
+    {
+        "country": "Norway",
+        "region": "Europe",
+        "for": 19,
+        "latitude": 60.472,
+        "longitude": 8.4689,
+        "first": 1,
+        "total": 0,
+        "third": 18
+    },
+    {
+        "country": "Poland",
+        "region": "Europe",
+        "for": 6,
+        "latitude": 51.9194,
+        "longitude": 19.1451,
+        "first": 1,
+        "total": 0,
+        "third": 5
+    },
+    {
+        "country": "Portugal",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 39.3999,
+        "longitude": -8.2245,
+        "first": 0,
+        "total": 1,
+        "third": 0
+    },
+    {
+        "country": "Russia",
+        "region": "Asia",
+        "for": 4,
+        "latitude": 61.524,
+        "longitude": 105.3188,
+        "first": 0,
+        "total": 1,
+        "third": 3
+    },
+    {
+        "country": "Slovakia",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 48.669,
+        "longitude": 19.699,
+        "first": 0,
+        "total": 1,
+        "third": 0
+    },
+    {
+        "country": "South Africa",
+        "region": "Africa",
+        "for": 4,
+        "latitude": -30.5595,
+        "longitude": 22.9375,
+        "first": 0,
+        "total": 4,
+        "third": 0
+    },
+    {
+        "country": "Sweden",
+        "region": "Europe",
+        "for": 76,
+        "latitude": 60.1282,
+        "longitude": 18.6435,
+        "first": 4,
+        "total": 6,
+        "third": 66
+    },
+    {
+        "country": "Swiss",
+        "region": "Europe",
+        "for": 6,
+        "latitude": 46.8182,
+        "longitude": 8.2275,
+        "first": 3,
+        "total": 2,
+        "third": 1
+    },
+    {
+        "country": "Syria",
+        "region": "Asia",
+        "for": 87,
+        "latitude": 34.8021,
+        "longitude": 38.9968,
+        "first": 0,
+        "total": 2,
+        "third": 85
+    },
+    {
+        "country": "USA",
+        "region": "America",
+        "for": 181,
+        "latitude": 37.0902,
+        "longitude": -95.7129,
+        "first": 132,
+        "total": 22,
+        "third": 27
+    },
+    {
+        "country": "Uruguay",
+        "region": "America",
+        "for": 3,
+        "latitude": -32.5228,
+        "longitude": -55.7658,
+        "first": 3,
+        "total": 0,
+        "third": 0
+    }
+];
+
+var third_data = [
+    {
+        "country": "Australia",
+        "region": "Australia",
+        "for": 1,
+        "latitude": -25.2744,
+        "longitude": 133.7751,
+        "first": 0,
+        "second": 0,
+        "total": 1
+    },
+    {
+        "country": "Austria",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 47.5162,
+        "longitude": 14.5501,
+        "first": 1,
+        "second": 0,
+        "total": 0
+    },
+    {
+        "country": "Belgium",
+        "region": "Europe",
+        "for": 8,
+        "latitude": 50.5039,
+        "longitude": 4.4699,
+        "first": 1,
+        "second": 1,
+        "total": 6
+    },
+    {
+        "country": "Canada",
+        "region": "America",
+        "for": 26,
+        "latitude": 56.1304,
+        "longitude": -106.3468,
+        "first": 19,
+        "second": 3,
+        "total": 4
+    },
+    {
+        "country": "Croatia",
+        "region": "Europe",
+        "for": 9,
+        "latitude": 45.1,
+        "longitude": 15.2,
+        "first": 0,
+        "second": 0,
+        "total": 9
+    },
+    {
+        "country": "Denmark",
+        "region": "Europe",
+        "for": 7,
+        "latitude": 56.2639,
+        "longitude": 9.5018,
+        "first": 0,
+        "second": 2,
+        "total": 5
+    },
+    {
+        "country": "Egypt",
+        "region": "Africa",
+        "for": 1,
+        "latitude": 26.8206,
+        "longitude": 30.8025,
+        "first": 1,
+        "second": 0,
+        "total": 0
+    },
+    {
+        "country": "England",
+        "region": "Europe",
+        "for": 317,
+        "latitude": 52.3555,
+        "longitude": -1.1743,
+        "first": 46,
+        "second": 154,
+        "total": 117
+    },
+    {
+        "country": "Finland",
+        "region": "Europe",
+        "for": 34,
+        "latitude": 61.9241,
+        "longitude": 25.7482,
+        "first": 0,
+        "second": 5,
+        "total": 29
+    },
+    {
+        "country": "France",
+        "region": "Europe",
+        "for": 15,
+        "latitude": 46.2276,
+        "longitude": 2.2137,
+        "first": 8,
+        "second": 6,
+        "total": 1
+    },
+    {
+        "country": "Germany",
+        "region": "Europe",
+        "for": 5,
+        "latitude": 51.1657,
+        "longitude": 10.4515,
+        "first": 4,
+        "second": 1,
+        "total": 0
+    },
+    {
+        "country": "Hungary",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 47.1625,
+        "longitude": 19.5033,
+        "first": 0,
+        "second": 1,
+        "total": 0
+    },
+    {
+        "country": "Ireland",
+        "region": "Europe",
+        "for": 124,
+        "latitude": 53.1424,
+        "longitude": -7.6921,
+        "first": 6,
+        "second": 12,
+        "total": 106
+    },
+    {
+        "country": "Italy",
+        "region": "Europe",
+        "for": 9,
+        "latitude": 41.8719,
+        "longitude": 12.5674,
+        "first": 3,
+        "second": 4,
+        "total": 2
+    },
+    {
+        "country": "Japan",
+        "region": "Asia",
+        "for": 1,
+        "latitude": 36.2048,
+        "longitude": 138.2529,
+        "first": 0,
+        "second": 1,
+        "total": 0
+    },
+    {
+        "country": "Latvia",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 56.8796,
+        "longitude": 24.6032,
+        "first": 0,
+        "second": 0,
+        "total": 1
+    },
+    {
+        "country": "Lithuania",
+        "region": "Europe",
+        "for": 2,
+        "latitude": 55.1694,
+        "longitude": 23.8813,
+        "first": 0,
+        "second": 2,
+        "total": 0
+    },
+    {
+        "country": "Norway",
+        "region": "Europe",
+        "for": 19,
+        "latitude": 60.472,
+        "longitude": 8.4689,
+        "first": 1,
+        "second": 0,
+        "total": 18
+    },
+    {
+        "country": "Poland",
+        "region": "Europe",
+        "for": 6,
+        "latitude": 51.9194,
+        "longitude": 19.1451,
+        "first": 1,
+        "second": 0,
+        "total": 5
+    },
+    {
+        "country": "Portugal",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 39.3999,
+        "longitude": -8.2245,
+        "first": 0,
+        "second": 1,
+        "total": 0
+    },
+    {
+        "country": "Russia",
+        "region": "Asia",
+        "for": 4,
+        "latitude": 61.524,
+        "longitude": 105.3188,
+        "first": 0,
+        "second": 1,
+        "total": 3
+    },
+    {
+        "country": "Slovakia",
+        "region": "Europe",
+        "for": 1,
+        "latitude": 48.669,
+        "longitude": 19.699,
+        "first": 0,
+        "second": 1,
+        "total": 0
+    },
+    {
+        "country": "South Africa",
+        "region": "Africa",
+        "for": 4,
+        "latitude": -30.5595,
+        "longitude": 22.9375,
+        "first": 0,
+        "second": 4,
+        "total": 0
+    },
+    {
+        "country": "Sweden",
+        "region": "Europe",
+        "for": 76,
+        "latitude": 60.1282,
+        "longitude": 18.6435,
+        "first": 4,
+        "second": 6,
+        "total": 66
+    },
+    {
+        "country": "Swiss",
+        "region": "Europe",
+        "for": 6,
+        "latitude": 46.8182,
+        "longitude": 8.2275,
+        "first": 3,
+        "second": 2,
+        "total": 1
+    },
+    {
+        "country": "Syria",
+        "region": "Asia",
+        "for": 87,
+        "latitude": 34.8021,
+        "longitude": 38.9968,
+        "first": 0,
+        "second": 2,
+        "total": 85
+    },
+    {
+        "country": "USA",
+        "region": "America",
+        "for": 181,
+        "latitude": 37.0902,
+        "longitude": -95.7129,
+        "first": 132,
+        "second": 22,
+        "total": 27
+    },
+    {
+        "country": "Uruguay",
+        "region": "America",
+        "for": 3,
+        "latitude": -32.5228,
+        "longitude": -55.7658,
+        "first": 3,
+        "second": 0,
+        "total": 0
+    }
+];
+
+// function drawDonut() {
+
+//     // total passengers
+//     var total = [
+//         { title: "Survived", value: 500, total: 1317, color: "grey" },
+//         { title: "Perlished", value: 817, total: 1317, color: "orange" }
+//     ];
+
+//     var radius = 150;
+
+//     var arc = d3.svg.arc()
+//         .innerRadius(radius * 0.7)
+//         .outerRadius(radius);
+
+//     var arcOver = d3.svg.arc()
+//         .innerRadius(radius * 0.7)
+//         .outerRadius(radius * 1.08);
+
+//     var pie = d3.layout.pie()
+//         .sort(null)
+//         .value(function (d) { return d.value; });
+
+//     var donuts = svg.append('g')
+//         .attr("transform", "translate(" + (margin.left + 1050) + "," + (margin.top + 60) + ")")
+//         .selectAll('.arc')
+//         .data(pie(total))
+//         .enter()
+//         .append('g')
+//         .attr('class', "arc");
+
+//     donuts.append('path')
+//         .attr('d', arc)
+//         .attr("fill", function (d) { return d.data.color; })
+//         .on("mouseover", function (d) {
+//             var curr_title = d.data.title;
+//             var curr_val = d.data.value;
+//             console.log(d.data.title + "  " + d.data.value)
+
+//             d3.select(this).transition()
+//                 .duration(500)
+//                 .attr("d", arcOver);
+
+//             donuts.select(".value")
+//                 .text(function (d) {
+//                     console.log("INSIDE" + d.data.title + "  " + d.data.value)
+//                     return curr_val + " passengers";
+//                 });
+
+//             donuts.select(".percentage")
+//                 .text(function (d) {
+//                     console.log("INSIDE" + d.data.title + "  " + d.data.value)
+
+//                     return (curr_val / d.data.total * 100).toFixed(2) + '%';
+//                 });
+//         })
+//         .on("mouseout", function (d) {
+//             d3.select(this).transition()
+//                 .duration(500)
+//                 .ease('bounce')
+//                 .attr("d", arc);
+
+//             donuts.select(".value")
+//                 .text(function (d) {
+//                     return d.data.total + " passengers";
+//                 });
+
+//             donuts.select(".percentage")
+//                 .text(function (d) {
+//                     return "";
+//                 });
+//         });
+
+//     // center
+//     donuts.append("svg:circle")
+//         .attr("r", radius * 0.6)
+//         .style("fill", "#E7E7E7");
+
+//     // center text
+//     donuts.append('text')
+//         .attr('class', 'center-txt type')
+//         .attr('y', radius * -0.12)
+//         .attr('text-anchor', 'middle')
+//         .style('font-weight', 'bold')
+//         .text(function (d) {
+//             return "Total Passenger";
+//         });
+
+//     donuts.append('text')
+//         .attr('class', 'center-txt value')
+//         .attr('y', radius * 0.02)
+//         .attr('text-anchor', 'middle')
+//         .text(function (d) {
+//             return d.data.total + " passengers";
+//         });
+
+//     donuts.append('text')
+//         .attr('class', 'center-txt percentage')
+//         .attr('y', radius * 0.3)
+//         .attr('font-size', '40px')
+//         .attr('text-anchor', 'middle');
+
+//     // again rebind for legend
+//     var legendG = svg.selectAll(".legend") // note appending it to mySvg and not svg to make positioning easier
+//         .data(pie(total))
+//         .enter().append("g")
+//         .attr("transform", function (d, i) {
+//             return "translate(" + (width - 200) + "," + (i * 15 + 20) + ")"; // place each legend on the right and bump each one down 15 pixels
+//         })
+//         .attr("class", "legend");
+
+//     legendG.append("rect") // make a matching color rect
+//         .attr("width", 10)
+//         .attr("height", 10)
+//         .attr("fill", function (d, i) {
+//             return d.data.color;
+//         });
+
+//     legendG.append("text") // add the text
+//         .text(function (d) {
+//             return d.data.title;
+//         })
+//         .style("font-size", 12)
+//         .attr("y", 10)
+//         .attr("x", 15);
+// }
+
 ///////////////////////////////////////////////////////////////////////////
 //////////////////// Set up and initiate svg containers ///////////////////
-////////////////////////////////////////////////////////////////////////////	
-            
+///////////////////////////////////////////////////////////////////////////	
 var margin = {
     top: 100,
     right: 0,
     bottom: 0,
     left: 0
 };
-var width = 960 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+var width = 1400 - margin.left - margin.right,
+    height = 800 - margin.top - margin.bottom;
 
 //SVG container
 var svg = d3.select('#titanic_map')
@@ -1273,8 +1406,8 @@ filter.append("feBlend")
 
 //Variables for the map
 var projection = d3.geo.mercator()
-    .scale(170)
-    .translate([480, 230]);
+    .scale(150)
+    .translate([400, 200]);
 
 var path = d3.geo.path()
     .projection(projection);
@@ -1296,333 +1429,364 @@ map.selectAll(".geo-path")
 //////////////////////////////// Cities ///////////////////////////////////
 /////////////////////////////////////////////////////////////////////////// 
 
-//Radius scale
-var rScale = d3.scale.sqrt()
-    .range([0, 14])
-    .domain([0, d3.max(populations, function (d) { return d.population; })]);
-
-//Put the city locations into the data itself
-populations.forEach(function (d, i) {
-    d.radius = rScale(d.population);
-    d.x = projection([d.longitude, d.latitude])[0];
-    d.y = projection([d.longitude, d.latitude])[1];
-});
-
-//Wrapper for the cities
-var cityWrapper = svg.append("g")
-    .attr("class", "cityWrapper")
-    .style("filter", "url(#gooeyCodeFilter)");
-
-//Place the city circles
-var cities = cityWrapper.selectAll(".cities")
-    .data(populations)
-    .enter().append("circle")
-    .attr("class", "cities")
-    .attr("r", function (d) { return d.radius; })
-    .attr("cx", projection([0, 0])[0])
-    .attr("cy", projection([0, 0])[1])
-    .style("opacity", 1);
-
-var coverCirleRadius = 40;
-//Circle over all others
-cityWrapper.append("circle")
-    .attr("class", "cityCover")
-    .attr("r", coverCirleRadius)
-    .attr("cx", projection([0, 0])[0])
-    .attr("cy", projection([0, 0])[1]);
-
-///////////////////////////////////////////////////////////////////////////
-/////////////////////////// Country Labels ////////////////////////////////
-/////////////////////////////////////////////////////////////////////////// 
-
-//Calculate the centers for each country
-var centers = getCenters("country", [width, height / 0.8]);
-centers.forEach(function (d) {
-    d.y = d.y - 100;
-    d.x = d.x + 0;
-});//centers forEach
-
-//Wrapper for the country labels
-var labelWrapper = svg.append("g")
-    .attr("class", "labelWrapper");
-
-//Append the country labels
-labelWrapper.selectAll(".label")
-    .data(centers)
-    .enter().append("text")
-    .attr("class", "label")
+// -1- Create a tooltip div that is hidden by default:
+var tooltip = d3.select("#titanic_map")
+    .append("div")
     .style("opacity", 0)
-    .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; })
-    .text(function (d) { return d.name });
+    .attr("class", "tooltip")
+    .style("background-color", "black")
+    .style("border-radius", "5px")
+    .style("padding", "10px")
+    .style("color", "white")
+    .style("font-family", "'Special Elite', cursive");
 
-///////////////////////////////////////////////////////////////////////////
-/////////////////////////// Set-up the force //////////////////////////////
-///////////////////////////////////////////////////////////////////////////	
-
-var force = d3.layout.force()
-    .gravity(.02)
-    .charge(0)
-    .on("tick", tick(centers, "country"));
-
-var padding = 0;
-var maxRadius = d3.max(populations, function (d) { return d.radius; });
-
-///////////////////////////////////////////////////////////////////////////
-///////////////////////////// Do the loop /////////////////////////////////
-///////////////////////////////////////////////////////////////////////////	
-
-loop();
-setInterval(loop, 15000);
-
-function loop() {
-    placeCities();
-    setTimeout(clusterCountry, 7000);
-    setTimeout(backToCenter, 12000);
-}//loop
-
-///////////////////////////////////////////////////////////////////////////
-/////////////////////////// Animation steps ///////////////////////////////
-///////////////////////////////////////////////////////////////////////////	
-
-//Move the cities from the center to their actual locations
-function placeCities() {
-
-    //Stop the force layout (in case you move backward)
-    force.stop();
-
-    //Make the cover circle shrink
-    d3.selectAll(".cityCover")
-        .transition().duration(5000)
-        .attr("r", 0);
-
-    //Put the cities in their geo location
-    d3.selectAll(".cities")
-        .transition("move").duration(2000)
-        .delay(function (d, i) { return i * 20; })
-        .attr("r", function (d) {
-            return d.radius = rScale(d.population);
-        })
-        .attr("cx", function (d) {
-            return d.x = projection([d.longitude, d.latitude])[0];
-        })
-        .attr("cy", function (d) {
-            return d.y = projection([d.longitude, d.latitude])[1];
-        });
-
-    //Around the end of the transition above make the circles see-through a bit
-    d3.selectAll(".cities")
-        .transition("dim").duration(2000).delay(4000)
-        .style("opacity", 0.8);
-
-    //"Remove" gooey filter from cities during the transition
-    //So at the end they do not appear to melt together anymore
-    d3.selectAll(".blurValues")
-        .transition().duration(4000)
-        .attrTween("values", function () {
-            return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5",
-                "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 6 -5");
-        });
-
-}//placeCities
-
-//Cluster all the cities based on the country
-function clusterCountry() {
-
-    ///Start force again
-    force.start();
-
-    //Dim the map
-    d3.selectAll(".geo-path")
-        .transition().duration(1000)
-        .style("fill-opacity", 0);
-
-    //Show the labels
-    d3.selectAll(".label")
-        .transition().duration(500)
-        .style("opacity", 1);
-
-    d3.selectAll(".cities")
-        .transition().duration(1000)
-        .style("opacity", 1);
-
-    //Reset gooey filter values back to a visible "gooey" effect
-    d3.selectAll(".blurValues")
-        .transition().duration(2000)
-        .attrTween("values", function () {
-            return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 6 -5",
-                "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -6");
-        });
-
-}//clusterCountry
-
-//Move the circles back to the center location again
-function backToCenter() {
-
-    //Stop the force layout
-    force.stop();
-
-    //Hide labels
-    d3.selectAll(".label")
-        .transition().duration(500)
-        .style("opacity", 0);
-
-    //Show map
-    d3.selectAll(".geo-path")
-        .transition().duration(1000)
-        .style("fill-opacity", 0.5);
-
-    //Make the cover cirlce to its true size again
-    d3.selectAll(".cityCover")
-        .transition().duration(3000).delay(500)
-        .attr("r", coverCirleRadius);
-
-    //Move the cities to the 0,0 coordinate
-    d3.selectAll(".cities")
-        .transition()
-        .duration(2000).delay(function (d, i) { return i * 10; })
-        .attr("cx", projection([0, 0])[0])
-        .attr("cy", projection([0, 0])[1])
-        .style("opacity", 1);
-
-    d3.selectAll(".blurValues")
-        .transition().duration(1000).delay(1000)
-        .attrTween("values", function () {
-            return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -6",
-                "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5");
-        });
-
-}//backToCenter
-
-///////////////////////////////////////////////////////////////////////////
-/////////////////////////// Helper functions //////////////////////////////
-/////////////////////////////////////////////////////////////////////////// 
-
-//Radial layout
-function getCenters(vname, size) {
-    var centers = [],
-        mapping,
-        flags = [];
-    for (var i = 0; i < populations.length; i++) {
-        if (flags[populations[i][vname]]) continue;
-        flags[populations[i][vname]] = true;
-        centers.push({ name: populations[i][vname], value: 1 });
-    }//for i
-    centers.sort(function (a, b) { return d3.ascending(a.name, b.name); });
-
-    mapping = d3.layout.pack()
-        .sort(function (d) { return d[vname]; })
-        .size(size);
-    mapping.nodes({ children: centers });
-
-    return centers;
-}//getCenters
-
-//Radial lay-out
-function tick(centers, varname) {
-    var foci = {};
-    for (var i = 0; i < centers.length; i++) {
-        foci[centers[i].name] = centers[i];
+function display(data) {
+    // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
+    var showTooltip = function (d) {
+        tooltip
+            .transition()
+            .duration(200)
+        tooltip
+            .style("opacity", 1)
+            .html("Country: " + d.country + "<br>Total: " + d.total)
+            .style("left", (d3.mouse(this)[0] + 50) + "px")
+            .style("top", (d3.mouse(this)[1] + 50) + "px")
+    }
+    var moveTooltip = function (d) {
+        tooltip
+            .style("left", (d3.mouse(this)[0] + 50) + "px")
+            .style("top", (d3.mouse(this)[1] + 50) + "px")
+    }
+    var hideTooltip = function (d) {
+        tooltip
+            .transition()
+            .duration(200)
+            .style("opacity", 0)
     }
 
-    return function (e) {
-        for (var i = 0; i < populations.length; i++) {
-            var o = populations[i];
-            var f = foci[o[varname]];
-            o.y += (f.y - o.y) * e.alpha;
-            o.x += (f.x - o.x) * e.alpha;
-        }//for
+    //Radius scale
+    var rScale = d3.scale.sqrt()
+        .range([0, 20])
+        .domain([0, d3.max(data, function (d) { return d.total; })]);
+
+    //Put the city locations into the data itself
+    data.forEach(function (d, i) {
+        d.radius = rScale(d.total);
+        d.x = projection([d.longitude, d.latitude])[0];
+        d.y = projection([d.longitude, d.latitude])[1];
+    });
+
+    //Wrapper for the cities
+    var cityWrapper = svg.append("g")
+        .attr("class", "cityWrapper")
+        .style("filter", "url(#gooeyCodeFilter)");
+
+    //Place the city circles
+    var cities = cityWrapper.selectAll(".cities")
+        .data(data)
+        .enter().append("circle")
+        .attr("class", "cities")
+        .attr("r", function (d) { return d.radius; })
+        .attr("cx", projection([0, 0])[0])
+        .attr("cy", projection([0, 0])[1])
+        .style("opacity", 1)
+        .on("mouseover", showTooltip)
+        .on("mousemove", moveTooltip)
+        .on("mouseleave", hideTooltip);
+
+    var coverCirleRadius = 60;
+    //Circle over all others
+    cityWrapper.append("circle")
+        .attr("class", "cityCover")
+        .attr("r", coverCirleRadius)
+        .attr("cx", projection([0, 0])[0])
+        .attr("cy", projection([0, 0])[1]);
+
+    ///////////////////////////////////////////////////////////////////////////
+    /////////////////////////// Region Labels ////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////// 
+
+    //Calculate the centers for each region
+    var centers = getCenters("region", [width / 1.2, height / 1.4]);
+    centers.forEach(function (d) {
+        d.y = d.y - 100;
+        d.x = d.x - 150;
+    });//centers forEach
+
+    //Wrapper for the region labels
+    var labelWrapper = svg.append("g")
+        .attr("class", "labelWrapper");
+
+    //Append the region labels
+    labelWrapper.selectAll(".label")
+        .data(centers)
+        .enter().append("text")
+        .attr("class", "label")
+        .style("opacity", 0)
+        .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; })
+        .text(function (d) { return d.name });
+
+    ///////////////////////////////////////////////////////////////////////////
+    /////////////////////////// Set-up the force //////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////	
+
+    var force = d3.layout.force()
+        .gravity(.2)
+        .charge(0)
+        .on("tick", tick(centers, "region"));
+
+    var padding = 0;
+    var maxRadius = d3.max(data, function (d) { return d.radius; });
+
+    ///////////////////////////////////////////////////////////////////////////
+    /////////////////////////// Animation steps ///////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////	
+
+    //Move the cities from the center to their actual locations
+    function placeCities() {
+        console.log("placeCities in total")
+
+        //Stop the force layout (in case you move backward)
+        force.stop();
+
+        //Make the cover circle shrink
+        d3.selectAll(".cityCover")
+            .transition().duration(2000)
+            .attr("r", 0);
+
+        //Put the cities in their geo location
+        d3.selectAll(".cities")
+            .transition("move").duration(2000)
+            .delay(function (d, i) { return i * 20; })
+            .attr("r", function (d) {
+                return d.radius = rScale(d.total);
+            })
+            .attr("cx", function (d) {
+                return d.x = projection([d.longitude, d.latitude])[0];
+            })
+            .attr("cy", function (d) {
+                return d.y = projection([d.longitude, d.latitude])[1];
+            });
+
+        //Around the end of the transition above make the circles see-through a bit
+        d3.selectAll(".cities")
+            .transition("dim").duration(200).delay(400)
+            .style("opacity", 0.8);
+
+        //"Remove" gooey filter from cities during the transition
+        //So at the end they do not appear to melt together anymore
+        d3.selectAll(".blurValues")
+            .transition().duration(4000)
+            .attrTween("values", function () {
+                return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5",
+                    "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 6 -5");
+            });
+
+    }//placeCities
+
+    //Cluster all the country based on the region
+    function clusterCountry() {
+        console.log("clusterCountry in total")
+
+        ///Start force again
+        force.start();
+
+        //Dim the map
+        d3.selectAll(".geo-path")
+            .transition().duration(1000)
+            .style("fill-opacity", 0);
+
+        //Show the labels
+        d3.selectAll(".label")
+            .transition().duration(500)
+            .style("opacity", 1);
 
         d3.selectAll(".cities")
-            .each(collide(.5))
-            .attr("cx", function (d) { return d.x; })
-            .attr("cy", function (d) { return d.y; });
+            .transition().duration(1000)
+            .style("opacity", 1);
 
-    }//function
-}//tick
+        //Reset gooey filter values back to a visible "gooey" effect
+        d3.selectAll(".blurValues")
+            .transition().duration(2000)
+            .attrTween("values", function () {
+                return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 6 -5",
+                    "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -6");
+            });
 
-function collide(alpha) {
-    var quadtree = d3.geom.quadtree(populations);
-    return function (d) {
-        var r = d.radius + maxRadius + padding,
-            nx1 = d.x - r,
-            nx2 = d.x + r,
-            ny1 = d.y - r,
-            ny2 = d.y + r;
-        quadtree.visit(function (quad, x1, y1, x2, y2) {
-            if (quad.point && (quad.point !== d)) {
-                var x = d.x - quad.point.x,
-                    y = d.y - quad.point.y,
-                    l = Math.sqrt(x * x + y * y),
-                    r = d.radius + quad.point.radius + padding;
-                if (l < r) {
-                    l = (l - r) / l * alpha;
-                    d.x -= x *= l;
-                    d.y -= y *= l;
-                    quad.point.x += x;
-                    quad.point.y += y;
+    }//clusterCountry
+
+    //Move the circles back to the center location again
+    function backToCenter() {
+        console.log("backToCenter in total")
+
+        //Stop the force layout
+        force.stop();
+
+        //Hide labels
+        d3.selectAll(".label")
+            .transition().duration(500)
+            .style("opacity", 0);
+
+        //Show map
+        d3.selectAll(".geo-path")
+            .transition().duration(1000)
+            .style("fill-opacity", 0.5);
+
+        //Make the cover cirlce to its true size again
+        d3.selectAll(".cityCover")
+            .transition().duration(3000).delay(500)
+            .attr("r", coverCirleRadius);
+
+        //Move the cities to the 0,0 coordinate
+        d3.selectAll(".cities")
+            .transition()
+            .duration(2000).delay(function (d, i) { return i * 10; })
+            .attr("cx", projection([0, 0])[0])
+            .attr("cy", projection([0, 0])[1])
+            .style("opacity", 1);
+
+        d3.selectAll(".blurValues")
+            .transition().duration(1000).delay(1000)
+            .attrTween("values", function () {
+                return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -6",
+                    "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5");
+            });
+
+    }//backToCenter
+
+    ///////////////////////////////////////////////////////////////////////////
+    /////////////////////////// Helper functions //////////////////////////////
+    /////////////////////////////////////////////////////////////////////////// 
+
+    //Radial layout
+    function getCenters(vname, size) {
+        var centers = [],
+            mapping,
+            flags = [];
+        for (var i = 0; i < data.length; i++) {
+            if (flags[data[i][vname]]) continue;
+            flags[data[i][vname]] = true;
+            centers.push({ name: data[i][vname], value: 1 });
+        }//for i
+        centers.sort(function (a, b) { return d3.ascending(a.name, b.name); });
+
+        mapping = d3.layout.pack()
+            .sort(function (d) { return d[vname]; })
+            .size(size);
+        mapping.nodes({ children: centers });
+
+        return centers;
+    }//getCenters
+
+    //Radial lay-out
+    function tick(centers, varname) {
+        var foci = {};
+        for (var i = 0; i < centers.length; i++) {
+            foci[centers[i].name] = centers[i];
+        }
+
+        return function (e) {
+            for (var i = 0; i < data.length; i++) {
+                var o = data[i];
+                var f = foci[o[varname]];
+                o.y += (f.y - o.y) * e.alpha;
+                o.x += (f.x - o.x) * e.alpha;
+            }//for
+
+            d3.selectAll(".cities")
+                .each(collide(.5))
+                .attr("cx", function (d) { return d.x; })
+                .attr("cy", function (d) { return d.y; });
+
+        }//function
+    }//tick
+
+    function collide(alpha) {
+        var quadtree = d3.geom.quadtree(data);
+        return function (d) {
+            var r = d.radius + maxRadius + padding,
+                nx1 = d.x - r,
+                nx2 = d.x + r,
+                ny1 = d.y - r,
+                ny2 = d.y + r;
+            quadtree.visit(function (quad, x1, y1, x2, y2) {
+                if (quad.point && (quad.point !== d)) {
+                    var x = d.x - quad.point.x,
+                        y = d.y - quad.point.y,
+                        l = Math.sqrt(x * x + y * y),
+                        r = d.radius + quad.point.radius + padding;
+                    if (l < r) {
+                        l = (l - r) / l * alpha;
+                        d.x -= x *= l;
+                        d.y -= y *= l;
+                        quad.point.x += x;
+                        quad.point.y += y;
+                    }
                 }
-            }
-            return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+                return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+            });
+        };
+    }//collide
+
+    loop();
+
+    function loop() {
+        // drawDonut();
+        placeCities();
+        setTimeout(clusterCountry, 7000);
+        setTimeout(backToCenter, 12000);
+    }
+}
+
+function setupButtons() {
+    console.log("setup")
+    d3.select("#total")
+        .on("click", function () {
+            console.log("total button")
+
+            buttonDissappear();
+            display(overall_data);
+            setTimeout(buttonAppear, 15000);
         });
-    };
-}//collide
+    d3.select("#first")
+        .on("click", function () {
+            console.log("first button")
 
-///////////////////////////////////////////////////////////////////////////
-//////////////////////////// Draw Titanic Route /////////////////////////////////
-/////////////////////////////////////////////////////////////////////////// 
+            buttonDissappear();
+            display(first_data);
+            setTimeout(buttonAppear, 15000);
+        });
+    d3.select("#second")
+        .on("click", function () {
+            console.log("total button")
 
-// Starting: Queenstown 51.8503° N, 8.2943° W
-// End: New York 40.7415° N, 74.0108° W
-// RMS Titanic Coordinates: 41.7325° N, 49.9469° W
+            buttonDissappear();
+            display(second_data);
+            setTimeout(buttonAppear, 15000);
+        });
+    d3.select("#third")
+        .on("click", function () {
+            console.log("first button")
 
-// var geoGenerator = d3.geoPath()
-//     .projection(projection)
-//     .pointRadius(4)
-//     .context(map);
+            buttonDissappear();
+            display(third_data);
+            setTimeout(buttonAppear, 15000);
+        });
+}
 
-// var irelandLonLat = [-8.2943, 51.8503];
-// var newYorkLonLat = [-74.0059, 40.7128];
-// var geoInterpolator = d3.geoInterpolate(irelandLonLat, newYorkLonLat);
+function buttonDissappear() {
+    d3.select("#total").style("visibility", "hidden");
+    d3.select("#first").style("visibility", "hidden");
+    d3.select("#second").style("visibility", "hidden");
+    d3.select("#third").style("visibility", "hidden");
+}
 
-// // Ireland - New York
-// // map.beginPath();
-// map.strokeStyle = 'red';
-// geoGenerator({ type: 'Feature', geometry: { type: 'LineString', coordinates: [irelandLonLat, newYorkLonLat] } });
-// map.stroke();
+function buttonAppear() {
+    console.log("button appear")
+    d3.select("#total").style("visibility", "visible");
+    d3.select("#first").style("visibility", "visible");
+    d3.select("#second").style("visibility", "visible");
+    d3.select("#third").style("visibility", "visible");
+}
 
-// // Point
-// // map.beginPath();
-// map.fillStyle = 'red';
-// geoGenerator({ type: 'Feature', geometry: { type: 'Point', coordinates: geoInterpolator(u) } });
-// map.fill();
-
-// load data : world countries map
-// d3.json('https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/world_countries.json', display);
-
-// function display(geo_data) {
-//     var margin = 75,
-//         width = 1400 - margin,
-//         height = 600 - margin;
-
-//     var svg = d3.select("#map")
-//         .append("svg")
-//         .attr("width", width + margin)
-//         .attr("height", height + margin)
-//         .append('g')
-//         .attr('class', 'map');
-
-//     var projection = d3.geo.mercator()
-//         .scale(150)
-//         .translate([width / 2, height / 1.5]);
-
-//     var path = d3.geo.path().projection(projection);
-
-//     var map = svg.selectAll('path')
-//         .data(geo_data.features)
-//         .enter()
-//         .append('path')
-//         .attr('d', path)
-//         .style('fill', 'lightBlue')
-//         .style('stroke', 'black')
-//         .style('stroke-width', 0.5);
-// }
+setupButtons();
