@@ -184,12 +184,18 @@ var countriesMap = [
 
 var nationality_data = [{ "country": "Australia", "region": "Australia", "total": 1, "latitude": -25.2744, "longitude": 133.7751, "first": 0, "second": 0, "third": 1 }, { "country": "Austria", "region": "Europe", "total": 1, "latitude": 47.5162, "longitude": 14.5501, "first": 1, "second": 0, "third": 0 }, { "country": "Belgium", "region": "Europe", "total": 8, "latitude": 50.5039, "longitude": 4.4699, "first": 1, "second": 1, "third": 6 }, { "country": "Canada", "region": "America", "total": 26, "latitude": 56.1304, "longitude": -106.3468, "first": 19, "second": 3, "third": 4 }, { "country": "Croatia", "region": "Europe", "total": 9, "latitude": 45.1, "longitude": 15.2, "first": 0, "second": 0, "third": 9 }, { "country": "Denmark", "region": "Europe", "total": 7, "latitude": 56.2639, "longitude": 9.5018, "first": 0, "second": 2, "third": 5 }, { "country": "Egypt", "region": "Africa", "total": 1, "latitude": 26.8206, "longitude": 30.8025, "first": 1, "second": 0, "third": 0 }, { "country": "England", "region": "Europe", "total": 317, "latitude": 52.3555, "longitude": -1.1743, "first": 46, "second": 154, "third": 117 }, { "country": "Finland", "region": "Europe", "total": 34, "latitude": 61.9241, "longitude": 25.7482, "first": 0, "second": 5, "third": 29 }, { "country": "France", "region": "Europe", "total": 15, "latitude": 46.2276, "longitude": 2.2137, "first": 8, "second": 6, "third": 1 }, { "country": "Germany", "region": "Europe", "total": 5, "latitude": 51.1657, "longitude": 10.4515, "first": 4, "second": 1, "third": 0 }, { "country": "Hungary", "region": "Europe", "total": 1, "latitude": 47.1625, "longitude": 19.5033, "first": 0, "second": 1, "third": 0 }, { "country": "Ireland", "region": "Europe", "total": 124, "latitude": 53.1424, "longitude": -7.6921, "first": 6, "second": 12, "third": 106 }, { "country": "Italy", "region": "Europe", "total": 9, "latitude": 41.8719, "longitude": 12.5674, "first": 3, "second": 4, "third": 2 }, { "country": "Japan", "region": "Asia", "total": 1, "latitude": 36.2048, "longitude": 138.2529, "first": 0, "second": 1, "third": 0 }, { "country": "Latvia", "region": "Europe", "total": 1, "latitude": 56.8796, "longitude": 24.6032, "first": 0, "second": 0, "third": 1 }, { "country": "Lithuania", "region": "Europe", "total": 2, "latitude": 55.1694, "longitude": 23.8813, "first": 0, "second": 2, "third": 0 }, { "country": "Norway", "region": "Europe", "total": 19, "latitude": 60.472, "longitude": 8.4689, "first": 1, "second": 0, "third": 18 }, { "country": "Poland", "region": "Europe", "total": 6, "latitude": 51.9194, "longitude": 19.1451, "first": 1, "second": 0, "third": 5 }, { "country": "Portugal", "region": "Europe", "total": 1, "latitude": 39.3999, "longitude": -8.2245, "first": 0, "second": 1, "third": 0 }, { "country": "Russia", "region": "Asia", "total": 4, "latitude": 61.524, "longitude": 105.3188, "first": 0, "second": 1, "third": 3 }, { "country": "Slovakia", "region": "Europe", "total": 1, "latitude": 48.669, "longitude": 19.699, "first": 0, "second": 1, "third": 0 }, { "country": "South Africa", "region": "Africa", "total": 4, "latitude": -30.5595, "longitude": 22.9375, "first": 0, "second": 4, "third": 0 }, { "country": "Sweden", "region": "Europe", "total": 76, "latitude": 60.1282, "longitude": 18.6435, "first": 4, "second": 6, "third": 66 }, { "country": "Swiss", "region": "Europe", "total": 6, "latitude": 46.8182, "longitude": 8.2275, "first": 3, "second": 2, "third": 1 }, { "country": "Syria", "region": "Asia", "total": 87, "latitude": 34.8021, "longitude": 38.9968, "first": 0, "second": 2, "third": 85 }, { "country": "USA", "region": "America", "total": 181, "latitude": 37.0902, "longitude": -95.7129, "first": 132, "second": 22, "third": 27 }, { "country": "Uruguay", "region": "America", "total": 3, "latitude": -32.5228, "longitude": -55.7658, "first": 3, "second": 0, "third": 0 }];
 
+var svg = null;
 
 function placeCitiesByTotal() {
+
     console.log("placeCitiesByTotal")
     ///////////////////////////////////////////////////////////////////////////
     //////////////////// Set up and initiate svg containers ///////////////////
     ///////////////////////////////////////////////////////////////////////////	
+
+    if (svg != null ) {
+        svg.remove();
+    }
 
     var margin = {
         top: 100,
@@ -197,7 +203,7 @@ function placeCitiesByTotal() {
         bottom: 0,
         left: 0
     };
-    var width = 1200 - margin.left - margin.right,
+    var width = 1400 - margin.left - margin.right,
         height = 800 - margin.top - margin.bottom;
 
     //SVG container
@@ -239,8 +245,8 @@ function placeCitiesByTotal() {
 
     //Variables for the map
     var projection = d3.geo.mercator()
-        .scale(170)
-        .translate([450, 200]);
+        .scale(150)
+        .translate([400, 200]);
 
     var path = d3.geo.path()
         .projection(projection);
@@ -326,7 +332,7 @@ function placeCitiesByTotal() {
         .on("mousemove", moveTooltip)
         .on("mouseleave", hideTooltip);
 
-    var coverCirleRadius = 40;
+    var coverCirleRadius = 60;
     //Circle over all others
     cityWrapper.append("circle")
         .attr("class", "cityCover")
@@ -339,10 +345,10 @@ function placeCitiesByTotal() {
     /////////////////////////////////////////////////////////////////////////// 
 
     //Calculate the centers for each region
-    var centers = getCenters("region", [width, height / 0.8]);
+    var centers = getCenters("region", [width / 1.2, height / 1.4]);
     centers.forEach(function (d) {
         d.y = d.y - 100;
-        d.x = d.x + 0;
+        d.x = d.x - 150;
     });//centers forEach
 
     //Wrapper for the region labels
@@ -402,7 +408,7 @@ function placeCitiesByTotal() {
 
         //Around the end of the transition above make the circles see-through a bit
         d3.selectAll(".cities")
-            .transition("dim").duration(2000).delay(4000)
+            .transition("dim").duration(200).delay(400)
             .style("opacity", 0.8);
 
         //"Remove" gooey filter from cities during the transition
@@ -416,7 +422,7 @@ function placeCitiesByTotal() {
 
     }//placeCities
 
-    //Cluster all the cities based on the country
+    //Cluster all the country based on the region
     function clusterCountry() {
         console.log("clusterCountry in total")
 
@@ -560,14 +566,139 @@ function placeCitiesByTotal() {
         };
     }//collide
 
+    function drawDonut() {
+
+        // total passengers
+        var total = [
+            { title: "Survived", value: 500, total: 1317, color: "grey" },
+            { title: "Perlished", value: 817, total: 1317, color: "orange" }
+        ];
+
+        var radius = 150;
+
+        var arc = d3.svg.arc()
+            .innerRadius(radius * 0.7)
+            .outerRadius(radius);
+
+        var arcOver = d3.svg.arc()
+            .innerRadius(radius * 0.7)
+            .outerRadius(radius * 1.08);
+
+        var pie = d3.layout.pie()
+            .sort(null)
+            .value(function (d) { return d.value; });
+
+        var donuts = svg.append('g')
+            .attr("transform", "translate(" + (margin.left + 1050) + "," + (margin.top + 60) + ")")
+            .selectAll('.arc')
+            .data(pie(total))
+            .enter()
+            .append('g')
+            .attr('class', "arc");
+
+        donuts.append('path')
+            .attr('d', arc)
+            .attr("fill", function (d) { return d.data.color; })
+            .on("mouseover", function (d) {
+                var curr_title = d.data.title;
+                var curr_val = d.data.value;
+                console.log(d.data.title + "  " + d.data.value)
+
+                d3.select(this).transition()
+                    .duration(500)
+                    .attr("d", arcOver);
+
+                donuts.select(".value")
+                    .text(function (d) {
+                        console.log("INSIDE" + d.data.title + "  " + d.data.value)
+                        return curr_val + " passengers";
+                    });
+
+                donuts.select(".percentage")
+                    .text(function (d) {
+                        console.log("INSIDE" + d.data.title + "  " + d.data.value)
+
+                        return (curr_val / d.data.total * 100).toFixed(2) + '%';
+                    });
+            })
+            .on("mouseout", function (d) {
+                d3.select(this).transition()
+                    .duration(500)
+                    .ease('bounce')
+                    .attr("d", arc);
+
+                donuts.select(".value")
+                    .text(function (d) {
+                        return d.data.total + " passengers";
+                    });
+
+                donuts.select(".percentage")
+                    .text(function (d) {
+                        return "";
+                    });
+            });
+
+        // center
+        donuts.append("svg:circle")
+            .attr("r", radius * 0.6)
+            .style("fill", "#E7E7E7");
+
+        // center text
+        donuts.append('text')
+            .attr('class', 'center-txt type')
+            .attr('y', radius * -0.12)
+            .attr('text-anchor', 'middle')
+            .style('font-weight', 'bold')
+            .text(function (d) {
+                return "Total Passenger";
+            });
+
+        donuts.append('text')
+            .attr('class', 'center-txt value')
+            .attr('y', radius * 0.02)
+            .attr('text-anchor', 'middle')
+            .text(function (d) {
+                return d.data.total + " passengers";
+            });
+
+        donuts.append('text')
+            .attr('class', 'center-txt percentage')
+            .attr('y', radius * 0.3)
+            .attr('font-size', '40px')
+            .attr('text-anchor', 'middle');
+
+        // again rebind for legend
+        var legendG = svg.selectAll(".legend") // note appending it to mySvg and not svg to make positioning easier
+            .data(pie(total))
+            .enter().append("g")
+            .attr("transform", function (d, i) {
+                return "translate(" + (width - 200) + "," + (i * 15 + 20) + ")"; // place each legend on the right and bump each one down 15 pixels
+            })
+            .attr("class", "legend");
+
+        legendG.append("rect") // make a matching color rect
+            .attr("width", 10)
+            .attr("height", 10)
+            .attr("fill", function (d, i) {
+                return d.data.color;
+            });
+
+        legendG.append("text") // add the text
+            .text(function (d) {
+                return d.data.title;
+            })
+            .style("font-size", 12)
+            .attr("y", 10)
+            .attr("x", 15);
+    }
+
     loop();
 
     function loop() {
-        d3.select("#first").style("visibility", "hidden");
+        // drawDonut();
         placeCities();
         setTimeout(clusterCountry, 7000);
         setTimeout(backToCenter, 12000);
-        document.getElementById("#first").style("visibility", "visible");
     }
 }
 
@@ -577,13 +708,17 @@ function placeCitiesByFirst() {
     //////////////////// Set up and initiate svg containers ///////////////////
     ///////////////////////////////////////////////////////////////////////////	
 
+    if (svg != null) {
+        svg.remove();
+    }
+
     var margin = {
         top: 100,
         right: 0,
         bottom: 0,
         left: 0
     };
-    var width = 1200 - margin.left - margin.right,
+    var width = 1400 - margin.left - margin.right,
         height = 800 - margin.top - margin.bottom;
 
     //SVG container
@@ -712,7 +847,7 @@ function placeCitiesByFirst() {
         .on("mousemove", moveTooltip)
         .on("mouseleave", hideTooltip);
 
-    var coverCirleRadius = 40;
+    var coverCirleRadius = 60;
     //Circle over all others
     cityWrapper.append("circle")
         .attr("class", "cityCover")
@@ -725,10 +860,10 @@ function placeCitiesByFirst() {
     /////////////////////////////////////////////////////////////////////////// 
 
     //Calculate the centers for each region
-    var centers = getCenters("region", [width, height / 0.8]);
+    var centers = getCenters("region", [width/1.2, height /1.4]);
     centers.forEach(function (d) {
         d.y = d.y - 100;
-        d.x = d.x + 0;
+        d.x = d.x - 150;
     });//centers forEach
 
     //Wrapper for the region labels
@@ -787,7 +922,7 @@ function placeCitiesByFirst() {
 
         //Around the end of the transition above make the circles see-through a bit
         d3.selectAll(".cities")
-            .transition("dim").duration(2000).delay(4000)
+            .transition("dim").duration(200).delay(400)
             .style("opacity", 0.8);
 
         //"Remove" gooey filter from cities during the transition
@@ -943,10 +1078,136 @@ function placeCitiesByFirst() {
         };
     }//collide
 
+    function drawDonut() {
+
+        // first class
+        var first = [
+            { title: "Survived", value: 198, total: 324, color: "grey" },
+            { title: "Perlished", value: 126, total: 324, color: "orange" }
+        ];
+
+        var radius = 150;
+
+        var arc = d3.svg.arc()
+            .innerRadius(radius * 0.7)
+            .outerRadius(radius);
+
+        var arcOver = d3.svg.arc()
+            .innerRadius(radius * 0.7)
+            .outerRadius(radius * 1.08);
+
+        var pie = d3.layout.pie()
+            .sort(null)
+            .value(function (d) { return d.value; });
+
+        var donuts = svg.append('g')
+            .attr("transform", "translate(" + (margin.left + 1050) + "," + (margin.top + 60) + ")")
+            .selectAll('.arc')
+            .data(pie(first))
+            .enter()
+            .append('g')
+            .attr('class', "arc");
+
+        donuts.append('path')
+            .attr('d', arc)
+            .attr("fill", function (d) { return d.data.color; })
+            .on("mouseover", function (d) {
+                var curr_title = d.data.title;
+                var curr_val = d.data.value;
+                console.log(d.data.title + "  " + d.data.value)
+
+                d3.select(this).transition()
+                    .duration(500)
+                    .attr("d", arcOver);
+
+                donuts.select(".value")
+                    .text(function (d) {
+                        console.log("INSIDE" + d.data.title + "  " + d.data.value)
+                        return curr_val + " passengers";
+                    });
+
+                donuts.select(".percentage")
+                    .text(function (d) {
+                        console.log("INSIDE" + d.data.title + "  " + d.data.value)
+
+                        return (curr_val / d.data.total * 100).toFixed(2) + '%';
+                    });
+            })
+            .on("mouseout", function (d) {
+                d3.select(this).transition()
+                    .duration(500)
+                    .ease('bounce')
+                    .attr("d", arc);
+
+                donuts.select(".value")
+                    .text(function (d) {
+                        return d.data.total + " passengers";
+                    });
+
+                donuts.select(".percentage")
+                    .text(function (d) {
+                        return "";
+                    });
+            });
+
+        // center
+        donuts.append("svg:circle")
+            .attr("r", radius * 0.6)
+            .style("fill", "#E7E7E7");
+
+        // center text
+        donuts.append('text')
+            .attr('class', 'center-txt type')
+            .attr('y', radius * -0.12)
+            .attr('text-anchor', 'middle')
+            .style('font-weight', 'bold')
+            .text(function (d) {
+                return "First Class Passenger";
+            });
+
+        donuts.append('text')
+            .attr('class', 'center-txt value')
+            .attr('y', radius * 0.02)
+            .attr('text-anchor', 'middle')
+            .text(function (d) {
+                return d.data.total + " passengers";
+            });
+
+        donuts.append('text')
+            .attr('class', 'center-txt percentage')
+            .attr('y', radius * 0.3)
+            .attr('font-size', '40px')
+            .attr('text-anchor', 'middle');
+
+        // again rebind for legend
+        var legendG = svg.selectAll(".legend") // note appending it to mySvg and not svg to make positioning easier
+            .data(pie(first))
+            .enter().append("g")
+            .attr("transform", function (d, i) {
+                return "translate(" + (width - 200) + "," + (i * 15 + 20) + ")"; // place each legend on the right and bump each one down 15 pixels
+            })
+            .attr("class", "legend");
+
+        legendG.append("rect") // make a matching color rect
+            .attr("width", 10)
+            .attr("height", 10)
+            .attr("fill", function (d, i) {
+                return d.data.color;
+            });
+
+        legendG.append("text") // add the text
+            .text(function (d) {
+                return d.data.title;
+            })
+            .style("font-size", 12)
+            .attr("y", 10)
+            .attr("x", 15);
+    }
+
     loop();
-    // setInterval(loop, 15000);
 
     function loop() {
+        // drawDonut();
         placeCities();
         setTimeout(clusterCountry, 7000);
         setTimeout(backToCenter, 12000);
@@ -958,13 +1219,17 @@ function placeCitiesBySecond() {
     //////////////////// Set up and initiate svg containers ///////////////////
     ///////////////////////////////////////////////////////////////////////////	
 
+    if (svg != null) {
+        svg.remove();
+    }
+
     var margin = {
         top: 100,
         right: 0,
         bottom: 0,
         left: 0
     };
-    var width = 1200 - margin.left - margin.right,
+    var width = 1400 - margin.left - margin.right,
         height = 800 - margin.top - margin.bottom;
 
     //SVG container
@@ -1093,7 +1358,7 @@ function placeCitiesBySecond() {
         .on("mousemove", moveTooltip)
         .on("mouseleave", hideTooltip);
 
-    var coverCirleRadius = 40;
+    var coverCirleRadius = 60;
     //Circle over all others
     cityWrapper.append("circle")
         .attr("class", "cityCover")
@@ -1106,10 +1371,10 @@ function placeCitiesBySecond() {
     /////////////////////////////////////////////////////////////////////////// 
 
     //Calculate the centers for each region
-    var centers = getCenters("region", [width, height / 0.8]);
+    var centers = getCenters("region", [width/1.2, height / 1.4]);
     centers.forEach(function (d) {
         d.y = d.y - 100;
-        d.x = d.x + 0;
+        d.x = d.x - 150;
     });//centers forEach
 
     //Wrapper for the region labels
@@ -1168,7 +1433,7 @@ function placeCitiesBySecond() {
 
         //Around the end of the transition above make the circles see-through a bit
         d3.selectAll(".cities")
-            .transition("dim").duration(2000).delay(4000)
+            .transition("dim").duration(200).delay(400)
             .style("opacity", 0.8);
 
         //"Remove" gooey filter from cities during the transition
@@ -1324,13 +1589,140 @@ function placeCitiesBySecond() {
         };
     }//collide
 
+    function drawDonut() {
+        
+        // second class
+        var second = [
+            { title: "Survived", value: 119, total: 280, color: "grey" },
+            { title: "Perlished", value: 161, total: 280, color: "orange" }
+        ];
+
+        var radius = 150;
+
+        var arc = d3.svg.arc()
+            .innerRadius(radius * 0.7)
+            .outerRadius(radius);
+
+        var arcOver = d3.svg.arc()
+            .innerRadius(radius * 0.7)
+            .outerRadius(radius * 1.08);
+
+        var pie = d3.layout.pie()
+            .sort(null)
+            .value(function (d) { return d.value; });
+
+        var donuts = svg.append('g')
+            .attr("transform", "translate(" + (margin.left + 1050) + "," + (margin.top + 60) + ")")
+            .selectAll('.arc')
+            .data(pie(second))
+            .enter()
+            .append('g')
+            .attr('class', "arc");
+
+        donuts.append('path')
+            .attr('d', arc)
+            .attr("fill", function (d) { return d.data.color; })
+            .on("mouseover", function (d) {
+                var curr_title = d.data.title;
+                var curr_val = d.data.value;
+                console.log(d.data.title + "  " + d.data.value)
+
+                d3.select(this).transition()
+                    .duration(500)
+                    .attr("d", arcOver);
+
+                donuts.select(".value")
+                    .text(function (d) {
+                        console.log("INSIDE" + d.data.title + "  " + d.data.value)
+                        return curr_val + " passengers";
+                    });
+
+                donuts.select(".percentage")
+                    .text(function (d) {
+                        console.log("INSIDE" + d.data.title + "  " + d.data.value)
+
+                        return (curr_val / d.data.total * 100).toFixed(2) + '%';
+                    });
+            })
+            .on("mouseout", function (d) {
+                d3.select(this).transition()
+                    .duration(500)
+                    .ease('bounce')
+                    .attr("d", arc);
+
+                donuts.select(".value")
+                    .text(function (d) {
+                        return d.data.total + " passengers";
+                    });
+
+                donuts.select(".percentage")
+                    .text(function (d) {
+                        return "";
+                    });
+            });
+
+        // center
+        donuts.append("svg:circle")
+            .attr("r", radius * 0.6)
+            .style("fill", "#E7E7E7");
+
+        // center text
+        donuts.append('text')
+            .attr('class', 'center-txt type')
+            .attr('y', radius * -0.12)
+            .attr('text-anchor', 'middle')
+            .style('font-weight', 'bold')
+            .text(function (d) {
+                return "Second Class Passenger";
+            });
+
+        donuts.append('text')
+            .attr('class', 'center-txt value')
+            .attr('y', radius * 0.02)
+            .attr('text-anchor', 'middle')
+            .text(function (d) {
+                return d.data.total + " passengers";
+            });
+
+        donuts.append('text')
+            .attr('class', 'center-txt percentage')
+            .attr('y', radius * 0.3)
+            .attr('font-size', '40px')
+            .attr('text-anchor', 'middle');
+
+        // again rebind for legend
+        var legendG = svg.selectAll(".legend") // note appending it to mySvg and not svg to make positioning easier
+            .data(pie(second))
+            .enter().append("g")
+            .attr("transform", function (d, i) {
+                return "translate(" + (width - 200) + "," + (i * 15 + 20) + ")"; // place each legend on the right and bump each one down 15 pixels
+            })
+            .attr("class", "legend");
+
+        legendG.append("rect") // make a matching color rect
+            .attr("width", 10)
+            .attr("height", 10)
+            .attr("fill", function (d, i) {
+                return d.data.color;
+            });
+
+        legendG.append("text") // add the text
+            .text(function (d) {
+                return d.data.title;
+            })
+            .style("font-size", 12)
+            .attr("y", 10)
+            .attr("x", 15);
+    }
+
     loop();
-    setInterval(loop, 15000);
 
     function loop() {
+        // drawDonut();
         placeCities();
         setTimeout(clusterCountry, 7000);
         setTimeout(backToCenter, 12000);
+        // svg.remove();
     }
 }
 
@@ -1339,13 +1731,17 @@ function placeCitiesByThird() {
     //////////////////// Set up and initiate svg containers ///////////////////
     ///////////////////////////////////////////////////////////////////////////	
 
+    if (svg != null) {
+        svg.remove();
+    }
+
     var margin = {
         top: 100,
         right: 0,
         bottom: 0,
         left: 0
     };
-    var width = 1200 - margin.left - margin.right,
+    var width = 1400 - margin.left - margin.right,
         height = 800 - margin.top - margin.bottom;
 
     //SVG container
@@ -1474,7 +1870,7 @@ function placeCitiesByThird() {
         .on("mousemove", moveTooltip)
         .on("mouseleave", hideTooltip);
 
-    var coverCirleRadius = 40;
+    var coverCirleRadius = 60;
     //Circle over all others
     cityWrapper.append("circle")
         .attr("class", "cityCover")
@@ -1487,10 +1883,10 @@ function placeCitiesByThird() {
     /////////////////////////////////////////////////////////////////////////// 
 
     //Calculate the centers for each region
-    var centers = getCenters("region", [width, height / 0.8]);
+    var centers = getCenters("region", [width/1.2, height /1.4]);
     centers.forEach(function (d) {
         d.y = d.y - 100;
-        d.x = d.x + 0;
+        d.x = d.x - 150;
     });//centers forEach
 
     //Wrapper for the region labels
@@ -1503,7 +1899,7 @@ function placeCitiesByThird() {
         .enter().append("text")
         .attr("class", "label")
         .style("opacity", 0)
-        .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; })
+        .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; }) // (d.y - 60)
         .text(function (d) { return d.name });
 
     ///////////////////////////////////////////////////////////////////////////
@@ -1549,7 +1945,7 @@ function placeCitiesByThird() {
 
         //Around the end of the transition above make the circles see-through a bit
         d3.selectAll(".cities")
-            .transition("dim").duration(2000).delay(4000)
+            .transition("dim").duration(200).delay(400)
             .style("opacity", 0.8);
 
         //"Remove" gooey filter from cities during the transition
@@ -1705,10 +2101,138 @@ function placeCitiesByThird() {
         };
     }//collide
 
+    function drawDonut() {
+
+        console.log("draw third donut")
+
+        // third class
+        var third = [
+            { title: "Survived", value: 183, total: 713, color: "grey" },
+            { title: "Perlished", value: 530, total: 713, color: "orange" }
+        ];
+
+        var radius = 150;
+
+        var arc = d3.svg.arc()
+            .innerRadius(radius * 0.7)
+            .outerRadius(radius);
+
+        var arcOver = d3.svg.arc()
+            .innerRadius(radius * 0.7)
+            .outerRadius(radius * 1.08);
+
+        var pie = d3.layout.pie()
+            .sort(null)
+            .value(function (d) { return d.value; });
+
+        var donuts = svg.append('g')
+            .attr("transform", "translate(" + (margin.left + 1050) + "," + (margin.top + 60) + ")")
+            .selectAll('.arc')
+            .data(pie(third))
+            .enter()
+            .append('g')
+            .attr('class', "arc");
+
+        donuts.append('path')
+            .attr('d', arc)
+            .attr("fill", function (d) { return d.data.color; })
+            .on("mouseover", function (d) {
+                var curr_title = d.data.title;
+                var curr_val = d.data.value;
+                console.log(d.data.title + "  " + d.data.value)
+
+                d3.select(this).transition()
+                    .duration(500)
+                    .attr("d", arcOver);
+
+                donuts.select(".value")
+                    .text(function (d) {
+                        console.log("INSIDE" + d.data.title + "  " + d.data.value)
+                        return curr_val + " passengers";
+                    });
+                
+                donuts.select(".percentage")
+                    .text(function (d) {
+                        console.log("INSIDE" + d.data.title + "  " + d.data.value)
+
+                        return (curr_val / d.data.total * 100).toFixed(2) + '%';
+                    });
+            })
+            .on("mouseout", function (d) {
+                d3.select(this).transition()
+                    .duration(500)
+                    .ease('bounce')
+                    .attr("d", arc);
+
+                donuts.select(".value")
+                    .text(function (d) {
+                        return d.data.total + " passengers";
+                    });
+
+                donuts.select(".percentage")
+                    .text(function (d) {
+                        return "";
+                    });
+            });
+            
+        // center
+        donuts.append("svg:circle")
+            .attr("r", radius * 0.6)
+            .style("fill", "#E7E7E7");
+        
+        // center text
+        donuts.append('text')
+            .attr('class', 'center-txt type')
+            .attr('y', radius * -0.12)
+            .attr('text-anchor', 'middle')
+            .style('font-weight', 'bold')
+            .text(function (d) {
+                return "Third Class Passenger";
+        });
+
+        donuts.append('text')
+            .attr('class', 'center-txt value')
+            .attr('y', radius * 0.02)
+            .attr('text-anchor', 'middle')
+            .text(function (d) {
+                return d.data.total + " passengers";
+            });
+
+        donuts.append('text')
+            .attr('class', 'center-txt percentage')
+            .attr('y', radius * 0.3)
+            .attr('font-size', '40px')
+            .attr('text-anchor', 'middle');
+
+        // again rebind for legend
+        var legendG = svg.selectAll(".legend") // note appending it to mySvg and not svg to make positioning easier
+            .data(pie(third))
+            .enter().append("g")
+            .attr("transform", function (d, i) {
+                return "translate(" + (width - 200) + "," + (i * 15 + 20) + ")"; // place each legend on the right and bump each one down 15 pixels
+            })
+            .attr("class", "legend");
+
+        legendG.append("rect") // make a matching color rect
+            .attr("width", 10)
+            .attr("height", 10)
+            .attr("fill", function (d, i) {
+                return d.data.color;
+            });
+
+        legendG.append("text") // add the text
+            .text(function (d) {
+                return d.data.title;
+            })
+            .style("font-size", 12)
+            .attr("y", 10)
+            .attr("x", 15);
+    }
+
     loop();
-    setInterval(loop, 15000);
 
     function loop() {
+        // drawDonut();
         placeCities();
         setTimeout(clusterCountry, 7000);
         setTimeout(backToCenter, 12000);
@@ -1721,23 +2245,47 @@ function placeCitiesByThird() {
 
 display();
 
+function buttonDissappear() {
+    d3.select("#total").style("visibility", "hidden");
+    d3.select("#first").style("visibility", "hidden");
+    d3.select("#second").style("visibility", "hidden");
+    d3.select("#third").style("visibility", "hidden");
+}
+
+function buttonAppear() {
+    console.log("button appear")
+    d3.select("#total").style("visibility", "visible");
+    d3.select("#first").style("visibility", "visible");
+    d3.select("#second").style("visibility", "visible");
+    d3.select("#third").style("visibility", "visible");
+}
+
 function drawTotal() {
+    buttonDissappear();
     placeCitiesByTotal();
+    setTimeout(buttonAppear, 15000);
 }
 
 function drawFirst() {
+    buttonDissappear();
     placeCitiesByFirst();
+    setTimeout(buttonAppear, 15000);
 }
 
 function drawSecond() {
+    buttonDissappear();
     placeCitiesBySecond();
+    setTimeout(buttonAppear, 15000);
 }
 
 function drawThird() {
+    buttonDissappear();
     placeCitiesByThird();
+    setTimeout(buttonAppear, 15000);
 }
 
 function display() {
+    // drawTotal();
     d3.select("#total").on("click", drawTotal);
     d3.select("#first").on("click", drawFirst);
     d3.select("#second").on("click", drawSecond);

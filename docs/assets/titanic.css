@@ -105,7 +105,7 @@
 #intro {
   position: relative;
   display: inline-block;
-  top: 0px;
+  top: 50px;
   height: 300px;
   margin-bottom: 300px;
   z-index: 90;
@@ -115,6 +115,7 @@
 .step {
   width: 400px;
   height: 50vh;
+  margin-top: 100px;
   margin-bottom: 200px;
   margin-left: 800px;
   /* font-family: "TiemposTextWeb-Regular","san-serif"; */

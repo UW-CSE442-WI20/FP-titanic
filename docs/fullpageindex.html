@@ -10,7 +10,7 @@
 	</style>
 
 
-	<title>Titanic Analysis</title>
+	<title>Titanic Exploration</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./fullpageassets/fullPage.css" />
@@ -23,6 +23,12 @@
   <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
 
   <script type="text/javascript" src="./fullpageassets/fullPage.js"></script>
+
+  <!-- <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script>
+    var d3v3 = window.d3;
+    window.d3 = null;
+  </script> -->
 
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script>
@@ -51,29 +57,51 @@
 </head>
 <body>
   <div id="fullpage">
+
+    <!-- Header -->
     <div class="section" id="header-section">
       <div class="container">
-        <img class="logo" src="./img/titanic_logo.png" />
-        <div class="start">
-          You think you know the story.<br>
-          Now <b>START SCROLLING</b> to discover the truth
-          <div id="scroll-down">
-            <span class="arrow-down"></span>
-          <span id="scroll-title">Scroll down</span>
+        <div style="width: 60%; height: 200px; float: left;">
+          <img class="logo" src="./img/titanic_logo.png" />
+          <div class="start">
+            On April 10, 1912, the Titanic set sail on its maiden voyage, traveling from Southampton, England, to New York City.
+            Nicknamed the “Millionaire’s Special,” the ship was fittingly captained by Edward J. Smith, who was known as the
+            “Millionaire’s Captain” because of his popularity with wealthy passengers. Indeed, onboard were a number of prominent
+            people, including American businessman Benjamin Guggenheim, British journalist William Thomas Stead, and Macy’s
+            department store co-owner Isidor Straus. The sinking of the Titanic in 1912 was a catastrophic event
+            which has since passed into myth and legend. But what is the truth behind the myth?<br> <br>
+            And, you think you know the story.<br>
+            Now <b>START SCROLLING</b> to discover the true story of a tragedy.
+            <div id="scroll-down">
+              <span class="arrow-down"></span>
+              <span id="scroll-title">Scroll down</span>
+            </div>
+          </div>
         </div>
+
+        <div style="margin-left: 40%; height: 200px;">
+          <div id="counter-header" class="header_title">
+            Total <span id="counter-label" class="header_count">0</span> people in the titanic. <br>
+            <div id="death-count" class="death_count"></div>
+            <p id="circle-represent" class="header_repre"></p>
+          </div>
+          <div id="canvas"></div>
         </div>
+    
+        <script src="./fullpageassets/tragedy-burst.js"></script>
       </div>
     </div>
 
+    <!-- Intro -->
     <div class="section">
       <div class="container">
         <div id="intro">
           Titanic is one of the highest grossing and most iconic Hollywood movies of the 20th century. The story of Jack and Rose
           is engrained in the memory of millions as the modern love story. However, people will probably be surprised as Jack and
           Rose are not even real. As we idolized over the movie, we don’t really understand the facts and figure behind the
-          sinking of the S.S.Titanic, one of the most tragic and influential sea disasters of the early 20th century. The legacy
-          of this accident lives on today as modern ships and cruises are all equipped with better technology and procedures. <br><br>
-          
+          sinking of the RMS Titanic, one of the most tragic and influential sea disasters of the early 20th century.<br><br>
+          And, you think you know the story.
+
           Through this interactive experience, we want to tell the story and pay our respects to those who perish in this tragic
           accident with the hope that their story will not only be a constant reminder of the need of proper safety procedure, but
           also the need for a more inclusive and fair society. As you scroll through the interactive graphs, we will layout facts
@@ -83,32 +111,39 @@
           In some of the graph, there will be "passenger", "crew", and "all" buttons. Click on these buttons to focus on those group
           of people.
         </div>
-        <br><br>
-        <div id="sections">
-          <div id="counter-header" class="title" align="center">
-            There are a total of <span id="counter-label">0</span> people in the titanic
+        <img src="./img/titanic.jpg" style="float: right;"/>
+      </div>
+    </div>
+
+    <!-- Passenger & Crew Distribution -->
+    <div class="section" style="background-image: url(../img/ship.png);">
+      <div class="container">
+        <div id="sections_distribution">
+          <div id='vis'></div>
+          <div class="step">
+            This graph shows <button id = "all1"> all </button> of Titanic’s <button id = "passenger1">passengers</button> and <button id = "crew1"> crews </button>. 
+            As a homage to those who died, you can also hover over the dots
+            to see their names. We believe that each of these persons deserve proper recognition and respect, regardless of their
+            status, gender, age, and sex.
           </div>
-          <div id="canvas"></div>
-          <script src="./fullpageassets/tragedy-burst.js"></script>
-          <br>
-          <div id="death-count" class="title" align="center"></div>
-          <p id="circle-represent" align="center"></p>
         </div>
       </div>
     </div>
 
     <div class="section">
       <div class="container">
-        <!-- <div id='vis'></div> -->
         <div id="sections_distribution">
-          <div id='vis'></div>
-          <!-- <script src="./fullpageassets/fullpagesections.js"></script> -->
+          <div id='forthvis'></div>
           <div class="step">
-            <div class="title">How many passengers on board?</div>
-            This graph shows <button id = "all1"> all </button> of Titanic’s <button id = "passenger1">passengers</button> and <button id = "crew1"> crews </button>. 
-            As a homage to those who died, you can also hover over the dots
-            to see their names. We believe that each of these persons deserve proper recognition and respect, regardless of their
-            status, gender, age, and sex.
+            <div class="title">There was a much larger proportion of passengers in 3rd class.</div>
+            This graph shows the distribution of passenger class. Even though Titanic was infamous as one of the most
+            luxurious
+            ships back at its day, it actually made a lot of its earnings carrying poor immigrants from Europe to the US.
+            The rooms
+            and accomodation that these people had (3rd class passengers) were much less luxurious and often lacking. Data
+            shows
+            that there is a much larger proportion of 3rd class passengers compared to other classes, but 1st and 2nd class
+            passenger numbers were similar.
           </div>
         </div>
       </div>
@@ -151,22 +186,6 @@
     <div class="section">
       <div class="container">
         <div id="sections_distribution">
-          <div id='forthvis'></div>
-          <div class="step">
-            <div class="title">There was a much larger proportion of passengers in 3rd class.</div>
-            This graph shows the distribution of passenger class. Even though Titanic was infamous as one of the most luxurious
-            ships back at its day, it actually made a lot of its earnings carrying poor immigrants from Europe to the US. The rooms
-            and accomodation that these people had (3rd class passengers) were much less luxurious and often lacking. Data shows
-            that there is a much larger proportion of 3rd class passengers compared to other classes, but 1st and 2nd class
-            passenger numbers were similar.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="container">
-        <div id="sections_distribution">
           <div id="sections">
             <div class="title">Where are the passengers from?</div>
             In the 21st century, we are used to thinking that globalization and movement of people is a recent trend. However, it
@@ -176,93 +195,75 @@
             <h5>Overall</h5> and <h5>First Class</h5> and <h5>Second Class</h5> and <h5>Third Class</h5>
             <br><br>
       
+            <button id="total">Total</button>
+            <button id="first">First</button>
+            <button id="second">Second</button>
+            <button id="third">Third</button>
             <div id="titanic_map"></div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+            <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
             <script src="./fullpageassets/map.js"></script>
+
+            <!-- <div id="titanic_map"></div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+            <script src="./fullpageassets/map.js"></script> -->
           </div>
           <!-- <div id="titanic_map"></div>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
           <script src="./assets/map.js"></script> -->
         </div>
       </div>
-  </div>
+    </div>
 
-  <!-- <div class="section">
-    <div class="container">
-      <div id="sections_distribution">
-        <div id="sections">
-          <div class="title">Arguably the most famous shipwreck in the world, the luxury ocean liner RMS Titanic struck an iceberg on April 14, 1912.
-            She sank in 2 hours killing 1,500 people.</div>
-            
-          <div id="counter-header">
-            There are a total of <span id="counter-label">0</span> passengers in the titanic
+
+    <div class="section">
+      <div class="container">
+        <div id="sections_distribution">
+          <div id="sections">
+            <div class="title">How many of the passengers survived?</div>
+            <br><br>
+
+            <div id="toolbar" align="center">
+              <button id="all" class="button active">All</button>
+              <button id="Gender" class="button">By Gender</button>
+              <button id="Age" class="button">By Age</button>
+              <button id="Class" class="button">By Class</button>
+              <button id="Survived" class="button">By Survival</button>
+            </div>
+            <br>
+            <p id="tragedy-description" align='center'> Based on our data, overall 40% of the passengers survived</p>
+            <div id="bubbles"></div>
+            <p align="center"> (Each dots represent approximately 10 people) </p>
+            <script src="./fullpageassets/tragedy-circles-graph.js"></script>
           </div>
-          <div id="canvas"></div>
-          <script src="./fullpageassets/tragedy-burst.js"></script>
-        </div>
+      </div>
       </div>
     </div>
-  </div> -->
 
-  <div class="section">
-    <div class="container">
-      <div id="sections_distribution">
+    <div class="section">
+      <div class="container">
         <div id="sections">
-          <div class="title">How many of the passengers survived?</div>
-          <br><br>
-
-          <div id="toolbar" align="center">
-            <button id="all" class="button active">All</button>
-            <button id="Gender" class="button">By Gender</button>
-            <button id="Age" class="button">By Age</button>
-            <button id="Class" class="button">By Class</button>
-            <button id="Survived" class="button">By Survival</button>
-          </div>
-          <br>
-          <p id="tragedy-description" align='center'> Based on our data, overall 40% of the passengers survived</p>
-          <div id="bubbles"></div>
-          <p align="center"> (Each dots represent approximately 10 people) </p>
-          <script src="./fullpageassets/tragedy-circles-graph.js"></script>
-        </div>
-    </div>
-    </div>>
-  </div>
-
-  <div class="section" background='black'>
-    <div class="container">
-      <div id="sections_distribution">
-        <div id="sidebar">
-          <input type="checkbox" id="togglelegend"> Legend<br/>
-          <div id="legend" style="visibility: hidden;"></div>
-        </div>
-        <div id="sunbucket">
-          <div id="main">
-            <div id="sequence"></div>
-            <div id="sunburst">
-              <div id="explanation" style="visibility: hidden;">
-                <span id="percentage"></span><br/>
-                survival rate
+          <div class="title">Test your survival rate?</div>
+          <div id="sunbucket">
+            <div id="main">
+              <div id="sequence"></div>
+              <div id="sunburst">
+                <div id="explanation" style="visibility: hidden;">
+                  <span id="percentage"></span><br/>
+                  survival rate
+                </div>
               </div>
             </div>
           </div>
-          <!-- <div id="sidebar">
+          <div id="sidebar">
             <input type="checkbox" id="togglelegend"> Legend<br/>
             <div id="legend" style="visibility: hidden;"></div>
-          </div> -->
+          </div>
+          <script src="./fullpageassets/testsequences.js"></script>
         </div>
-        <script src="./fullpageassets/testsequences.js"></script>
-
-        <div class="step">
-          <div class="title">Test your survival rate.</div>
-          Finally, we want to highlight how all of the factors above affect the survival rate of passengers. 
-          Users can play around this sunburst to determine their chances of survival based on their gender, age, 
-          and class status. We also made this graph so that users can dive more in-depth and make their own observation 
-          about how all the factors above affect the accident and how they can stop a similar accident from ever happening in the future
-        </div>
+          
       </div>
     </div>
   </div>
-
 </div>
   
   

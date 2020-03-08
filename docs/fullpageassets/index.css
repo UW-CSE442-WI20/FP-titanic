@@ -11,21 +11,61 @@ body {
 
 .logo {
     position: relative;
-    height: 500px;
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+    height: 300px;
+    width: 600px;
     /* margin: 50px 20px 10px 20px; */
 }
 
 .start{
   height: 200px;
   font-family: 'Special Elite', cursive;
-  font-size: 30px;
-  line-height: 30px;
-  margin-right: 80px;
-  text-align: right;
+  font-size: 15px;
+  line-height: 20px;
+  /* margin-right: 400px; */
   color: #262626;
+}
+
+.header_title {
+  overflow: hidden;
+  font-family: 'Special Elite', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  /* margin-left: 60%; */
+  color: black;
+  line-height: 1.2em;
+  padding-top: 50px;
+  text-align: center;
+}
+
+/* .ship_background {
+    background-image: url(../img/ship.png);
+} */
+
+.header_count {
+  overflow: hidden;
+  font-family: 'Special Elite', cursive;
+  font-size: 30px;
+  font-weight: bold;
+  /* margin-left: 60%; */
+  color: rgb(105, 105, 105);
+  line-height: 1.2em;
+}
+
+.death_count {
+  overflow: hidden;
+  font-family: 'Special Elite', cursive;
+  font-size: 30px;
+  font-weight: bold;
+  /* margin-left: 60%; */
+  color: rgb(107, 17, 17);
+  line-height: 1.2em;
+  text-align: center;
+}
+
+.header_repre {
+    font-size: 20px;
+    font-weight: lighter;
+    color: rgb(105, 105, 105);
 }
 
 div {border-color: green;}

@@ -1,7 +1,7 @@
 
 
 #main {
-  float: left;
+  /* float: left; */
   width: 750px;
   font-family: 'Special Elite', cursive;
 }
@@ -10,6 +10,8 @@
   float: left;
   width: 100px;
   font-family: 'Special Elite', cursive;
+  margin-left: 820px;
+  z-index: 50;
 }
 
 #sequence {
@@ -30,12 +32,14 @@
 #sunbucket {
   /* float: left;
   overflow: hidden; */
-  width: 600px;
+  /* width: 600px; */
   display: inline-block;
   position: absolute;
   /* z-index: 1; */
-  margin-top: auto;
+  margin-top: 0;
   margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #sunburst {
