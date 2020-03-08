@@ -48,72 +48,72 @@ var scrollVis = function (rawData) {
             .attr('width', width)
             .attr('height', height)
         svg2.append("g").attr("class", "x_axis");
-        draw_dots(svg2, "sex","both",500, 0);
+        draw_dots(svg2, "sex", "both", 500, 0);
 
         // graph 3
         var svg3 = d3v4.select("#thirdvis").append("svg")
             .attr('width', width)
             .attr('height', height)
         svg3.append("g").attr("class", "x_axis");
-        draw_dots(svg3, "age","both",500, 0);
+        draw_dots(svg3, "age", "both", 500, 0);
 
         // graph 4
         var svg4 = d3v4.select("#forthvis").append("svg")
             .attr('width', width)
             .attr('height', height)
         svg4.append("g").attr("class", "x_axis");
-        draw_dots(svg4, "p_class","both",2000, 0);
+        draw_dots(svg4, "p_class", "both", 2000, 0);
 
-        d3v4.select("#passenger1").on("click", function() {
-            draw_dots(svg, "all","both",500, 1);
-        });
-          
-        d3v4.select("#crew1").on("click", function() {
-            draw_dots(svg, "all","both",500, 2);
-        });
-    
-        d3v4.select("#survivability1").on("click", function() {
-            draw_dots(svg, "all","survive",500, 3);
-        });
-    
-        d3v4.select("#all1").on("click", function() {
-            draw_dots(svg, "all","both",500, 0);
-        });
-        
-        d3v4.select("#passenger2").on("click", function() {
-            draw_dots(svg2, "sex","both",500, 1);
-        });
-        
-        d3v4.select("#crew2").on("click", function() {
-            draw_dots(svg2, "sex","both",500, 2);
+        d3v4.select("#passenger1").on("click", function () {
+            draw_dots(svg, "all", "both", 500, 1);
         });
 
-        d3v4.select("#survivability2").on("click", function() {
-            draw_dots(svg2, "sex","survive",500, 3);
+        d3v4.select("#crew1").on("click", function () {
+            draw_dots(svg, "all", "both", 500, 2);
         });
 
-        d3v4.select("#all2").on("click", function() {
-            draw_dots(svg2, "sex","both",500, 0);
-        });
-        
-        d3v4.select("#passenger3").on("click", function() {
-            draw_dots(svg3, "age","both",500, 1);
-        });
-        
-        d3v4.select("#crew3").on("click", function() {
-            draw_dots(svg3, "age","both",500, 2);
+        d3v4.select("#survivability1").on("click", function () {
+            draw_dots(svg, "all", "survive", 500, 3);
         });
 
-        d3v4.select("#survivability3").on("click", function() {
-            draw_dots(svg3, "age","survive",500, 3);
+        d3v4.select("#all1").on("click", function () {
+            draw_dots(svg, "all", "both", 500, 0);
         });
 
-        d3v4.select("#all3").on("click", function() {
-            draw_dots(svg3, "age","both",500, 0);
+        d3v4.select("#passenger2").on("click", function () {
+            draw_dots(svg2, "sex", "both", 500, 1);
         });
 
-        d3v4.select("#survivability4").on("click", function() {
-            draw_dots(svg4, "p_class", "survive",500, 3);
+        d3v4.select("#crew2").on("click", function () {
+            draw_dots(svg2, "sex", "both", 500, 2);
+        });
+
+        d3v4.select("#survivability2").on("click", function () {
+            draw_dots(svg2, "sex", "survive", 500, 3);
+        });
+
+        d3v4.select("#all2").on("click", function () {
+            draw_dots(svg2, "sex", "both", 500, 0);
+        });
+
+        d3v4.select("#passenger3").on("click", function () {
+            draw_dots(svg3, "age", "both", 500, 1);
+        });
+
+        d3v4.select("#crew3").on("click", function () {
+            draw_dots(svg3, "age", "both", 500, 2);
+        });
+
+        d3v4.select("#survivability3").on("click", function () {
+            draw_dots(svg3, "age", "survive", 500, 3);
+        });
+
+        d3v4.select("#all3").on("click", function () {
+            draw_dots(svg3, "age", "both", 500, 0);
+        });
+
+        d3v4.select("#survivability4").on("click", function () {
+            draw_dots(svg4, "p_class", "survive", 500, 3);
         });
 
         // ------------------------------ donut ---------------------------------------
@@ -127,11 +127,11 @@ var scrollVis = function (rawData) {
 
         d3v4.select("#form4").on("change", () => {
             var buttons = d3v4.selectAll(".radio4")._groups[0]
-            for(var i = 0; i < buttons.length; i++) {
+            for (var i = 0; i < buttons.length; i++) {
                 if (buttons[i].checked == true) {
                     d3v4.select("#forth-area2").selectAll("svg").remove()
                     donut4 = new DonutCharts("#forth-area2");
-                    if (i == 0){
+                    if (i == 0) {
                         donut4.create(donutData, 0)
                     } else {
                         donut4.create(donutData, i + 2)
@@ -146,11 +146,11 @@ var scrollVis = function (rawData) {
 
         d3v4.select("#form2").on("change", () => {
             var buttons = d3v4.selectAll(".radio2")._groups[0]
-            for(var i = 0; i < buttons.length; i++) {
+            for (var i = 0; i < buttons.length; i++) {
                 if (buttons[i].checked == true) {
                     d3v4.select("second-area").selectAll("svg").remove()
                     donut2 = new DonutCharts("#second-area");
-                    if (i == 0){
+                    if (i == 0) {
                         donut2.create(donutData, 0)
                     } else {
                         donut2.create(donutData, i)
@@ -165,11 +165,11 @@ var scrollVis = function (rawData) {
 
         d3v4.select("#form3").on("change", () => {
             var buttons = d3v4.selectAll(".radio3")._groups[0]
-            for(var i = 0; i < buttons.length; i++) {
+            for (var i = 0; i < buttons.length; i++) {
                 if (buttons[i].checked == true) {
                     d3v4.select("third-area").selectAll("svg").remove()
                     donut3 = new DonutCharts("#third-area");
-                    if (i == 0){
+                    if (i == 0) {
                         donut3.create(donutData, 0)
                     } else {
                         donut3.create(donutData, i + 6)
@@ -197,8 +197,8 @@ var scrollVis = function (rawData) {
     // 11: 61-75
     function genData() {
         var allCategories = new Array();
-        var vals =[38.76, 67.13, 23.67, 57.42, 40.27, 23.53, 18.84, 40.61, 28.76, 25.69, 25.69, 17.07]
-        var type =["Overall", "Female", "Male", "1st Class", "2nd Class", "3rd Class", "Crew Class", "0-15", "15-30", "31-45", "46-60", "61-75"]
+        var vals = [38.76, 67.13, 23.67, 57.42, 40.27, 23.53, 18.84, 40.61, 28.76, 25.69, 25.69, 17.07]
+        var type = ["Overall", "Female", "Male", "1st Class", "2nd Class", "3rd Class", "Crew Class", "0-15", "15-30", "31-45", "46-60", "61-75"]
 
         for (var i = 0; i < vals.length; i++) {
             var category = new Array();
@@ -223,117 +223,117 @@ var scrollVis = function (rawData) {
 
     function DonutCharts(id) {
         var charts = d3v3.select(id);
-    
+
         var chart_m,
             chart_r,
-            color = d3v3.scale.category20();
-    
-        var getCatNames = function(dataset) {
+            color = ['#353238', '#6b1111'];
+
+        var getCatNames = function (dataset) {
             var catNames = new Array();
-    
+
             for (var i = 0; i < dataset[0].data.length; i++) {
                 catNames.push(dataset[0].data[i].cat);
             }
-    
+
             return catNames;
         }
-    
-        var createLegend = function(catNames) {
+
+        var createLegend = function (catNames) {
             var legends = charts.select('.legend')
-                            .selectAll('g')
-                                .data(catNames)
-                            .enter().append('g')
-                                .attr('transform', function(d, i) {
-                                    return 'translate(' + (i * 150 + 50) + ', 10)';
-                                });
-    
+                .selectAll('g')
+                .data(catNames)
+                .enter().append('g')
+                .attr('transform', function (d, i) {
+                    return 'translate(' + (i * 150 + 50) + ', 10)';
+                });
+
             legends.append('circle')
                 .attr('class', 'legend-icon')
                 .attr('r', 6)
-                .style('fill', function(d, i) {
-                    return color(i);
+                .style('fill', function (d, i) {
+                    return color[i];
                 });
-    
+
             legends.append('text')
                 .attr('dx', '1em')
                 .attr('dy', '.3em')
-                .text(function(d) {
+                .text(function (d) {
                     return d;
                 });
         }
-    
-        var createCenter = function() {
-    
+
+        var createCenter = function () {
+
             var eventObj = {
-                'mouseover': function(d, i) {
+                'mouseover': function (d, i) {
                     d3v3.select(this)
                         .transition()
                         .attr("r", chart_r * 0.65);
                 },
-    
-                'mouseout': function(d, i) {
+
+                'mouseout': function (d, i) {
                     d3v3.select(this)
                         .transition()
                         .duration(500)
                         .ease('bounce')
                         .attr("r", chart_r * 0.6);
                 },
-    
-                'click': function(d, i) {
+
+                'click': function (d, i) {
                     var paths = charts.selectAll('.clicked');
                     pathAnim(paths, 0);
                     paths.classed('clicked', false);
                     resetAllCenterText();
                 }
             }
-    
+
             var donuts = d3v3.selectAll('.donut');
-    
+
             // The circle displaying total data.
             donuts.append("svg:circle")
                 .attr("r", chart_r * 0.6)
                 .style("fill", "#E7E7E7")
                 .on(eventObj);
-    
-            donuts.append('text')
-                    .attr('class', 'center-txt type')
-                    .attr('y', chart_r * -0.16)
-                    .attr('text-anchor', 'middle')
-                    .style('font-weight', 'bold')
-                    .text(function(d, i) {
-                        return d.type;
-                    });
 
             donuts.append('text')
-                    .attr('class', 'center-txt value')
-                    .attr('text-anchor', 'middle');
+                .attr('class', 'center-txt type')
+                .attr('y', chart_r * -0.16)
+                .attr('text-anchor', 'middle')
+                .style('font-weight', 'bold')
+                .text(function (d, i) {
+                    return d.type;
+                });
 
             donuts.append('text')
-                    .attr('class', 'center-txt percentage')
-                    .attr('y', chart_r * 0.16)
-                    .attr('text-anchor', 'middle')
-                    .style('fill', '#A2A2A2');
+                .attr('class', 'center-txt value')
+                .attr('text-anchor', 'middle');
+
+            donuts.append('text')
+                .attr('class', 'center-txt percentage')
+                .attr('y', chart_r * 0.16)
+                .attr('text-anchor', 'middle')
+                .style('fill', '#A2A2A2');
         }
-    
-        var setCenterText = function(thisDonut) {
-            var sum = d3v3.sum(thisDonut.selectAll('.clicked').data(), function(d) {
+
+        var setCenterText = function (thisDonut) {
+            var sum = d3v3.sum(thisDonut.selectAll('.clicked').data(), function (d) {
                 return d.data.val;
             });
-    
+
             thisDonut.select('.percentage')
-                .text(function(d) {
-                    return (sum)? (sum/d.total*100).toFixed(2) + '%'
-                                : '';
+                .text(function (d) {
+                    return (sum) ? (sum / d.total * 100).toFixed(2) + '%'
+                        : '';
                 });
         }
-    
-        var resetAllCenterText = function() {
+
+        var resetAllCenterText = function () {
             charts.selectAll('.percentage')
                 .text('');
         }
-    
-        var pathAnim = function(path, dir) {
-            switch(dir) {
+
+        var pathAnim = function (path, dir) {
+            switch (dir) {
                 case 0:
                     path.transition()
                         .duration(500)
@@ -343,7 +343,7 @@ var scrollVis = function (rawData) {
                             .outerRadius(chart_r)
                         );
                     break;
-    
+
                 case 1:
                     path.transition()
                         .attr('d', d3v3.svg.arc()
@@ -353,21 +353,21 @@ var scrollVis = function (rawData) {
                     break;
             }
         }
-    
-        var updateDonut = function() {
-    
+
+        var updateDonut = function () {
+
             var eventObj = {
-                'mouseover': function(d, i, j) {
+                'mouseover': function (d, i, j) {
                     pathAnim(d3v3.select(this), 1);
-    
+
                     var thisDonut = charts.select('.type' + j);
-    
-                    thisDonut.select('.percentage').text(function(donut_d) {
-                        return (d.data.val/donut_d.total*100).toFixed(2) + '%';
+
+                    thisDonut.select('.percentage').text(function (donut_d) {
+                        return (d.data.val / donut_d.total * 100).toFixed(2) + '%';
                     });
                 },
-                
-                'mouseout': function(d, i, j) {
+
+                'mouseout': function (d, i, j) {
                     var thisPath = d3v3.select(this);
                     var clicked = thisPath.classed('clicked');
 
@@ -379,14 +379,14 @@ var scrollVis = function (rawData) {
 
                     var clicked = thisPath.classed('clicked');
                 },
-    
-                'click': function(d, i, j) {
+
+                'click': function (d, i, j) {
                     var thisDonut = charts.select('.type' + j);
-    
+
                     if (0 === thisDonut.selectAll('.clicked')[0].length) {
                         thisDonut.select('circle').on('click')();
                     }
-    
+
                     var thisPath = d3v3.select(this);
                     var clicked = thisPath.classed('clicked');
                     pathAnim(thisPath, ~~(!clicked));
@@ -394,69 +394,69 @@ var scrollVis = function (rawData) {
                     setCenterText(thisDonut);
                 }
             };
-    
+
             var pie = d3v3.layout.pie()
-                            .sort(null)
-                            .value(function(d) {
-                                return d.val;
-                            });
-    
+                .sort(null)
+                .value(function (d) {
+                    return d.val;
+                });
+
             var arc = d3v3.svg.arc()
-                            .innerRadius(chart_r * 0.7)
-                            .outerRadius(function() {
-                                return (d3.select(this).classed('clicked'))? chart_r * 1.08
-                                                                           : chart_r;
-                            });
-    
+                .innerRadius(chart_r * 0.7)
+                .outerRadius(function () {
+                    return (d3.select(this).classed('clicked')) ? chart_r * 1.08
+                        : chart_r;
+                });
+
             // Start joining data with paths
             var paths = charts.selectAll('.donut')
-                            .selectAll('path')
-                            .data(function(d, i) {
-                                return pie(d.data);
-                            });
-    
+                .selectAll('path')
+                .data(function (d, i) {
+                    return pie(d.data);
+                });
+
             paths
                 .transition()
                 .duration(1000)
                 .attr('d', arc);
-    
+
             paths.enter()
                 .append('svg:path')
-                    .attr('d', arc)
-                    .style('fill', function(d, i) {
-                        return color(i);
-                    })
-                    .style('stroke', '#FFFFFF')
-                    .on(eventObj)
-    
+                .attr('d', arc)
+                .style('fill', function (d, i) {
+                    return color[i];
+                })
+                .style('stroke', '#FFFFFF')
+                .on(eventObj)
+
             paths.exit().remove();
-    
+
             resetAllCenterText();
         }
-    
-        this.create = function(dataset, i) {
+
+        this.create = function (dataset, i) {
             console.log(dataset[i])
             var $charts = $(id);
-            chart_m = $charts.innerWidth() / dataset[i].length / 2 * 0.14;
-            chart_r = $charts.innerWidth() / dataset[i].length / 2 * 0.85;
-    
+            chart_m = $charts.innerWidth() / dataset[i].length / 2 * 0.04;
+            chart_r = $charts.innerWidth() / dataset[i].length / 2 * 0.5;
+
             charts.append('svg')
                 .attr('class', 'legend')
                 .attr('width', '100%')
                 .attr('height', 50)
-                .attr('transform', 'translate(0, -100)');
-    
+                .attr('transform', 'translate(0, 0)');
+
             var donut = charts.selectAll('.donut')
-                            .data(dataset[i])
-                        .enter().append('svg:svg')
-                            .attr('width', (chart_r + chart_m) * 2)
-                            .attr('height', (chart_r + chart_m) * 2)
-                        .append('svg:g')
-                            .attr('class', function(d, i) {
-                                return 'donut type' + i;
-                            })
-                            .attr('transform', 'translate(' + (chart_r+chart_m) + ',' + (chart_r+chart_m) + ')');
-    
+                .data(dataset[i])
+                .enter().append('svg:svg')
+                .attr('width', (chart_r + chart_m) * 2)
+                .attr('height', (chart_r + chart_m) * 2)
+                .append('svg:g')
+                .attr('class', function (d, i) {
+                    return 'donut type' + i;
+                })
+                .attr('transform', 'translate(' + (chart_r + chart_m) + ',' + (chart_r + chart_m) + ')');
+
             createLegend(getCatNames(dataset[i]));
             createCenter();
             updateDonut();
@@ -581,7 +581,7 @@ var scrollVis = function (rawData) {
                     }
                 } else if (status == 3) {
                     return survival_colours[d.survived]
-                }  
+                }
             })
             .attr("r", my_radius)
             .attr("transform", "translate(" + left_right_margin + "," + top_bottom_margin + ")")
