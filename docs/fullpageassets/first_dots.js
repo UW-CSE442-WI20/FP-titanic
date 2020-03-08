@@ -6,16 +6,11 @@ var scrollVis = function (rawData) {
     var height = 600;
     var format = d3v4.format(".0%");
 
-    // define scroll index tracking vars - JV
-    // var lastIndex = -1;
-    // var activeIndex = 0;
-
     // define scales - one set of scales for all charts.
     var x0_scale = d3v4.scaleBand().padding(0.1).range([0, width - (left_right_margin * 2)]);
     var x1_scale = d3v4.scaleLinear();
     var y_scale = d3v4.scaleLinear().range([height - (top_bottom_margin * 2), 0]);
 
-    // define colours
     //all_colours - used during 1st section when survival rates not needed variable == "both".
     var all_colours = {
         Men: '#1f78b4', Women: '#a6cee3', all: "grey", passenger: "green", crew: "blue",
@@ -31,19 +26,12 @@ var scrollVis = function (rawData) {
 
     var survival_colours = { 0: "#fb9a99", 1: "#404040" };
 
-    // define functions for the current scroll setting - inherited from JV
-    var activateFunctions = [];
     //define data object and svg.
     var vis_data = {};
-    // var svg = ""
     var tooltip = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 0);
 
-
-    // vis_data = convert_data(rawData);
-    // console.log("visdata")
-    // console.log("svg")
     var chart = function () {
         vis_data = convert_data(rawData);
         // console.log("visdata")
@@ -129,18 +117,6 @@ var scrollVis = function (rawData) {
         });
 
         // ------------------------------ donut ---------------------------------------
-        // 0: Overall
-        // 1: Female
-        // 2: Male
-        // 3: 1st class
-        // 4: 2nd class
-        // 5: 3rd class
-        // 6: crew class
-        // 7: 0-15
-        // 8: 15-30
-        // 9: 31-45
-        // 10: 46-60
-        // 11: 61-75
         var donutData = genData();
 
         var donut = new DonutCharts("#first-area");
@@ -192,16 +168,57 @@ var scrollVis = function (rawData) {
             for(var i = 0; i < buttons.length; i++) {
                 if (buttons[i].checked == true) {
                     d3v4.select("third-area").selectAll("svg").remove()
-                    donut2 = new DonutCharts("#third-area");
+                    donut3 = new DonutCharts("#third-area");
                     if (i == 0){
-                        donut2.create(donutData, 0)
+                        donut3.create(donutData, 0)
                     } else {
-                        donut2.create(donutData, i + 6)
+                        donut3.create(donutData, i + 6)
                     }
                     break;
                 }
             }
         });
+    }
+
+    /*
+    * Returns a json-like object.
+    */
+    // 0: Overall
+    // 1: Female
+    // 2: Male
+    // 3: 1st class
+    // 4: 2nd class
+    // 5: 3rd class
+    // 6: crew class
+    // 7: 0-15
+    // 8: 15-30
+    // 9: 31-45
+    // 10: 46-60
+    // 11: 61-75
+    function genData() {
+        var allCategories = new Array();
+        var vals =[38.76, 67.13, 23.67, 57.42, 40.27, 23.53, 18.84, 40.61, 28.76, 25.69, 25.69, 17.07]
+        var type =["Overall", "Female", "Male", "1st Class", "2nd Class", "3rd Class", "Crew Class", "0-15", "15-30", "31-45", "46-60", "61-75"]
+
+        for (var i = 0; i < vals.length; i++) {
+            var category = new Array();
+            var data = new Array();
+            data.push({
+                "cat": "Survived",
+                "val": vals[i]
+            });
+            data.push({
+                "cat": "Perished",
+                "val": 100 - vals[i]
+            });
+            category.push({
+                "type": type[i],
+                "data": data,
+                "total": 100
+            })
+            allCategories.push(category);
+        }
+        return allCategories;
     }
 
     function DonutCharts(id) {
@@ -341,7 +358,6 @@ var scrollVis = function (rawData) {
     
             var eventObj = {
                 'mouseover': function(d, i, j) {
-                    console.log("mouseover")
                     pathAnim(d3v3.select(this), 1);
     
                     var thisDonut = charts.select('.type' + j);
@@ -349,17 +365,14 @@ var scrollVis = function (rawData) {
                     thisDonut.select('.percentage').text(function(donut_d) {
                         return (d.data.val/donut_d.total*100).toFixed(2) + '%';
                     });
-                    draw_dots(svg, "all","both", 500, 3);
                 },
                 
                 'mouseout': function(d, i, j) {
-                    console.log("mouseout")
                     var thisPath = d3v3.select(this);
                     var clicked = thisPath.classed('clicked');
 
                     if (!clicked) {
                         pathAnim(thisPath, 0);
-                        draw_dots(svg, "all","both", 500, 0);
                     }
                     var thisDonut = charts.select('.type' + j);
                     setCenterText(thisDonut);
@@ -422,6 +435,7 @@ var scrollVis = function (rawData) {
         }
     
         this.create = function(dataset, i) {
+            console.log(dataset[i])
             var $charts = $(id);
             chart_m = $charts.innerWidth() / dataset[i].length / 2 * 0.14;
             chart_r = $charts.innerWidth() / dataset[i].length / 2 * 0.85;
@@ -469,9 +483,6 @@ var scrollVis = function (rawData) {
         var bar_group = svg.selectAll(".labels_group")
             .data(x0_scale.domain(), function (d) { return d });
 
-        // console.log("label? = " + x0_scale.domain())
-
-        // console.log("draw dots")
         bar_group.exit().remove();
         //enter new groups
         var enter = bar_group.enter()
@@ -615,49 +626,6 @@ function display(data) {
 
 // // load data and display
 d3v4.csv('https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/clean2.csv', display);
-
-// // ----------------------------------------------- Donut Chart -------------------------------------------------------------- //
-
-/*
-* Returns a json-like object.
-*/
-// 0: Overall
-// 1: Female
-// 2: Male
-// 3: 1st class
-// 4: 2nd class
-// 5: 3rd class
-// 6: crew class
-// 7: 0-15
-// 8: 15-30
-// 9: 31-45
-// 10: 46-60
-// 11: 61-75
-function genData() {
-    var allCategories = new Array();
-    var vals =[38.76, 67.13, 23.67, 57.42, 40.27, 23.53, 18.84, 40.61, 28.76, 25.69, 25.69, 17.07]
-    var type =["Overall", "Female", "Male", "1st Class", "2nd Class", "3rd Class", "Crew Class", "0-15", "15-30", "31-45", "46-60", "61-75"]
-
-    for (var i = 0; i < vals.length; i++) {
-        var category = new Array();
-        var data = new Array();
-        data.push({
-            "cat": "Survived",
-            "val": vals[i]
-        });
-        data.push({
-            "cat": "Perished",
-            "val": 100 - vals[i]
-        });
-        category.push({
-            "type": type[i],
-            "data": data,
-            "total": 100
-        })
-        allCategories.push(category);
-    }
-    return allCategories;
-}
 
 //data functions.  returns 6 different datasets, all with 891 entries (passenger count)
 //data is split into sections - ie ["male","female"], given a per_row count - ie two_per_row
