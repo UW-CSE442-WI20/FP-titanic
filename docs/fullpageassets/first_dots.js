@@ -365,6 +365,7 @@ var scrollVis = function (rawData) {
                 'mouseover': function (d, i, j) {
                     pathAnim(d3v3.select(this), 1);
 
+
                     var thisDonut = charts.select('.type' + j);
 
                     thisDonut.select('.percentage').text(function (donut_d) {
@@ -386,9 +387,6 @@ var scrollVis = function (rawData) {
                 },
 
                 'click': function (d, i, j) {
-
-                    draw_dots(svg, "all", "survive", 500, 3);
-
                     var thisDonut = charts.select('.type' + j);
 
                     if (0 === thisDonut.selectAll('.clicked')[0].length) {
@@ -443,6 +441,7 @@ var scrollVis = function (rawData) {
         }
 
         this.create = function (dataset, i) {
+
             console.log(dataset[i])
             var $charts = $(id);
             // chart_m = $charts.innerWidth() / dataset[i].length / 2 * 0.04;
