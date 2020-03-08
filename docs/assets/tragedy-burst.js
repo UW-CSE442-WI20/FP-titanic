@@ -37,7 +37,7 @@ var yInitCircle = [];
 
 // Styles
 var NEUTRAL_COLOR = "#ccc";
-var RED_COLOR = "#6b1111";
+var RED_COLOR = "#fb9a99";
 var BLACK_COLOR = "#353238";
 var ORANGE_COLOR = "#FF715B";
 var PINK_COLOR = "#DD7A92";

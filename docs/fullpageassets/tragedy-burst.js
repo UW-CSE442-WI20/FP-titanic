@@ -28,7 +28,7 @@
     var yInitCircle = [];
     
     // Styles
-    var RED_COLOR = "#6b1111";
+    var RED_COLOR = "#fb9a99";
     var BLACK_COLOR = "#353238";
 
     window.onload = function () {
