@@ -29,6 +29,7 @@ var scrollVis = function (rawData) {
   
     // define functions for the current scroll setting - inherited from JV
     var activateFunctions = [];
+    var centered;
     //define data object and svg.
     var vis_data = {};
     // var svg = ""
@@ -108,7 +109,6 @@ var scrollVis = function (rawData) {
         draw_dots(svg3, "age","both",500, 0);
       });
     }
-
     
     
 
