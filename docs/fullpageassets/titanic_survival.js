@@ -12,8 +12,8 @@ var titanic_final = [{
     "disp": "Female",
     "query_string": "person.sex === 'female'",
     "desc_hover": "Female Passengers",
-    "color_hover": "#F1DBF5",
-    "color_click": "#D8AADF",
+    "color_hover": "#3282b8",
+    "color_click": "#3282b8",
     "clicked": 0,
     "on_click_remove": [2],
     "range": [1, 2]
@@ -22,8 +22,8 @@ var titanic_final = [{
     "disp": "Male",
     "query_string": "person.sex === 'male'",
     "desc_hover": "Male Passengers",
-    "color_hover": "#F1DBF5",
-    "color_click": "#D8AADF",
+    "color_hover": "#0f4c75",
+    "color_click": "#0f4c75",
     "clicked": 0,
     "on_click_remove": [1],
     "range": [1, 2]
@@ -32,8 +32,8 @@ var titanic_final = [{
     "disp": "Class 1",
     "query_string": "person.pclass === '1'",
     "desc_hover": "1st Class Passengers",
-    "color_hover": "#FFC387",
-    "color_click": "#FF9B39",
+        "color_hover": "#c4bbf0",
+        "color_click": "#c4bbf0",
     "clicked": 0,
     "on_click_remove": [4, 5],
     "range": [3, 4, 5]
@@ -42,8 +42,8 @@ var titanic_final = [{
     "disp": "Class 2",
     "query_string": "person.pclass === '2'",
     "desc_hover": "2nd Class Passengers",
-    "color_hover": "#FFC387",
-    "color_click": "#FF9B39",
+        "color_hover": "#927fbf",
+        "color_click": "#927fbf",
     "clicked": 0,
     "on_click_remove": [3, 5],
     "range": [3, 4, 5]
@@ -52,8 +52,8 @@ var titanic_final = [{
     "disp": "Class 3",
     "query_string": "person.pclass === '3'",
     "desc_hover": "3rd Class Passengers",
-    "color_hover": "#FFC387",
-    "color_click": "#FF9B39",
+        "color_hover": "#4f3b78",
+        "color_click": "#4f3b78",
     "clicked": 0,
     "on_click_remove": [3, 4],
     "range": [3, 4, 5]
@@ -62,39 +62,39 @@ var titanic_final = [{
     "disp": "0-21",
     "query_string": "person.age >= '0' && person.age <= '21'",
     "desc_hover": "Passengers below 21 years old",
-    "color_hover": "#AAE3A7",
-    "color_click": "#7BCE77",
+        "color_hover": "#bad8b6",
+        "color_click": "#bad8b6",
     "clicked": 0,
     "on_click_remove": [7, 8, 9],
     "range": [6, 7, 8, 9]
 }, {
     "id": 7,
-    "disp": "22-28",
-    "query_string": "person.age >= '22' && person.age <= '28'",
-    "desc_hover": "Passengers between 22-28 years old",
-    "color_hover": "#AAE3A7",
-    "color_click": "#7BCE77",
+    "disp": "22-45",
+    "query_string": "person.age >= '22' && person.age <= '45'",
+    "desc_hover": "Passengers between 22-45 years old",
+        "color_hover": "#92b88e",
+        "color_click": "#92b88e",
     "clicked": 0,
     "on_click_remove": [6, 8, 9],
     "range": [6, 7, 8, 9]
 }, {
     "id": 8,
-    "disp": "29-39",
-    "query_string": "person.age >= '29' && person.age <= '39'",
-    "desc_hover": "Passengers between 29-39 years old",
+    "disp": "46-60",
+    "query_string": "person.age >= '46' && person.age <= '60'",
+    "desc_hover": "Passengers between 46-60 years old",
     "desc_click": "",
-    "color_hover": "#AAE3A7",
-    "color_click": "#7BCE77",
+        "color_hover": "#82a47e",
+        "color_click": "#82a47e",
     "clicked": 0,
     "on_click_remove": [6, 7, 9],
     "range": [6, 7, 8, 9]
 }, {
     "id": 9,
-    "disp": "40-80",
-    "query_string": "person.age >= '40' && person.age <= '80'",
-    "desc_hover": "Passengers between 40-80 years old",
-    "color_hover": "#AAE3A7",
-    "color_click": "#7BCE77",
+    "disp": "61-80",
+    "query_string": "person.age >= '61' && person.age <= '80'",
+    "desc_hover": "Passengers between 61-80 years old",
+        "color_hover": "#728f6e",
+        "color_click": "#728f6e",
     "clicked": 0,
     "on_click_remove": [6, 7, 8],
     "range": [6, 7, 8, 9]
@@ -133,8 +133,8 @@ var titanic_final = [{
     "disp": "No ParChild",
     "query_string": "person.parch === '0'",
     "desc_hover": "No parent or children aboard",
-    "color_hover": "#B1D3F0",
-    "color_click": "#5796CA",
+        "color_hover": "#F1DBF5",
+        "color_click": "#D8AADF",
     "clicked": 0,
     "on_click_remove": [14, 15],
     "range": [13, 14, 15]
@@ -143,8 +143,8 @@ var titanic_final = [{
     "disp": "1 ParChild",
     "query_string": "person.parch === '1'",
     "desc_hover": "1 parent or children aboard",
-    "color_hover": "#B1D3F0",
-    "color_click": "#5796CA",
+        "color_hover": "#F1DBF5",
+        "color_click": "#D8AADF",
     "clicked": 0,
     "on_click_remove": [13, 15],
     "range": [13, 14, 15]
@@ -153,8 +153,8 @@ var titanic_final = [{
     "disp": "2+ ParChild",
     "query_string": "person.parch >= '2'",
     "desc_hover": "2 or more parent(s) or children(s) aboard",
-    "color_hover": "#B1D3F0",
-    "color_click": "#5796CA",
+        "color_hover": "#F1DBF5",
+        "color_click": "#D8AADF",
     "clicked": 0,
     "on_click_remove": [13, 14],
     "range": [13, 14, 15]
@@ -227,7 +227,7 @@ function visualizer(titanic_data) {
             svg.append("text")
                 .attr("class", "mid-text")
                 .attr("text-anchor", "middle")
-                .attr("dy", -20)
+                .attr("dy", 0)
                 .style("fill", fill_color(result))
                 .text("of the selected passengers survived");
 
@@ -237,7 +237,7 @@ function visualizer(titanic_data) {
             svg.append("text")
                 .attr("class", "mid-hint")
                 .attr("text-anchor", "middle")
-                .attr("dy", 25)
+                .attr("dy", 30)
                 .text(function () {
                     if (hundred === 0) {
                         if (result <= 55) return hint[1];
@@ -368,7 +368,7 @@ function visualizer(titanic_data) {
                     svg.append("text")
                         .attr("class", "best-text")
                         .attr("text-anchor", "middle")
-                        .attr("dy", -85)
+                        .attr("dy", -130)
                         .text("Try Women, Children And Upper-class")
                         .transition()
                         .duration(4000)
