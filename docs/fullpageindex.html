@@ -126,9 +126,9 @@
           <div style="width: 60%; height: 100px; float: left;">
             <div id='vis'></div>
           </div>
-          <!-- <div style="margin-left: 60%; margin-top: 10%;height: 100px;">
-            <div id="donut"></div>
-          </div> -->
+          <div style="margin-left: 60%; margin-top: 10%; height: 100px;">
+            <div id="first-area"></div>
+          </div>
           <!-- <div class="step">
             This graph shows <button id = "all1"> all </button> of Titanic’s <button id = "passenger1">passengers</button> and <button id = "crew1"> crews </button>. 
             As a homage to those who died, you can also hover over the dots
@@ -170,14 +170,13 @@
               passenger numbers were similar.
               We can also see their <button id="survivability4">survivability</button>.
             </div>
-            <div id="forth-area">
-              <form>
-                <label><input type="radio" name="dataset" value="total" checked> Overall</label>
-                <label><input type="radio" name="dataset" value="1stClass"> 1st Class</label>
-                <label><input type="radio" name="dataset" value="2ndClass"> 2nd Class</label>
-                <label><input type="radio" name="dataset" value="3rdClass"> 3rd Class</label>
-                <label><input type="radio" name="dataset" value="crew"> Crew</label>
-
+            <div id="forth-area2">
+              <form id="form4">
+                <label><input class="radio4" type="radio" name="dataset" value="total" checked> Overall</label>
+                <label><input class="radio4" type="radio" name="dataset" value="1stClass"> 1st Class</label>
+                <label><input class="radio4" type="radio" name="dataset" value="2ndClass"> 2nd Class</label>
+                <label><input class="radio4" type="radio" name="dataset" value="3rdClass"> 3rd Class</label>
+                <label><input class="radio4" type="radio" name="dataset" value="crew"> Crew</label>
               </form>
             </div>
           </div>
@@ -189,7 +188,6 @@
         </div>
       </div>
     </div>
-    <script src="./fullpageassets/forth_dots.js"></script>
 
     <div class="section">
       <div class="container">
@@ -206,10 +204,10 @@
               <button id=survivability2>survivability</button>.
             </div>
             <div id="second-area">
-              <form>
-                <label><input type="radio" name="dataset" value="total" checked> Overall</label>
-                <label><input type="radio" name="dataset" value="men"> Men</label>
-                <label><input type="radio" name="dataset" value="women"> Women</label>
+              <form id ="form2">
+                <label><input class="radio2" type="radio" name="dataset" value="total" checked> Overall</label>
+                <label><input class="radio2" type="radio" name="dataset" value="women"> Women</label>
+                <label><input class="radio2" type="radio" name="dataset" value="men"> Men</label>
               </form>
             </div>
           </div>
@@ -219,10 +217,6 @@
         </div>
       </div>
     </div>
-    <script src="./fullpageassets/second_dots.js"></script>
-
-
-
 
     <div class="section">
       <div class="container">
@@ -238,13 +232,13 @@
               Europe. Click here to see <button id = "all3"> all </button> passenger and crew and their <button id=survivability3>survivability</button>.
             </div>
             <div id="third-area">
-              <form>
-                <label><input type="radio" name="dataset" value="total" checked> Overall</label>
-                <label><input type="radio" name="dataset" value="age1"> 0 - 15</label>
-                <label><input type="radio" name="dataset" value="age2"> 15 - 30</label>
-                <label><input type="radio" name="dataset" value="age3"> 30 - 45</label>
-                <label><input type="radio" name="dataset" value="age4"> 45 - 70</label>
-                <label><input type="radio" name="dataset" value="age5"> >= 70</label>
+              <form id="form3">
+                <label><input class="radio3" type="radio" name="dataset" value="total" checked> Overall</label>
+                <label><input class="radio3" type="radio" name="dataset" value="age1"> 0 - 15</label>
+                <label><input class="radio3" type="radio" name="dataset" value="age2"> 15 - 30</label>
+                <label><input class="radio3" type="radio" name="dataset" value="age3"> 30 - 45</label>
+                <label><input class="radio3" type="radio" name="dataset" value="age4"> 45 - 70</label>
+                <label><input class="radio3" type="radio" name="dataset" value="age5"> >= 70</label>
               </form>
             </div>
           </div>
@@ -254,7 +248,6 @@
         </div>
       </div>
     </div>
-    <script src="./fullpageassets/third_dots.js"></script>
 
     <div class="section">
       <div class="container">

@@ -129,17 +129,79 @@ var scrollVis = function (rawData) {
         });
 
         // ------------------------------ donut ---------------------------------------
-        // var donutData = genData();
+        // 0: Overall
+        // 1: Female
+        // 2: Male
+        // 3: 1st class
+        // 4: 2nd class
+        // 5: 3rd class
+        // 6: crew class
+        // 7: 0-15
+        // 8: 15-30
+        // 9: 31-45
+        // 10: 46-60
+        // 11: 61-75
+        var donutData = genData();
 
-        // var donut = new DonutCharts("#donut");
-        // donut.create(donutData, 0, svg);
+        var donut = new DonutCharts("#first-area");
+        donut.create(donutData, 0);
 
-        // var donut = new DonutCharts("#donut2");
-        // donut.create(donutData, 0, svg);
-        // var label2 = d3.select("#form2").selectAll("label")
-        //     .on("change", (change) => {
-        //         console.log(change)
-        //     })
+        var donut4 = new DonutCharts("#forth-area2");
+        donut4.create(donutData, 0);
+
+        d3v4.select("#form4").on("change", () => {
+            var buttons = d3v4.selectAll(".radio4")._groups[0]
+            for(var i = 0; i < buttons.length; i++) {
+                if (buttons[i].checked == true) {
+                    d3v4.select("#forth-area2").selectAll("svg").remove()
+                    donut4 = new DonutCharts("#forth-area2");
+                    if (i == 0){
+                        donut4.create(donutData, 0)
+                    } else {
+                        donut4.create(donutData, i + 2)
+                    }
+                    break;
+                }
+            }
+        });
+
+        var donut2 = new DonutCharts("#second-area");
+        donut2.create(donutData, 0);
+
+        d3v4.select("#form2").on("change", () => {
+            var buttons = d3v4.selectAll(".radio2")._groups[0]
+            for(var i = 0; i < buttons.length; i++) {
+                if (buttons[i].checked == true) {
+                    d3v4.select("second-area").selectAll("svg").remove()
+                    donut2 = new DonutCharts("#second-area");
+                    if (i == 0){
+                        donut2.create(donutData, 0)
+                    } else {
+                        donut2.create(donutData, i)
+                    }
+                    break;
+                }
+            }
+        });
+
+        var donut3 = new DonutCharts("#third-area");
+        donut3.create(donutData, 0);
+
+        d3v4.select("#form3").on("change", () => {
+            var buttons = d3v4.selectAll(".radio3")._groups[0]
+            for(var i = 0; i < buttons.length; i++) {
+                if (buttons[i].checked == true) {
+                    d3v4.select("third-area").selectAll("svg").remove()
+                    donut2 = new DonutCharts("#third-area");
+                    if (i == 0){
+                        donut2.create(donutData, 0)
+                    } else {
+                        donut2.create(donutData, i + 6)
+                    }
+                    break;
+                }
+            }
+        });
     }
 
     function DonutCharts(id) {
