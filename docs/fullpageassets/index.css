@@ -9,6 +9,38 @@ body {
     background-color: white;
 }
 
+.title {
+  overflow: hidden;
+  font-family: 'Special Elite', cursive;
+  font-size: 32px;
+  font-weight: bold;
+  /* margin-left: 60%; */
+  color: black;
+  line-height: 1.2em;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+#tragedy_description {
+    font-family: 'Special Elite', cursive;
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(107, 17, 17);
+    line-height: 1.2em;
+}
+
+.question {
+  overflow: hidden;
+  font-family: 'Special Elite', cursive;
+  font-size: 28px;
+  font-weight: bold;
+  /* margin-left: 60%; */
+  color: rgb(56, 56, 56);
+  line-height: 1.2em;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
 .logo {
     position: relative;
     height: 300px;

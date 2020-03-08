@@ -1758,7 +1758,7 @@ function display(data) {
 
 // overall_data, first_data, second_data, third_data
 display(overall_data);
-drawDonut(total_pass);
+// drawDonut(total_pass);
 
 // d3.selectAll("input").on("change", update);
 

@@ -35,7 +35,7 @@ d3v4.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/doc
         .style("fill", function(d, i){ return color[d.Survived]; })
         .style("stroke", function(d, i){ return color[d.Survived]; })
         .style("stroke-width", 3)
-        .style("pointer-events", "all")
+        .style("pointer-events", "Overall")
 
     circles = circles.merge(circlesEnter)
     
@@ -49,14 +49,14 @@ d3v4.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/doc
         .nodes(data)
         .on("tick", ticked);
 
-    splitBubbles('all')
+    splitBubbles('Overall')
     
     function splitBubbles(byVar) {
         centerScale.domain(data.map(function(d){ return d[byVar]; }));
         centerScaleHeight.domain(data.map(function(d){ return d[byVar]; }));
         
-        if(byVar == "all"){
-            showTitles('All', centerScale)
+        if(byVar == "Overall"){
+            showTitles('Overall', centerScale)
         } else {
             showTitles(byVar, centerScale);
         }
@@ -74,16 +74,15 @@ d3v4.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/doc
     }
 
     function changeTragedyDescription(byVar) {
-        if(byVar == 'all' || byVar == 'Survived') {
-            document.getElementById("tragedy-description").innerHTML = "Overall, 38.76% of the titanic's passengers survived";
+        if(byVar == 'Overall' || byVar == 'Survived') {
+            document.getElementById("tragedy-description").innerHTML = "Only 38.76% of the titanic's passengers survived";
         } else if (byVar == 'Gender') {
             document.getElementById("tragedy-description").innerHTML = "67.13% of women survived while only 23.67% of men survived the incident";
         } else if (byVar == 'Class') {
             document.getElementById("tragedy-description").innerHTML = "Based on our data, more than half (57.42%) of 1st class passengers survived while 40.27% of the 2nd class passengers survived. \
                                                                         The survival rate for 3rd class passengers and crew members were heartbreakingly low, with 25.53% and 18.84% respectively.";
         } else if (byVar == 'Age') {
-            document.getElementById("tragedy-description").innerHTML = "Around 40.61% of children aged 0-15 survived, 28.76% of younger adults aged 16-30 survived, and 25.69% of older adults aged 31-45 survived. \
-                                                                        People aged 46-60 has 25.69% chance of surviving and the survival rate went really low for people aged 61-75 with only 17.07%.";
+            document.getElementById("tragedy-description").innerHTML = "Around 40.61% of children aged 0-15 survived and 28.76% of younger adults aged 16-30 survived. Howevr, the survival rate went really low for elders, aged over 61 with only 17.07%.";
         }
     }
 
@@ -100,7 +99,7 @@ d3v4.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/doc
             .attr('y', 40)
             .attr('text-anchor', 'middle')
             .text(function (d) { 
-                if (byVar == 'All') {
+                if (byVar == 'Overall') {
                     return byVar;
                 } else if (byVar == 'Gender' || byVar == 'Age') {
                     return d;
@@ -121,7 +120,7 @@ d3v4.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/doc
         d3v4.selectAll('.button')
             .on('click', function () {
             
-            // Remove active class from all buttons
+            // Remove active class from Overall buttons
             d3v4.selectAll('.button').classed('active', false);
             // Find the button just clicked
             var button = d3v4.select(this);

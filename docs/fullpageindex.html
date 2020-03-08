@@ -7,7 +7,7 @@
 		  display: none;
 		}
 		
-	</style>
+  </style>
 
 
 	<title>Titanic Exploration</title>
@@ -48,7 +48,7 @@
 				sectionsColor: [contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, sunburstColor],
 				navigation: true,
 				navigationPosition: 'right',
-        navigationTooltips: ['Landing', 'Introduction', 'Passenger & Crew', 'Gender', 'Age', 'Nationality', 'Social Class', 'Sources & About Us'],
+        navigationTooltips: ['Landing', 'Introduction', 'Passenger vs Crew', 'Passenger Class', 'Gender', 'Age', 'Nationality', 'Survivors', 'Tragedy', 'Predict', 'Sources & About Us'],
         easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.12)',
         
 			});
@@ -178,9 +178,9 @@
             </div>
             <div id="forth-area">
               <form>
-                <label><input type="radio" name="dataset" value="total" checked> Overall</label>
-                <label><input type="radio" name="dataset" value="passenger"> Passenger</label>
-                <label><input type="radio" name="dataset" value="crew"> Crew</label>
+                <label><input type="radio" name="dataset" value="total" checked> First Class Passenger</label>
+                <label><input type="radio" name="dataset" value="passenger">Second Class Passenger</label>
+                <label><input type="radio" name="dataset" value="crew">Third Class Passenger</label>
               </form>
             </div>
           </div>
@@ -209,9 +209,8 @@
             </div>
             <div id="second-area">
               <form>
-                <label><input type="radio" name="dataset" value="total" checked> Overall</label>
-                <label><input type="radio" name="dataset" value="passenger"> Passenger</label>
-                <label><input type="radio" name="dataset" value="crew"> Crew</label>
+                <label><input type="radio" name="dataset" value="total" checked>Men</label>
+                <label><input type="radio" name="dataset" value="passenger">Women</label>
               </form>
             </div>
           </div>
@@ -241,9 +240,9 @@
             </div>
             <div id="third-area">
               <form>
-                <label><input type="radio" name="dataset" value="total" checked> Overall</label>
-                <label><input type="radio" name="dataset" value="passenger"> Passenger</label>
-                <label><input type="radio" name="dataset" value="crew"> Crew</label>
+                <label><input type="radio" name="dataset" value="total" checked>Children (0-21)</label>
+                <label><input type="radio" name="dataset" value="passenger">Adult (22-45)</label>
+                <label><input type="radio" name="dataset" value="crew">Elder (>= 71)</label>
               </form>
             </div>
           </div>
@@ -279,7 +278,7 @@
               </form> -->
             </div>
             <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-            <script src="./fullpageassets/map.js"></script>
+            <script src="./assets/map.js"></script>
           </div>
       </div>
     </div>
@@ -287,47 +286,78 @@
     <!-- Survivors Distribution -->
     <div class="section">
       <div class="container">
-        <div id="sections">
-          <div class="title">Survivors Distribution</div>
-          <div id="sunbucket">
-            <div id="main">
-              <div id="sequence"></div>
-              <div id="sunburst">
-                <div id="explanation" style="visibility: hidden;">
-                  <span id="percentage"></span><br/>
-                  survival rate
+          <div style="width: 60%; height: 200px; float: left;">
+            <div id="sunbucket">
+              <div id="main">
+                <div id="sequence"></div>
+                <div id="sunburst">
+                  <div id="explanation" style="visibility: hidden;">
+                    <span id="percentage"></span><br />
+                    of Survivors
+                  </div>
                 </div>
               </div>
             </div>
+            <div id="sidebar">
+              <!-- <input type="checkbox" id="togglelegend"> Legend<br/> -->
+              <div id="legend" style="visibility: visible;"></div>
+            </div>
           </div>
-          <div id="sidebar">
-            <input type="checkbox" id="togglelegend"> Legend<br/>
-            <div id="legend" style="visibility: hidden;"></div>
+
+          <div style="margin-left: 60%; height: 200px; font-family: 'Special Elite', cursive;">
+            <div class="title">Survivors Distribution</div>
+            <br>
+
+            Most of those aboard the Titanic were to lose their lives when she went down, but some were lucky. 
+            
+            <br><br>
+
+            Controversy continues to this day, however; if you were travelling in first class you were likely to live, 
+            whilst if you were a third class passenger it was likely you would perish. 
+            
+            <br><br>
+
+            <div class="question">Now, it's your turn to explore on the Survivors of the Titanic Disaster.</div>
+
+            <br><br>
+            
+            Only 31.6% of people aboard (passengers and crew) who survived the sinking. The lifeboats of the RMS Titanic played 
+            a crucial role in the disaster of 14–15 April 1912. However, there were not enough Titanic lifeboats on board to 
+            hold all the passengers and crew, and when the lifeboats were launched they were not filled to capacity.
+
+            <br><br>
+            After the Titanic disaster, recommendations were made by both the British and American Boards of Inquiry, that ships 
+            would carry enough lifeboats for those aboard, mandated lifeboat drills would be implemented, lifeboat
+            inspections would be conducted, etc. Many of these recommendations were incorporated into the International Convention
+            for the Safety of Life at Sea passed in 1914.
+
+
           </div>
           <script src="./fullpageassets/testsequences.js"></script>
-        </div>   
       </div>
     </div>
     
     <!-- Overall Distribution -->
     <div class="section">
       <div class="container">
-        <div id="sections_distribution">
+        <div id="sections_distribution" style="width: auto;">
           <div id="sections">
-            <div class="title">How many of the passengers survived?</div>
+            <div class="title">Overall Survival Rate of Titanic Tragedy</div>
+
+            <p id="tragedy_description"> Based on our data, overall 40% of the passengers survived</p>
+
+            Use the filters below to explore the survival rate of the Titanic tragedy by each groups. (Each dots represent approximately 10 people)
             <br><br>
 
             <div id="toolbar" >
-              <button id="all" class="button active">All</button>
+              <button id="all" class="button active">Overall Distribution</button>
               <button id="Gender" class="button">By Gender</button>
               <button id="Age" class="button">By Age</button>
               <button id="Class" class="button">By Class</button>
               <button id="Survived" class="button">By Survival</button>
             </div>
-            <br>
-            <p id="tragedy-description"> Based on our data, overall 40% of the passengers survived</p>
-            <div id="bubbles"></div>
-            <p> (Each dots represent approximately 10 people) </p>
+            
+            <div id="bubbles" style="text-align: center; margin-left: 10%; margin-top: 10px;"></div>
             <script src="./fullpageassets/tragedy-circles-graph.js"></script>
           </div>
       </div>
@@ -340,18 +370,32 @@
     <div class="section">
       <div class="container">
         <div id="sections_distribution">
-            <div class="title">How many of the passengers survived?</div>
-              Although there was some luck involved in surviving, <br>
-              some groups of people were more likely to survive than others. <br>
-              Try clicking on different features and see the cummulative effect of the variables <br>
-              Can you figure out which variable group hikes the survival rate up to 100% ? <br>
-              Don't forget "Women and children first!"
+          <div style="width: 40%; height: 200px; float: left;">
+            <div class="title">Conclusion & Takeways</div>
+            Although there was some luck involved in surviving, some groups of people were more likely to survive than others.
+            Looking back on the questions that were asked at the beginning, we can observe certain relations towards survivability
+            of passengers with their Demographics and Social Economic.
+            
+            <br><br>
+            Try clicking on different features and see the cummulative effect of the variables.<br>
+            Can you figure out which variable group hikes the survival rate up to 100% ?
+            <p style="color: grey;">Hint : Don't forget "Women and children first!"</p>
+          </div>
           <div style="margin-left: 50%;">
             <div id="survival_chart"></div>
           
           </div>
           <script src="./fullpageassets/titanic_survival.js"></script>
           
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div id="sections_distribution">
+          <div class="title">Sources</div>
+          <img src="./img/titanic.jpg" style="float: left;" />
         </div>
       </div>
     </div>

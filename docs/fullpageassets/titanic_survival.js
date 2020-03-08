@@ -237,7 +237,7 @@ function visualizer(titanic_data) {
             svg.append("text")
                 .attr("class", "mid-hint")
                 .attr("text-anchor", "middle")
-                .attr("dy", 10)
+                .attr("dy", 25)
                 .text(function () {
                     if (hundred === 0) {
                         if (result <= 55) return hint[1];
