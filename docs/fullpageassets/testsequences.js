@@ -11,17 +11,13 @@ var b = {
 
 // Mapping of step names to colors.
 var colors = {
+  // "Male": '#1f78b4', "Female": '#a6cee3',
+  // "0 to 15":"#addd8e","16 to 30":"#78c679","31 to 45":"#41ab5d","46 to 60":"#238443","61 to 75":"#005a32",
+  // "First": "#9e9ac8", "Second":"#756bb1","Third":"#54278f", "Crew": "#2a0c52"
   
-  "Male": '#1f78b4', "Female": '#a6cee3',
-  "0 to 15":"#addd8e","16 to 30":"#78c679","31 to 45":"#41ab5d","46 to 60":"#238443","61 to 75":"#005a32",
-  "First": "#9e9ac8", "Second":"#756bb1","Third":"#54278f", "Crew": "#2a0c52"
-  
-  // "home": "#5687d1",
-  // "product": "#7b615c",
-  // "search": "#de783b",
-  // "account": "#6ab975",
-  // "other": "#a173d1",
-  // "end": "#bbbbbb"
+  "Male": '#0f4c75', "Female": '#3282b8',
+  "0 to 15":"#bad8b6","16 to 30":"#a3cd9e","31 to 45":"#92b88e","46 to 60":"#82a47e","61 to 75":"#728f6e",
+  "First": "#c4bbf0", "Second":"#927fbf","Third":"#4f3b78", "Crew": "#363b4e"
 };
 
 // Total size of all segments; we set this later, after loading the data.
@@ -45,7 +41,7 @@ var arc = d3v4.arc()
 
 // Use d3v4.text and d3v4.csvParseRows so that we do not need to have a header
 // row, and can receive the csv as an array of arrays.
-d3v4.text("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/sunburst-survival-count-copy.csv", function(text) {
+d3v4.text("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/sunburst-survival-percent-copy.csv", function(text) {
   var csv = d3v4.csvParseRows(text);
   var json = buildHierarchy(csv);
   createVisualization(json);
@@ -96,7 +92,9 @@ function createVisualization(json) {
 // Fade all but the current sequence, and show it in the breadcrumb trail.
 function mouseover(d) {
 
-  var percentage = (100 * d.value / totalSize).toPrecision(3);
+  // var percentage = (100 * d.value / totalSize).toPrecision(3);
+  var percentage = d.value;
+
   var percentageString = percentage + "%";
   if (percentage < 0.1) {
     percentageString = "< 0.1%";

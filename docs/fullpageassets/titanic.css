@@ -35,8 +35,13 @@
 }
 
 .container {
+<<<<<<< HEAD
   width: 1280px;
   height: 600px;
+=======
+  width: 1080px;
+  height: 800px;
+>>>>>>> 4802139b97b467a3421ffc064cc48ee8bd25d52e
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
@@ -157,7 +162,7 @@
   /* height: 50vh; */
   vertical-align: middle;
   margin-bottom: auto;
-  margin-top: auto;
+  margin-top: 200px;
   margin-left: 60%;
   /* font-family: "TiemposTextWeb-Regular","san-serif"; */
   /* font-family: "metric-test-regular"; */
