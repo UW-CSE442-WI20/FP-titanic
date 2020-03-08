@@ -20,6 +20,8 @@
   <link rel="stylesheet" type="text/css" href="./fullpageassets/old_index.css"/>
   <link rel="stylesheet" type="text/css" href="./fullpageassets/tooltip.css"/>
 
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
 
   <script type="text/javascript" src="./fullpageassets/fullPage.js"></script>
@@ -229,7 +231,7 @@
 
     <div class="section">
       <div class="container">
-        <div id="sections_distribution">
+        <div id="sections_distribution" style="font-family: 'Special Elite', cursive;">
             <div class="title">Where are the passengers from?</div>
             In the 21st century, we are used to thinking that globalization and movement of people is a recent trend. However, it
             was because of early pioneer innovation such as Titanic that people can move almost anywhere they want and within
@@ -237,28 +239,30 @@
             Europe, but also from far away places such as Asia and the middle east.
             <h5>Overall</h5> and <h5>First Class</h5> and <h5>Second Class</h5> and <h5>Third Class</h5>
             <br><br>
-
-            <form>
-              <label><input type="radio" name="dataset" value="total" checked> Overall</label>
-              <label><input type="radio" name="dataset" value="passenger"> Passenger</label>
-              <label><input type="radio" name="dataset" value="crew"> Crew</label>
-            </form>
       
             <!-- <button id="total">Total</button>
             <button id="first">First</button>
             <button id="second">Second</button>
             <button id="third">Third</button> -->
-            <div id="titanic_map"></div>
+            <div id="titanic_map">
+              <!-- <form>
+                <label><input type="radio" name="dataset" value="total" checked> Total Passenger</label>
+                <label><input type="radio" name="dataset" value="first"> First Class Passenger</label>
+                <label><input type="radio" name="dataset" value="second"> Second Class Passenger</label>
+                <label><input type="radio" name="dataset" value="third"> Third Class Passenger</label>
+              </form> -->
+            </div>
             <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
             <script src="./fullpageassets/map.js"></script>
           </div>
       </div>
     </div>
 
+    <!-- Survivors Distribution -->
     <div class="section">
       <div class="container">
         <div id="sections">
-          <div class="title">Distribution of Survivors</div>
+          <div class="title">Survivors Distribution</div>
           <div id="sunbucket">
             <div id="main">
               <div id="sequence"></div>
@@ -278,8 +282,8 @@
         </div>   
       </div>
     </div>
-
-
+    
+    <!-- Overall Distribution -->
     <div class="section">
       <div class="container">
         <div id="sections_distribution">
@@ -307,16 +311,24 @@
     
 
 
-    <!-- <div class="section">
+    <div class="section">
       <div class="container">
         <div id="sections_distribution">
-          <div id="sections">
-            <div id="chart"></div>
-            <script src="./fullpageassets/tragedy-circles-graph.js"></script>
+            <div class="title">How many of the passengers survived?</div>
+              Although there was some luck involved in surviving, <br>
+              some groups of people were more likely to survive than others. <br>
+              Try clicking on different features and see the cummulative effect of the variables <br>
+              Can you figure out which variable group hikes the survival rate up to 100% ? <br>
+              Don't forget "Women and children first!"
+          <div style="margin-left: 50%;">
+            <div id="survival_chart"></div>
+          
           </div>
+          <script src="./fullpageassets/titanic_survival.js"></script>
+          
         </div>
       </div>
-    </div> -->
+    </div>
 
   </div>
 </div>

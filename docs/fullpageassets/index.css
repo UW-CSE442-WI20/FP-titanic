@@ -388,3 +388,60 @@ h5 {
         transform: scale(1, 0);
     }
 }
+
+/* survival */
+.best-text {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-style: italic; 
+  font-weight: bold;
+  fill: #cb181d;
+}
+.mid-percent {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+}
+.mid-text {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+
+}
+.mid-hint {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: lighter; 
+  fill: grey;
+}
+.text-hover {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  fill: grey;
+}
+#survival_chart {
+    z-index: 100;
+  text-align: center;
+}
+.listArc {
+  fill: white;
+  stroke: #AAAAAA;
+}
+.listText {
+    text-align: center;
+  fill: #6B6B6B;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.inner-text {
+    text-align: center;
+  fill: black;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+}

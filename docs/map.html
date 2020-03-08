@@ -18,11 +18,20 @@
 
     <div class="container">
 
-        <button id="total">Total</button>
+        <!-- <button id="total">Total</button>
         <button id="first">First</button>
         <button id="second">Second</button>
         <button id="third">Third</button>
-        <div id="titanic_map"></div>
+        <div id="titanic_map"></div> -->
+
+        <div id="titanic_map">
+            <form>
+                <label><input type="radio" name="dataset" value="total" checked> Total Passenger</label>
+                <label><input type="radio" name="dataset" value="first"> First Class Passenger</label>
+                <label><input type="radio" name="dataset" value="second"> Second Class Passenger</label>
+                <label><input type="radio" name="dataset" value="third"> Third Class Passenger</label>
+            </form>
+        </div>
         <script src="./fullpageassets/map.js"></script>
         
     </div>
