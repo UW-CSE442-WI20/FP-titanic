@@ -35,7 +35,7 @@ d3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/
         .style("fill", function(d, i){ return color[d.Survived]; })
         .style("stroke", function(d, i){ return color[d.Survived]; })
         .style("stroke-width", 3)
-        .style("pointer-events", "all")
+        .style("pointer-events", "Overall")
         // .call(d3.drag()
         //         .on("start", dragstarted)
         //         .on("drag", dragged)
@@ -53,7 +53,7 @@ d3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/
         .nodes(data)
         .on("tick", ticked);
 
-    splitBubbles('all')
+    splitBubbles('Overall')
     
     // function dragstarted(d,i) {
     //     console.log("draggedstart")
@@ -88,8 +88,8 @@ d3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/
         centerScale.domain(data.map(function(d){ return d[byVar]; }));
         centerScaleHeight.domain(data.map(function(d){ return d[byVar]; }));
         
-        if(byVar == "all"){
-            showTitles('All', centerScale)
+        if(byVar == "Overall"){
+            showTitles('Overall', centerScale)
         } else {
             showTitles(byVar, centerScale);
         }
@@ -107,14 +107,14 @@ d3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/
     }
 
     function changeTragedyDescription(byVar) {
-        if(byVar == 'all' || byVar == 'Survived') {
-            document.getElementById("tragedy-description").innerHTML = "Based on our data, overall 40% of the passengers survived";
+        if(byVar == 'Overall' || byVar == 'Survived') {
+            document.getElementById("tragedy_description").innerHTML = "Based on our data, overall 40% of the passengers survived";
         } else if (byVar == 'Gender') {
-            document.getElementById("tragedy-description").innerHTML = "Based on our data, 90% of women survived while only 30% of men survived";
+            document.getElementById("tragedy_description").innerHTML = "Based on our data, 90% of women survived while only 30% of men survived";
         } else if (byVar == 'Class') {
-            document.getElementById("tragedy-description").innerHTML = "Based on our data, class";
+            document.getElementById("tragedy_description").innerHTML = "Based on our data, class";
         } else if (byVar == 'Age') {
-            document.getElementById("tragedy-description").innerHTML = "Based on our data, overall 40% of the passengers survived";
+            document.getElementById("tragedy_description").innerHTML = "Based on our data, overall 40% of the passengers survived";
         }
     }
 
@@ -131,7 +131,7 @@ d3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/
             .attr('y', 40)
             .attr('text-anchor', 'middle')
             .text(function (d) { 
-                if (byVar == 'All') {
+                if (byVar == 'Overall') {
                     return byVar;
                 } else if (byVar == 'Gender' || byVar == 'Age') {
                     return d;
@@ -152,7 +152,7 @@ d3.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/
         d3.selectAll('.button')
             .on('click', function () {
             
-            // Remove active class from all buttons
+            // Remove active class from Overall buttons
             d3.selectAll('.button').classed('active', false);
             // Find the button just clicked
             var button = d3.select(this);

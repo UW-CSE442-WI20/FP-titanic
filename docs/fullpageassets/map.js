@@ -1229,14 +1229,31 @@ var third_data = [
     }
 ];
 
-function drawDonut() {
+// total passengers
+var total_pass = [
+    { title: "Survived", value: 500, total: 1317, color: "#353238" },
+    { title: "Perlished", value: 817, total: 1317, color: "#6b1111" }
+];
 
-    // total passengers
-    var total = [
-        { title: "Survived", value: 500, total: 1317, color: "grey" },
-        { title: "Perlished", value: 817, total: 1317, color: "orange" }
-    ];
+// first class
+var first_pass = [
+    { title: "Survived", value: 198, total: 324, color: "#353238" },
+    { title: "Perlished", value: 126, total: 324, color: "#6b1111" }
+];
 
+// second class
+var second_pass = [
+    { title: "Survived", value: 119, total: 280, color: "#353238" },
+    { title: "Perlished", value: 161, total: 280, color: "#6b1111" }
+];
+
+// third class
+var third_pass = [
+    { title: "Survived", value: 183, total: 713, color: "#353238" },
+    { title: "Perlished", value: 530, total: 713, color: "#6b1111" }
+];
+
+function drawDonut(total) {
     var radius = 150;
 
     var arc = d3.svg.arc()
@@ -1738,8 +1755,19 @@ function display(data) {
     }
 }
 
+
+// overall_data, first_data, second_data, third_data
 display(overall_data);
-drawDonut();
+// drawDonut(total_pass);
+
+// d3.selectAll("input").on("change", update);
+
+// function update(val = this.value) {
+
+//     display(overall_data);
+//     drawDonut(total_pass);
+// }
+
 
 // function setupButtons() {
 //     console.log("setup")

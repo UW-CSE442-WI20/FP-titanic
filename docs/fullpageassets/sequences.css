@@ -10,8 +10,8 @@
   float: left;
   width: 100px;
   font-family: 'Special Elite', cursive;
-  margin-left: 820px;
   z-index: 50;
+  margin-top: 100px;
 }
 
 #sequence {
@@ -45,6 +45,7 @@
 #sunburst {
   float: left;
   position: relative;
+  margin-left: 10%;
 }
 
 #sunburst path {

@@ -103,7 +103,7 @@ function mouseover(d) {
       .text(percentageString);
 
   d3v4.select("#explanation")
-      .style("visibility", "");
+      .style("visibility", "visible");
 
   var sequenceArray = d.ancestors().reverse();
   sequenceArray.shift(); // remove root node from the array
