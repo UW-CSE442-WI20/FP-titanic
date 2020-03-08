@@ -2419,24 +2419,28 @@ function buttonAppear() {
 }
 
 function drawTotal() {
+    d3.select("#description").text("In the 21st century, we are used to thinking that globalization and movement of people is a recent trend.More than 2,200 people were on board the Titanic when it struck an iceberg the night of April 14, 1912.")
     buttonDissappear();
     placeCitiesByTotal();
     setTimeout(buttonAppear, 15000);
 }
 
 function drawFirst() {
+    d3.select("#description").text("First class passengers hailed mainly from U.S. and European cities. Despite orders to put women and children in lifeboats first, survival rates were highest in first class. Most children were in steerage.")
     buttonDissappear();
     placeCitiesByFirst();
     setTimeout(buttonAppear, 15000);
 }
 
 function drawSecond() {
+    d3.select("#description").text("Travelers in second class enjoyed fewer amenities aboard the Titanic. Their hometowns were more widely scattered, and their ranks included the only black family on board, traveling from Paris to Haiti.")
     buttonDissappear();
     placeCitiesBySecond();
     setTimeout(buttonAppear, 15000);
 }
 
 function drawThird() {
+    d3.select("#description").text("Immigrants comprised the bulk of steerage passengers, many of whom began their voyages in Ireland, Scandinavia, and Lebanon. Two-month-old Millvina Dean was the last Titanic survivor; she died in 2009.")
     buttonDissappear();
     placeCitiesByThird();
     setTimeout(buttonAppear, 15000);
