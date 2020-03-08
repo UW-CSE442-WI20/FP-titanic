@@ -75,7 +75,8 @@
                             .force("charge", d3v4.forceManyBody().strength([CHARGE_BETWEEN_CIRCLES]))
                             .force("x", d3v4.forceX())
                             .force("y", d3v4.forceY())
-                            .on("tick", ticked);
+                            .on("tick", ticked)
+                            .alphaDecay(0.5);
         
         function ticked() {
             counter++;

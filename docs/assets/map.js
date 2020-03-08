@@ -855,8 +855,10 @@ function placeCitiesByTotal() {
     function loop() {
         // drawDonut();
         placeCities();
-        setTimeout(clusterCountry, 2000);
-        setTimeout(backToCenter, 4000);
+        setTimeout(clusterCountry, 7000);
+        setTimeout(backToCenter, 10000);
+        // setTimeout(clusterCountry, 2000);
+        // setTimeout(backToCenter, 4000);
     }
 }
 
@@ -1367,8 +1369,10 @@ function placeCitiesByFirst() {
     function loop() {
         // drawDonut();
         placeCities();
-        setTimeout(clusterCountry, 2000);
-        setTimeout(backToCenter, 4000);
+        setTimeout(clusterCountry, 7000);
+        setTimeout(backToCenter, 10000);
+        // setTimeout(clusterCountry, 2000);
+        // setTimeout(backToCenter, 4000);
     }
 }
 
@@ -1878,8 +1882,10 @@ function placeCitiesBySecond() {
     function loop() {
         // drawDonut();
         placeCities();
-        setTimeout(clusterCountry, 2000);
-        setTimeout(backToCenter, 4000);
+        setTimeout(clusterCountry, 7000);
+        setTimeout(backToCenter, 10000);
+        // setTimeout(clusterCountry, 2000);
+        // setTimeout(backToCenter, 4000);
         // svg.remove();
     }
 }
@@ -2392,11 +2398,11 @@ function placeCitiesByThird() {
     function loop() {
         // drawDonut();
         placeCities();
-        setTimeout(clusterCountry, 2000);
-        setTimeout(backToCenter, 4000);
+        // setTimeout(clusterCountry, 2000);
+        // setTimeout(backToCenter, 4000);
 
-        // setTimeout(clusterCountry, 7000);
-        // setTimeout(backToCenter, 10000);
+        setTimeout(clusterCountry, 7000);
+        setTimeout(backToCenter, 10000);
     }
 }
 

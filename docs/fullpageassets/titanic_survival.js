@@ -232,7 +232,7 @@ function visualizer(titanic_data) {
                 .text("of the selected passengers survived");
 
             // Help user find the max survival ratio by giving some hints according to their rate
-            var hint = ["", "Have you tried adding 'Female' and 'Class 1' ?", "Try more features, you will find the 100% soon", "Great job! So close to 100%. Have you tried adding '1 Parch'?", "Well Done!"];
+            var hint = ["", "Have you tried adding 'Female' and 'Class 1' ?", "Try more features, you will find the 100% soon", "Great job! So close to 100%. Have you tried adding '1 ParChild'?", "Well Done!"];
 
             svg.append("text")
                 .attr("class", "mid-hint")
