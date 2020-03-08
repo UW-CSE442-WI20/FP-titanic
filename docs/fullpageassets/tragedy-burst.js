@@ -21,14 +21,14 @@
     var CHARGE_BETWEEN_CIRCLES = -10;
     
     // animation delays, duration, timings:
-    var COUNTER_DURATION = 10;
-    var FILTER_DURATION = 50;
+    var COUNTER_DURATION = 8200;
+    var FILTER_DURATION = 1500;
     
     var xInitCircle = [];
     var yInitCircle = [];
     
     // Styles
-    var RED_COLOR = "#eb7775";
+    var RED_COLOR = "#6b1111";
     var BLACK_COLOR = "#353238";
 
     window.onload = function () {
@@ -75,8 +75,7 @@
                             .force("charge", d3v4.forceManyBody().strength([CHARGE_BETWEEN_CIRCLES]))
                             .force("x", d3v4.forceX())
                             .force("y", d3v4.forceY())
-                            .on("tick", ticked)
-                            .alphaDecay(0.5);
+                            .on("tick", ticked);
         
         function ticked() {
             counter++;
@@ -86,7 +85,7 @@
                 .attr("fill", BLACK_COLOR);
             
             if (counter > datasets["total"].length - 100) {
-                $('#blob-explanation h5').fadeTo(25, 1);
+                $('#blob-explanation h5').fadeTo(250, 1);
             }
             if (counter > datasets["total"].length) { 
                 // view is done loading
@@ -95,13 +94,13 @@
                 svg.selectAll("circle")
                    .transition()
                    .attr("fill", function(d, i) {
-                        if (i >= 72 ) {
-                            return "#eb7775";
+                        if (i >= 96 ) {
+                            return "#EF3B2C";
                         } else {
                             return BLACK_COLOR;
                         }
                    })
-                document.getElementById("death-count").innerHTML = "1,765 perished due to the sinking of Titanic.";
+                document.getElementById("death-count").innerHTML = "1,517 perished due to the sinking of Titanic.";
                 document.getElementById("circle-represent").innerHTML = "(Each circle represents 10 people)";
 
                 // get circles' coordinates
