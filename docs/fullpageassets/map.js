@@ -1253,7 +1253,383 @@ var third_pass = [
     { title: "Perlished", value: 530, total: 713, color: "#6b1111" }
 ];
 
-function drawDonut(total) {
+var margin = {
+    top: 100,
+    right: 0,
+    bottom: 0,
+    left: 0
+};
+var width = 1200 - margin.left - margin.right,
+    height = 800 - margin.top - margin.bottom;
+
+//SVG container
+var svg = d3.select('#titanic_map')
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////// Create filter ///////////////////////////////
+///////////////////////////////////////////////////////////////////////////	
+
+//SVG filter for the gooey effect
+//Code taken from http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/
+var defs = svg.append("defs");
+var filter = defs.append("filter").attr("id", "gooeyCodeFilter");
+filter.append("feGaussianBlur")
+    .attr("in", "SourceGraphic")
+    .attr("stdDeviation", "10")
+    //to fix safari: http://stackoverflow.com/questions/24295043/svg-gaussian-blur-in-safari-unexpectedly-lightens-image
+    .attr("color-interpolation-filters", "sRGB")
+    .attr("result", "blur");
+filter.append("feColorMatrix")
+    .attr("class", "blurValues")
+    .attr("in", "blur")
+    .attr("mode", "matrix")
+    .attr("values", "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5")
+    .attr("result", "gooey");
+filter.append("feBlend")
+    .attr("in", "SourceGraphic")
+    .attr("in2", "gooey")
+    .attr("operator", "atop");
+
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////// Set-up Map /////////////////////////////////
+/////////////////////////////////////////////////////////////////////////// 
+
+//Variables for the map
+var projection = d3.geo.mercator()
+    .scale(150)
+    .translate([400, 200]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var map = svg.append("g")
+    .attr("class", "map");
+
+//Initiate the world map
+map.selectAll(".geo-path")
+    .data(countriesMap[0].features)
+    .enter().append("path")
+    .attr("class", function (d) { return "geo-path" + " " + d.id; })
+    .attr("id", function (d) { return d.properties.name; })
+    .attr("d", path)
+    .style("stroke-opacity", 1)
+    .style("fill-opacity", 0.5);
+
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////// Cities ///////////////////////////////////
+/////////////////////////////////////////////////////////////////////////// 
+
+// -1- Create a tooltip div that is hidden by default:
+var tooltip = d3.select("#titanic_map")
+    .append("div")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("background-color", "black")
+    .style("border-radius", "5px")
+    .style("padding", "10px")
+    .style("color", "white")
+    .style("font-family", "'Special Elite', cursive")
+
+// -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
+var showTooltip = function (d) {
+    tooltip
+        .transition()
+        .duration(200)
+    tooltip
+        .style("opacity", 1)
+        .html("Country: " + d.country + "<br>Total: " + d.total)
+        .style("left", (d3.mouse(this)[0] + 50) + "px")
+        .style("top", (d3.mouse(this)[1] + 50) + "px")
+}
+var moveTooltip = function (d) {
+    tooltip
+        .style("left", (d3.mouse(this)[0] + 50) + "px")
+        .style("top", (d3.mouse(this)[1] + 50) + "px")
+}
+var hideTooltip = function (d) {
+    tooltip
+        .transition()
+        .duration(200)
+        .style("opacity", 0)
+}
+
+//Radius scale
+var rScale = d3.scale.sqrt()
+    .range([0, 20])
+    .domain([0, d3.max(overall_data, function (d) { return d.total; })]);
+
+//Put the city locations into the data itself
+overall_data.forEach(function (d, i) {
+    d.radius = rScale(d.total);
+    d.x = projection([d.longitude, d.latitude])[0];
+    d.y = projection([d.longitude, d.latitude])[1];
+});
+
+//Wrapper for the cities
+var cityWrapper = svg.append("g")
+    .attr("class", "cityWrapper")
+    .style("filter", "url(#gooeyCodeFilter)");
+
+//Place the city circles
+var cities = cityWrapper.selectAll(".cities")
+    .data(overall_data)
+    .enter().append("circle")
+    .attr("class", "cities")
+    .attr("r", function (d) { return d.radius; })
+    .attr("cx", projection([0, 0])[0])
+    .attr("cy", projection([0, 0])[1])
+    .style("opacity", 1)
+    .on("mouseover", showTooltip)
+    .on("mousemove", moveTooltip)
+    .on("mouseleave", hideTooltip);
+
+var coverCirleRadius = 60;
+//Circle over all others
+cityWrapper.append("circle")
+    .attr("class", "cityCover")
+    .attr("r", coverCirleRadius)
+    .attr("cx", projection([0, 0])[0])
+    .attr("cy", projection([0, 0])[1]);
+
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////// Region Labels ////////////////////////////////
+/////////////////////////////////////////////////////////////////////////// 
+
+//Calculate the centers for each region
+var centers = getCenters("region", [width / 1.2, height / 1.4]);
+centers.forEach(function (d) {
+    d.y = d.y - 100;
+    d.x = d.x - 150;
+});//centers forEach
+
+//Wrapper for the region labels
+var labelWrapper = svg.append("g")
+    .attr("class", "labelWrapper");
+
+//Append the region labels
+labelWrapper.selectAll(".label")
+    .data(centers)
+    .enter().append("text")
+    .attr("class", "label")
+    .style("opacity", 0)
+    .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; })
+    .text(function (d) { return d.name });
+
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////// Set-up the force //////////////////////////////
+///////////////////////////////////////////////////////////////////////////	
+
+var force = d3.layout.force()
+    .gravity(.2)
+    .charge(0)
+    .on("tick", tick(centers, "region"));
+
+var padding = 0;
+var maxRadius = d3.max(overall_data, function (d) { return d.radius; });
+
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////// Animation steps ///////////////////////////////
+///////////////////////////////////////////////////////////////////////////	
+
+//Move the cities from the center to their actual locations
+function placeCities() {
+    console.log("placeCities in total")
+
+    //Stop the force layout (in case you move backward)
+    force.stop();
+
+    //Make the cover circle shrink
+    d3.selectAll(".cityCover")
+        .transition().duration(2000)
+        .attr("r", 0);
+
+    //Put the cities in their geo location
+    d3.selectAll(".cities")
+        .transition("move").duration(2000)
+        .delay(function (d, i) { return i * 20; })
+        .attr("r", function (d) {
+            return d.radius = rScale(d.total);
+        })
+        .attr("cx", function (d) {
+            return d.x = projection([d.longitude, d.latitude])[0];
+        })
+        .attr("cy", function (d) {
+            return d.y = projection([d.longitude, d.latitude])[1];
+        });
+
+    //Around the end of the transition above make the circles see-through a bit
+    d3.selectAll(".cities")
+        .transition("dim").duration(200).delay(400)
+        .style("opacity", 0.8);
+
+    //"Remove" gooey filter from cities during the transition
+    //So at the end they do not appear to melt together anymore
+    d3.selectAll(".blurValues")
+        .transition().duration(4000)
+        .attrTween("values", function () {
+            return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5",
+                "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 6 -5");
+        });
+
+}//placeCities
+
+//Cluster all the country based on the region
+function clusterCountry() {
+    console.log("clusterCountry in total")
+
+    ///Start force again
+    force.start();
+
+    //Dim the map
+    d3.selectAll(".geo-path")
+        .transition().duration(1000)
+        .style("fill-opacity", 0);
+
+    //Show the labels
+    d3.selectAll(".label")
+        .transition().duration(500)
+        .style("opacity", 1);
+
+    d3.selectAll(".cities")
+        .transition().duration(1000)
+        .style("opacity", 1);
+
+    //Reset gooey filter values back to a visible "gooey" effect
+    d3.selectAll(".blurValues")
+        .transition().duration(2000)
+        .attrTween("values", function () {
+            return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 6 -5",
+                "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -6");
+        });
+
+}//clusterCountry
+
+//Move the circles back to the center location again
+function backToCenter() {
+    console.log("backToCenter in total")
+
+    //Stop the force layout
+    force.stop();
+
+    //Hide labels
+    d3.selectAll(".label")
+        .transition().duration(500)
+        .style("opacity", 0);
+
+    //Show map
+    d3.selectAll(".geo-path")
+        .transition().duration(1000)
+        .style("fill-opacity", 0.5);
+
+    //Make the cover cirlce to its true size again
+    d3.selectAll(".cityCover")
+        .transition().duration(3000).delay(500)
+        .attr("r", coverCirleRadius);
+
+    //Move the cities to the 0,0 coordinate
+    d3.selectAll(".cities")
+        .transition()
+        .duration(2000).delay(function (d, i) { return i * 10; })
+        .attr("cx", projection([0, 0])[0])
+        .attr("cy", projection([0, 0])[1])
+        .style("opacity", 1);
+
+    d3.selectAll(".blurValues")
+        .transition().duration(1000).delay(1000)
+        .attrTween("values", function () {
+            return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -6",
+                "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5");
+        });
+
+}//backToCenter
+
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////// Helper functions //////////////////////////////
+/////////////////////////////////////////////////////////////////////////// 
+
+//Radial layout
+function getCenters(vname, size) {
+    var centers = [],
+        mapping,
+        flags = [];
+    for (var i = 0; i < overall_data.length; i++) {
+        if (flags[overall_data[i][vname]]) continue;
+        flags[overall_data[i][vname]] = true;
+        centers.push({ name: overall_data[i][vname], value: 1 });
+    }//for i
+    centers.sort(function (a, b) { return d3.ascending(a.name, b.name); });
+
+    mapping = d3.layout.pack()
+        .sort(function (d) { return d[vname]; })
+        .size(size);
+    mapping.nodes({ children: centers });
+
+    return centers;
+}//getCenters
+
+//Radial lay-out
+function tick(centers, varname) {
+    var foci = {};
+    for (var i = 0; i < centers.length; i++) {
+        foci[centers[i].name] = centers[i];
+    }
+
+    return function (e) {
+        for (var i = 0; i < overall_data.length; i++) {
+            var o = overall_data[i];
+            var f = foci[o[varname]];
+            o.y += (f.y - o.y) * e.alpha;
+            o.x += (f.x - o.x) * e.alpha;
+        }//for
+
+        d3.selectAll(".cities")
+            .each(collide(.5))
+            .attr("cx", function (d) { return d.x; })
+            .attr("cy", function (d) { return d.y; });
+
+    }//function
+}//tick
+
+function collide(alpha) {
+    var quadtree = d3.geom.quadtree(overall_data);
+    return function (d) {
+        var r = d.radius + maxRadius + padding,
+            nx1 = d.x - r,
+            nx2 = d.x + r,
+            ny1 = d.y - r,
+            ny2 = d.y + r;
+        quadtree.visit(function (quad, x1, y1, x2, y2) {
+            if (quad.point && (quad.point !== d)) {
+                var x = d.x - quad.point.x,
+                    y = d.y - quad.point.y,
+                    l = Math.sqrt(x * x + y * y),
+                    r = d.radius + quad.point.radius + padding;
+                if (l < r) {
+                    l = (l - r) / l * alpha;
+                    d.x -= x *= l;
+                    d.y -= y *= l;
+                    quad.point.x += x;
+                    quad.point.y += y;
+                }
+            }
+            return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+        });
+    };
+}//collide
+
+function drawDonut() {
+
+    // total passengers
+    var total = [
+        { title: "Survived", value: 500, total: 1317, color: "grey" },
+        { title: "Perlished", value: 817, total: 1317, color: "orange" }
+    ];
+
     var radius = 150;
 
     var arc = d3.svg.arc()
@@ -1372,392 +1748,335 @@ function drawDonut(total) {
         .attr("x", 15);
 }
 
-///////////////////////////////////////////////////////////////////////////
-//////////////////// Set up and initiate svg containers ///////////////////
-///////////////////////////////////////////////////////////////////////////	
-var margin = {
-    top: 100,
-    right: 0,
-    bottom: 0,
-    left: 0
-};
-var width = 1400 - margin.left - margin.right,
-    height = 800 - margin.top - margin.bottom;
+loop();
 
-//SVG container
-var svg = d3.select('#titanic_map')
-    .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
-
-///////////////////////////////////////////////////////////////////////////
-///////////////////////////// Create filter ///////////////////////////////
-///////////////////////////////////////////////////////////////////////////	
-
-//SVG filter for the gooey effect
-//Code taken from http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/
-var defs = svg.append("defs");
-var filter = defs.append("filter").attr("id", "gooeyCodeFilter");
-filter.append("feGaussianBlur")
-    .attr("in", "SourceGraphic")
-    .attr("stdDeviation", "10")
-    //to fix safari: http://stackoverflow.com/questions/24295043/svg-gaussian-blur-in-safari-unexpectedly-lightens-image
-    .attr("color-interpolation-filters", "sRGB")
-    .attr("result", "blur");
-filter.append("feColorMatrix")
-    .attr("class", "blurValues")
-    .attr("in", "blur")
-    .attr("mode", "matrix")
-    .attr("values", "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5")
-    .attr("result", "gooey");
-filter.append("feBlend")
-    .attr("in", "SourceGraphic")
-    .attr("in2", "gooey")
-    .attr("operator", "atop");
-
-///////////////////////////////////////////////////////////////////////////
-//////////////////////////// Set-up Map /////////////////////////////////
-/////////////////////////////////////////////////////////////////////////// 
-
-//Variables for the map
-var projection = d3.geo.mercator()
-    .scale(150)
-    .translate([400, 200]);
-
-var path = d3.geo.path()
-    .projection(projection);
-
-var map = svg.append("g")
-    .attr("class", "map");
-
-//Initiate the world map
-map.selectAll(".geo-path")
-    .data(countriesMap[0].features)
-    .enter().append("path")
-    .attr("class", function (d) { return "geo-path" + " " + d.id; })
-    .attr("id", function (d) { return d.properties.name; })
-    .attr("d", path)
-    .style("stroke-opacity", 1)
-    .style("fill-opacity", 0.5);
-
-///////////////////////////////////////////////////////////////////////////
-//////////////////////////////// Cities ///////////////////////////////////
-/////////////////////////////////////////////////////////////////////////// 
-
-// -1- Create a tooltip div that is hidden by default:
-var tooltip = d3.select("#titanic_map")
-    .append("div")
-    .style("opacity", 0)
-    .attr("class", "tooltip")
-    .style("background-color", "black")
-    .style("border-radius", "5px")
-    .style("padding", "10px")
-    .style("color", "white")
-    .style("font-family", "'Special Elite', cursive");
-
-function display(data) {
-    // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
-    var showTooltip = function (d) {
-        tooltip
-            .transition()
-            .duration(200)
-        tooltip
-            .style("opacity", 1)
-            .html("Country: " + d.country + "<br>Total: " + d.total)
-            .style("left", (d3.mouse(this)[0] + 50) + "px")
-            .style("top", (d3.mouse(this)[1] + 50) + "px")
-    }
-    var moveTooltip = function (d) {
-        tooltip
-            .style("left", (d3.mouse(this)[0] + 50) + "px")
-            .style("top", (d3.mouse(this)[1] + 50) + "px")
-    }
-    var hideTooltip = function (d) {
-        tooltip
-            .transition()
-            .duration(200)
-            .style("opacity", 0)
-    }
-
-    //Radius scale
-    var rScale = d3.scale.sqrt()
-        .range([0, 20])
-        .domain([0, d3.max(data, function (d) { return d.total; })]);
-
-    //Put the city locations into the data itself
-    data.forEach(function (d, i) {
-        d.radius = rScale(d.total);
-        d.x = projection([d.longitude, d.latitude])[0];
-        d.y = projection([d.longitude, d.latitude])[1];
-    });
-
-    //Wrapper for the cities
-    var cityWrapper = svg.append("g")
-        .attr("class", "cityWrapper")
-        .style("filter", "url(#gooeyCodeFilter)");
-
-    //Place the city circles
-    var cities = cityWrapper.selectAll(".cities")
-        .data(data)
-        .enter().append("circle")
-        .attr("class", "cities")
-        .attr("r", function (d) { return d.radius; })
-        .attr("cx", projection([0, 0])[0])
-        .attr("cy", projection([0, 0])[1])
-        .style("opacity", 1)
-        .on("mouseover", showTooltip)
-        .on("mousemove", moveTooltip)
-        .on("mouseleave", hideTooltip);
-
-    var coverCirleRadius = 60;
-    //Circle over all others
-    cityWrapper.append("circle")
-        .attr("class", "cityCover")
-        .attr("r", coverCirleRadius)
-        .attr("cx", projection([0, 0])[0])
-        .attr("cy", projection([0, 0])[1]);
-
-    ///////////////////////////////////////////////////////////////////////////
-    /////////////////////////// Region Labels ////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////// 
-
-    //Calculate the centers for each region
-    var centers = getCenters("region", [width / 1.2, height / 1.4]);
-    centers.forEach(function (d) {
-        d.y = d.y - 100;
-        d.x = d.x - 150;
-    });//centers forEach
-
-    //Wrapper for the region labels
-    var labelWrapper = svg.append("g")
-        .attr("class", "labelWrapper");
-
-    //Append the region labels
-    labelWrapper.selectAll(".label")
-        .data(centers)
-        .enter().append("text")
-        .attr("class", "label")
-        .style("opacity", 0)
-        .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; })
-        .text(function (d) { return d.name });
-
-    ///////////////////////////////////////////////////////////////////////////
-    /////////////////////////// Set-up the force //////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////	
-
-    var force = d3.layout.force()
-        .gravity(.2)
-        .charge(0)
-        .on("tick", tick(centers, "region"));
-
-    var padding = 0;
-    var maxRadius = d3.max(data, function (d) { return d.radius; });
-
-    ///////////////////////////////////////////////////////////////////////////
-    /////////////////////////// Animation steps ///////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////	
-
-    //Move the cities from the center to their actual locations
-    function placeCities() {
-        console.log("placeCities in total")
-
-        //Stop the force layout (in case you move backward)
-        force.stop();
-
-        //Make the cover circle shrink
-        d3.selectAll(".cityCover")
-            .transition().duration(2000)
-            .attr("r", 0);
-
-        //Put the cities in their geo location
-        d3.selectAll(".cities")
-            .transition("move").duration(2000)
-            .delay(function (d, i) { return i * 20; })
-            .attr("r", function (d) {
-                return d.radius = rScale(d.total);
-            })
-            .attr("cx", function (d) {
-                return d.x = projection([d.longitude, d.latitude])[0];
-            })
-            .attr("cy", function (d) {
-                return d.y = projection([d.longitude, d.latitude])[1];
-            });
-
-        //Around the end of the transition above make the circles see-through a bit
-        d3.selectAll(".cities")
-            .transition("dim").duration(200).delay(400)
-            .style("opacity", 0.8);
-
-        //"Remove" gooey filter from cities during the transition
-        //So at the end they do not appear to melt together anymore
-        d3.selectAll(".blurValues")
-            .transition().duration(4000)
-            .attrTween("values", function () {
-                return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5",
-                    "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 6 -5");
-            });
-
-    }//placeCities
-
-    //Cluster all the country based on the region
-    function clusterCountry() {
-        console.log("clusterCountry in total")
-
-        ///Start force again
-        force.start();
-
-        //Dim the map
-        d3.selectAll(".geo-path")
-            .transition().duration(1000)
-            .style("fill-opacity", 0);
-
-        //Show the labels
-        d3.selectAll(".label")
-            .transition().duration(500)
-            .style("opacity", 1);
-
-        d3.selectAll(".cities")
-            .transition().duration(1000)
-            .style("opacity", 1);
-
-        //Reset gooey filter values back to a visible "gooey" effect
-        d3.selectAll(".blurValues")
-            .transition().duration(2000)
-            .attrTween("values", function () {
-                return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 6 -5",
-                    "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -6");
-            });
-
-    }//clusterCountry
-
-    //Move the circles back to the center location again
-    function backToCenter() {
-        console.log("backToCenter in total")
-
-        //Stop the force layout
-        force.stop();
-
-        //Hide labels
-        d3.selectAll(".label")
-            .transition().duration(500)
-            .style("opacity", 0);
-
-        //Show map
-        d3.selectAll(".geo-path")
-            .transition().duration(1000)
-            .style("fill-opacity", 0.5);
-
-        //Make the cover cirlce to its true size again
-        d3.selectAll(".cityCover")
-            .transition().duration(3000).delay(500)
-            .attr("r", coverCirleRadius);
-
-        //Move the cities to the 0,0 coordinate
-        d3.selectAll(".cities")
-            .transition()
-            .duration(2000).delay(function (d, i) { return i * 10; })
-            .attr("cx", projection([0, 0])[0])
-            .attr("cy", projection([0, 0])[1])
-            .style("opacity", 1);
-
-        d3.selectAll(".blurValues")
-            .transition().duration(1000).delay(1000)
-            .attrTween("values", function () {
-                return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -6",
-                    "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5");
-            });
-
-    }//backToCenter
-
-    ///////////////////////////////////////////////////////////////////////////
-    /////////////////////////// Helper functions //////////////////////////////
-    /////////////////////////////////////////////////////////////////////////// 
-
-    //Radial layout
-    function getCenters(vname, size) {
-        var centers = [],
-            mapping,
-            flags = [];
-        for (var i = 0; i < data.length; i++) {
-            if (flags[data[i][vname]]) continue;
-            flags[data[i][vname]] = true;
-            centers.push({ name: data[i][vname], value: 1 });
-        }//for i
-        centers.sort(function (a, b) { return d3.ascending(a.name, b.name); });
-
-        mapping = d3.layout.pack()
-            .sort(function (d) { return d[vname]; })
-            .size(size);
-        mapping.nodes({ children: centers });
-
-        return centers;
-    }//getCenters
-
-    //Radial lay-out
-    function tick(centers, varname) {
-        var foci = {};
-        for (var i = 0; i < centers.length; i++) {
-            foci[centers[i].name] = centers[i];
-        }
-
-        return function (e) {
-            for (var i = 0; i < data.length; i++) {
-                var o = data[i];
-                var f = foci[o[varname]];
-                o.y += (f.y - o.y) * e.alpha;
-                o.x += (f.x - o.x) * e.alpha;
-            }//for
-
-            d3.selectAll(".cities")
-                .each(collide(.5))
-                .attr("cx", function (d) { return d.x; })
-                .attr("cy", function (d) { return d.y; });
-
-        }//function
-    }//tick
-
-    function collide(alpha) {
-        var quadtree = d3.geom.quadtree(data);
-        return function (d) {
-            var r = d.radius + maxRadius + padding,
-                nx1 = d.x - r,
-                nx2 = d.x + r,
-                ny1 = d.y - r,
-                ny2 = d.y + r;
-            quadtree.visit(function (quad, x1, y1, x2, y2) {
-                if (quad.point && (quad.point !== d)) {
-                    var x = d.x - quad.point.x,
-                        y = d.y - quad.point.y,
-                        l = Math.sqrt(x * x + y * y),
-                        r = d.radius + quad.point.radius + padding;
-                    if (l < r) {
-                        l = (l - r) / l * alpha;
-                        d.x -= x *= l;
-                        d.y -= y *= l;
-                        quad.point.x += x;
-                        quad.point.y += y;
-                    }
-                }
-                return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
-            });
-        };
-    }//collide
-
-    loop();
-
-    function loop() {
-        // drawDonut();
-        placeCities();
-        setTimeout(clusterCountry, 7000);
-        setTimeout(backToCenter, 12000);
-    }
+function loop() {
+    // drawDonut();
+    placeCities();
+    setTimeout(clusterCountry, 7000);
+    setTimeout(backToCenter, 12000);
 }
 
+loop();
+setInterval(loop, 15000);
 
-// overall_data, first_data, second_data, third_data
-display(overall_data);
+function loop() {
+    // drawDonut();
+    placeCities();
+    setTimeout(clusterCountry, 7000);
+    setTimeout(backToCenter, 12000);
+}
+
+// function display(data) {
+//     // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
+//     var showTooltip = function (d) {
+//         tooltip
+//             .transition()
+//             .duration(200)
+//         tooltip
+//             .style("opacity", 1)
+//             .html("Country: " + d.country + "<br>Total: " + d.total)
+//             .style("left", (d3.mouse(this)[0] + 50) + "px")
+//             .style("top", (d3.mouse(this)[1] + 50) + "px")
+//     }
+//     var moveTooltip = function (d) {
+//         tooltip
+//             .style("left", (d3.mouse(this)[0] + 50) + "px")
+//             .style("top", (d3.mouse(this)[1] + 50) + "px")
+//     }
+//     var hideTooltip = function (d) {
+//         tooltip
+//             .transition()
+//             .duration(200)
+//             .style("opacity", 0)
+//     }
+
+//     //Radius scale
+//     var rScale = d3.scale.sqrt()
+//         .range([0, 20])
+//         .domain([0, d3.max(data, function (d) { return d.total; })]);
+
+//     //Put the city locations into the data itself
+//     data.forEach(function (d, i) {
+//         d.radius = rScale(d.total);
+//         d.x = projection([d.longitude, d.latitude])[0];
+//         d.y = projection([d.longitude, d.latitude])[1];
+//     });
+
+//     //Wrapper for the cities
+//     var cityWrapper = svg.append("g")
+//         .attr("class", "cityWrapper")
+//         .style("filter", "url(#gooeyCodeFilter)");
+
+//     //Place the city circles
+//     var cities = cityWrapper.selectAll(".cities")
+//         .data(data)
+//         .enter().append("circle")
+//         .attr("class", "cities")
+//         .attr("r", function (d) { return d.radius; })
+//         .attr("cx", projection([0, 0])[0])
+//         .attr("cy", projection([0, 0])[1])
+//         .style("opacity", 1)
+//         .on("mouseover", showTooltip)
+//         .on("mousemove", moveTooltip)
+//         .on("mouseleave", hideTooltip);
+
+//     var coverCirleRadius = 60;
+//     //Circle over all others
+//     cityWrapper.append("circle")
+//         .attr("class", "cityCover")
+//         .attr("r", coverCirleRadius)
+//         .attr("cx", projection([0, 0])[0])
+//         .attr("cy", projection([0, 0])[1]);
+
+//     ///////////////////////////////////////////////////////////////////////////
+//     /////////////////////////// Region Labels ////////////////////////////////
+//     /////////////////////////////////////////////////////////////////////////// 
+
+//     //Calculate the centers for each region
+//     var centers = getCenters("region", [width / 1.2, height / 1.4]);
+//     centers.forEach(function (d) {
+//         d.y = d.y - 100;
+//         d.x = d.x - 150;
+//     });//centers forEach
+
+//     //Wrapper for the region labels
+//     var labelWrapper = svg.append("g")
+//         .attr("class", "labelWrapper");
+
+//     //Append the region labels
+//     labelWrapper.selectAll(".label")
+//         .data(centers)
+//         .enter().append("text")
+//         .attr("class", "label")
+//         .style("opacity", 0)
+//         .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; })
+//         .text(function (d) { return d.name });
+
+//     ///////////////////////////////////////////////////////////////////////////
+//     /////////////////////////// Set-up the force //////////////////////////////
+//     ///////////////////////////////////////////////////////////////////////////	
+
+//     var force = d3.layout.force()
+//         .gravity(.2)
+//         .charge(0)
+//         .on("tick", tick(centers, "region"));
+
+//     var padding = 0;
+//     var maxRadius = d3.max(data, function (d) { return d.radius; });
+
+//     ///////////////////////////////////////////////////////////////////////////
+//     /////////////////////////// Animation steps ///////////////////////////////
+//     ///////////////////////////////////////////////////////////////////////////	
+
+//     //Move the cities from the center to their actual locations
+//     function placeCities() {
+//         console.log("placeCities in total")
+
+//         //Stop the force layout (in case you move backward)
+//         force.stop();
+
+//         //Make the cover circle shrink
+//         d3.selectAll(".cityCover")
+//             .transition().duration(2000)
+//             .attr("r", 0);
+
+//         //Put the cities in their geo location
+//         d3.selectAll(".cities")
+//             .transition("move").duration(2000)
+//             .delay(function (d, i) { return i * 20; })
+//             .attr("r", function (d) {
+//                 return d.radius = rScale(d.total);
+//             })
+//             .attr("cx", function (d) {
+//                 return d.x = projection([d.longitude, d.latitude])[0];
+//             })
+//             .attr("cy", function (d) {
+//                 return d.y = projection([d.longitude, d.latitude])[1];
+//             });
+
+//         //Around the end of the transition above make the circles see-through a bit
+//         d3.selectAll(".cities")
+//             .transition("dim").duration(200).delay(400)
+//             .style("opacity", 0.8);
+
+//         //"Remove" gooey filter from cities during the transition
+//         //So at the end they do not appear to melt together anymore
+//         d3.selectAll(".blurValues")
+//             .transition().duration(4000)
+//             .attrTween("values", function () {
+//                 return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5",
+//                     "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 6 -5");
+//             });
+
+//     }//placeCities
+
+//     //Cluster all the country based on the region
+//     function clusterCountry() {
+//         console.log("clusterCountry in total")
+
+//         ///Start force again
+//         force.start();
+
+//         //Dim the map
+//         d3.selectAll(".geo-path")
+//             .transition().duration(1000)
+//             .style("fill-opacity", 0);
+
+//         //Show the labels
+//         d3.selectAll(".label")
+//             .transition().duration(500)
+//             .style("opacity", 1);
+
+//         d3.selectAll(".cities")
+//             .transition().duration(1000)
+//             .style("opacity", 1);
+
+//         //Reset gooey filter values back to a visible "gooey" effect
+//         d3.selectAll(".blurValues")
+//             .transition().duration(2000)
+//             .attrTween("values", function () {
+//                 return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 6 -5",
+//                     "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -6");
+//             });
+
+//     }//clusterCountry
+
+//     //Move the circles back to the center location again
+//     function backToCenter() {
+//         console.log("backToCenter in total")
+
+//         //Stop the force layout
+//         force.stop();
+
+//         //Hide labels
+//         d3.selectAll(".label")
+//             .transition().duration(500)
+//             .style("opacity", 0);
+
+//         //Show map
+//         d3.selectAll(".geo-path")
+//             .transition().duration(1000)
+//             .style("fill-opacity", 0.5);
+
+//         //Make the cover cirlce to its true size again
+//         d3.selectAll(".cityCover")
+//             .transition().duration(3000).delay(500)
+//             .attr("r", coverCirleRadius);
+
+//         //Move the cities to the 0,0 coordinate
+//         d3.selectAll(".cities")
+//             .transition()
+//             .duration(2000).delay(function (d, i) { return i * 10; })
+//             .attr("cx", projection([0, 0])[0])
+//             .attr("cy", projection([0, 0])[1])
+//             .style("opacity", 1);
+
+//         d3.selectAll(".blurValues")
+//             .transition().duration(1000).delay(1000)
+//             .attrTween("values", function () {
+//                 return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -6",
+//                     "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5");
+//             });
+
+//     }//backToCenter
+
+//     ///////////////////////////////////////////////////////////////////////////
+//     /////////////////////////// Helper functions //////////////////////////////
+//     /////////////////////////////////////////////////////////////////////////// 
+
+//     //Radial layout
+//     function getCenters(vname, size) {
+//         var centers = [],
+//             mapping,
+//             flags = [];
+//         for (var i = 0; i < data.length; i++) {
+//             if (flags[data[i][vname]]) continue;
+//             flags[data[i][vname]] = true;
+//             centers.push({ name: data[i][vname], value: 1 });
+//         }//for i
+//         centers.sort(function (a, b) { return d3.ascending(a.name, b.name); });
+
+//         mapping = d3.layout.pack()
+//             .sort(function (d) { return d[vname]; })
+//             .size(size);
+//         mapping.nodes({ children: centers });
+
+//         return centers;
+//     }//getCenters
+
+//     //Radial lay-out
+//     function tick(centers, varname) {
+//         var foci = {};
+//         for (var i = 0; i < centers.length; i++) {
+//             foci[centers[i].name] = centers[i];
+//         }
+
+//         return function (e) {
+//             for (var i = 0; i < data.length; i++) {
+//                 var o = data[i];
+//                 var f = foci[o[varname]];
+//                 o.y += (f.y - o.y) * e.alpha;
+//                 o.x += (f.x - o.x) * e.alpha;
+//             }//for
+
+//             d3.selectAll(".cities")
+//                 .each(collide(.5))
+//                 .attr("cx", function (d) { return d.x; })
+//                 .attr("cy", function (d) { return d.y; });
+
+//         }//function
+//     }//tick
+
+//     function collide(alpha) {
+//         var quadtree = d3.geom.quadtree(data);
+//         return function (d) {
+//             var r = d.radius + maxRadius + padding,
+//                 nx1 = d.x - r,
+//                 nx2 = d.x + r,
+//                 ny1 = d.y - r,
+//                 ny2 = d.y + r;
+//             quadtree.visit(function (quad, x1, y1, x2, y2) {
+//                 if (quad.point && (quad.point !== d)) {
+//                     var x = d.x - quad.point.x,
+//                         y = d.y - quad.point.y,
+//                         l = Math.sqrt(x * x + y * y),
+//                         r = d.radius + quad.point.radius + padding;
+//                     if (l < r) {
+//                         l = (l - r) / l * alpha;
+//                         d.x -= x *= l;
+//                         d.y -= y *= l;
+//                         quad.point.x += x;
+//                         quad.point.y += y;
+//                     }
+//                 }
+//                 return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+//             });
+//         };
+//     }//collide
+
+//     loop();
+
+//     function loop() {
+//         // drawDonut();
+//         placeCities();
+//         setTimeout(clusterCountry, 7000);
+//         setTimeout(backToCenter, 12000);
+//     }
+// }
+
+// // overall_data, first_data, second_data, third_data
+// // display(overall_data);
+
+// loop_display();
+// setInterval(loop_display, 15000);
+
+// function loop_display() {
+//     display(overall_data);
+// }//loop
+
+
+
 // drawDonut(total_pass);
 
 // d3.selectAll("input").on("change", update);
@@ -1821,3 +2140,122 @@ display(overall_data);
 // }
 
 // setupButtons();
+
+function drawDonut(total) {
+    var radius = 150;
+
+    var arc = d3.svg.arc()
+        .innerRadius(radius * 0.7)
+        .outerRadius(radius);
+
+    var arcOver = d3.svg.arc()
+        .innerRadius(radius * 0.7)
+        .outerRadius(radius * 1.08);
+
+    var pie = d3.layout.pie()
+        .sort(null)
+        .value(function (d) { return d.value; });
+
+    var donuts = svg.append('g')
+        .attr("transform", "translate(" + (margin.left + 1050) + "," + (margin.top + 60) + ")")
+        .selectAll('.arc')
+        .data(pie(total))
+        .enter()
+        .append('g')
+        .attr('class', "arc");
+
+    donuts.append('path')
+        .attr('d', arc)
+        .attr("fill", function (d) { return d.data.color; })
+        .on("mouseover", function (d) {
+            var curr_title = d.data.title;
+            var curr_val = d.data.value;
+            console.log(d.data.title + "  " + d.data.value)
+
+            d3.select(this).transition()
+                .duration(500)
+                .attr("d", arcOver);
+
+            donuts.select(".value")
+                .text(function (d) {
+                    console.log("INSIDE" + d.data.title + "  " + d.data.value)
+                    return curr_val + " passengers";
+                });
+
+            donuts.select(".percentage")
+                .text(function (d) {
+                    console.log("INSIDE" + d.data.title + "  " + d.data.value)
+
+                    return (curr_val / d.data.total * 100).toFixed(2) + '%';
+                });
+        })
+        .on("mouseout", function (d) {
+            d3.select(this).transition()
+                .duration(500)
+                .ease('bounce')
+                .attr("d", arc);
+
+            donuts.select(".value")
+                .text(function (d) {
+                    return d.data.total + " passengers";
+                });
+
+            donuts.select(".percentage")
+                .text(function (d) {
+                    return "";
+                });
+        });
+
+    // center
+    donuts.append("svg:circle")
+        .attr("r", radius * 0.6)
+        .style("fill", "#E7E7E7");
+
+    // center text
+    donuts.append('text')
+        .attr('class', 'center-txt type')
+        .attr('y', radius * -0.12)
+        .attr('text-anchor', 'middle')
+        .style('font-weight', 'bold')
+        .text(function (d) {
+            return "Total Passenger";
+        });
+
+    donuts.append('text')
+        .attr('class', 'center-txt value')
+        .attr('y', radius * 0.02)
+        .attr('text-anchor', 'middle')
+        .text(function (d) {
+            return d.data.total + " passengers";
+        });
+
+    donuts.append('text')
+        .attr('class', 'center-txt percentage')
+        .attr('y', radius * 0.3)
+        .attr('font-size', '40px')
+        .attr('text-anchor', 'middle');
+
+    // again rebind for legend
+    var legendG = svg.selectAll(".legend") // note appending it to mySvg and not svg to make positioning easier
+        .data(pie(total))
+        .enter().append("g")
+        .attr("transform", function (d, i) {
+            return "translate(" + (width - 200) + "," + (i * 15 + 20) + ")"; // place each legend on the right and bump each one down 15 pixels
+        })
+        .attr("class", "legend");
+
+    legendG.append("rect") // make a matching color rect
+        .attr("width", 10)
+        .attr("height", 10)
+        .attr("fill", function (d, i) {
+            return d.data.color;
+        });
+
+    legendG.append("text") // add the text
+        .text(function (d) {
+            return d.data.title;
+        })
+        .style("font-size", 12)
+        .attr("y", 10)
+        .attr("x", 15);
+}

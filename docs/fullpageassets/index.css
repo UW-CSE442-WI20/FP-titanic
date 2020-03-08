@@ -23,7 +23,7 @@ body {
 
 #tragedy_description {
     font-family: 'Special Elite', cursive;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bolder;
     color: rgb(107, 17, 17);
     line-height: 1.2em;
@@ -154,7 +154,7 @@ div {border-color: green;}
 
 #scroll-down {
     position: relative;
-    padding-top: 103px;
+    padding-top: 93px;
 }
 
 h5 {
@@ -212,7 +212,7 @@ h5 {
     /* IE 10+, Fx 29+ */
     
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 50%;
     margin-left: -1px;
     width: 2px;

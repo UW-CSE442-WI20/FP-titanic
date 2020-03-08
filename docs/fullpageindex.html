@@ -74,6 +74,7 @@
             which has since passed into myth and legend. But what is the truth behind the myth?<br> <br>
             And, you think you know the story.<br>
             Now <b>START SCROLLING</b> to discover the true story of a tragedy.
+            <p style="color: grey;">Note: This website works the best with Chrome.</p>
             <div id="scroll-down">
               <span class="arrow-down"></span>
               <span id="scroll-title">Scroll down</span>
@@ -234,16 +235,22 @@
       <div class="container">
         <div id="sections_distribution">
           <div style="width: 60%; height: 100px; float: left;">
-            <div class="step_right">
+            <div id='thirdvis'></div>
+            
+          </div>
+          <div style="margin-left: 10%; height: 100px;">
+            <div class="step">
               <div class="title">The majority were aged between 15 and 45 years old.</div>
-              This graph shows the distribution of the <button id = "passenger3">passengers</button> and <button id = "crew3">crews</button> age group distribution. 
+              This graph shows the distribution of the <button id="passenger3">passengers</button> and <button
+                id="crew3">crews</button> age group distribution.
               Titanic was a passenger liner that operated between England and
-              the United States. It carried some of the wealthiest people in Europe, but also at the same time carried immigrants into
+              the United States. It carried some of the wealthiest people in Europe, but also at the same time carried immigrants
+              into
               the US. It is thus no surprise that working age individuals (age 15 - 30) account for the majority of the passenger as
               the early 20th century was a time where European migration into the US was at a high due to wars and instability in
-              Europe. Click here to see all passenger and crew: <button id = "all3"> all </button>
+              Europe. Click here to see all passenger and crew: <button id="all3"> all </button>
             </div>
-            <div id="third-area">
+            <!-- <div id="third-area">
               <form>
                 <label><input type="radio" name="dataset" value="total" checked> Overall</label>
                 <label><input type="radio" name="dataset" value="age1"> 0 - 15</label>
@@ -252,10 +259,7 @@
                 <label><input type="radio" name="dataset" value="age4"> 45 - 70</label>
                 <label><input type="radio" name="dataset" value="age5"> >= 70</label>
               </form>
-            </div>
-          </div>
-          <div style="margin-left: 10%; height: 100px;">
-            <div id='thirdvis'></div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -265,19 +269,19 @@
     <div class="section">
       <div class="container">
         <div id="sections_distribution" style="font-family: 'Special Elite', cursive;">
-            <div class="title">Where are the passengers from?</div>
+            <div class="title">Where are the Titanic passengers from?</div>
             In the 21st century, we are used to thinking that globalization and movement of people is a recent trend. However, it
             was because of early pioneer innovation such as Titanic that people can move almost anywhere they want and within
             reasonable time. We see that the Titanic had a very diverse set of nationalities. It not only had passengers from
             Europe, but also from far away places such as Asia and the middle east.
-            <h5>Overall</h5> and <h5>First Class</h5> and <h5>Second Class</h5> and <h5>Third Class</h5>
+            <!-- <h5>Overall</h5> and <h5>First Class</h5> and <h5>Second Class</h5> and <h5>Third Class</h5> -->
             <br><br>
       
             <!-- <button id="total">Total</button>
             <button id="first">First</button>
             <button id="second">Second</button>
             <button id="third">Third</button> -->
-            <div id="titanic_map">
+            <div id="titanic_map" style="text-align: center; margin-left: 15%;">
               <!-- <form>
                 <label><input type="radio" name="dataset" value="total" checked> Total Passenger</label>
                 <label><input type="radio" name="dataset" value="first"> First Class Passenger</label>
@@ -351,9 +355,6 @@
         <div id="sections_distribution" style="width: auto;">
           <div id="sections">
             <div class="title">Overall Survival Rate of Titanic Tragedy</div>
-
-            <p id="tragedy_description"> Based on our data, overall 40% of the passengers survived</p>
-
             Use the filters below to explore the survival rate of the Titanic tragedy by each groups. (Each dots represent approximately 10 people)
             <br><br>
 
@@ -366,6 +367,7 @@
             </div>
             
             <div id="bubbles" style="text-align: center; margin-left: 10%; margin-top: 10px;"></div>
+            <p id="tragedy_description" style="margin-top: 0;"> Based on our data, overall 40% of the passengers survived</p>
             <script src="./fullpageassets/tragedy-circles-graph.js"></script>
           </div>
       </div>
@@ -412,10 +414,17 @@
 
     <div class="section">
       <div class="container">
-        <div id="sections_distribution">
-          <div class="title">Sources</div>
-          <img src="./img/titanic.jpg" style="float: left;" />
+        <div class="title" style="padding-top: 30px;">Sources</div>
+        <div id="intro" style="padding-top: 0;">
+          Titanic is one of the highest grossing and most iconic Hollywood movies of the 20th century. The story of Jack and
+          Rose
+          is engrained in the memory of millions as the modern love story. However, people will probably be surprised as Jack
+          and
+          Rose are not even real. As we idolized over the movie, we don’t really understand the facts and figure behind the
+          sinking of the RMS Titanic, one of the most tragic and influential sea disasters of the early 20th century.<br><br>
+          And, you think you know the story.
         </div>
+        <img src="./img/titanic.jpg" style="float: left;" />
       </div>
     </div>
 
