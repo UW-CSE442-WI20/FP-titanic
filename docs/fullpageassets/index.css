@@ -37,9 +37,13 @@ body {
   text-align: center;
 }
 
-/* .ship_background {
+.ship_background {
     background-image: url(../img/ship.png);
-} */
+    background-repeat: no-repeat;
+    background-position: 45px 200px;
+    background-size: 660px;
+    position: relative;
+}
 
 .header_count {
   overflow: hidden;

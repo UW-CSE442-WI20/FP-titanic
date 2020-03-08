@@ -1,7 +1,7 @@
 var scrollVis = function (rawData) {
     // define constants (proportions copied from JV)
     var width = 600;
-    var left_right_margin = 30;
+    var left_right_margin = -10;
     var top_bottom_margin = 30;
     var height = 600;
     var format = d3v4.format(".0%");
@@ -23,7 +23,7 @@ var scrollVis = function (rawData) {
   
     //survival colours - used during 2nd section when looking at survival rates.
     var crew_colours = { Men: '#054a78', Women: '#558dab', all: "3#e4142",
-    "0 - 15":"#5e8c41","15 - 30":"#3b943d","30 - 45":"#1f8239","45 - 70":"#0b5e27",">= 70":"#01331d", "Crew Class":"#2a0c52"};
+    "0 - 15":"#5e8c41","15 - 30":"#3b943d","30 - 45":"#1f8239","45 - 70":"#0b5e27",">= 70":"#01331d", "Crew":"#2a0c52"};
     
     var survival_colours = {0:"#fb9a99", 1: "#404040"};
   
@@ -44,12 +44,12 @@ var scrollVis = function (rawData) {
       vis_data = convert_data(rawData);
       // console.log("visdata")
 
-      // graph 1
-      var svg1 = d3v4.select("#vis").append("svg")
-              .attr('width', width)
-              .attr('height', height);
-      svg1.append("g").attr("class", "x_axis");
-      draw_dots(svg1, "all","both",500, 0);
+      // // graph 1
+      // var svg1 = d3v4.select("#vis").append("svg")
+      //         .attr('width', width + 50)
+      //         .attr('height', height + 400);
+      // svg1.append("g").attr("class", "x_axis");
+      // draw_dots(svg1, "all","both",700, 0);
 
       // graph 2
       var svg2 = d3v4.select("#secondvis").append("svg")
@@ -72,17 +72,17 @@ var scrollVis = function (rawData) {
       svg4.append("g").attr("class", "x_axis");
       draw_dots(svg4, "p_class","both",2000, 0);
 
-      d3v4.select("#passenger1").on("click", function() {
-        draw_dots(svg1, "all","both",500, 1);
-      });
+      // d3v4.select("#passenger1").on("click", function() {
+      //   draw_dots(svg1, "all","both",500, 1);
+      // });
       
-      d3v4.select("#crew1").on("click", function() {
-        draw_dots(svg1, "all","both",500, 2);
-      });
+      // d3v4.select("#crew1").on("click", function() {
+      //   draw_dots(svg1, "all","both",700, 2);
+      // });
 
-      d3v4.select("#all1").on("click", function() {
-        draw_dots(svg1, "all","both",500, 0);
-      });
+      // d3v4.select("#all1").on("click", function() {
+      //   draw_dots(svg1, "all","both",700, 0);
+      // });
       
       d3v4.select("#passenger2").on("click", function() {
         draw_dots(svg2, "sex","both",500, 1);
@@ -211,7 +211,6 @@ var scrollVis = function (rawData) {
                   })
               .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")")
               .transition()
-              .delay(transition*1.2)
               .attr("visibility","visible") //now that the dots and text have moved, make text visible.
 
       //repeat data,exit,enter and merge for dots
@@ -455,7 +454,7 @@ function convert_data(my_data){
 
   function get_positions(my_data,col_per_row,variables,field){
     // console.log("Field : " + field)
-    var p_class_labels = {1:"1st Class",2: "2nd Class",3:"3rd Class", 4:"Crew Class"};
+    var p_class_labels = {1:"1st Class",2: "2nd Class",3:"3rd Class", 4:"Crew"};
     var positions = [], band = "",p_class="";
     if (variables.length == 0){
       positions = populate(my_data,"","",col_per_row);
@@ -507,7 +506,7 @@ function convert_data(my_data){
           passenger: my_data[d].Passenger,
           age: band,
           sex: sex_labels[my_data[d].Sex],
-          all: "all",
+          all: "number of people",
           p_class: p_class,
           total: my_data.length,
           ch_1_2: band,

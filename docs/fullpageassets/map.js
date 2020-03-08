@@ -1229,131 +1229,131 @@ var third_data = [
     }
 ];
 
-// function drawDonut() {
+function drawDonut() {
 
-//     // total passengers
-//     var total = [
-//         { title: "Survived", value: 500, total: 1317, color: "grey" },
-//         { title: "Perlished", value: 817, total: 1317, color: "orange" }
-//     ];
+    // total passengers
+    var total = [
+        { title: "Survived", value: 500, total: 1317, color: "grey" },
+        { title: "Perlished", value: 817, total: 1317, color: "orange" }
+    ];
 
-//     var radius = 150;
+    var radius = 150;
 
-//     var arc = d3.svg.arc()
-//         .innerRadius(radius * 0.7)
-//         .outerRadius(radius);
+    var arc = d3.svg.arc()
+        .innerRadius(radius * 0.7)
+        .outerRadius(radius);
 
-//     var arcOver = d3.svg.arc()
-//         .innerRadius(radius * 0.7)
-//         .outerRadius(radius * 1.08);
+    var arcOver = d3.svg.arc()
+        .innerRadius(radius * 0.7)
+        .outerRadius(radius * 1.08);
 
-//     var pie = d3.layout.pie()
-//         .sort(null)
-//         .value(function (d) { return d.value; });
+    var pie = d3.layout.pie()
+        .sort(null)
+        .value(function (d) { return d.value; });
 
-//     var donuts = svg.append('g')
-//         .attr("transform", "translate(" + (margin.left + 1050) + "," + (margin.top + 60) + ")")
-//         .selectAll('.arc')
-//         .data(pie(total))
-//         .enter()
-//         .append('g')
-//         .attr('class', "arc");
+    var donuts = svg.append('g')
+        .attr("transform", "translate(" + (margin.left + 1050) + "," + (margin.top + 60) + ")")
+        .selectAll('.arc')
+        .data(pie(total))
+        .enter()
+        .append('g')
+        .attr('class', "arc");
 
-//     donuts.append('path')
-//         .attr('d', arc)
-//         .attr("fill", function (d) { return d.data.color; })
-//         .on("mouseover", function (d) {
-//             var curr_title = d.data.title;
-//             var curr_val = d.data.value;
-//             console.log(d.data.title + "  " + d.data.value)
+    donuts.append('path')
+        .attr('d', arc)
+        .attr("fill", function (d) { return d.data.color; })
+        .on("mouseover", function (d) {
+            var curr_title = d.data.title;
+            var curr_val = d.data.value;
+            console.log(d.data.title + "  " + d.data.value)
 
-//             d3.select(this).transition()
-//                 .duration(500)
-//                 .attr("d", arcOver);
+            d3.select(this).transition()
+                .duration(500)
+                .attr("d", arcOver);
 
-//             donuts.select(".value")
-//                 .text(function (d) {
-//                     console.log("INSIDE" + d.data.title + "  " + d.data.value)
-//                     return curr_val + " passengers";
-//                 });
+            donuts.select(".value")
+                .text(function (d) {
+                    console.log("INSIDE" + d.data.title + "  " + d.data.value)
+                    return curr_val + " passengers";
+                });
 
-//             donuts.select(".percentage")
-//                 .text(function (d) {
-//                     console.log("INSIDE" + d.data.title + "  " + d.data.value)
+            donuts.select(".percentage")
+                .text(function (d) {
+                    console.log("INSIDE" + d.data.title + "  " + d.data.value)
 
-//                     return (curr_val / d.data.total * 100).toFixed(2) + '%';
-//                 });
-//         })
-//         .on("mouseout", function (d) {
-//             d3.select(this).transition()
-//                 .duration(500)
-//                 .ease('bounce')
-//                 .attr("d", arc);
+                    return (curr_val / d.data.total * 100).toFixed(2) + '%';
+                });
+        })
+        .on("mouseout", function (d) {
+            d3.select(this).transition()
+                .duration(500)
+                .ease('bounce')
+                .attr("d", arc);
 
-//             donuts.select(".value")
-//                 .text(function (d) {
-//                     return d.data.total + " passengers";
-//                 });
+            donuts.select(".value")
+                .text(function (d) {
+                    return d.data.total + " passengers";
+                });
 
-//             donuts.select(".percentage")
-//                 .text(function (d) {
-//                     return "";
-//                 });
-//         });
+            donuts.select(".percentage")
+                .text(function (d) {
+                    return "";
+                });
+        });
 
-//     // center
-//     donuts.append("svg:circle")
-//         .attr("r", radius * 0.6)
-//         .style("fill", "#E7E7E7");
+    // center
+    donuts.append("svg:circle")
+        .attr("r", radius * 0.6)
+        .style("fill", "#E7E7E7");
 
-//     // center text
-//     donuts.append('text')
-//         .attr('class', 'center-txt type')
-//         .attr('y', radius * -0.12)
-//         .attr('text-anchor', 'middle')
-//         .style('font-weight', 'bold')
-//         .text(function (d) {
-//             return "Total Passenger";
-//         });
+    // center text
+    donuts.append('text')
+        .attr('class', 'center-txt type')
+        .attr('y', radius * -0.12)
+        .attr('text-anchor', 'middle')
+        .style('font-weight', 'bold')
+        .text(function (d) {
+            return "Total Passenger";
+        });
 
-//     donuts.append('text')
-//         .attr('class', 'center-txt value')
-//         .attr('y', radius * 0.02)
-//         .attr('text-anchor', 'middle')
-//         .text(function (d) {
-//             return d.data.total + " passengers";
-//         });
+    donuts.append('text')
+        .attr('class', 'center-txt value')
+        .attr('y', radius * 0.02)
+        .attr('text-anchor', 'middle')
+        .text(function (d) {
+            return d.data.total + " passengers";
+        });
 
-//     donuts.append('text')
-//         .attr('class', 'center-txt percentage')
-//         .attr('y', radius * 0.3)
-//         .attr('font-size', '40px')
-//         .attr('text-anchor', 'middle');
+    donuts.append('text')
+        .attr('class', 'center-txt percentage')
+        .attr('y', radius * 0.3)
+        .attr('font-size', '40px')
+        .attr('text-anchor', 'middle');
 
-//     // again rebind for legend
-//     var legendG = svg.selectAll(".legend") // note appending it to mySvg and not svg to make positioning easier
-//         .data(pie(total))
-//         .enter().append("g")
-//         .attr("transform", function (d, i) {
-//             return "translate(" + (width - 200) + "," + (i * 15 + 20) + ")"; // place each legend on the right and bump each one down 15 pixels
-//         })
-//         .attr("class", "legend");
+    // again rebind for legend
+    var legendG = svg.selectAll(".legend") // note appending it to mySvg and not svg to make positioning easier
+        .data(pie(total))
+        .enter().append("g")
+        .attr("transform", function (d, i) {
+            return "translate(" + (width - 200) + "," + (i * 15 + 20) + ")"; // place each legend on the right and bump each one down 15 pixels
+        })
+        .attr("class", "legend");
 
-//     legendG.append("rect") // make a matching color rect
-//         .attr("width", 10)
-//         .attr("height", 10)
-//         .attr("fill", function (d, i) {
-//             return d.data.color;
-//         });
+    legendG.append("rect") // make a matching color rect
+        .attr("width", 10)
+        .attr("height", 10)
+        .attr("fill", function (d, i) {
+            return d.data.color;
+        });
 
-//     legendG.append("text") // add the text
-//         .text(function (d) {
-//             return d.data.title;
-//         })
-//         .style("font-size", 12)
-//         .attr("y", 10)
-//         .attr("x", 15);
-// }
+    legendG.append("text") // add the text
+        .text(function (d) {
+            return d.data.title;
+        })
+        .style("font-size", 12)
+        .attr("y", 10)
+        .attr("x", 15);
+}
 
 ///////////////////////////////////////////////////////////////////////////
 //////////////////// Set up and initiate svg containers ///////////////////
@@ -1738,55 +1738,58 @@ function display(data) {
     }
 }
 
-function setupButtons() {
-    console.log("setup")
-    d3.select("#total")
-        .on("click", function () {
-            console.log("total button")
+display(overall_data);
+drawDonut();
 
-            buttonDissappear();
-            display(overall_data);
-            setTimeout(buttonAppear, 15000);
-        });
-    d3.select("#first")
-        .on("click", function () {
-            console.log("first button")
+// function setupButtons() {
+//     console.log("setup")
+//     d3.select("#total")
+//         .on("click", function () {
+//             console.log("total button")
 
-            buttonDissappear();
-            display(first_data);
-            setTimeout(buttonAppear, 15000);
-        });
-    d3.select("#second")
-        .on("click", function () {
-            console.log("total button")
+//             buttonDissappear();
+//             display(overall_data);
+//             setTimeout(buttonAppear, 15000);
+//         });
+//     d3.select("#first")
+//         .on("click", function () {
+//             console.log("first button")
 
-            buttonDissappear();
-            display(second_data);
-            setTimeout(buttonAppear, 15000);
-        });
-    d3.select("#third")
-        .on("click", function () {
-            console.log("first button")
+//             buttonDissappear();
+//             display(first_data);
+//             setTimeout(buttonAppear, 15000);
+//         });
+//     d3.select("#second")
+//         .on("click", function () {
+//             console.log("total button")
 
-            buttonDissappear();
-            display(third_data);
-            setTimeout(buttonAppear, 15000);
-        });
-}
+//             buttonDissappear();
+//             display(second_data);
+//             setTimeout(buttonAppear, 15000);
+//         });
+//     d3.select("#third")
+//         .on("click", function () {
+//             console.log("first button")
 
-function buttonDissappear() {
-    d3.select("#total").style("visibility", "hidden");
-    d3.select("#first").style("visibility", "hidden");
-    d3.select("#second").style("visibility", "hidden");
-    d3.select("#third").style("visibility", "hidden");
-}
+//             buttonDissappear();
+//             display(third_data);
+//             setTimeout(buttonAppear, 15000);
+//         });
+// }
 
-function buttonAppear() {
-    console.log("button appear")
-    d3.select("#total").style("visibility", "visible");
-    d3.select("#first").style("visibility", "visible");
-    d3.select("#second").style("visibility", "visible");
-    d3.select("#third").style("visibility", "visible");
-}
+// function buttonDissappear() {
+//     d3.select("#total").style("visibility", "hidden");
+//     d3.select("#first").style("visibility", "hidden");
+//     d3.select("#second").style("visibility", "hidden");
+//     d3.select("#third").style("visibility", "hidden");
+// }
 
-setupButtons();
+// function buttonAppear() {
+//     console.log("button appear")
+//     d3.select("#total").style("visibility", "visible");
+//     d3.select("#first").style("visibility", "visible");
+//     d3.select("#second").style("visibility", "visible");
+//     d3.select("#third").style("visibility", "visible");
+// }
+
+// setupButtons();

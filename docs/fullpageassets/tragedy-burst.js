@@ -7,7 +7,7 @@
 
     // Canvas object and dimensions
     var svg;
-    var CANVAS_WIDTH = 900;
+    var CANVAS_WIDTH = 1050;
     var CANVAS_HEIGHT = 300;
     
     // Total data fields

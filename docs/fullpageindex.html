@@ -46,8 +46,8 @@
 				sectionsColor: [contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, sunburstColor],
 				navigation: true,
 				navigationPosition: 'right',
-        navigationTooltips: ['Start', 'Section1', 'Section2', 'Section3'],
-        easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.12)'
+        navigationTooltips: ['Landing', 'Introduction', 'Passenger & Crew', 'Gender', 'Age', 'Nationality', 'Social Class', 'Sources & About Us'],
+        easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.12)',
         
 			});
 		});
@@ -116,24 +116,40 @@
     </div>
 
     <!-- Passenger & Crew Distribution -->
-    <div class="section" style="background-image: url(../img/ship.png);">
+    <div class="section ship_background">
       <div class="container">
         <div id="sections_distribution">
-          <div id='vis'></div>
-          <div class="step">
+          This graph shows <button id="all1"> all </button> of Titanic’s <button id="passenger1">passengers</button> and <button
+            id="crew1"> crews </button>.
+          <div style="width: 60%; height: 100px; float: left;">
+            <div id='vis'></div>
+          </div>
+          <div style="margin-left: 60%; margin-top: 10%;height: 100px;">
+            <div id="chart-area">
+              <form>
+                <label><input type="radio" name="dataset" value="total" checked> Overall</label>
+                <label><input type="radio" name="dataset" value="passenger"> Passenger</label>
+                <label><input type="radio" name="dataset" value="crew"> Crew</label>
+              </form>
+            </div>
+            <!-- <div id='first_donut'></div> -->
+            <!-- <div id='forthvis'></div> -->
+          </div>
+          <!-- <div class="step">
             This graph shows <button id = "all1"> all </button> of Titanic’s <button id = "passenger1">passengers</button> and <button id = "crew1"> crews </button>. 
             As a homage to those who died, you can also hover over the dots
             to see their names. We believe that each of these persons deserve proper recognition and respect, regardless of their
             status, gender, age, and sex.
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
+    <script src="./fullpageassets/first_dots.js"></script>
 
     <div class="section">
       <div class="container">
         <div id="sections_distribution">
-          <div id='forthvis'></div>
+          <!-- <div id='forthvis'></div>
           <div class="step">
             <div class="title">There was a much larger proportion of passengers in 3rd class.</div>
             This graph shows the distribution of passenger class. Even though Titanic was infamous as one of the most
@@ -144,10 +160,36 @@
             shows
             that there is a much larger proportion of 3rd class passengers compared to other classes, but 1st and 2nd class
             passenger numbers were similar.
+          </div> -->
+
+          <div style="width: 60%; height: 100px; float: left;">
+            <div class="step_right">
+              <div class="title">There was a much larger proportion of passengers in 3rd class.</div>
+              This graph shows the distribution of passenger class. Even though Titanic was infamous as one of the most
+              luxurious
+              ships back at its day, it actually made a lot of its earnings carrying poor immigrants from Europe to the US.
+              The rooms
+              and accomodation that these people had (3rd class passengers) were much less luxurious and often lacking. Data
+              shows
+              that there is a much larger proportion of 3rd class passengers compared to other classes, but 1st and 2nd class
+              passenger numbers were similar.
+            </div>
+            <!-- <div id="forth-area">
+              <form>
+                <label><input type="radio" name="dataset" value="total" checked> Overall</label>
+                <label><input type="radio" name="dataset" value="passenger"> Passenger</label>
+                <label><input type="radio" name="dataset" value="crew"> Crew</label>
+              </form>
+            </div> -->
+
+          </div>
+          <div style="margin-left: 10%; height: 100px;">
+            <div id='forthvis'></div>
           </div>
         </div>
       </div>
     </div>
+    <!-- <script src="./fullpageassets/forth_dots.js"></script> -->
 
     <div class="section">
       <div class="container">
@@ -165,6 +207,7 @@
         </div>
       </div>
     </div>
+    <!-- <script src="./fullpageassets/second_dots.js"></script> -->
 
     <div class="section">
       <div class="container">
@@ -182,6 +225,7 @@
         </div>
       </div>
     </div>
+    <!-- <script src="./fullpageassets/first_dots.js"></script> -->
 
     <div class="section">
       <div class="container">
@@ -194,11 +238,17 @@
             Europe, but also from far away places such as Asia and the middle east.
             <h5>Overall</h5> and <h5>First Class</h5> and <h5>Second Class</h5> and <h5>Third Class</h5>
             <br><br>
+
+            <form>
+              <label><input type="radio" name="dataset" value="total" checked> Overall</label>
+              <label><input type="radio" name="dataset" value="passenger"> Passenger</label>
+              <label><input type="radio" name="dataset" value="crew"> Crew</label>
+            </form>
       
-            <button id="total">Total</button>
+            <!-- <button id="total">Total</button>
             <button id="first">First</button>
             <button id="second">Second</button>
-            <button id="third">Third</button>
+            <button id="third">Third</button> -->
             <div id="titanic_map"></div>
             <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
             <script src="./fullpageassets/map.js"></script>
@@ -222,7 +272,7 @@
             <div class="title">How many of the passengers survived?</div>
             <br><br>
 
-            <div id="toolbar" align="center">
+            <div id="toolbar" >
               <button id="all" class="button active">All</button>
               <button id="Gender" class="button">By Gender</button>
               <button id="Age" class="button">By Age</button>
@@ -230,9 +280,9 @@
               <button id="Survived" class="button">By Survival</button>
             </div>
             <br>
-            <p id="tragedy-description" align='center'> Based on our data, overall 40% of the passengers survived</p>
+            <p id="tragedy-description"> Based on our data, overall 40% of the passengers survived</p>
             <div id="bubbles"></div>
-            <p align="center"> (Each dots represent approximately 10 people) </p>
+            <p> (Each dots represent approximately 10 people) </p>
             <script src="./fullpageassets/tragedy-circles-graph.js"></script>
           </div>
       </div>
@@ -259,10 +309,22 @@
             <div id="legend" style="visibility: hidden;"></div>
           </div>
           <script src="./fullpageassets/testsequences.js"></script>
-        </div>
-          
+        </div>   
       </div>
     </div>
+
+
+    <!-- <div class="section">
+      <div class="container">
+        <div id="sections_distribution">
+          <div id="sections">
+            <div id="chart"></div>
+            <script src="./fullpageassets/tragedy-circles-graph.js"></script>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
   </div>
 </div>
   

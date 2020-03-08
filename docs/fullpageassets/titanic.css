@@ -35,7 +35,7 @@
 }
 
 .container {
-  width: 1080px;
+  width: 1280px;
   height: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -128,11 +128,31 @@
   font-family: 'Special Elite', cursive;
 }
 
+.step_right {
+  overflow: hidden;
+  /* display: inline-block;
+  position: relative; */
+  /* width: 40%; */
+  height: 600px;
+  /* height: 50vh; */
+  vertical-align: middle;
+  margin-bottom: auto;
+  margin-top: auto;
+  /* margin-left: 60%; */
+  /* font-family: "TiemposTextWeb-Regular","san-serif"; */
+  /* font-family: "metric-test-regular"; */
+  font-family: 'Special Elite', cursive;
+  font-size: 16px;
+  line-height: 20px;
+  /* color: #767678; */
+  color: rgba(49, 49, 49, 0.856);
+}
+
 .step {
   overflow: hidden;
   /* display: inline-block;
   position: relative; */
-  width: 40%;
+  /* width: 40%; */
   height: 600px;
   /* height: 50vh; */
   vertical-align: middle;
@@ -167,7 +187,7 @@
 #vis, #secondvis, #thirdvis, #forthvis {
   /* float: left; */
   overflow: hidden;
-  width: 60%;
+  /* width: 60%; */
   display: inline-block;
   position: absolute;
   /* top: 60px; */
