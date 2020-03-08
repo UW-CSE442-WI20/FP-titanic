@@ -49,13 +49,13 @@ d3v4.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/doc
         .nodes(data)
         .on("tick", ticked);
 
-    splitBubbles('Overall')
+    splitBubbles('all')
     
     function splitBubbles(byVar) {
         centerScale.domain(data.map(function(d){ return d[byVar]; }));
         centerScaleHeight.domain(data.map(function(d){ return d[byVar]; }));
         
-        if(byVar == "Overall"){
+        if(byVar == "all"){
             showTitles('Overall', centerScale)
         } else {
             showTitles(byVar, centerScale);

@@ -14,14 +14,14 @@ var scrollVis = function (rawData) {
     //all_colours - used during 1st section when survival rates not needed variable == "both".
     var all_colours = {
         Men: '#1f78b4', Women: '#a6cee3', all: "grey", passenger: "green", crew: "blue",
-        "0 - 15": "#addd8e", "15 - 30": "#78c679", "30 - 45": "#41ab5d", "45 - 70": "#238443", ">= 70": "#005a32",
+        "0 - 15": "#addd8e", "15 - 30": "#78c679", "30 - 45": "#41ab5d", "45 - 60": "#238443", ">= 60": "#005a32",
         "1st Class": "#9e9ac8", "2nd Class": "#756bb1", "3rd Class": "#54278f"
     };
 
     //survival colours - used during 2nd section when looking at survival rates.
     var crew_colours = {
         Men: '#054a78', Women: '#558dab', all: "3#e4142",
-        "0 - 15": "#5e8c41", "15 - 30": "#3b943d", "30 - 45": "#1f8239", "45 - 70": "#0b5e27", ">= 70": "#01331d", "Crew": "#2a0c52"
+        "0 - 15": "#5e8c41", "15 - 30": "#3b943d", "30 - 45": "#1f8239", "45 - 60": "#0b5e27", ">= 60": "#01331d", "Crew": "#2a0c52"
     };
 
     var survival_colours = { 0: "#eb7775", 1: "#404040" };
