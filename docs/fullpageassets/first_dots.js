@@ -116,11 +116,16 @@ var scrollVis = function (rawData) {
             draw_dots(svg4, "p_class", "survive", 500, 3);
         });
 
+        d3v4.select("#all4").on("click", function () {
+            draw_dots(svg4, "p_class", "both", 2000, 0);
+        });
+
+
         // ------------------------------ donut ---------------------------------------
         var donutData = genData();
 
-        var donut = new DonutCharts("#first-area");
-        donut.create(donutData, 0);
+        var donut1 = new DonutCharts("#first-area");
+        donut1.create(donutData, 0);
 
         var donut4 = new DonutCharts("#forth-area2");
         donut4.create(donutData, 0);
@@ -381,6 +386,9 @@ var scrollVis = function (rawData) {
                 },
 
                 'click': function (d, i, j) {
+
+                    draw_dots(svg, "all", "survive", 500, 3);
+
                     var thisDonut = charts.select('.type' + j);
 
                     if (0 === thisDonut.selectAll('.clicked')[0].length) {
@@ -437,8 +445,14 @@ var scrollVis = function (rawData) {
         this.create = function (dataset, i) {
             console.log(dataset[i])
             var $charts = $(id);
-            chart_m = $charts.innerWidth() / dataset[i].length / 2 * 0.04;
-            chart_r = $charts.innerWidth() / dataset[i].length / 2 * 0.5;
+            // chart_m = $charts.innerWidth() / dataset[i].length / 2 * 0.04;
+            // chart_r = $charts.innerWidth() / dataset[i].length / 2 * 0.5;
+
+            chart_m = 13;
+            chart_r = 162;
+
+            // console.log("m " + chart_m)
+            // console.log("r " + chart_r)
 
             charts.append('svg')
                 .attr('class', 'legend')
@@ -464,6 +478,9 @@ var scrollVis = function (rawData) {
     }
 
     var draw_dots = function (svg, data_class, fill_type, transition, status) {
+
+        console.log("draw dots")
+        
         svg.select("x_axis").attr("x_axis", x0_scale.domain())
 
         //define data - empty if none (ie first scroll index).

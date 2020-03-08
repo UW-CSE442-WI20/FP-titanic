@@ -100,7 +100,7 @@ function mouseover(d) {
   }
 
   d3v4.select("#percentage")
-      .text(percentageString);
+      .text(percentageString); 
 
   d3v4.select("#explanation")
       .style("visibility", "visible");

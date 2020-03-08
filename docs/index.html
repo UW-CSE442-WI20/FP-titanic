@@ -12,7 +12,7 @@
   <title>Titanic Exploration</title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="./fullpageassets/fullPage.css" />
+  <link rel="stylesheet" type="text/css" href="./fullpageassets/main.css" />
   <link rel="stylesheet" type="text/css" href="./fullpageassets/index.css" />
   <link rel="stylesheet" type="text/css" href="./fullpageassets/sequences.css" />
   <link rel="stylesheet" type="text/css" href="./fullpageassets/titanic.css" />
@@ -141,14 +141,22 @@
             <div id='vis'></div>
           </div>
           <div class="title">Passenger vs Crew Distribution</div>
-          This graph shows <button id="all1"> all </button> of Titanic’s <button id="passenger1">passengers</button> and <button
-            id="crew1"> crews </button> along with their <button id="survivability1">survivability</button>.
-            As a homage to those who died, you can also hover over the dots to see their names.
-            We believe that each of these persons deserve proper recognition and respect, regardless of their
-            status, gender, age, and sex.
-          <div style="margin-left: 65%;">
+          <div style="margin-left: 60%;">
+            <div style="color: rgba(49, 49, 49, 0.856);">
+              This graph shows <button id="all1"> all </button> of Titanic’s <button id="passenger1">passengers</button> and <button
+                id="crew1"> crews </button> along with their <button id="survivability1">survivability</button>.
+              As a homage to those who died, you can also hover over the dots to see their names.
+              We believe that each of these persons deserve proper recognition and respect, regardless of their
+              status, gender, age, and sex.
+            </div>
+            
             <div id="first-area"></div>
           </div>
+          
+            <!-- <div id="first-area"></div> -->
+          <!-- <div style="margin-left: 65%;">
+            <div id="first-area"></div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -174,18 +182,16 @@
           <div style="width: 60%; height: 100px; float: left;">
             <div class="step_right">
               <div class="title">There was a much larger proportion of passengers in 3rd class.</div>
-              This graph shows the distribution of passenger class. Even though Titanic was infamous as one of the most
-              luxurious
-              ships back at its day, it actually made a lot of its earnings carrying poor immigrants from Europe to the
-              US.
-              The rooms
-              and accomodation that these people had (3rd class passengers) were much less luxurious and often lacking.
-              Data
-              shows
-              that there is a much larger proportion of 3rd class passengers compared to other classes, but 1st and 2nd
-              class
-              passenger numbers were similar.
-              We can also see their <button id="survivability4">survivability</button>.
+              Even though Titanic was infamous as one of the most
+              luxurious ships back at its day, it actually made a lot of its earnings carrying poor immigrants from Europe to the
+              US. The rooms and accomodation that these people had (3rd class passengers) were much less luxurious and often lacking.
+              
+              <p style="color: grey;">
+
+
+              Click here to see <button id="all4"> all </button> passenger
+              and crew and their <button id="survivability4">survivability</button>.
+              </p>
             </div>
             <div id="forth-area2">
               <form id="form4">
@@ -216,14 +222,12 @@
                 id="crew2">crews</button>.
               Gender inequality was a major problem back in the early 20th
               century as women often were not able to work or travel without permission without authorization from their
-              husbands.
-              Moreover, women are generally poorer as they were not able to get access to high paying jobs. We want to
-              see how gender
-              inequality back in the 1920s affected the passenger distribution of titanic. We see that there are far
-              more males than
-              females (in fact almost twice as much). Click here to see <button id="all2"> all </button>all passenger
-              and crew and their
-              <button id=survivability2>survivability</button>.
+              husbands. We want to see how gender inequality back in the 1920s affected the passenger distribution of titanic. 
+              <p style="color: grey;">
+                Click here to see <button id="all2"> all </button> passenger
+                and crew and their
+                <button id="survivability2">survivability</button>.
+              </p>
             </div>
             <div id="second-area">
               <form id="form2">
@@ -250,13 +254,12 @@
                 id="crew3">crews</button> age group distribution.
               Titanic was a passenger liner that operated between England and
               the United States. It carried some of the wealthiest people in Europe, but also at the same time carried
-              immigrants into
-              the US. It is thus no surprise that working age individuals (age 15 - 30) account for the majority of the
-              passenger as
-              the early 20th century was a time where European migration into the US was at a high due to wars and
-              instability in
-              Europe. Click here to see <button id="all3"> all </button> passenger and crew and their <button
-                id=survivability3>survivability</button>.
+              immigrants into the US due to wars and instability in Europe. 
+              <p style="color: grey;">
+                Click here to see <button id="all3"> all </button> passenger
+                and crew and their
+                <button id="survivability3">survivability</button>.
+              </p>
             </div>
             <div id="third-area">
               <form id="form3">

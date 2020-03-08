@@ -317,6 +317,7 @@ function visualizer(titanic_data) {
                 if (eval(query_string_total))
                     total += 1;
             });
+            console.log(total)
             if (total !== 0) {
 
                 var percent = (survived / total) * 100;
@@ -324,6 +325,9 @@ function visualizer(titanic_data) {
 
                 inner_donut([{ "disp": "Survived", "freq": survived, "percent": percent },
                 { "disp": "Died", "freq": total - survived, "percent": 1 - percent }]);
+            } else {
+                inner_donut([{ "disp": "Survived", "freq": survived, "percent": 0 },
+                { "disp": "Died", "freq": total - survived, "percent": 0 }]);
             }
         }
 
