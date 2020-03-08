@@ -252,3 +252,7 @@ button {
   font-family: 'Special Elite', cursive;
   font-size: 16px;
 }
+
+.legend {
+  z-index: 99;
+}

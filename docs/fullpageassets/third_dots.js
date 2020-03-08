@@ -3,14 +3,26 @@ function drawDonut() {
     // total passengers
     var data = {
         "total": [
-            { "title": "Survived", "count": "500", "total": "1317", "color": "#353238" },
-            { "title": "Perlished", "count": "817", "total": "1317", "color": "#6b1111" }
+            { "title": "Survived", "count": "712", "total": "2477", "color": "#353238" },
+            { "title": "Perlished", "count": "1765", "total": "2477", "color": "#6b1111" }
         ],
-        "passenger": [
-            { "title": "Survived", "count": "100", "total": "300", "color": "#353238" },
-            { "title": "Perlished", "count": "200", "total": "300", "color": "#6b1111" }
+        "age1": [ // 0 - 15
+            { "title": "Survived", "count": "67", "total": "157", "color": "#353238" },
+            { "title": "Perlished", "count": "90", "total": "300", "color": "#6b1111" }
         ],
-        "crew": [
+        "age2": [ // 15 - 30
+            { "title": "Survived", "count": "335", "total": "1077", "color": "#353238" },
+            { "title": "Perlished", "count": "742", "total": "1077", "color": "#6b1111" }
+        ],
+        "age3": [ // 30 - 45
+            { "title": "Survived", "count": "223", "total": "911", "color": "#353238" },
+            { "title": "Perlished", "count": "688", "total": "911", "color": "#6b1111" }
+        ],
+        "age4": [ // 45 - 70
+            { "title": "Survived", "count": "10", "total": "326", "color": "#353238" },
+            { "title": "Perlished", "count": "90", "total": "326", "color": "#6b1111" }
+        ],
+        "age5": [ // >= 70
             { "title": "Survived", "count": "10", "total": "100", "color": "#353238" },
             { "title": "Perlished", "count": "90", "total": "100", "color": "#6b1111" }
         ]
@@ -20,14 +32,14 @@ function drawDonut() {
     const width = 540;
     const height = 540;
 
-    const svg = d3.select("#third-area")
+    const svg3 = d3.select("#third-area")
         .append("svg")
         .attr("width", width)
         .attr("height", height)
         .append("g")
         .attr("transform", `translate(${width / 2}, ${height / 2})`);
 
-    const pie = d3.pie()
+    const pieThird = d3.pie()
         .value(d => d.count)
         .sort(null);
 
@@ -57,8 +69,8 @@ function drawDonut() {
 
     function update(val = this.value) {
         // Join new data
-        const donuts = svg.selectAll("path")
-            .data(pie(data[val]));
+        const donuts = svg3.selectAll("path")
+            .data(pieThird(data[val]));
 
         // Update existing arcs
         donuts.transition().duration(200).attrTween("d", arcTween);
@@ -139,8 +151,8 @@ function drawDonut() {
             .attr('text-anchor', 'middle');
 
         // again rebind for legend
-        var legendG = svg.selectAll(".legend") // note appending it to mySvg and not svg to make positioning easier
-            .data(pie(data[val]))
+        var legendG = svg3.selectAll(".legend") // note appending it to mySvg and not svg to make positioning easier
+            .data(pieThird(data[val]))
             .enter().append("g")
             .attr("transform", function (d, i) {
                 return "translate(" + (width - 200) + "," + (i * 15 + 20) + ")"; // place each legend on the right and bump each one down 15 pixels
