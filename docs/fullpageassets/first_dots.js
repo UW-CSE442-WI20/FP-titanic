@@ -153,7 +153,7 @@ var scrollVis = function (rawData) {
             var buttons = d3v4.selectAll(".radio2")._groups[0]
             for (var i = 0; i < buttons.length; i++) {
                 if (buttons[i].checked == true) {
-                    d3v4.select("second-area").selectAll("svg").remove()
+                    d3v4.select("#second-area").selectAll("svg").remove()
                     donut2 = new DonutCharts("#second-area");
                     if (i == 0) {
                         donut2.create(donutData, 0)
@@ -172,7 +172,7 @@ var scrollVis = function (rawData) {
             var buttons = d3v4.selectAll(".radio3")._groups[0]
             for (var i = 0; i < buttons.length; i++) {
                 if (buttons[i].checked == true) {
-                    d3v4.select("third-area").selectAll("svg").remove()
+                    d3v4.select("#third-area").selectAll("svg").remove()
                     donut3 = new DonutCharts("#third-area");
                     if (i == 0) {
                         donut3.create(donutData, 0)
@@ -202,7 +202,7 @@ var scrollVis = function (rawData) {
     // 11: 61-75
     function genData() {
         var allCategories = new Array();
-        var vals = [38.76, 67.13, 23.67, 57.42, 40.27, 23.53, 18.84, 40.61, 28.76, 25.69, 25.69, 17.07]
+        var vals = [38.76, 67.13, 23.67, 57.42, 40.27, 26.13, 18.84, 40.61, 28.76, 34.06, 25.69, 22.17]
         var type = ["Overall", "Female", "Male", "1st Class", "2nd Class", "3rd Class", "Crew Class", "0-15", "15-30", "31-45", "46-60", "61-75"]
 
         for (var i = 0; i < vals.length; i++) {
@@ -292,7 +292,7 @@ var scrollVis = function (rawData) {
                 }
             }
 
-            var donuts = d3v3.selectAll('.donut');
+            var donuts = charts.selectAll('.donut');
 
             // The circle displaying total data.
             donuts.append("svg:circle")
@@ -661,7 +661,7 @@ function convert_data(my_data) {
 
     var all = get_positions(my_data, all_per_row, []);
     var sex = get_positions(my_data, two_per_row, ["Male", "Female"], "Sex");
-    var age = get_positions(my_data, five_per_row, [0, 15, 30, 45, 70], "Age");
+    var age = get_positions(my_data, five_per_row, [0, 15, 30, 45, 60], "Age");
     var p_class = get_positions(my_data, four_per_row, [1, 2, 3, 4], "Pclass");
     var ch_1_2 = age_class(my_data, two_per_row);
     var w_ch_1_2 = women_children_class(my_data, two_per_row);
