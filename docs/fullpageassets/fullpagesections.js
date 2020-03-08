@@ -3,7 +3,7 @@ var scrollVis = function (rawData) {
     var width = 600;
     var left_right_margin = 30;
     var top_bottom_margin = 30;
-    var height = 600;
+    var height = 700;
     var format = d3v4.format(".0%");
   
     // define scroll index tracking vars - JV
@@ -17,13 +17,26 @@ var scrollVis = function (rawData) {
   
     // define colours
     //all_colours - used during 1st section when survival rates not needed variable == "both".
-    var all_colours = { Men: '#1f78b4', Women: '#a6cee3',all:"grey", passenger:"green", crew: "blue",
-    "0 - 15":"#addd8e","15 - 30":"#78c679","30 - 45":"#41ab5d","45 - 70":"#238443",">= 70":"#005a32",
-    "1st Class": "#9e9ac8", "2nd Class":"#756bb1","3rd Class":"#54278f"};
+    var all_colours = { 
+    // Men: '#1f78b4', Women: '#a6cee3',all:"grey", passenger:"green", crew: "blue",
+    Men: '#3c70a4', Women: '#bbe1fa',all:"grey", passenger:"green", crew: "blue",
+    // "0 - 15":"#addd8e","15 - 30":"#78c679","30 - 45":"#41ab5d","45 - 70":"#238443",">= 70":"#005a32",
+    "0 - 15":"#bad8b6","15 - 30":"#a3cd9e","30 - 45":"#92b88e","45 - 70":"#82a47e",">= 70":"#728f6e",
+    // "1st Class": "#9e9ac8", "2nd Class":"#756bb1","3rd Class":"#54278f"};
+    "1st Class": "#c4bbf0", "2nd Class":"#927fbf","3rd Class":"#4f3b78"};
+
   
     //survival colours - used during 2nd section when looking at survival rates.
-    var crew_colours = { Men: '#054a78', Women: '#558dab', all: "3#e4142",
-    "0 - 15":"#5e8c41","15 - 30":"#3b943d","30 - 45":"#1f8239","45 - 70":"#0b5e27",">= 70":"#01331d", "Crew Class":"#2a0c52"};
+    var crew_colours = { 
+    // Men: '#054a78', Women: '#558dab', all: "3#e4142",
+    Men: '#0f4c75', Women: '#3282b8', all: "3#e4142",
+
+    // "0 - 15":"#5e8c41","15 - 30":"#3b943d","30 - 45":"#1f8239","45 - 70":"#0b5e27",">= 70":"#01331d",
+    "0 - 15":"#529471","15 - 30":"#498565","30 - 45":"#41765a","45 - 70":"#39674f",">= 70":"#315843",
+
+    // "Crew Class":"#2a0c52"};
+    "Crew Class":"#363b4e"};
+
     
     var survival_colours = {0:"#fb9a99", 1: "#404040"};
   
@@ -148,7 +161,7 @@ var scrollVis = function (rawData) {
       y_scale.domain([0,115]);
 
       //set radius
-      var my_radius = 2;
+      var my_radius = 2.5;
       //data,exit,enter and merge for bar labels
       var bar_group = svg.selectAll(".labels_group")
                           .data(x0_scale.domain(),function(d){return d});

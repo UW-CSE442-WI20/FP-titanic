@@ -36,7 +36,7 @@
 
 .container {
   width: 1080px;
-  height: 600px;
+  height: 800px;
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
@@ -137,7 +137,7 @@
   /* height: 50vh; */
   vertical-align: middle;
   margin-bottom: auto;
-  margin-top: auto;
+  margin-top: 200px;
   margin-left: 60%;
   /* font-family: "TiemposTextWeb-Regular","san-serif"; */
   /* font-family: "metric-test-regular"; */
