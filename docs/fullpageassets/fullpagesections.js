@@ -65,6 +65,13 @@ var scrollVis = function (rawData) {
       // svg1.append("g").attr("class", "x_axis");
       // draw_dots(svg1, "all","both",700, 0);
 
+      // graph 1
+      var svg = d3v4.select("#vis").append("svg")
+            .attr('width', width + 50)
+            .attr('height', height + 400);
+        svg.append("g").attr("class", "x_axis");
+        draw_dots(svg, "all", "both", 700, 0);
+
       // graph 2
       var svg2 = d3v4.select("#secondvis").append("svg")
               .attr('width', width)
@@ -97,6 +104,13 @@ var scrollVis = function (rawData) {
       // d3v4.select("#all1").on("click", function() {
       //   draw_dots(svg1, "all","both",700, 0);
       // });
+      d3v4.select("#survivability1").on("click", function() {
+        draw_dots(svg1, "all","both",500, 3);
+      });
+
+      // d3v4.select("#all1").on("click", function() {
+      //   draw_dots(svg1, "all","both",500, 0);
+      // });
       
       d3v4.select("#passenger2").on("click", function() {
         draw_dots(svg2, "sex","both",500, 1);
@@ -104,6 +118,10 @@ var scrollVis = function (rawData) {
       
       d3v4.select("#crew2").on("click", function() {
         draw_dots(svg2, "sex","both",500, 2);
+      });
+
+      d3v4.select("#survivability2").on("click", function() {
+        draw_dots(svg2, "sex","both",500, 3);
       });
 
       d3v4.select("#all2").on("click", function() {
@@ -118,8 +136,16 @@ var scrollVis = function (rawData) {
         draw_dots(svg3, "age","both",500, 2);
       });
 
+      d3v4.select("#survivability3").on("click", function() {
+        draw_dots(svg3, "age","both",500, 3);
+      });
+
       d3v4.select("#all3").on("click", function() {
         draw_dots(svg3, "age","both",500, 0);
+      });
+
+      d3v4.select("#survivability4").on("click", function() {
+        draw_dots(svg4, "p_class","both",500, 3);
       });
     }
     
@@ -256,13 +282,15 @@ var scrollVis = function (rawData) {
                   } else {
                     return "grey"
                   }
-                } else {
+                } else if (status == 2) {
                   if(d.passenger == 1) {
                     return "grey"
                   } else {
                     return "orange"
                   }
-                }              
+                } else if (status == 3) {
+                  return survival_colours[d.survived]
+                }            
               })
               .attr("r",my_radius)
               .attr("transform","translate(" + left_right_margin + "," + top_bottom_margin + ")")

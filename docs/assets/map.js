@@ -184,123 +184,281 @@ var countriesMap = [
 
 var nationality_data = [{ "country": "Australia", "region": "Australia", "total": 1, "latitude": -25.2744, "longitude": 133.7751, "first": 0, "second": 0, "third": 1 }, { "country": "Austria", "region": "Europe", "total": 1, "latitude": 47.5162, "longitude": 14.5501, "first": 1, "second": 0, "third": 0 }, { "country": "Belgium", "region": "Europe", "total": 8, "latitude": 50.5039, "longitude": 4.4699, "first": 1, "second": 1, "third": 6 }, { "country": "Canada", "region": "America", "total": 26, "latitude": 56.1304, "longitude": -106.3468, "first": 19, "second": 3, "third": 4 }, { "country": "Croatia", "region": "Europe", "total": 9, "latitude": 45.1, "longitude": 15.2, "first": 0, "second": 0, "third": 9 }, { "country": "Denmark", "region": "Europe", "total": 7, "latitude": 56.2639, "longitude": 9.5018, "first": 0, "second": 2, "third": 5 }, { "country": "Egypt", "region": "Africa", "total": 1, "latitude": 26.8206, "longitude": 30.8025, "first": 1, "second": 0, "third": 0 }, { "country": "England", "region": "Europe", "total": 317, "latitude": 52.3555, "longitude": -1.1743, "first": 46, "second": 154, "third": 117 }, { "country": "Finland", "region": "Europe", "total": 34, "latitude": 61.9241, "longitude": 25.7482, "first": 0, "second": 5, "third": 29 }, { "country": "France", "region": "Europe", "total": 15, "latitude": 46.2276, "longitude": 2.2137, "first": 8, "second": 6, "third": 1 }, { "country": "Germany", "region": "Europe", "total": 5, "latitude": 51.1657, "longitude": 10.4515, "first": 4, "second": 1, "third": 0 }, { "country": "Hungary", "region": "Europe", "total": 1, "latitude": 47.1625, "longitude": 19.5033, "first": 0, "second": 1, "third": 0 }, { "country": "Ireland", "region": "Europe", "total": 124, "latitude": 53.1424, "longitude": -7.6921, "first": 6, "second": 12, "third": 106 }, { "country": "Italy", "region": "Europe", "total": 9, "latitude": 41.8719, "longitude": 12.5674, "first": 3, "second": 4, "third": 2 }, { "country": "Japan", "region": "Asia", "total": 1, "latitude": 36.2048, "longitude": 138.2529, "first": 0, "second": 1, "third": 0 }, { "country": "Latvia", "region": "Europe", "total": 1, "latitude": 56.8796, "longitude": 24.6032, "first": 0, "second": 0, "third": 1 }, { "country": "Lithuania", "region": "Europe", "total": 2, "latitude": 55.1694, "longitude": 23.8813, "first": 0, "second": 2, "third": 0 }, { "country": "Norway", "region": "Europe", "total": 19, "latitude": 60.472, "longitude": 8.4689, "first": 1, "second": 0, "third": 18 }, { "country": "Poland", "region": "Europe", "total": 6, "latitude": 51.9194, "longitude": 19.1451, "first": 1, "second": 0, "third": 5 }, { "country": "Portugal", "region": "Europe", "total": 1, "latitude": 39.3999, "longitude": -8.2245, "first": 0, "second": 1, "third": 0 }, { "country": "Russia", "region": "Asia", "total": 4, "latitude": 61.524, "longitude": 105.3188, "first": 0, "second": 1, "third": 3 }, { "country": "Slovakia", "region": "Europe", "total": 1, "latitude": 48.669, "longitude": 19.699, "first": 0, "second": 1, "third": 0 }, { "country": "South Africa", "region": "Africa", "total": 4, "latitude": -30.5595, "longitude": 22.9375, "first": 0, "second": 4, "third": 0 }, { "country": "Sweden", "region": "Europe", "total": 76, "latitude": 60.1282, "longitude": 18.6435, "first": 4, "second": 6, "third": 66 }, { "country": "Swiss", "region": "Europe", "total": 6, "latitude": 46.8182, "longitude": 8.2275, "first": 3, "second": 2, "third": 1 }, { "country": "Syria", "region": "Asia", "total": 87, "latitude": 34.8021, "longitude": 38.9968, "first": 0, "second": 2, "third": 85 }, { "country": "USA", "region": "America", "total": 181, "latitude": 37.0902, "longitude": -95.7129, "first": 132, "second": 22, "third": 27 }, { "country": "Uruguay", "region": "America", "total": 3, "latitude": -32.5228, "longitude": -55.7658, "first": 3, "second": 0, "third": 0 }];
 
-var svg = null;
+var margin = {
+    top: 100,
+    right: 0,
+    bottom: 0,
+    left: 0
+};
+var width = 1400 - margin.left - margin.right,
+    height = 800 - margin.top - margin.bottom;
+
+//SVG container
+var svg = d3.select('#titanic_map')
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////// Create filter ///////////////////////////////
+///////////////////////////////////////////////////////////////////////////	
+
+//SVG filter for the gooey effect
+//Code taken from http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/
+var defs = svg.append("defs");
+var filter = defs.append("filter").attr("id", "gooeyCodeFilter");
+filter.append("feGaussianBlur")
+    .attr("in", "SourceGraphic")
+    .attr("stdDeviation", "10")
+    //to fix safari: http://stackoverflow.com/questions/24295043/svg-gaussian-blur-in-safari-unexpectedly-lightens-image
+    .attr("color-interpolation-filters", "sRGB")
+    .attr("result", "blur");
+filter.append("feColorMatrix")
+    .attr("class", "blurValues")
+    .attr("in", "blur")
+    .attr("mode", "matrix")
+    .attr("values", "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5")
+    .attr("result", "gooey");
+filter.append("feBlend")
+    .attr("in", "SourceGraphic")
+    .attr("in2", "gooey")
+    .attr("operator", "atop");
+
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////// Set-up Map /////////////////////////////////
+/////////////////////////////////////////////////////////////////////////// 
+
+//Variables for the map
+var projection = d3.geo.mercator()
+    .scale(150)
+    .translate([400, 200]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var map = svg.append("g")
+    .attr("class", "map");
+
+//Initiate the world map
+map.selectAll(".geo-path")
+    .data(countriesMap[0].features)
+    .enter().append("path")
+    .attr("class", function (d) { return "geo-path" + " " + d.id; })
+    .attr("id", function (d) { return d.properties.name; })
+    .attr("d", path)
+    .style("stroke-opacity", 1)
+    .style("fill-opacity", 0.5);
+
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////// Cities ///////////////////////////////////
+/////////////////////////////////////////////////////////////////////////// 
+
+// -1- Create a tooltip div that is hidden by default:
+var tooltip = d3.select("#titanic_map")
+    .append("div")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("background-color", "black")
+    .style("border-radius", "5px")
+    .style("padding", "10px")
+    .style("color", "white")
+    .style("font-family", "'Special Elite', cursive")
+
+//Wrapper for the cities
+var cityWrapper = svg.append("g")
+    .attr("class", "cityWrapper")
+    .style("filter", "url(#gooeyCodeFilter)");
+
+//Place the city circles
+var cities = cityWrapper.selectAll(".cities")
+    .data(nationality_data)
+    .enter().append("circle")
+    .attr("class", "cities")
+    .attr("r", function (d) { return d.radius; })
+    .attr("cx", projection([0, 0])[0])
+    .attr("cy", projection([0, 0])[1])
+    .style("opacity", 1)
+    .on("mouseover", showTooltip)
+    .on("mousemove", moveTooltip)
+    .on("mouseleave", hideTooltip);
+
+// -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
+var showTooltip = function (d) {
+    tooltip
+        .transition()
+        .duration(200)
+    tooltip
+        .style("opacity", 1)
+        .html("Country: " + d.country + "<br>Total: " + d.first)
+        .style("left", (d3.mouse(this)[0] + 50) + "px")
+        .style("top", (d3.mouse(this)[1] + 50) + "px")
+}
+var moveTooltip = function (d) {
+    tooltip
+        .style("left", (d3.mouse(this)[0] + 50) + "px")
+        .style("top", (d3.mouse(this)[1] + 50) + "px")
+}
+var hideTooltip = function (d) {
+    tooltip
+        .transition()
+        .duration(200)
+        .style("opacity", 0)
+}
+
+//Calculate the centers for each region
+var centers = getCenters("region", [width / 1.2, height / 1.4]);
+centers.forEach(function (d) {
+    d.y = d.y - 100;
+    d.x = d.x - 150;
+});//centers forEach
+
+//Radial layout
+function getCenters(vname, size) {
+    var centers = [],
+        mapping,
+        flags = [];
+    for (var i = 0; i < nationality_data.length; i++) {
+        if (flags[nationality_data[i][vname]]) continue;
+        flags[nationality_data[i][vname]] = true;
+        centers.push({ name: nationality_data[i][vname], value: 1 });
+    }//for i
+    centers.sort(function (a, b) { return d3.ascending(a.name, b.name); });
+
+    mapping = d3.layout.pack()
+        .sort(function (d) { return d[vname]; })
+        .size(size);
+    mapping.nodes({ children: centers });
+
+    return centers;
+}//getCenters
+
+//Wrapper for the region labels
+var labelWrapper = svg.append("g")
+    .attr("class", "labelWrapper");
+
+//Append the region labels
+labelWrapper.selectAll(".label")
+    .data(centers)
+    .enter().append("text")
+    .attr("class", "label")
+    .style("opacity", 0)
+    .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; })
+    .text(function (d) { return d.name });
 
 function placeCitiesByTotal() {
 
     console.log("placeCitiesByTotal")
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////// Set up and initiate svg containers ///////////////////
-    ///////////////////////////////////////////////////////////////////////////	
+    
+    // ///////////////////////////////////////////////////////////////////////////
+    // //////////////////// Set up and initiate svg containers ///////////////////
+    // ///////////////////////////////////////////////////////////////////////////	
 
-    if (svg != null ) {
-        svg.remove();
-    }
+    // var margin = {
+    //     top: 100,
+    //     right: 0,
+    //     bottom: 0,
+    //     left: 0
+    // };
+    // var width = 1400 - margin.left - margin.right,
+    //     height = 800 - margin.top - margin.bottom;
 
-    var margin = {
-        top: 100,
-        right: 0,
-        bottom: 0,
-        left: 0
-    };
-    var width = 1400 - margin.left - margin.right,
-        height = 800 - margin.top - margin.bottom;
+    // //SVG container
+    // var svg = d3.select('#titanic_map')
+    //     .append("svg")
+    //     .attr("width", width + margin.left + margin.right)
+    //     .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //     .attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
 
-    //SVG container
-    var svg = d3.select('#titanic_map')
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
+    // ///////////////////////////////////////////////////////////////////////////
+    // ///////////////////////////// Create filter ///////////////////////////////
+    // ///////////////////////////////////////////////////////////////////////////	
 
-    ///////////////////////////////////////////////////////////////////////////
-    ///////////////////////////// Create filter ///////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////	
+    // //SVG filter for the gooey effect
+    // //Code taken from http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/
+    // var defs = svg.append("defs");
+    // var filter = defs.append("filter").attr("id", "gooeyCodeFilter");
+    // filter.append("feGaussianBlur")
+    //     .attr("in", "SourceGraphic")
+    //     .attr("stdDeviation", "10")
+    //     //to fix safari: http://stackoverflow.com/questions/24295043/svg-gaussian-blur-in-safari-unexpectedly-lightens-image
+    //     .attr("color-interpolation-filters", "sRGB")
+    //     .attr("result", "blur");
+    // filter.append("feColorMatrix")
+    //     .attr("class", "blurValues")
+    //     .attr("in", "blur")
+    //     .attr("mode", "matrix")
+    //     .attr("values", "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5")
+    //     .attr("result", "gooey");
+    // filter.append("feBlend")
+    //     .attr("in", "SourceGraphic")
+    //     .attr("in2", "gooey")
+    //     .attr("operator", "atop");
 
-    //SVG filter for the gooey effect
-    //Code taken from http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/
-    var defs = svg.append("defs");
-    var filter = defs.append("filter").attr("id", "gooeyCodeFilter");
-    filter.append("feGaussianBlur")
-        .attr("in", "SourceGraphic")
-        .attr("stdDeviation", "10")
-        //to fix safari: http://stackoverflow.com/questions/24295043/svg-gaussian-blur-in-safari-unexpectedly-lightens-image
-        .attr("color-interpolation-filters", "sRGB")
-        .attr("result", "blur");
-    filter.append("feColorMatrix")
-        .attr("class", "blurValues")
-        .attr("in", "blur")
-        .attr("mode", "matrix")
-        .attr("values", "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5")
-        .attr("result", "gooey");
-    filter.append("feBlend")
-        .attr("in", "SourceGraphic")
-        .attr("in2", "gooey")
-        .attr("operator", "atop");
+    // ///////////////////////////////////////////////////////////////////////////
+    // //////////////////////////// Set-up Map /////////////////////////////////
+    // /////////////////////////////////////////////////////////////////////////// 
 
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////////////// Set-up Map /////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////// 
+    // //Variables for the map
+    // var projection = d3.geo.mercator()
+    //     .scale(150)
+    //     .translate([400, 200]);
 
-    //Variables for the map
-    var projection = d3.geo.mercator()
-        .scale(150)
-        .translate([400, 200]);
+    // var path = d3.geo.path()
+    //     .projection(projection);
 
-    var path = d3.geo.path()
-        .projection(projection);
+    // var map = svg.append("g")
+    //     .attr("class", "map");
 
-    var map = svg.append("g")
-        .attr("class", "map");
+    // //Initiate the world map
+    // map.selectAll(".geo-path")
+    //     .data(countriesMap[0].features)
+    //     .enter().append("path")
+    //     .attr("class", function (d) { return "geo-path" + " " + d.id; })
+    //     .attr("id", function (d) { return d.properties.name; })
+    //     .attr("d", path)
+    //     .style("stroke-opacity", 1)
+    //     .style("fill-opacity", 0.5);
 
-    //Initiate the world map
-    map.selectAll(".geo-path")
-        .data(countriesMap[0].features)
-        .enter().append("path")
-        .attr("class", function (d) { return "geo-path" + " " + d.id; })
-        .attr("id", function (d) { return d.properties.name; })
-        .attr("d", path)
-        .style("stroke-opacity", 1)
-        .style("fill-opacity", 0.5);
+    // ///////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////// Cities ///////////////////////////////////
+    // /////////////////////////////////////////////////////////////////////////// 
 
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////////////////// Cities ///////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////// 
+    // // -1- Create a tooltip div that is hidden by default:
+    // var tooltip = d3.select("#titanic_map")
+    //     .append("div")
+    //     .style("opacity", 0)
+    //     .attr("class", "tooltip")
+    //     .style("background-color", "black")
+    //     .style("border-radius", "5px")
+    //     .style("padding", "10px")
+    //     .style("color", "white")
+    //     .style("font-family", "'Special Elite', cursive")
 
-    // -1- Create a tooltip div that is hidden by default:
-    var tooltip = d3.select("#titanic_map")
-        .append("div")
-        .style("opacity", 0)
-        .attr("class", "tooltip")
-        .style("background-color", "black")
-        .style("border-radius", "5px")
-        .style("padding", "10px")
-        .style("color", "white")
-        .style("font-family", "'Special Elite', cursive")
-
-    // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
-    var showTooltip = function (d) {
-        tooltip
-            .transition()
-            .duration(200)
-        tooltip
-            .style("opacity", 1)
-            .html("Country: " + d.country + "<br>Total: " + d.total)
-            .style("left", (d3.mouse(this)[0] + 50) + "px")
-            .style("top", (d3.mouse(this)[1] + 50) + "px")
-    }
-    var moveTooltip = function (d) {
-        tooltip
-            .style("left", (d3.mouse(this)[0] + 50) + "px")
-            .style("top", (d3.mouse(this)[1] + 50) + "px")
-    }
-    var hideTooltip = function (d) {
-        tooltip
-            .transition()
-            .duration(200)
-            .style("opacity", 0)
-    }
+    // // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
+    // var showTooltip = function (d) {
+    //     tooltip
+    //         .transition()
+    //         .duration(200)
+    //     tooltip
+    //         .style("opacity", 1)
+    //         .html("Country: " + d.country + "<br>Total: " + d.total)
+    //         .style("left", (d3.mouse(this)[0] + 50) + "px")
+    //         .style("top", (d3.mouse(this)[1] + 50) + "px")
+    // }
+    // var moveTooltip = function (d) {
+    //     tooltip
+    //         .style("left", (d3.mouse(this)[0] + 50) + "px")
+    //         .style("top", (d3.mouse(this)[1] + 50) + "px")
+    // }
+    // var hideTooltip = function (d) {
+    //     tooltip
+    //         .transition()
+    //         .duration(200)
+    //         .style("opacity", 0)
+    // }
 
     //Radius scale
     var rScale = d3.scale.sqrt()
@@ -314,23 +472,23 @@ function placeCitiesByTotal() {
         d.y = projection([d.longitude, d.latitude])[1];
     });
 
-    //Wrapper for the cities
-    var cityWrapper = svg.append("g")
-        .attr("class", "cityWrapper")
-        .style("filter", "url(#gooeyCodeFilter)");
+    // //Wrapper for the cities
+    // var cityWrapper = svg.append("g")
+    //     .attr("class", "cityWrapper")
+    //     .style("filter", "url(#gooeyCodeFilter)");
 
-    //Place the city circles
-    var cities = cityWrapper.selectAll(".cities")
-        .data(nationality_data)
-        .enter().append("circle")
-        .attr("class", "cities")
-        .attr("r", function (d) { return d.radius; })
-        .attr("cx", projection([0, 0])[0])
-        .attr("cy", projection([0, 0])[1])
-        .style("opacity", 1)
-        .on("mouseover", showTooltip)
-        .on("mousemove", moveTooltip)
-        .on("mouseleave", hideTooltip);
+    // //Place the city circles
+    // var cities = cityWrapper.selectAll(".cities")
+    //     .data(nationality_data)
+    //     .enter().append("circle")
+    //     .attr("class", "cities")
+    //     .attr("r", function (d) { return d.radius; })
+    //     .attr("cx", projection([0, 0])[0])
+    //     .attr("cy", projection([0, 0])[1])
+    //     .style("opacity", 1)
+    //     .on("mouseover", showTooltip)
+    //     .on("mousemove", moveTooltip)
+    //     .on("mouseleave", hideTooltip);
 
     var coverCirleRadius = 60;
     //Circle over all others
@@ -344,25 +502,25 @@ function placeCitiesByTotal() {
     /////////////////////////// Region Labels ////////////////////////////////
     /////////////////////////////////////////////////////////////////////////// 
 
-    //Calculate the centers for each region
-    var centers = getCenters("region", [width / 1.2, height / 1.4]);
-    centers.forEach(function (d) {
-        d.y = d.y - 100;
-        d.x = d.x - 150;
-    });//centers forEach
+    // //Calculate the centers for each region
+    // var centers = getCenters("region", [width / 1.2, height / 1.4]);
+    // centers.forEach(function (d) {
+    //     d.y = d.y - 100;
+    //     d.x = d.x - 150;
+    // });//centers forEach
 
-    //Wrapper for the region labels
-    var labelWrapper = svg.append("g")
-        .attr("class", "labelWrapper");
+    // //Wrapper for the region labels
+    // var labelWrapper = svg.append("g")
+    //     .attr("class", "labelWrapper");
 
-    //Append the region labels
-    labelWrapper.selectAll(".label")
-        .data(centers)
-        .enter().append("text")
-        .attr("class", "label")
-        .style("opacity", 0)
-        .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; })
-        .text(function (d) { return d.name });
+    // //Append the region labels
+    // labelWrapper.selectAll(".label")
+    //     .data(centers)
+    //     .enter().append("text")
+    //     .attr("class", "label")
+    //     .style("opacity", 0)
+    //     .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y + 60) + ")"; })
+    //     .text(function (d) { return d.name });
 
     ///////////////////////////////////////////////////////////////////////////
     /////////////////////////// Set-up the force //////////////////////////////
@@ -496,25 +654,25 @@ function placeCitiesByTotal() {
     /////////////////////////// Helper functions //////////////////////////////
     /////////////////////////////////////////////////////////////////////////// 
 
-    //Radial layout
-    function getCenters(vname, size) {
-        var centers = [],
-            mapping,
-            flags = [];
-        for (var i = 0; i < nationality_data.length; i++) {
-            if (flags[nationality_data[i][vname]]) continue;
-            flags[nationality_data[i][vname]] = true;
-            centers.push({ name: nationality_data[i][vname], value: 1 });
-        }//for i
-        centers.sort(function (a, b) { return d3.ascending(a.name, b.name); });
+    // //Radial layout
+    // function getCenters(vname, size) {
+    //     var centers = [],
+    //         mapping,
+    //         flags = [];
+    //     for (var i = 0; i < nationality_data.length; i++) {
+    //         if (flags[nationality_data[i][vname]]) continue;
+    //         flags[nationality_data[i][vname]] = true;
+    //         centers.push({ name: nationality_data[i][vname], value: 1 });
+    //     }//for i
+    //     centers.sort(function (a, b) { return d3.ascending(a.name, b.name); });
 
-        mapping = d3.layout.pack()
-            .sort(function (d) { return d[vname]; })
-            .size(size);
-        mapping.nodes({ children: centers });
+    //     mapping = d3.layout.pack()
+    //         .sort(function (d) { return d[vname]; })
+    //         .size(size);
+    //     mapping.nodes({ children: centers });
 
-        return centers;
-    }//getCenters
+    //     return centers;
+    // }//getCenters
 
     //Radial lay-out
     function tick(centers, varname) {
@@ -704,118 +862,118 @@ function placeCitiesByTotal() {
 
 function placeCitiesByFirst() {
     console.log("placeCitiesBy First")
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////// Set up and initiate svg containers ///////////////////
-    ///////////////////////////////////////////////////////////////////////////	
+    // ///////////////////////////////////////////////////////////////////////////
+    // //////////////////// Set up and initiate svg containers ///////////////////
+    // ///////////////////////////////////////////////////////////////////////////	
 
-    if (svg != null) {
-        svg.remove();
-    }
+    // if (svg != null) {
+    //     svg.remove();
+    // }
 
-    var margin = {
-        top: 100,
-        right: 0,
-        bottom: 0,
-        left: 0
-    };
-    var width = 1400 - margin.left - margin.right,
-        height = 800 - margin.top - margin.bottom;
+    // var margin = {
+    //     top: 100,
+    //     right: 0,
+    //     bottom: 0,
+    //     left: 0
+    // };
+    // var width = 1400 - margin.left - margin.right,
+    //     height = 800 - margin.top - margin.bottom;
 
-    //SVG container
-    var svg = d3.select('#titanic_map')
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
+    // //SVG container
+    // var svg = d3.select('#titanic_map')
+    //     .append("svg")
+    //     .attr("width", width + margin.left + margin.right)
+    //     .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //     .attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
 
-    ///////////////////////////////////////////////////////////////////////////
-    ///////////////////////////// Create filter ///////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////	
+    // ///////////////////////////////////////////////////////////////////////////
+    // ///////////////////////////// Create filter ///////////////////////////////
+    // ///////////////////////////////////////////////////////////////////////////	
 
-    //SVG filter for the gooey effect
-    //Code taken from http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/
-    var defs = svg.append("defs");
-    var filter = defs.append("filter").attr("id", "gooeyCodeFilter");
-    filter.append("feGaussianBlur")
-        .attr("in", "SourceGraphic")
-        .attr("stdDeviation", "10")
-        //to fix safari: http://stackoverflow.com/questions/24295043/svg-gaussian-blur-in-safari-unexpectedly-lightens-image
-        .attr("color-interpolation-filters", "sRGB")
-        .attr("result", "blur");
-    filter.append("feColorMatrix")
-        .attr("class", "blurValues")
-        .attr("in", "blur")
-        .attr("mode", "matrix")
-        .attr("values", "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5")
-        .attr("result", "gooey");
-    filter.append("feBlend")
-        .attr("in", "SourceGraphic")
-        .attr("in2", "gooey")
-        .attr("operator", "atop");
+    // //SVG filter for the gooey effect
+    // //Code taken from http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/
+    // var defs = svg.append("defs");
+    // var filter = defs.append("filter").attr("id", "gooeyCodeFilter");
+    // filter.append("feGaussianBlur")
+    //     .attr("in", "SourceGraphic")
+    //     .attr("stdDeviation", "10")
+    //     //to fix safari: http://stackoverflow.com/questions/24295043/svg-gaussian-blur-in-safari-unexpectedly-lightens-image
+    //     .attr("color-interpolation-filters", "sRGB")
+    //     .attr("result", "blur");
+    // filter.append("feColorMatrix")
+    //     .attr("class", "blurValues")
+    //     .attr("in", "blur")
+    //     .attr("mode", "matrix")
+    //     .attr("values", "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5")
+    //     .attr("result", "gooey");
+    // filter.append("feBlend")
+    //     .attr("in", "SourceGraphic")
+    //     .attr("in2", "gooey")
+    //     .attr("operator", "atop");
 
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////////////// Set-up Map /////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////// 
+    // ///////////////////////////////////////////////////////////////////////////
+    // //////////////////////////// Set-up Map /////////////////////////////////
+    // /////////////////////////////////////////////////////////////////////////// 
 
-    //Variables for the map
-    var projection = d3.geo.mercator()
-        .scale(170)
-        .translate([450, 200]);
+    // //Variables for the map
+    // var projection = d3.geo.mercator()
+    //     .scale(170)
+    //     .translate([450, 200]);
 
-    var path = d3.geo.path()
-        .projection(projection);
+    // var path = d3.geo.path()
+    //     .projection(projection);
 
-    var map = svg.append("g")
-        .attr("class", "map");
+    // var map = svg.append("g")
+    //     .attr("class", "map");
 
-    //Initiate the world map
-    map.selectAll(".geo-path")
-        .data(countriesMap[0].features)
-        .enter().append("path")
-        .attr("class", function (d) { return "geo-path" + " " + d.id; })
-        .attr("id", function (d) { return d.properties.name; })
-        .attr("d", path)
-        .style("stroke-opacity", 1)
-        .style("fill-opacity", 0.5);
+    // //Initiate the world map
+    // map.selectAll(".geo-path")
+    //     .data(countriesMap[0].features)
+    //     .enter().append("path")
+    //     .attr("class", function (d) { return "geo-path" + " " + d.id; })
+    //     .attr("id", function (d) { return d.properties.name; })
+    //     .attr("d", path)
+    //     .style("stroke-opacity", 1)
+    //     .style("fill-opacity", 0.5);
 
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////////////////// Cities ///////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////// 
+    // ///////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////// Cities ///////////////////////////////////
+    // /////////////////////////////////////////////////////////////////////////// 
 
-    // -1- Create a tooltip div that is hidden by default:
-    var tooltip = d3.select("#titanic_map")
-        .append("div")
-        .style("opacity", 0)
-        .attr("class", "tooltip")
-        .style("background-color", "black")
-        .style("border-radius", "5px")
-        .style("padding", "10px")
-        .style("color", "white")
-        .style("font-family", "'Special Elite', cursive")
+    // // -1- Create a tooltip div that is hidden by default:
+    // var tooltip = d3.select("#titanic_map")
+    //     .append("div")
+    //     .style("opacity", 0)
+    //     .attr("class", "tooltip")
+    //     .style("background-color", "black")
+    //     .style("border-radius", "5px")
+    //     .style("padding", "10px")
+    //     .style("color", "white")
+    //     .style("font-family", "'Special Elite', cursive")
 
-    // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
-    var showTooltip = function (d) {
-        tooltip
-            .transition()
-            .duration(200)
-        tooltip
-            .style("opacity", 1)
-            .html("Country: " + d.country + "<br>Total: " + d.first)
-            .style("left", (d3.mouse(this)[0] + 50) + "px")
-            .style("top", (d3.mouse(this)[1] + 50) + "px")
-    }
-    var moveTooltip = function (d) {
-        tooltip
-            .style("left", (d3.mouse(this)[0] + 50) + "px")
-            .style("top", (d3.mouse(this)[1] + 50) + "px")
-    }
-    var hideTooltip = function (d) {
-        tooltip
-            .transition()
-            .duration(200)
-            .style("opacity", 0)
-    }
+    // // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
+    // var showTooltip = function (d) {
+    //     tooltip
+    //         .transition()
+    //         .duration(200)
+    //     tooltip
+    //         .style("opacity", 1)
+    //         .html("Country: " + d.country + "<br>Total: " + d.first)
+    //         .style("left", (d3.mouse(this)[0] + 50) + "px")
+    //         .style("top", (d3.mouse(this)[1] + 50) + "px")
+    // }
+    // var moveTooltip = function (d) {
+    //     tooltip
+    //         .style("left", (d3.mouse(this)[0] + 50) + "px")
+    //         .style("top", (d3.mouse(this)[1] + 50) + "px")
+    // }
+    // var hideTooltip = function (d) {
+    //     tooltip
+    //         .transition()
+    //         .duration(200)
+    //         .style("opacity", 0)
+    // }
 
     //Radius scale
     var rScale = d3.scale.sqrt()
@@ -829,23 +987,23 @@ function placeCitiesByFirst() {
         d.y = projection([d.longitude, d.latitude])[1];
     });
 
-    //Wrapper for the cities
-    var cityWrapper = svg.append("g")
-        .attr("class", "cityWrapper")
-        .style("filter", "url(#gooeyCodeFilter)");
+    // //Wrapper for the cities
+    // var cityWrapper = svg.append("g")
+    //     .attr("class", "cityWrapper")
+    //     .style("filter", "url(#gooeyCodeFilter)");
 
-    //Place the city circles
-    var cities = cityWrapper.selectAll(".cities")
-        .data(nationality_data)
-        .enter().append("circle")
-        .attr("class", "cities")
-        .attr("r", function (d) { return d.radius; })
-        .attr("cx", projection([0, 0])[0])
-        .attr("cy", projection([0, 0])[1])
-        .style("opacity", 1)
-        .on("mouseover", showTooltip)
-        .on("mousemove", moveTooltip)
-        .on("mouseleave", hideTooltip);
+    // //Place the city circles
+    // var cities = cityWrapper.selectAll(".cities")
+    //     .data(nationality_data)
+    //     .enter().append("circle")
+    //     .attr("class", "cities")
+    //     .attr("r", function (d) { return d.radius; })
+    //     .attr("cx", projection([0, 0])[0])
+    //     .attr("cy", projection([0, 0])[1])
+    //     .style("opacity", 1)
+    //     .on("mouseover", showTooltip)
+    //     .on("mousemove", moveTooltip)
+    //     .on("mouseleave", hideTooltip);
 
     var coverCirleRadius = 60;
     //Circle over all others
@@ -859,25 +1017,25 @@ function placeCitiesByFirst() {
     /////////////////////////// Region Labels ////////////////////////////////
     /////////////////////////////////////////////////////////////////////////// 
 
-    //Calculate the centers for each region
-    var centers = getCenters("region", [width/1.2, height /1.4]);
-    centers.forEach(function (d) {
-        d.y = d.y - 100;
-        d.x = d.x - 150;
-    });//centers forEach
+    // //Calculate the centers for each region
+    // var centers = getCenters("region", [width/1.2, height /1.4]);
+    // centers.forEach(function (d) {
+    //     d.y = d.y - 100;
+    //     d.x = d.x - 150;
+    // });//centers forEach
 
-    //Wrapper for the region labels
-    var labelWrapper = svg.append("g")
-        .attr("class", "labelWrapper");
+    // //Wrapper for the region labels
+    // var labelWrapper = svg.append("g")
+    //     .attr("class", "labelWrapper");
 
-    //Append the region labels
-    labelWrapper.selectAll(".label")
-        .data(centers)
-        .enter().append("text")
-        .attr("class", "label")
-        .style("opacity", 0)
-        .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; })
-        .text(function (d) { return d.name });
+    // //Append the region labels
+    // labelWrapper.selectAll(".label")
+    //     .data(centers)
+    //     .enter().append("text")
+    //     .attr("class", "label")
+    //     .style("opacity", 0)
+    //     .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; })
+    //     .text(function (d) { return d.name });
 
     ///////////////////////////////////////////////////////////////////////////
     /////////////////////////// Set-up the force //////////////////////////////
@@ -1215,118 +1373,118 @@ function placeCitiesByFirst() {
 }
 
 function placeCitiesBySecond() {
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////// Set up and initiate svg containers ///////////////////
-    ///////////////////////////////////////////////////////////////////////////	
+    // ///////////////////////////////////////////////////////////////////////////
+    // //////////////////// Set up and initiate svg containers ///////////////////
+    // ///////////////////////////////////////////////////////////////////////////	
 
-    if (svg != null) {
-        svg.remove();
-    }
+    // if (svg != null) {
+    //     svg.remove();
+    // }
 
-    var margin = {
-        top: 100,
-        right: 0,
-        bottom: 0,
-        left: 0
-    };
-    var width = 1400 - margin.left - margin.right,
-        height = 800 - margin.top - margin.bottom;
+    // var margin = {
+    //     top: 100,
+    //     right: 0,
+    //     bottom: 0,
+    //     left: 0
+    // };
+    // var width = 1400 - margin.left - margin.right,
+    //     height = 800 - margin.top - margin.bottom;
 
-    //SVG container
-    var svg = d3.select('#titanic_map')
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
+    // //SVG container
+    // var svg = d3.select('#titanic_map')
+    //     .append("svg")
+    //     .attr("width", width + margin.left + margin.right)
+    //     .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //     .attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
 
-    ///////////////////////////////////////////////////////////////////////////
-    ///////////////////////////// Create filter ///////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////	
+    // ///////////////////////////////////////////////////////////////////////////
+    // ///////////////////////////// Create filter ///////////////////////////////
+    // ///////////////////////////////////////////////////////////////////////////	
 
-    //SVG filter for the gooey effect
-    //Code taken from http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/
-    var defs = svg.append("defs");
-    var filter = defs.append("filter").attr("id", "gooeyCodeFilter");
-    filter.append("feGaussianBlur")
-        .attr("in", "SourceGraphic")
-        .attr("stdDeviation", "10")
-        //to fix safari: http://stackoverflow.com/questions/24295043/svg-gaussian-blur-in-safari-unexpectedly-lightens-image
-        .attr("color-interpolation-filters", "sRGB")
-        .attr("result", "blur");
-    filter.append("feColorMatrix")
-        .attr("class", "blurValues")
-        .attr("in", "blur")
-        .attr("mode", "matrix")
-        .attr("values", "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5")
-        .attr("result", "gooey");
-    filter.append("feBlend")
-        .attr("in", "SourceGraphic")
-        .attr("in2", "gooey")
-        .attr("operator", "atop");
+    // //SVG filter for the gooey effect
+    // //Code taken from http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/
+    // var defs = svg.append("defs");
+    // var filter = defs.append("filter").attr("id", "gooeyCodeFilter");
+    // filter.append("feGaussianBlur")
+    //     .attr("in", "SourceGraphic")
+    //     .attr("stdDeviation", "10")
+    //     //to fix safari: http://stackoverflow.com/questions/24295043/svg-gaussian-blur-in-safari-unexpectedly-lightens-image
+    //     .attr("color-interpolation-filters", "sRGB")
+    //     .attr("result", "blur");
+    // filter.append("feColorMatrix")
+    //     .attr("class", "blurValues")
+    //     .attr("in", "blur")
+    //     .attr("mode", "matrix")
+    //     .attr("values", "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5")
+    //     .attr("result", "gooey");
+    // filter.append("feBlend")
+    //     .attr("in", "SourceGraphic")
+    //     .attr("in2", "gooey")
+    //     .attr("operator", "atop");
 
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////////////// Set-up Map /////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////// 
+    // ///////////////////////////////////////////////////////////////////////////
+    // //////////////////////////// Set-up Map /////////////////////////////////
+    // /////////////////////////////////////////////////////////////////////////// 
 
-    //Variables for the map
-    var projection = d3.geo.mercator()
-        .scale(170)
-        .translate([450, 200]);
+    // //Variables for the map
+    // var projection = d3.geo.mercator()
+    //     .scale(170)
+    //     .translate([450, 200]);
 
-    var path = d3.geo.path()
-        .projection(projection);
+    // var path = d3.geo.path()
+    //     .projection(projection);
 
-    var map = svg.append("g")
-        .attr("class", "map");
+    // var map = svg.append("g")
+    //     .attr("class", "map");
 
-    //Initiate the world map
-    map.selectAll(".geo-path")
-        .data(countriesMap[0].features)
-        .enter().append("path")
-        .attr("class", function (d) { return "geo-path" + " " + d.id; })
-        .attr("id", function (d) { return d.properties.name; })
-        .attr("d", path)
-        .style("stroke-opacity", 1)
-        .style("fill-opacity", 0.5);
+    // //Initiate the world map
+    // map.selectAll(".geo-path")
+    //     .data(countriesMap[0].features)
+    //     .enter().append("path")
+    //     .attr("class", function (d) { return "geo-path" + " " + d.id; })
+    //     .attr("id", function (d) { return d.properties.name; })
+    //     .attr("d", path)
+    //     .style("stroke-opacity", 1)
+    //     .style("fill-opacity", 0.5);
 
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////////////////// Cities ///////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////// 
+    // ///////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////// Cities ///////////////////////////////////
+    // /////////////////////////////////////////////////////////////////////////// 
 
-    // -1- Create a tooltip div that is hidden by default:
-    var tooltip = d3.select("#titanic_map")
-        .append("div")
-        .style("opacity", 0)
-        .attr("class", "tooltip")
-        .style("background-color", "black")
-        .style("border-radius", "5px")
-        .style("padding", "10px")
-        .style("color", "white")
-        .style("font-family", "'Special Elite', cursive")
+    // // -1- Create a tooltip div that is hidden by default:
+    // var tooltip = d3.select("#titanic_map")
+    //     .append("div")
+    //     .style("opacity", 0)
+    //     .attr("class", "tooltip")
+    //     .style("background-color", "black")
+    //     .style("border-radius", "5px")
+    //     .style("padding", "10px")
+    //     .style("color", "white")
+    //     .style("font-family", "'Special Elite', cursive")
 
-    // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
-    var showTooltip = function (d) {
-        tooltip
-            .transition()
-            .duration(200)
-        tooltip
-            .style("opacity", 1)
-            .html("Country: " + d.country + "<br>Total: " + d.second)
-            .style("left", (d3.mouse(this)[0] + 50) + "px")
-            .style("top", (d3.mouse(this)[1] + 50) + "px")
-    }
-    var moveTooltip = function (d) {
-        tooltip
-            .style("left", (d3.mouse(this)[0] + 50) + "px")
-            .style("top", (d3.mouse(this)[1] + 50) + "px")
-    }
-    var hideTooltip = function (d) {
-        tooltip
-            .transition()
-            .duration(200)
-            .style("opacity", 0)
-    }
+    // // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
+    // var showTooltip = function (d) {
+    //     tooltip
+    //         .transition()
+    //         .duration(200)
+    //     tooltip
+    //         .style("opacity", 1)
+    //         .html("Country: " + d.country + "<br>Total: " + d.second)
+    //         .style("left", (d3.mouse(this)[0] + 50) + "px")
+    //         .style("top", (d3.mouse(this)[1] + 50) + "px")
+    // }
+    // var moveTooltip = function (d) {
+    //     tooltip
+    //         .style("left", (d3.mouse(this)[0] + 50) + "px")
+    //         .style("top", (d3.mouse(this)[1] + 50) + "px")
+    // }
+    // var hideTooltip = function (d) {
+    //     tooltip
+    //         .transition()
+    //         .duration(200)
+    //         .style("opacity", 0)
+    // }
 
     //Radius scale
     var rScale = d3.scale.sqrt()
@@ -1340,23 +1498,23 @@ function placeCitiesBySecond() {
         d.y = projection([d.longitude, d.latitude])[1];
     });
 
-    //Wrapper for the cities
-    var cityWrapper = svg.append("g")
-        .attr("class", "cityWrapper")
-        .style("filter", "url(#gooeyCodeFilter)");
+    // //Wrapper for the cities
+    // var cityWrapper = svg.append("g")
+    //     .attr("class", "cityWrapper")
+    //     .style("filter", "url(#gooeyCodeFilter)");
 
-    //Place the city circles
-    var cities = cityWrapper.selectAll(".cities")
-        .data(nationality_data)
-        .enter().append("circle")
-        .attr("class", "cities")
-        .attr("r", function (d) { return d.radius; })
-        .attr("cx", projection([0, 0])[0])
-        .attr("cy", projection([0, 0])[1])
-        .style("opacity", 1)
-        .on("mouseover", showTooltip)
-        .on("mousemove", moveTooltip)
-        .on("mouseleave", hideTooltip);
+    // //Place the city circles
+    // var cities = cityWrapper.selectAll(".cities")
+    //     .data(nationality_data)
+    //     .enter().append("circle")
+    //     .attr("class", "cities")
+    //     .attr("r", function (d) { return d.radius; })
+    //     .attr("cx", projection([0, 0])[0])
+    //     .attr("cy", projection([0, 0])[1])
+    //     .style("opacity", 1)
+    //     .on("mouseover", showTooltip)
+    //     .on("mousemove", moveTooltip)
+    //     .on("mouseleave", hideTooltip);
 
     var coverCirleRadius = 60;
     //Circle over all others
@@ -1370,25 +1528,25 @@ function placeCitiesBySecond() {
     /////////////////////////// Region Labels ////////////////////////////////
     /////////////////////////////////////////////////////////////////////////// 
 
-    //Calculate the centers for each region
-    var centers = getCenters("region", [width/1.2, height / 1.4]);
-    centers.forEach(function (d) {
-        d.y = d.y - 100;
-        d.x = d.x - 150;
-    });//centers forEach
+    // //Calculate the centers for each region
+    // var centers = getCenters("region", [width/1.2, height / 1.4]);
+    // centers.forEach(function (d) {
+    //     d.y = d.y - 100;
+    //     d.x = d.x - 150;
+    // });//centers forEach
 
-    //Wrapper for the region labels
-    var labelWrapper = svg.append("g")
-        .attr("class", "labelWrapper");
+    // //Wrapper for the region labels
+    // var labelWrapper = svg.append("g")
+    //     .attr("class", "labelWrapper");
 
-    //Append the region labels
-    labelWrapper.selectAll(".label")
-        .data(centers)
-        .enter().append("text")
-        .attr("class", "label")
-        .style("opacity", 0)
-        .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; })
-        .text(function (d) { return d.name });
+    // //Append the region labels
+    // labelWrapper.selectAll(".label")
+    //     .data(centers)
+    //     .enter().append("text")
+    //     .attr("class", "label")
+    //     .style("opacity", 0)
+    //     .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; })
+    //     .text(function (d) { return d.name });
 
     ///////////////////////////////////////////////////////////////////////////
     /////////////////////////// Set-up the force //////////////////////////////
@@ -1727,118 +1885,118 @@ function placeCitiesBySecond() {
 }
 
 function placeCitiesByThird() {
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////// Set up and initiate svg containers ///////////////////
-    ///////////////////////////////////////////////////////////////////////////	
+    // ///////////////////////////////////////////////////////////////////////////
+    // //////////////////// Set up and initiate svg containers ///////////////////
+    // ///////////////////////////////////////////////////////////////////////////	
 
-    if (svg != null) {
-        svg.remove();
-    }
+    // if (svg != null) {
+    //     svg.remove();
+    // }
 
-    var margin = {
-        top: 100,
-        right: 0,
-        bottom: 0,
-        left: 0
-    };
-    var width = 1400 - margin.left - margin.right,
-        height = 800 - margin.top - margin.bottom;
+    // var margin = {
+    //     top: 100,
+    //     right: 0,
+    //     bottom: 0,
+    //     left: 0
+    // };
+    // var width = 1400 - margin.left - margin.right,
+    //     height = 800 - margin.top - margin.bottom;
 
-    //SVG container
-    var svg = d3.select('#titanic_map')
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
+    // //SVG container
+    // var svg = d3.select('#titanic_map')
+    //     .append("svg")
+    //     .attr("width", width + margin.left + margin.right)
+    //     .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //     .attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
 
-    ///////////////////////////////////////////////////////////////////////////
-    ///////////////////////////// Create filter ///////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////	
+    // ///////////////////////////////////////////////////////////////////////////
+    // ///////////////////////////// Create filter ///////////////////////////////
+    // ///////////////////////////////////////////////////////////////////////////	
 
-    //SVG filter for the gooey effect
-    //Code taken from http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/
-    var defs = svg.append("defs");
-    var filter = defs.append("filter").attr("id", "gooeyCodeFilter");
-    filter.append("feGaussianBlur")
-        .attr("in", "SourceGraphic")
-        .attr("stdDeviation", "10")
-        //to fix safari: http://stackoverflow.com/questions/24295043/svg-gaussian-blur-in-safari-unexpectedly-lightens-image
-        .attr("color-interpolation-filters", "sRGB")
-        .attr("result", "blur");
-    filter.append("feColorMatrix")
-        .attr("class", "blurValues")
-        .attr("in", "blur")
-        .attr("mode", "matrix")
-        .attr("values", "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5")
-        .attr("result", "gooey");
-    filter.append("feBlend")
-        .attr("in", "SourceGraphic")
-        .attr("in2", "gooey")
-        .attr("operator", "atop");
+    // //SVG filter for the gooey effect
+    // //Code taken from http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/
+    // var defs = svg.append("defs");
+    // var filter = defs.append("filter").attr("id", "gooeyCodeFilter");
+    // filter.append("feGaussianBlur")
+    //     .attr("in", "SourceGraphic")
+    //     .attr("stdDeviation", "10")
+    //     //to fix safari: http://stackoverflow.com/questions/24295043/svg-gaussian-blur-in-safari-unexpectedly-lightens-image
+    //     .attr("color-interpolation-filters", "sRGB")
+    //     .attr("result", "blur");
+    // filter.append("feColorMatrix")
+    //     .attr("class", "blurValues")
+    //     .attr("in", "blur")
+    //     .attr("mode", "matrix")
+    //     .attr("values", "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5")
+    //     .attr("result", "gooey");
+    // filter.append("feBlend")
+    //     .attr("in", "SourceGraphic")
+    //     .attr("in2", "gooey")
+    //     .attr("operator", "atop");
 
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////////////// Set-up Map /////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////// 
+    // ///////////////////////////////////////////////////////////////////////////
+    // //////////////////////////// Set-up Map /////////////////////////////////
+    // /////////////////////////////////////////////////////////////////////////// 
 
-    //Variables for the map
-    var projection = d3.geo.mercator()
-        .scale(170)
-        .translate([450, 200]);
+    // //Variables for the map
+    // var projection = d3.geo.mercator()
+    //     .scale(170)
+    //     .translate([450, 200]);
 
-    var path = d3.geo.path()
-        .projection(projection);
+    // var path = d3.geo.path()
+    //     .projection(projection);
 
-    var map = svg.append("g")
-        .attr("class", "map");
+    // var map = svg.append("g")
+    //     .attr("class", "map");
 
-    //Initiate the world map
-    map.selectAll(".geo-path")
-        .data(countriesMap[0].features)
-        .enter().append("path")
-        .attr("class", function (d) { return "geo-path" + " " + d.id; })
-        .attr("id", function (d) { return d.properties.name; })
-        .attr("d", path)
-        .style("stroke-opacity", 1)
-        .style("fill-opacity", 0.5);
+    // //Initiate the world map
+    // map.selectAll(".geo-path")
+    //     .data(countriesMap[0].features)
+    //     .enter().append("path")
+    //     .attr("class", function (d) { return "geo-path" + " " + d.id; })
+    //     .attr("id", function (d) { return d.properties.name; })
+    //     .attr("d", path)
+    //     .style("stroke-opacity", 1)
+    //     .style("fill-opacity", 0.5);
 
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////////////////// Cities ///////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////// 
+    // ///////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////// Cities ///////////////////////////////////
+    // /////////////////////////////////////////////////////////////////////////// 
 
-    // -1- Create a tooltip div that is hidden by default:
-    var tooltip = d3.select("#titanic_map")
-        .append("div")
-        .style("opacity", 0)
-        .attr("class", "tooltip")
-        .style("background-color", "black")
-        .style("border-radius", "5px")
-        .style("padding", "10px")
-        .style("color", "white")
-        .style("font-family", "'Special Elite', cursive")
+    // // -1- Create a tooltip div that is hidden by default:
+    // var tooltip = d3.select("#titanic_map")
+    //     .append("div")
+    //     .style("opacity", 0)
+    //     .attr("class", "tooltip")
+    //     .style("background-color", "black")
+    //     .style("border-radius", "5px")
+    //     .style("padding", "10px")
+    //     .style("color", "white")
+    //     .style("font-family", "'Special Elite', cursive")
 
-    // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
-    var showTooltip = function (d) {
-        tooltip
-            .transition()
-            .duration(200)
-        tooltip
-            .style("opacity", 1)
-            .html("Country: " + d.country + "<br>Total: " + d.third)
-            .style("left", (d3.mouse(this)[0] + 50) + "px")
-            .style("top", (d3.mouse(this)[1] + 50) + "px")
-    }
-    var moveTooltip = function (d) {
-        tooltip
-            .style("left", (d3.mouse(this)[0] + 50) + "px")
-            .style("top", (d3.mouse(this)[1] + 50) + "px")
-    }
-    var hideTooltip = function (d) {
-        tooltip
-            .transition()
-            .duration(200)
-            .style("opacity", 0)
-    }
+    // // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
+    // var showTooltip = function (d) {
+    //     tooltip
+    //         .transition()
+    //         .duration(200)
+    //     tooltip
+    //         .style("opacity", 1)
+    //         .html("Country: " + d.country + "<br>Total: " + d.third)
+    //         .style("left", (d3.mouse(this)[0] + 50) + "px")
+    //         .style("top", (d3.mouse(this)[1] + 50) + "px")
+    // }
+    // var moveTooltip = function (d) {
+    //     tooltip
+    //         .style("left", (d3.mouse(this)[0] + 50) + "px")
+    //         .style("top", (d3.mouse(this)[1] + 50) + "px")
+    // }
+    // var hideTooltip = function (d) {
+    //     tooltip
+    //         .transition()
+    //         .duration(200)
+    //         .style("opacity", 0)
+    // }
 
     //Radius scale
     var rScale = d3.scale.sqrt()
@@ -1852,23 +2010,23 @@ function placeCitiesByThird() {
         d.y = projection([d.longitude, d.latitude])[1];
     });
 
-    //Wrapper for the cities
-    var cityWrapper = svg.append("g")
-        .attr("class", "cityWrapper")
-        .style("filter", "url(#gooeyCodeFilter)");
+    // //Wrapper for the cities
+    // var cityWrapper = svg.append("g")
+    //     .attr("class", "cityWrapper")
+    //     .style("filter", "url(#gooeyCodeFilter)");
 
-    //Place the city circles
-    var cities = cityWrapper.selectAll(".cities")
-        .data(nationality_data)
-        .enter().append("circle")
-        .attr("class", "cities")
-        .attr("r", function (d) { return d.radius; })
-        .attr("cx", projection([0, 0])[0])
-        .attr("cy", projection([0, 0])[1])
-        .style("opacity", 1)
-        .on("mouseover", showTooltip)
-        .on("mousemove", moveTooltip)
-        .on("mouseleave", hideTooltip);
+    // //Place the city circles
+    // var cities = cityWrapper.selectAll(".cities")
+    //     .data(nationality_data)
+    //     .enter().append("circle")
+    //     .attr("class", "cities")
+    //     .attr("r", function (d) { return d.radius; })
+    //     .attr("cx", projection([0, 0])[0])
+    //     .attr("cy", projection([0, 0])[1])
+    //     .style("opacity", 1)
+    //     .on("mouseover", showTooltip)
+    //     .on("mousemove", moveTooltip)
+    //     .on("mouseleave", hideTooltip);
 
     var coverCirleRadius = 60;
     //Circle over all others
@@ -1882,25 +2040,25 @@ function placeCitiesByThird() {
     /////////////////////////// Region Labels ////////////////////////////////
     /////////////////////////////////////////////////////////////////////////// 
 
-    //Calculate the centers for each region
-    var centers = getCenters("region", [width/1.2, height /1.4]);
-    centers.forEach(function (d) {
-        d.y = d.y - 100;
-        d.x = d.x - 150;
-    });//centers forEach
+    // //Calculate the centers for each region
+    // var centers = getCenters("region", [width/1.2, height /1.4]);
+    // centers.forEach(function (d) {
+    //     d.y = d.y - 100;
+    //     d.x = d.x - 150;
+    // });//centers forEach
 
-    //Wrapper for the region labels
-    var labelWrapper = svg.append("g")
-        .attr("class", "labelWrapper");
+    // //Wrapper for the region labels
+    // var labelWrapper = svg.append("g")
+    //     .attr("class", "labelWrapper");
 
-    //Append the region labels
-    labelWrapper.selectAll(".label")
-        .data(centers)
-        .enter().append("text")
-        .attr("class", "label")
-        .style("opacity", 0)
-        .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; }) // (d.y - 60)
-        .text(function (d) { return d.name });
+    // //Append the region labels
+    // labelWrapper.selectAll(".label")
+    //     .data(centers)
+    //     .enter().append("text")
+    //     .attr("class", "label")
+    //     .style("opacity", 0)
+    //     .attr("transform", function (d) { return "translate(" + (d.x) + ", " + (d.y - 60) + ")"; }) // (d.y - 60)
+    //     .text(function (d) { return d.name });
 
     ///////////////////////////////////////////////////////////////////////////
     /////////////////////////// Set-up the force //////////////////////////////
