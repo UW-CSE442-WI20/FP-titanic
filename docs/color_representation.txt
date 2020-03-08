@@ -1,0 +1,19 @@
+Perished    #6b1111
+Survived    #353238
+
+Overall     black
+Crew        #363b4e
+Passenger Class
+    First   #c4bbf0
+    Second  #927fbf
+    Third   #4f3b78
+Gender
+    Men     #0f4c75
+    Women   #3282b8
+Age Group
+    0-15    #bad8b6
+    16-30   #a3cd9e
+    30-45   #92b88e
+    45-70   #82a47e
+    70>     #728f6e
+

@@ -3,7 +3,7 @@ var scrollVis = function (rawData) {
     var width = 600;
     var left_right_margin = -10;
     var top_bottom_margin = 30;
-    var height = 700;
+    var height = 600;
     var format = d3v4.format(".0%");
   
     // define scroll index tracking vars - JV

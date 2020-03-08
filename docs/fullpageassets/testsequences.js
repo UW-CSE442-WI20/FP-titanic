@@ -41,7 +41,7 @@ var arc = d3v4.arc()
 
 // Use d3v4.text and d3v4.csvParseRows so that we do not need to have a header
 // row, and can receive the csv as an array of arrays.
-d3v4.text("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/sunburst-survival-percent-copy.csv", function(text) {
+d3v4.text("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/docs/data/sunburst-survival-count-copy.csv", function(text) {
   var csv = d3v4.csvParseRows(text);
   var json = buildHierarchy(csv);
   createVisualization(json);
@@ -92,8 +92,7 @@ function createVisualization(json) {
 // Fade all but the current sequence, and show it in the breadcrumb trail.
 function mouseover(d) {
 
-  // var percentage = (100 * d.value / totalSize).toPrecision(3);
-  var percentage = d.value;
+  var percentage = (100 * d.value / totalSize).toPrecision(3);
 
   var percentageString = percentage + "%";
   if (percentage < 0.1) {
@@ -104,7 +103,7 @@ function mouseover(d) {
       .text(percentageString);
 
   d3v4.select("#explanation")
-      .style("visibility", "");
+      .style("visibility", "visible");
 
   var sequenceArray = d.ancestors().reverse();
   sequenceArray.shift(); // remove root node from the array

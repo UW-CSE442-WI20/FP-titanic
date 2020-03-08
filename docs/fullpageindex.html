@@ -7,7 +7,7 @@
 		  display: none;
 		}
 		
-	</style>
+  </style>
 
 
 	<title>Titanic Exploration</title>
@@ -20,6 +20,8 @@
   <link rel="stylesheet" type="text/css" href="./fullpageassets/old_index.css"/>
   <link rel="stylesheet" type="text/css" href="./fullpageassets/tooltip.css"/>
 
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
 
   <script type="text/javascript" src="./fullpageassets/fullPage.js"></script>
@@ -46,7 +48,7 @@
 				sectionsColor: [contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, contentColor, sunburstColor],
 				navigation: true,
 				navigationPosition: 'right',
-        navigationTooltips: ['Landing', 'Introduction', 'Passenger & Crew', 'Gender', 'Age', 'Nationality', 'Social Class', 'Sources & About Us'],
+        navigationTooltips: ['Landing', 'Introduction', 'Passenger vs Crew', 'Passenger Class', 'Gender', 'Age', 'Nationality', 'Survivors', 'Tragedy', 'Predict', 'Sources & About Us'],
         easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.12)',
         
 			});
@@ -137,6 +139,7 @@
       </div>
     </div>
     <script src="./fullpageassets/first_dots.js"></script>
+  
 
     <div class="section">
       <div class="container">
@@ -167,73 +170,95 @@
               passenger numbers were similar.
               We can also see their <button id="survivability4">survivability</button>.
             </div>
-            <!-- <div id="forth-area">
+            <div id="forth-area">
               <form>
                 <label><input type="radio" name="dataset" value="total" checked> Overall</label>
-                <label><input type="radio" name="dataset" value="passenger"> Passenger</label>
+                <label><input type="radio" name="dataset" value="1stClass"> 1st Class</label>
+                <label><input type="radio" name="dataset" value="2ndClass"> 2nd Class</label>
+                <label><input type="radio" name="dataset" value="3rdClass"> 3rd Class</label>
                 <label><input type="radio" name="dataset" value="crew"> Crew</label>
-              </form>
-            </div> -->
 
+              </form>
+            </div>
           </div>
+
           <div style="margin-left: 10%; height: 100px;">
             <div id='forthvis'></div>
           </div>
+          
         </div>
       </div>
     </div>
-    <!-- <script src="./fullpageassets/forth_dots.js"></script> -->
+    <script src="./fullpageassets/forth_dots.js"></script>
 
     <div class="section">
       <div class="container">
         <div id="sections_distribution">
-          <div id='secondvis'></div>
-          <div style="margin-left: 60%; margin-top: 10%;height: 100px;">
-            <!-- <div id="donut2">
-              <form id="form2">
+          <div style="width: 60%; height: 100px; float: left;">
+            <div class="step_right">
+              <div class="title">There were more men than women on board.</div>
+              This graph shows the gender distribution of the <button id = "passenger2">passengers</button> and <button id = "crew2">crews</button>. 
+              Gender inequality was a major problem back in the early 20th
+              century as women often were not able to work or travel without permission without authorization from their husbands.
+              Moreover, women are generally poorer as they were not able to get access to high paying jobs. We want to see how gender
+              inequality back in the 1920s affected the passenger distribution of titanic. We see that there are far more males than
+              females (in fact almost twice as much). Click here to see <button id = "all2"> all </button>all passenger and crew and their
+              <button id=survivability2>survivability</button>.
+            </div>
+            <div id="second-area">
+              <form>
                 <label><input type="radio" name="dataset" value="total" checked> Overall</label>
-                <label><input type="radio" name="dataset" value="Female"> Female</label>
-                <label><input type="radio" name="dataset" value="Male"> Male</label>
+                <label><input type="radio" name="dataset" value="men"> Men</label>
+                <label><input type="radio" name="dataset" value="women"> Women</label>
               </form>
-            </div> -->
+            </div>
           </div>
-          <div class="step">
-            <div class="title">There were more men than women on board.</div>
-            This graph shows the gender distribution of the <button id = "passenger2">passengers</button> and <button id = "crew2">crews</button>. 
-            Gender inequality was a major problem back in the early 20th
-            century as women often were not able to work or travel without permission without authorization from their husbands.
-            Moreover, women are generally poorer as they were not able to get access to high paying jobs. We want to see how gender
-            inequality back in the 1920s affected the passenger distribution of titanic. We see that there are far more males than
-            females (in fact almost twice as much). Click here to see <button id = "all2"> all </button>all passenger and crew and their
-            <button id=survivability2>survivability</button>.
+          <div style="margin-left: 10%; height: 100px;">
+            <div id='secondvis'></div>
           </div>
         </div>
       </div>
     </div>
-    <!-- <script src="./fullpageassets/second_dots.js"></script> -->
+    <script src="./fullpageassets/second_dots.js"></script>
+
+
+
 
     <div class="section">
       <div class="container">
         <div id="sections_distribution">
-          <div id='thirdvis'></div>
-          <div class="step">
-            <div class="title">The majority were aged between 15 and 45 years old.</div>
-            This graph shows the distribution of the <button id = "passenger3">passengers</button> and <button id = "crew3">crews</button> age group distribution. 
-            Titanic was a passenger liner that operated between England and
-            the United States. It carried some of the wealthiest people in Europe, but also at the same time carried immigrants into
-            the US. It is thus no surprise that working age individuals (age 15 - 30) account for the majority of the passenger as
-            the early 20th century was a time where European migration into the US was at a high due to wars and instability in
-            Europe. Click here to see <button id = "all3"> all </button> passenger and crew and their <button id=survivability3>survivability</button>.
+          <div style="width: 60%; height: 100px; float: left;">
+            <div class="step_right">
+              <div class="title">The majority were aged between 15 and 45 years old.</div>
+              This graph shows the distribution of the <button id = "passenger3">passengers</button> and <button id = "crew3">crews</button> age group distribution. 
+              Titanic was a passenger liner that operated between England and
+              the United States. It carried some of the wealthiest people in Europe, but also at the same time carried immigrants into
+              the US. It is thus no surprise that working age individuals (age 15 - 30) account for the majority of the passenger as
+              the early 20th century was a time where European migration into the US was at a high due to wars and instability in
+              Europe. Click here to see <button id = "all3"> all </button> passenger and crew and their <button id=survivability3>survivability</button>.
+            </div>
+            <div id="third-area">
+              <form>
+                <label><input type="radio" name="dataset" value="total" checked> Overall</label>
+                <label><input type="radio" name="dataset" value="age1"> 0 - 15</label>
+                <label><input type="radio" name="dataset" value="age2"> 15 - 30</label>
+                <label><input type="radio" name="dataset" value="age3"> 30 - 45</label>
+                <label><input type="radio" name="dataset" value="age4"> 45 - 70</label>
+                <label><input type="radio" name="dataset" value="age5"> >= 70</label>
+              </form>
+            </div>
+          </div>
+          <div style="margin-left: 10%; height: 100px;">
+            <div id='thirdvis'></div>
           </div>
         </div>
       </div>
     </div>
-    <!-- <script src="./fullpageassets/first_dots.js"></script> -->
+    <script src="./fullpageassets/third_dots.js"></script>
 
     <div class="section">
       <div class="container">
-        <div id="sections_distribution">
-          <div id="sections">
+        <div id="sections_distribution" style="font-family: 'Special Elite', cursive;">
             <div class="title">Where are the passengers from?</div>
             In the 21st century, we are used to thinking that globalization and movement of people is a recent trend. However, it
             was because of early pioneer innovation such as Titanic that people can move almost anywhere they want and within
@@ -241,92 +266,152 @@
             Europe, but also from far away places such as Asia and the middle east.
             <h5>Overall</h5> and <h5>First Class</h5> and <h5>Second Class</h5> and <h5>Third Class</h5>
             <br><br>
-
-            <form>
-              <label><input type="radio" name="dataset" value="total" checked> Overall</label>
-              <label><input type="radio" name="dataset" value="passenger"> Passenger</label>
-              <label><input type="radio" name="dataset" value="crew"> Crew</label>
-            </form>
       
             <!-- <button id="total">Total</button>
             <button id="first">First</button>
             <button id="second">Second</button>
             <button id="third">Third</button> -->
-            <div id="titanic_map"></div>
+            <div id="titanic_map">
+              <!-- <form>
+                <label><input type="radio" name="dataset" value="total" checked> Total Passenger</label>
+                <label><input type="radio" name="dataset" value="first"> First Class Passenger</label>
+                <label><input type="radio" name="dataset" value="second"> Second Class Passenger</label>
+                <label><input type="radio" name="dataset" value="third"> Third Class Passenger</label>
+              </form> -->
+            </div>
             <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
             <script src="./fullpageassets/map.js"></script>
-
-            <!-- <div id="titanic_map"></div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-            <script src="./fullpageassets/map.js"></script> -->
           </div>
-          <!-- <div id="titanic_map"></div>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-          <script src="./assets/map.js"></script> -->
-        </div>
       </div>
     </div>
 
-
+    <!-- Survivors Distribution -->
     <div class="section">
       <div class="container">
-        <div id="sections_distribution">
+          <div style="width: 60%; height: 200px; float: left;">
+            <div id="sunbucket">
+              <div id="main">
+                <div id="sequence"></div>
+                <div id="sunburst">
+                  <div id="explanation" style="visibility: hidden;">
+                    <span id="percentage"></span><br />
+                    of Survivors
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="sidebar">
+              <!-- <input type="checkbox" id="togglelegend"> Legend<br/> -->
+              <div id="legend" style="visibility: visible;"></div>
+            </div>
+          </div>
+
+          <div style="margin-left: 60%; height: 200px; font-family: 'Special Elite', cursive;">
+            <div class="title">Survivors Distribution</div>
+            <br>
+
+            Most of those aboard the Titanic were to lose their lives when she went down, but some were lucky. 
+            
+            <br><br>
+
+            Controversy continues to this day, however; if you were travelling in first class you were likely to live, 
+            whilst if you were a third class passenger it was likely you would perish. 
+            
+            <br><br>
+
+            <div class="question">Now, it's your turn to explore on the Survivors of the Titanic Disaster.</div>
+
+            <br><br>
+            
+            Only 31.6% of people aboard (passengers and crew) who survived the sinking. The lifeboats of the RMS Titanic played 
+            a crucial role in the disaster of 14–15 April 1912. However, there were not enough Titanic lifeboats on board to 
+            hold all the passengers and crew, and when the lifeboats were launched they were not filled to capacity.
+
+            <br><br>
+            After the Titanic disaster, recommendations were made by both the British and American Boards of Inquiry, that ships 
+            would carry enough lifeboats for those aboard, mandated lifeboat drills would be implemented, lifeboat
+            inspections would be conducted, etc. Many of these recommendations were incorporated into the International Convention
+            for the Safety of Life at Sea passed in 1914.
+
+
+          </div>
+          <script src="./fullpageassets/testsequences.js"></script>
+      </div>
+    </div>
+    
+    <!-- Overall Distribution -->
+    <div class="section">
+      <div class="container">
+        <div id="sections_distribution" style="width: auto;">
           <div id="sections">
-            <div class="title">How many of the passengers survived?</div>
+            <div class="title">Overall Survival Rate of Titanic Tragedy</div>
+
+            <p id="tragedy_description"> Based on our data, overall 40% of the passengers survived</p>
+
+            Use the filters below to explore the survival rate of the Titanic tragedy by each groups. (Each dots represent approximately 10 people)
             <br><br>
 
             <div id="toolbar" >
-              <button id="all" class="button active">All</button>
+              <button id="all" class="button active">Overall Distribution</button>
               <button id="Gender" class="button">By Gender</button>
               <button id="Age" class="button">By Age</button>
               <button id="Class" class="button">By Class</button>
               <button id="Survived" class="button">By Survival</button>
             </div>
-            <br>
-            <p id="tragedy-description"> Based on our data, overall 40% of the passengers survived</p>
-            <div id="bubbles"></div>
-            <p> (Each dots represent approximately 10 people) </p>
+            
+            <div id="bubbles" style="text-align: center; margin-left: 10%; margin-top: 10px;"></div>
             <script src="./fullpageassets/tragedy-circles-graph.js"></script>
           </div>
       </div>
+      </div>
+    </div>
+
+    
+
+
+    <div class="section">
+      <div class="container">
+        <div id="sections_distribution">
+          <div style="width: 45%; height: 200px; float: left;">
+            <div class="title">Conclusion & Takeways</div>
+            Although there was some luck involved in surviving, some groups of people were more likely to survive than others.
+            Looking back on the questions that were asked at the beginning, we can observe certain relations towards survivability
+            of passengers with their Demographics and Social Economic.
+            
+            <br><br>
+            <b style="font-size: 20px;">Try clicking on different features and see the cummulative effect of the variables.<br><br>
+            Can you figure out which variable group hikes the survival rate up to 100% ?</b>
+
+            <p style="font-style: italic;color: grey; "> "Women and Children First". Does your age or gender influence your chances of survivability? </p>
+            With the data provided, it seems that women and children have a higher chances of suriving the tragedy than that of
+            adult males.67% of the women and children survived the tragedy while only 17% of the adult males survived.
+
+            <p style="font-style: italic;color: grey; ">If you are rich, would you most likely be prioritized? </p>
+            The answer to this question is most probably. Looking at the data grouped according to the Passenger Class, it would
+            seem that the higher you are in the passenger class, the higher your chances of surviving the tragedy. 63% of the First
+            Class Passengers survived the tragedy. While only 48% of the Second Passengers survived and only 24% of the Third Class
+            Passengers survived. Please take note that this part of the analysis is limited to the fact that there is no direct relationship between
+            socio-economic status and their class.
+
+          </div>
+          <div style="margin-left: 50%;">
+            <div id="survival_chart"></div>
+          
+          </div>
+          <script src="./fullpageassets/titanic_survival.js"></script>
+          
+        </div>
       </div>
     </div>
 
     <div class="section">
       <div class="container">
-        <div id="sections">
-          <div class="title">Test your survival rate?</div>
-          <div id="sunbucket">
-            <div id="main">
-              <div id="sequence"></div>
-              <div id="sunburst">
-                <div id="explanation" style="visibility: hidden;">
-                  <span id="percentage"></span><br/>
-                  survival rate
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="sidebar">
-            <input type="checkbox" id="togglelegend"> Legend<br/>
-            <div id="legend" style="visibility: hidden;"></div>
-          </div>
-          <script src="./fullpageassets/testsequences.js"></script>
-        </div>   
-      </div>
-    </div>
-
-
-    <!-- <div class="section">
-      <div class="container">
         <div id="sections_distribution">
-          <div id="sections">
-            <div id="chart"></div>
-            <script src="./fullpageassets/tragedy-circles-graph.js"></script>
-          </div>
+          <div class="title">Sources</div>
+          <img src="./img/titanic.jpg" style="float: left;" />
         </div>
       </div>
-    </div> -->
+    </div>
 
   </div>
 </div>
