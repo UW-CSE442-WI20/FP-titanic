@@ -24,11 +24,11 @@
 
   <script type="text/javascript" src="./fullpageassets/fullPage.js"></script>
 
-  <!-- <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script>
     var d3v3 = window.d3;
     window.d3 = null;
-  </script> -->
+  </script>
 
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script>
@@ -120,21 +120,13 @@
       <div class="container">
         <div id="sections_distribution">
           This graph shows <button id="all1"> all </button> of Titanic’s <button id="passenger1">passengers</button> and 
-          <button id="crew1"> crews </button>.
+          <button id="crew1"> crews </button> along with their <button id="survivability1">survivability</button>
           <div style="width: 60%; height: 100px; float: left;">
             <div id='vis'></div>
           </div>
-          <div style="margin-left: 60%; margin-top: 10%;height: 100px;">
-            <div id="chart-area">
-              <form>
-                <label><input type="radio" name="dataset" value="total" checked> Overall</label>
-                <label><input type="radio" name="dataset" value="passenger"> Passenger</label>
-                <label><input type="radio" name="dataset" value="crew"> Crew</label>
-              </form>
-            </div>
-            <!-- <div id='first_donut'></div> -->
-            <!-- <div id='forthvis'></div> -->
-          </div>
+          <!-- <div style="margin-left: 60%; margin-top: 10%;height: 100px;">
+            <div id="donut"></div>
+          </div> -->
           <!-- <div class="step">
             This graph shows <button id = "all1"> all </button> of Titanic’s <button id = "passenger1">passengers</button> and <button id = "crew1"> crews </button>. 
             As a homage to those who died, you can also hover over the dots
@@ -173,6 +165,7 @@
               shows
               that there is a much larger proportion of 3rd class passengers compared to other classes, but 1st and 2nd class
               passenger numbers were similar.
+              We can also see their <button id="survivability4">survivability</button>.
             </div>
             <!-- <div id="forth-area">
               <form>
@@ -195,6 +188,15 @@
       <div class="container">
         <div id="sections_distribution">
           <div id='secondvis'></div>
+          <div style="margin-left: 60%; margin-top: 10%;height: 100px;">
+            <!-- <div id="donut2">
+              <form id="form2">
+                <label><input type="radio" name="dataset" value="total" checked> Overall</label>
+                <label><input type="radio" name="dataset" value="Female"> Female</label>
+                <label><input type="radio" name="dataset" value="Male"> Male</label>
+              </form>
+            </div> -->
+          </div>
           <div class="step">
             <div class="title">There were more men than women on board.</div>
             This graph shows the gender distribution of the <button id = "passenger2">passengers</button> and <button id = "crew2">crews</button>. 
@@ -202,7 +204,8 @@
             century as women often were not able to work or travel without permission without authorization from their husbands.
             Moreover, women are generally poorer as they were not able to get access to high paying jobs. We want to see how gender
             inequality back in the 1920s affected the passenger distribution of titanic. We see that there are far more males than
-            females (in fact almost twice as much). Click here to see all passenger and crew: <button id = "all2"> all </button>
+            females (in fact almost twice as much). Click here to see <button id = "all2"> all </button>all passenger and crew and their
+            <button id=survivability2>survivability</button>.
           </div>
         </div>
       </div>
@@ -220,7 +223,7 @@
             the United States. It carried some of the wealthiest people in Europe, but also at the same time carried immigrants into
             the US. It is thus no surprise that working age individuals (age 15 - 30) account for the majority of the passenger as
             the early 20th century was a time where European migration into the US was at a high due to wars and instability in
-            Europe. Click here to see all passenger and crew: <button id = "all3"> all </button>
+            Europe. Click here to see <button id = "all3"> all </button> passenger and crew and their <button id=survivability3>survivability</button>.
           </div>
         </div>
       </div>
@@ -332,7 +335,7 @@
 </body>
 
 <!-- Scripts -->
-<script src="./fullpageassets/fullpagesections.js"></script>
+<!-- <script src="./fullpageassets/fullpagesections.js"></script> -->
 
 
 </html>
