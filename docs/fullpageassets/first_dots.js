@@ -441,7 +441,6 @@ var scrollVis = function (rawData) {
         }
 
         this.create = function (dataset, i) {
-
             console.log(dataset[i])
             var $charts = $(id);
             // chart_m = $charts.innerWidth() / dataset[i].length / 2 * 0.04;
