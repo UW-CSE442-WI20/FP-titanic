@@ -75,14 +75,14 @@ d3v4.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/doc
 
     function changeTragedyDescription(byVar) {
         if(byVar == 'Overall' || byVar == 'Survived') {
-            document.getElementById("tragedy_description").innerHTML = "Only 38.76% of the titanic's passengers survived";
+            document.getElementById("tragedy_description").innerHTML = "Only 29% of the titanic's passengers survived";
         } else if (byVar == 'Gender') {
             document.getElementById("tragedy_description").innerHTML = "67.13% of women survived while only 23.67% of men survived the incident";
         } else if (byVar == 'Class') {
             document.getElementById("tragedy_description").innerHTML = "Based on our data, more than half (57.42%) of 1st class passengers survived while 40.27% of the 2nd class passengers survived. \
                                                                         The survival rate for 3rd class passengers and crew members were heartbreakingly low, with 25.53% and 18.84% respectively.";
         } else if (byVar == 'Age') {
-            document.getElementById("tragedy_description").innerHTML = "Around 40.61% of children aged 0-15 survived and 28.76% of younger adults aged 16-30 survived. Howevr, the survival rate went really low for elders, aged over 61 with only 17.07%.";
+            document.getElementById("tragedy_description").innerHTML = "Around 40.61% of children aged 0-15 survived and 28.76% of younger adults aged 16-30 survived. Howevr, the survival rate went really low for elders, aged over 61 with only 22%.";
         }
     }
 

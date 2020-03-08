@@ -231,7 +231,7 @@ var scrollVis = function (rawData) {
 
         var chart_m,
             chart_r,
-            color = ['#353238', '#6b1111'];
+            color = ['#353238', '#fb9a99'];
 
         var getCatNames = function (dataset) {
             var catNames = new Array();
@@ -478,7 +478,7 @@ var scrollVis = function (rawData) {
     var draw_dots = function (svg, data_class, fill_type, transition, status) {
 
         console.log("draw dots")
-        
+
         svg.select("x_axis").attr("x_axis", x0_scale.domain())
 
         //define data - empty if none (ie first scroll index).
