@@ -38,7 +38,7 @@ var scrollVis = function (rawData) {
     "Crew Class":"#363b4e"};
 
     
-    var survival_colours = {0:"#fb9a99", 1: "#404040"};
+    var survival_colours = {0:"#eb7775", 1: "#404040"};
   
     // define functions for the current scroll setting - inherited from JV
     var activateFunctions = [];

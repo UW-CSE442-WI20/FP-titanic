@@ -1232,25 +1232,25 @@ var third_data = [
 // total passengers
 var total_pass = [
     { title: "Survived", value: 500, total: 1317, color: "#353238" },
-    { title: "Perlished", value: 817, total: 1317, color: "#fb9a99" }
+    { title: "Perlished", value: 817, total: 1317, color: "#eb7775" }
 ];
 
 // first class
 var first_pass = [
     { title: "Survived", value: 198, total: 324, color: "#353238" },
-    { title: "Perlished", value: 126, total: 324, color: "#fb9a99" }
+    { title: "Perlished", value: 126, total: 324, color: "#eb7775" }
 ];
 
 // second class
 var second_pass = [
     { title: "Survived", value: 119, total: 280, color: "#353238" },
-    { title: "Perlished", value: 161, total: 280, color: "#fb9a99" }
+    { title: "Perlished", value: 161, total: 280, color: "#eb7775" }
 ];
 
 // third class
 var third_pass = [
     { title: "Survived", value: 183, total: 713, color: "#353238" },
-    { title: "Perlished", value: 530, total: 713, color: "#fb9a99" }
+    { title: "Perlished", value: 530, total: 713, color: "#eb7775" }
 ];
 
 var margin = {

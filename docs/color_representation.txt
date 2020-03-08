@@ -1,4 +1,4 @@
-Perished    #fb9a99  fb9a99 6b1111
+Perished    #eb7775  eb7775 6b1111  eb7775
 Survived    #353238
 
 Overall     black

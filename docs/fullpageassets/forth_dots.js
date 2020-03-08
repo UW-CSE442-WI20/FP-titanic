@@ -5,23 +5,23 @@ function drawDonut() {
     var data = {
         "total": [
             { "title": "Survived", "count": "712", "total": "2477", "color": "#353238" },
-            { "title": "Perlished", "count": "1765", "total": "2477", "color": "#fb9a99" }
+            { "title": "Perlished", "count": "1765", "total": "2477", "color": "#eb7775" }
         ],
         "1stClass": [
             { "title": "Survived", "count": "201", "total": "350", "color": "#353238" },
-            { "title": "Perlished", "count": "149", "total": "350", "color": "#fb9a99" }
+            { "title": "Perlished", "count": "149", "total": "350", "color": "#eb7775" }
         ],
         "2ndClass": [
             { "title": "Survived", "count": "118", "total": "293", "color": "#353238" },
-            { "title": "Perlished", "count": "175", "total": "293", "color": "#fb9a99" }
+            { "title": "Perlished", "count": "175", "total": "293", "color": "#eb7775" }
         ],
         "3rdClass": [
             { "title": "Survived", "count": "181", "total": "709", "color": "#353238" },
-            { "title": "Perlished", "count": "528", "total": "709", "color": "#fb9a99" }
+            { "title": "Perlished", "count": "528", "total": "709", "color": "#eb7775" }
         ],
         "crew": [
             { "title": "Survived", "count": "212", "total": "1125", "color": "#353238" },
-            { "title": "Perlished", "count": "913", "total": "1125", "color": "#fb9a99" }
+            { "title": "Perlished", "count": "913", "total": "1125", "color": "#eb7775" }
         ]
     };
 

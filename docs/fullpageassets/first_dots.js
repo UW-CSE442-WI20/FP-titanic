@@ -24,7 +24,7 @@ var scrollVis = function (rawData) {
         "0 - 15": "#5e8c41", "15 - 30": "#3b943d", "30 - 45": "#1f8239", "45 - 70": "#0b5e27", ">= 70": "#01331d", "Crew": "#2a0c52"
     };
 
-    var survival_colours = { 0: "#fb9a99", 1: "#404040" };
+    var survival_colours = { 0: "#eb7775", 1: "#404040" };
 
     //define data object and svg.
     var vis_data = {};
@@ -231,7 +231,7 @@ var scrollVis = function (rawData) {
 
         var chart_m,
             chart_r,
-            color = ['#353238', '#fb9a99'];
+            color = ['#353238', '#eb7775'];
 
         var getCatNames = function (dataset) {
             var catNames = new Array();

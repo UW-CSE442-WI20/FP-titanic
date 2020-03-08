@@ -28,7 +28,7 @@ var scrollVis = function () {
   var crew_colours = { Men: '#054a78', Women: '#558dab', all: "3#e4142",
   "0 - 15":"#5e8c41","15 - 30":"#3b943d","30 - 45":"#1f8239","45 - 70":"#0b5e27",">= 70":"#01331d", "Crew Class":"#2a0c52"};
   
-  var survival_colours = {0:"#fb9a99", 1: "#404040"}
+  var survival_colours = {0:"#eb7775", 1: "#404040"}
 
   // define functions for the current scroll setting - inherited from JV
   var activateFunctions = [];

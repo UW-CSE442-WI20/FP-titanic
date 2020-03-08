@@ -1,7 +1,7 @@
 var w = 1000, h = 500;
     
 var radius = 4;
-var color = {0:"#fb9a99", 1: "#404040"}
+var color = {0:"#eb7775", 1: "#404040"}
 var centerScale = d3.scalePoint().padding(1).range([0, w]);
 var centerScaleHeight = d3.scalePoint().padding(1).range([h/2, h/2]);
 var forceStrength = 0.3;

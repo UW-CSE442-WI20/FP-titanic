@@ -4,27 +4,27 @@ function drawDonut() {
     var data = {
         "total": [
             { "title": "Survived", "count": "712", "total": "2477", "color": "#353238" },
-            { "title": "Perlished", "count": "1765", "total": "2477", "color": "#fb9a99" }
+            { "title": "Perlished", "count": "1765", "total": "2477", "color": "#eb7775" }
         ],
         "age1": [ // 0 - 15
             { "title": "Survived", "count": "67", "total": "157", "color": "#353238" },
-            { "title": "Perlished", "count": "90", "total": "300", "color": "#fb9a99" }
+            { "title": "Perlished", "count": "90", "total": "300", "color": "#eb7775" }
         ],
         "age2": [ // 15 - 30
             { "title": "Survived", "count": "335", "total": "1077", "color": "#353238" },
-            { "title": "Perlished", "count": "742", "total": "1077", "color": "#fb9a99" }
+            { "title": "Perlished", "count": "742", "total": "1077", "color": "#eb7775" }
         ],
         "age3": [ // 30 - 45
             { "title": "Survived", "count": "223", "total": "911", "color": "#353238" },
-            { "title": "Perlished", "count": "688", "total": "911", "color": "#fb9a99" }
+            { "title": "Perlished", "count": "688", "total": "911", "color": "#eb7775" }
         ],
         "age4": [ // 45 - 70
             { "title": "Survived", "count": "10", "total": "326", "color": "#353238" },
-            { "title": "Perlished", "count": "90", "total": "326", "color": "#fb9a99" }
+            { "title": "Perlished", "count": "90", "total": "326", "color": "#eb7775" }
         ],
         "age5": [ // >= 70
             { "title": "Survived", "count": "10", "total": "100", "color": "#353238" },
-            { "title": "Perlished", "count": "90", "total": "100", "color": "#fb9a99" }
+            { "title": "Perlished", "count": "90", "total": "100", "color": "#eb7775" }
         ]
     };
 
