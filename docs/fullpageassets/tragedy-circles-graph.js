@@ -49,13 +49,13 @@ d3v4.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/doc
         .nodes(data)
         .on("tick", ticked);
 
-    splitBubbles('Overall')
+    splitBubbles('all')
     
     function splitBubbles(byVar) {
         centerScale.domain(data.map(function(d){ return d[byVar]; }));
         centerScaleHeight.domain(data.map(function(d){ return d[byVar]; }));
         
-        if(byVar == "Overall"){
+        if(byVar == "all"){
             showTitles('Overall', centerScale)
         } else {
             showTitles(byVar, centerScale);
@@ -74,7 +74,7 @@ d3v4.csv("https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/doc
     }
 
     function changeTragedyDescription(byVar) {
-        if(byVar == 'Overall' || byVar == 'Survived') {
+        if(byVar == 'all' || byVar == 'Survived') {
             document.getElementById("tragedy_description").innerHTML = "Only 38.76% of the titanic's passengers survived";
         } else if (byVar == 'Gender') {
             document.getElementById("tragedy_description").innerHTML = "67.13% of women survived while only 23.67% of men survived the incident";
