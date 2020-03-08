@@ -21,8 +21,8 @@
     var CHARGE_BETWEEN_CIRCLES = -10;
     
     // animation delays, duration, timings:
-    var COUNTER_DURATION = 8200;
-    var FILTER_DURATION = 1500;
+    var COUNTER_DURATION = 10;
+    var FILTER_DURATION = 50;
     
     var xInitCircle = [];
     var yInitCircle = [];
@@ -85,7 +85,7 @@
                 .attr("fill", BLACK_COLOR);
             
             if (counter > datasets["total"].length - 100) {
-                $('#blob-explanation h5').fadeTo(250, 1);
+                $('#blob-explanation h5').fadeTo(25, 1);
             }
             if (counter > datasets["total"].length) { 
                 // view is done loading
@@ -100,7 +100,7 @@
                             return BLACK_COLOR;
                         }
                    })
-                document.getElementById("death-count").innerHTML = "1765 perished due to the sinking of Titanic.";
+                document.getElementById("death-count").innerHTML = "1,765 perished due to the sinking of Titanic.";
                 document.getElementById("circle-represent").innerHTML = "(Each circle represents 10 people)";
 
                 // get circles' coordinates

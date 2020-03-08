@@ -2394,6 +2394,9 @@ function placeCitiesByThird() {
         placeCities();
         setTimeout(clusterCountry, 2000);
         setTimeout(backToCenter, 4000);
+
+        // setTimeout(clusterCountry, 7000);
+        // setTimeout(backToCenter, 10000);
     }
 }
 
