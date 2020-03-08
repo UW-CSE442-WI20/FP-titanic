@@ -35,13 +35,8 @@
 }
 
 .container {
-<<<<<<< HEAD
   width: 1280px;
   height: 600px;
-=======
-  width: 1080px;
-  height: 800px;
->>>>>>> 4802139b97b467a3421ffc064cc48ee8bd25d52e
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
