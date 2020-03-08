@@ -94,13 +94,13 @@
                 svg.selectAll("circle")
                    .transition()
                    .attr("fill", function(d, i) {
-                        if (i >= 96 ) {
+                        if (i >= 72 ) {
                             return "#EF3B2C";
                         } else {
                             return BLACK_COLOR;
                         }
                    })
-                document.getElementById("death-count").innerHTML = "1517 perished due to the sinking of Titanic.";
+                document.getElementById("death-count").innerHTML = "1765 perished due to the sinking of Titanic.";
                 document.getElementById("circle-represent").innerHTML = "(Each circle represents 10 people)";
 
                 // get circles' coordinates
