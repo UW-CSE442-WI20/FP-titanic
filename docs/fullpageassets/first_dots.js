@@ -14,14 +14,14 @@ var scrollVis = function (rawData) {
     //all_colours - used during 1st section when survival rates not needed variable == "both".
     var all_colours = {
         Men: '#1f78b4', Women: '#a6cee3', all: "grey", passenger: "green", crew: "blue",
-        "0 - 15": "#addd8e", "15 - 30": "#78c679", "30 - 45": "#41ab5d", "45 - 60": "#238443", ">= 60": "#005a32",
+        "0 - 15": "#addd8e", "16 - 30": "#78c679", "31 - 45": "#41ab5d", "46 - 60": "#238443", ">= 61": "#005a32",
         "1st Class": "#9e9ac8", "2nd Class": "#756bb1", "3rd Class": "#54278f"
     };
 
     //survival colours - used during 2nd section when looking at survival rates.
     var crew_colours = {
         Men: '#054a78', Women: '#558dab', all: "3#e4142",
-        "0 - 15": "#5e8c41", "15 - 30": "#3b943d", "30 - 45": "#1f8239", "45 - 60": "#0b5e27", ">= 60": "#01331d", "Crew": "#2a0c52"
+        "0 - 15": "#5e8c41", "16 - 30": "#3b943d", "31 - 45": "#1f8239", "46 - 60": "#0b5e27", ">= 61": "#01331d", "Crew": "#2a0c52"
     };
 
     var survival_colours = { 0: "#eb7775", 1: "#404040" };
@@ -203,7 +203,7 @@ var scrollVis = function (rawData) {
     function genData() {
         var allCategories = new Array();
         var vals = [38.76, 67.13, 23.67, 57.42, 40.27, 26.13, 18.84, 40.61, 28.76, 34.06, 25.69, 22.17]
-        var type = ["Overall", "Female", "Male", "1st Class", "2nd Class", "3rd Class", "Crew Class", "0-15", "15-30", "31-45", "46-60", "61-75"]
+        var type = ["Overall", "Female", "Male", "1st Class", "2nd Class", "3rd Class", "Crew Class", "0-15", "16-30", "31-45", "46-60", "61-75"]
 
         for (var i = 0; i < vals.length; i++) {
             var category = new Array();
@@ -649,7 +649,6 @@ d3v4.csv('https://raw.githubusercontent.com/UW-CSE442-WI20/FP-titanic/master/doc
 
 //all has only one section
 //sex, age and p_class are linked to the data variables
-//ch_1_2 and w_ch_1_2 are custom sections linked to my conclusions (ie children under 15 in 1st and 2nd Class v remaining passengers)
 
 
 function convert_data(my_data) {
@@ -661,40 +660,10 @@ function convert_data(my_data) {
 
     var all = get_positions(my_data, all_per_row, []);
     var sex = get_positions(my_data, two_per_row, ["Male", "Female"], "Sex");
-    var age = get_positions(my_data, five_per_row, [0, 15, 30, 45, 60], "Age");
+    var age = get_positions(my_data, five_per_row, [0, 16, 31, 46, 61], "Age");
     var p_class = get_positions(my_data, four_per_row, [1, 2, 3, 4], "Pclass");
-    var ch_1_2 = age_class(my_data, two_per_row);
-    var w_ch_1_2 = women_children_class(my_data, two_per_row);
 
-    return { all: all, sex: sex, age: age, p_class: p_class, ch_1_2: ch_1_2, w_ch_1_2: w_ch_1_2 };
-
-    function women_children_class(my_data, col_per_row) {
-
-        var positions = [];
-        var filtered_data = my_data.filter(function (d) {
-            return (d.Age < 15 && d.Pclass < 4) || (d.Sex == "Female" && d.Age >= 15 && d.Pclass < 4)
-        })
-
-        positions = positions.concat(populate(filtered_data, "1st or 2nd Class women and children", "", col_per_row));
-        var filtered_data = my_data.filter(function (d) {
-            return (d.Age < 15 && d.Pclass == 4) || (d.Sex == "Female" && d.Age >= 15 && d.Pclass == 4) || (d.Sex == "Male" && d.Age >= 15)
-        })
-        positions = positions.concat(populate(filtered_data, "Remaining Passengers", "", col_per_row))
-        return positions;
-    }
-
-    function age_class(my_data, col_per_row) {
-        var positions = [];
-        var filtered_data = my_data.filter(function (d) {
-            return (d.Age < 15 && d.Pclass < 4)
-        })
-        positions = positions.concat(populate(filtered_data, "1st or 2nd Class children", "", col_per_row));
-        var filtered_data = my_data.filter(function (d) {
-            return (d.Age < 15 && d.Pclass == 4) || (d.Age >= 15)
-        })
-        positions = positions.concat(populate(filtered_data, "Remaining Passengers", "", col_per_row))
-        return positions;
-    }
+    return { all: all, sex: sex, age: age, p_class: p_class };
 
     function get_positions(my_data, col_per_row, variables, field) {
         // console.log("Field : " + field)
@@ -715,7 +684,7 @@ function convert_data(my_data) {
                             band = ">= " + variables[v];
                             return d[field] >= variables[v];
                         } else {
-                            band = variables[v] + " - " + variables[+v + 1];
+                            band = variables[v] + " - " + (variables[+v + 1] - 1);
                             return (d[field] >= variables[v] && d[field] < variables[+v + 1]);
                         };
                     }
@@ -752,9 +721,7 @@ function convert_data(my_data) {
                     sex: sex_labels[my_data[d].Sex],
                     all: "number of people",
                     p_class: p_class,
-                    total: my_data.length,
-                    ch_1_2: band,
-                    w_ch_1_2: band
+                    total: my_data.length
                 });
                 my_column += 1
             }
